@@ -3,13 +3,6 @@
 import React, { useEffect, useState } from 'react';
 
 export default function AuditMemorandum() {
-  // ... rest of your component code
-}
-
-
-import React, { useEffect, useState } from 'react';
-
-export default function AuditMemorandum() {
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState('');
 
