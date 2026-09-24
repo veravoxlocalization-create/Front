@@ -1,24 +1,21 @@
 import './globals.css';
+import React from 'react';
 
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'VeraVox — Structural localization for European technical buyers',
-  description: 'VeraVox re-engineers US SaaS copy for European technical buyers. Structural adaptations for ES, FR, DE markets — not literal translation.',
+export const metadata = {
+  title: 'VeraVox Localization',
+  description: 'Institutional localization audit platform for technical B2B SaaS.',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-      </head>
-      <body className="bg-ink-950 text-bone-100 font-body antialiased">
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-ink-950 text-bone-100 antialiased selection:bg-signal-green selection:text-ink-950">
         {children}
       </body>
     </html>
   );
 }
-
