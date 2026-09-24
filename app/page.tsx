@@ -74,7 +74,7 @@ export default function Home() {
             </p>
             <div className="hero-in d4 mt-10">
               <Link href="#audits" className="rule-hover inline-block text-sm font-medium text-bone-100 pb-0.5">
-                Explore the Audit Library
+                Explore the Audit Library ↓
               </Link>
             </div>
           </div>
@@ -190,10 +190,7 @@ export default function Home() {
             <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider flex items-center gap-1.5">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    Premium
-                  </span>
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">Premium</span>
                   <span className="font-mono text-xs text-bone-500">Memo No. 05</span>
                 </div>
                 <h3 className="font-display text-xl text-bone-300 mb-2">Vercel</h3>
@@ -207,10 +204,7 @@ export default function Home() {
             <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider flex items-center gap-1.5">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    Premium
-                  </span>
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">Premium</span>
                   <span className="font-mono text-xs text-bone-500">Memo No. 06</span>
                 </div>
                 <h3 className="font-display text-xl text-bone-300 mb-2">Supabase</h3>
@@ -224,50 +218,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="border-t border-ink-700">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
-          <h2 className="font-display font-semibold text-3xl md:text-4xl tracking-tight text-bone-100 max-w-xl mb-14">
-            Three ways to engage
-          </h2>
-          <div className="divide-y divide-ink-700 border-y border-ink-700">
-            <div className="grid md:grid-cols-12 gap-6 py-10">
-              <div className="md:col-span-1 font-mono text-sm text-bone-500">01</div>
-              <div className="md:col-span-6">
-                <h3 className="font-display font-medium text-xl text-bone-100 mb-2">Core Asset Audit &amp; Rewrite</h3>
-                <p className="text-bone-500 leading-relaxed max-w-md">A structural tear-down and rebuild of your primary landing page or core asset into ES, FR, or DE. We replace direct translations with context-native, high-signal phrasing.</p>
-              </div>
-              <div className="md:col-span-2 font-mono text-sm text-bone-300 md:text-right">$450–$800<br /><span className="text-bone-500">flat fee</span></div>
-              <div className="md:col-span-3 md:text-right">
-                <Link href="mailto:veravoxlocalization@gmail.com?subject=VeraVox%20Engagement%20Inquiry" className="inline-block border border-ink-600 hover:border-signal-green hover:text-signal-green transition-colors px-4 py-2 text-sm text-bone-100">Submit Asset for Audit</Link>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-12 gap-6 py-10">
-              <div className="md:col-span-1 font-mono text-sm text-bone-500">02</div>
-              <div className="md:col-span-6">
-                <h3 className="font-display font-medium text-xl text-bone-100 mb-2">Live Messaging Audit &amp; Strategy Call</h3>
-                <p className="text-bone-500 leading-relaxed max-w-md">A 60-minute diagnostic session to isolate friction points in your localized funnel. We map out a structural plan to correct tone mismatches across your active campaigns.</p>
-              </div>
-              <div className="md:col-span-2 font-mono text-sm text-bone-300 md:text-right">$250–$400<br /><span className="text-bone-500">per session</span></div>
-              <div className="md:col-span-3 md:text-right">
-                <Link href="mailto:veravoxlocalization@gmail.com?subject=VeraVox%20Engagement%20Inquiry" className="inline-block border border-ink-600 hover:border-signal-green hover:text-signal-green transition-colors px-4 py-2 text-sm text-bone-100">Book Strategy Session</Link>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-12 gap-6 py-10">
-              <div className="md:col-span-1 font-mono text-sm text-bone-500">03</div>
-              <div className="md:col-span-6">
-                <h3 className="font-display font-medium text-xl text-bone-100 mb-2">Growth Partner Retainer</h3>
-                <p className="text-bone-500 leading-relaxed max-w-md">Ongoing, full-funnel multimodal localization. We manage and adapt your VSL scripts, outbound voice, and targeted email sequences to align with European buying cycles.</p>
-              </div>
-              <div className="md:col-span-2 font-mono text-sm text-bone-300 md:text-right">Custom<br /><span className="text-bone-500">retainer</span></div>
-              <div className="md:col-span-3 md:text-right">
-                <Link href="mailto:veravoxlocalization@gmail.com?subject=VeraVox%20Engagement%20Inquiry" className="inline-block border border-signal-green bg-signal-green/10 hover:bg-signal-green hover:text-ink-950 transition-colors px-4 py-2 text-sm text-signal-green hover:font-medium">Apply for Growth Partnership</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer id="contact" className="border-t border-ink-700">
+      <footer className="border-t border-ink-700">
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-14">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
