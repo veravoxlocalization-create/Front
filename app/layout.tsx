@@ -1,5 +1,6 @@
 import './globals.css';
 import React from 'react';
+import ThemeToggle from '../components/ThemeToggle';
 
 export const metadata = {
   title: 'VeraVox Localization',
@@ -13,8 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased selection:bg-signal-green selection:text-ink-950">
+      <body className="antialiased selection:bg-signal-gold selection:text-ink-950">
         {children}
+        <ThemeToggle />
       </body>
     </html>
   );
