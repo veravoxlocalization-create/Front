@@ -13,13 +13,27 @@
 
   --color-signal-green: #10b981;
   --color-signal-red: #f43f5e;
+  --color-signal-gold: #c29443;
 }
 
 @layer base {
+  .theme-light {
+    --color-ink-950: #fdfbf7;
+    --color-ink-900: #f4f2eb;
+    --color-ink-700: #e2dfd3;
+    --color-ink-600: #c9c5b6;
+
+    --color-bone-100: #121214;
+    --color-bone-300: #313136;
+    --color-bone-500: #595963;
+    --color-bone-600: #71717a;
+  }
+
   body {
     background-color: var(--color-ink-950);
     color: var(--color-bone-100);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.15s ease, color 0.15s ease;
   }
 }
 
