@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    background-color: #09090b; /* ink-950 */
-    color: #f4f4f5; /* bone-100 */
+    background-color: #09090b;
+    color: #f4f4f5;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
@@ -15,7 +15,6 @@
     font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  /* Editorial Hero Animations */
   @keyframes heroIn {
     from {
       opacity: 0;
