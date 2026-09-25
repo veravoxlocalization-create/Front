@@ -3,41 +3,126 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-const TEARDOWN_CONTENT = {
+const UI_TEXT = {
   de: {
-    buyerLang: 'German',
-    label: 'asset.headline — us-en → de-de',
-    direct: 'Linear ist der schnellste Weg, moderne Software zu planen, zu verfolgen und auszuliefern — gebaut für die Geschwindigkeit leistungsstarker Teams.',
-    structural: 'Linear strukturiert Planung, Entwicklung und Auslieferung in einem System — nachvollziehbar für Teams, die Präzision brauchen.',
-    whyFailed: '"Fastest" and "high-performing" are hype superlatives. Translated literally, they read as unverified marketing claims to a DE engineering lead.',
-    anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (traceable, verifiable) is a term DE technical buyers search for directly — it does the trust-building work "fast" was trying to do.',
-    restructure: 'Leads with function, not speed — matching how DE product documentation is conventionally ordered.',
+    navTag: 'Redaktionsberatung',
+    h1: 'Optimieren Sie Ihre US-SaaS-Texte für europäische Technik-Käufer.',
+    sub: 'Wörtliche Übersetzungen zerstören die Konversionsabsicht. Wir entwickeln strukturelle Anpassungen für kritische EU-Märkte.',
+    desc: 'Sie verlieren in Europa Pipeline-Effizienz durch unpassenden Ton und strukturelle Übersetzungsfehler. VeraVox setzt adversarial Audits und kontextuelle Anker ein, um Ihre US-Botschaften exakt auf das pragmatische Vokabular europäischer Entscheidungsträger abzustimmen. Null Marketing-Fluff. Hohe Signal-Lokalisierung.',
+    libraryLink: 'Audit-Bibliothek erkunden ↓',
+    specTitle: 'Engagementspezifikation',
+    targetMarkets: 'Zielmärkte',
+    method: 'Methode',
+    methodVal: 'strukturell, nicht wörtlich',
+    diagCall: 'Diagnosegespräch',
+    fluff: 'Marketing-Fluff',
+    teardownTitle: 'Im Fokus: Der Linear-Teardown',
+    teardownDesc: 'Eine illustrative Rekonstruktion, wie wir das Kernmessaging eines US-Produkts für einen deutschen Technik-Käufer strukturell neu konzipieren — Zeile für Zeile, Entscheidung für Entscheidung.',
+    directRejected: 'Direktübersetzung — abgelehnt',
+    structuralShipped: 'Strukturelle Anpassung — veröffentlicht',
+    whyFailedHeading: 'Warum es scheitert',
+    anchorHeading: 'Der Anker',
+    restructureHeading: 'Die Umstrukturierung',
+    auditLibTitle: 'Audit-Bibliothek',
+    auditLibDesc: 'Ausführliche Memos zur Evaluierung technischer Absichten und Lokalisierungsintegrität über primäre B2B-Infrastruktur-Oberflächen.',
+    freeAccess: 'Kostenfreier Zugriff',
+    memo4: 'Memo Nr. 04',
+    readMemo: 'Memorandum lesen →',
+    premium: 'Premium',
+    memo5: 'Memo Nr. 05',
+    memo6: 'Memo Nr. 06',
+    subscriberOnly: 'Nur für Abonnenten',
+    footerSub: 'Strukturelle Textanpassung für europäische Tech-Märkte (ES | FR | DE).',
+    footerCopy: '© 2026 VeraVox — alle Texte auditiert, keiner davon übersetzt',
+    newsletterTitle: 'Technischer Newsletter',
+    newsletterDesc: 'Erhalten Sie monatliche Memos zur Lokalisierungsarchitektur direkt in Ihr Postfach.',
+    subscribeBtn: 'Abonnieren',
   },
   es: {
-    buyerLang: 'Spanish',
-    label: 'asset.headline — us-en → es-es',
-    direct: 'Envía código más rápido. Sin romper tu base de código.',
-    structural: 'Acelera tus despliegues. Sin comprometer tu infraestructura.',
-    whyFailed: 'Physical verbs like "send" and "break" read as overly literal and lack enterprise prestige in Spanish B2B.',
-    anchorHtml: '<span class="text-bone-100">Infraestructura</span> and <span class="text-bone-100">despliegues</span> shift the framing from a physical action to structural engineering.',
-    restructure: 'Removes Germanic action-orientation to focus on systemic stability, matching how ES technical buyers evaluate risk.',
+    navTag: 'Asesoría Editorial',
+    h1: 'Reingeniería de textos US SaaS para compradores técnicos europeos.',
+    sub: 'Las traducciones literales destruyen la intención de conversión. Construimos adaptaciones estructurales para mercados exigentes de la UE.',
+    desc: 'Estás perdiendo eficiencia de pipeline en Europa debido a tonos desajustados y errores de traducción estructural. VeraVox implementa auditorías adversariales y anclajes contextuales para mapear tus mensajes al vocabulario pragmático exacto que esperan los tomadores de decisiones europeos. Cero marketing vacío. Alta precisión.',
+    libraryLink: 'Explorar la Biblioteca de Auditorías ↓',
+    specTitle: 'Especificación de proyecto',
+    targetMarkets: 'Mercados objetivo',
+    method: 'Método',
+    methodVal: 'estructural, no literal',
+    diagCall: 'Llamada de diagnóstico',
+    fluff: 'Marketing vacío',
+    teardownTitle: 'Destacado: El caso Linear',
+    teardownDesc: 'Una reconstrucción ilustrativa de cómo reestructuramos el mensaje central de un producto estadounidense para un comprador técnico alemán, paso a paso.',
+    directRejected: 'Traducción directa — rechazada',
+    structuralShipped: 'Adaptación estructural — publicada',
+    whyFailedHeading: 'Por qué falló',
+    anchorHeading: 'El anclaje',
+    restructureHeading: 'La reestructuración',
+    auditLibTitle: 'Biblioteca de Auditorías',
+    auditLibDesc: 'Memorandos completos que evalúan la intención técnica y la integridad de localización en superficies B2B.',
+    freeAccess: 'Acceso libre',
+    memo4: 'Memo N° 04',
+    readMemo: 'Leer memorando →',
+    premium: 'Premium',
+    memo5: 'Memo N° 05',
+    memo6: 'Memo N° 06',
+    subscriberOnly: 'Exclusivo para suscriptores',
+    footerSub: 'Adaptación estructural de textos para mercados tecnológicos europeos (ES | FR | DE).',
+    footerCopy: '© 2026 VeraVox — todo el contenido auditado, ninguno traducido',
+    newsletterTitle: 'Boletín Técnico',
+    newsletterDesc: 'Recibe memorandos mensuales de arquitectura de localización directamente en tu bandeja.',
+    subscribeBtn: 'Suscribirse',
   },
   fr: {
-    buyerLang: 'French',
-    label: 'asset.headline — us-en → fr-fr',
-    direct: 'Expédiez le code plus rapidement. Sans casser votre base de code.',
-    structural: 'Accélérez vos déploiements. Sans compromettre votre infrastructure.',
-    whyFailed: 'Literal translations of "ship" and "break" sound like a logistics error rather than a software solution.',
-    anchorHtml: 'European enterprise buyers require conceptual abstraction. <span class="text-bone-100">Déploiements</span> establishes immediate technical authority.',
-    restructure: 'Aligns with French technical documentation standards, prioritizing institutional reliability over aggressive speed.',
+    navTag: 'Conseil Éditorial',
+    h1: 'Réingénérez vos copies SaaS US pour les acheteurs techniques européens.',
+    sub: 'Les traductions littérales détruisent l’intention de conversion. Nous construisons des adaptations structurelles pour des marchés exigeants.',
+    desc: 'Vous perdez en efficacité de pipeline en Europe en raison de décalages de ton et d’erreurs de traduction. VeraVox déploie des audits contradictoires et des ancrages contextuels pour aligner vos messages sur le vocabulaire pragmatique des décideurs européens. Zéro jargon marketing. Haute fidélité.',
+    libraryLink: 'Explorer la bibliothèque d’audits ↓',
+    specTitle: 'Spécification de mission',
+    targetMarkets: 'Marchés cibles',
+    method: 'Méthode',
+    methodVal: 'structurelle, non littérale',
+    diagCall: 'Appel de diagnostic',
+    fluff: 'Jargon marketing',
+    teardownTitle: 'À l’affiche : Le cas Linear',
+    teardownDesc: 'Une reconstruction illustrative de la façon dont nous réagençons le message central d’un produit US pour un acheteur technique allemand.',
+    directRejected: 'Traduction littérale — rejetée',
+    structuralShipped: 'Adaptation structurelle — publiée',
+    whyFailedHeading: 'Pourquoi cela échoue',
+    anchorHeading: 'L’ancrage',
+    restructureHeading: 'La restructuration',
+    auditLibTitle: 'Bibliothèque d’Audits',
+    auditLibDesc: 'Mémorandums complets évaluant l’intention technique et l’intégrité de localisation sur les surfaces B2B.',
+    freeAccess: 'Accès libre',
+    memo4: 'Mémo n° 04',
+    readMemo: 'Lire le mémorandum →',
+    premium: 'Premium',
+    memo5: 'Mémo n° 05',
+    memo6: 'Mémo n° 06',
+    subscriberOnly: 'Exclusif abonnés',
+    footerSub: 'Adaptation textuelle structurelle pour les marchés tech européens (ES | FR | DE).',
+    footerCopy: '© 2026 VeraVox — tout le contenu audité, aucun traduit',
+    newsletterTitle: 'Bulletin Technique',
+    newsletterDesc: 'Recevez des mémos mensuels sur l’architecture de localisation directement dans votre boîte.',
+    subscribeBtn: 'S’inscrire',
   },
 };
 
 type Lang = 'es' | 'fr' | 'de';
 
+const TEARDOWN_CONTENT = {
+  buyerLang: 'German',
+  label: 'asset.headline — us-en → de-de',
+  direct: 'Linear ist der schnellste Weg, moderne Software zu planen, zu verfolgen und auszuliefern — gebaut für die Geschwindigkeit leistungsstarker Teams.',
+  structural: 'Linear strukturiert Planung, Entwicklung und Auslieferung in einem System — nachvollziehbar für Teams, die Präzision brauchen.',
+  whyFailed: '"Fastest" and "high-performing" are hype superlatives. Translated literally, they read as unverified marketing claims to a DE engineering lead.',
+  anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (traceable, verifiable) is a term DE technical buyers search for directly — it does the trust-building work "fast" was trying to do.',
+  restructure: 'Leads with function, not speed — matching how DE product documentation is conventionally ordered.',
+};
+
 export default function Home() {
   const [lang, setLang] = useState<Lang>('de');
-  const currentTeardown = TEARDOWN_CONTENT[lang];
+  const t = UI_TEXT[lang];
 
   return (
     <>
@@ -49,7 +134,7 @@ export default function Home() {
               <React.Fragment key={l}>
                 <button
                   onClick={() => setLang(l)}
-                  className={`bg-transparent border-0 p-0 cursor-pointer transition-colors hover:text-bone-300 ${lang === l ? 'text-signal-green' : 'text-bone-500'}`}
+                  className={`bg-transparent border-0 p-0 cursor-pointer transition-colors hover:text-bone-300 ${lang === l ? 'text-signal-gold' : 'text-bone-500'}`}
                 >
                   {l.toUpperCase()}
                 </button>
@@ -64,40 +149,40 @@ export default function Home() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-start">
           <div className="lg:col-span-7">
             <h1 className="hero-in d1 font-display font-semibold text-4xl sm:text-5xl md:text-[3.4rem] leading-[1.08] tracking-tight text-bone-100 max-w-xl">
-              Re-engineer your US SaaS copy for European technical buyers.
+              {t.h1}
             </h1>
             <p className="hero-in d2 mt-6 text-lg md:text-xl text-bone-300 max-w-lg leading-relaxed">
-              Literal translations destroy conversion intent. We build structural adaptations for cynical EU markets.
+              {t.sub}
             </p>
             <p className="hero-in d3 mt-8 text-base text-bone-500 max-w-md leading-relaxed">
-              You are losing pipeline efficiency in Europe due to mismatched tone and structural translation errors. VeraVox deploys Adversarial Audits and Contextual Anchors to map your US messaging to the exact pragmatic vocabulary expected by European decision-makers. Zero marketing fluff. High-signal localization.
+              {t.desc}
             </p>
             <div className="hero-in d4 mt-10">
               <Link href="#audits" className="rule-hover inline-block text-sm font-medium text-bone-100 pb-0.5">
-                Explore the Audit Library ↓
+                {t.libraryLink}
               </Link>
             </div>
           </div>
           <div className="lg:col-span-5 lg:pt-2">
             <div className="hero-in d3 border border-ink-700 bg-ink-900">
               <div className="px-5 py-3 border-b border-ink-700 font-mono text-xs text-bone-500">
-                engagement spec
+                {t.specTitle}
               </div>
               <dl className="divide-y divide-ink-700">
                 <div className="flex items-center justify-between px-5 py-4">
-                  <dt className="text-sm text-bone-500">Target markets</dt>
+                  <dt className="text-sm text-bone-500">{t.targetMarkets}</dt>
                   <dd className="font-mono text-sm text-bone-100">ES · FR · DE</dd>
                 </div>
                 <div className="flex items-center justify-between px-5 py-4">
-                  <dt className="text-sm text-bone-500">Method</dt>
-                  <dd className="font-mono text-sm text-bone-100">structural, not literal</dd>
+                  <dt className="text-sm text-bone-500">{t.method}</dt>
+                  <dd className="font-mono text-sm text-bone-100">{t.methodVal}</dd>
                 </div>
                 <div className="flex items-center justify-between px-5 py-4">
-                  <dt className="text-sm text-bone-500">Diagnostic call</dt>
+                  <dt className="text-sm text-bone-500">{t.diagCall}</dt>
                   <dd className="font-mono text-sm text-bone-100">60 min</dd>
                 </div>
                 <div className="flex items-center justify-between px-5 py-4">
-                  <dt className="text-sm text-bone-500">Marketing fluff</dt>
+                  <dt className="text-sm text-bone-500">{t.fluff}</dt>
                   <dd className="font-mono text-sm text-signal-green">0%</dd>
                 </div>
               </dl>
@@ -110,15 +195,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="max-w-xl mb-12">
             <h2 className="font-display font-semibold text-3xl md:text-4xl tracking-tight text-bone-100">
-              Featured: the Linear teardown
+              {t.teardownTitle}
             </h2>
             <p className="mt-4 text-base text-bone-500 leading-relaxed">
-              An illustrative reconstruction of how we structurally re-engineer a US product's core messaging for a <span className="text-bone-100">{currentTeardown.buyerLang}</span> technical buyer — line by line, decision by decision.
+              {t.teardownDesc}
             </p>
           </div>
           <div className="border border-ink-700 bg-ink-950">
             <div className="flex items-center justify-between px-5 py-3 border-b border-ink-700">
-              <span className="font-mono text-xs text-bone-500">{currentTeardown.label}</span>
+              <span className="font-mono text-xs text-bone-500">{TEARDOWN_CONTENT.label}</span>
               <span className="font-mono text-xs text-bone-500">illustrative example</span>
             </div>
             <div className="grid md:grid-cols-[1fr_auto] divide-y md:divide-y-0 divide-ink-700">
@@ -126,34 +211,34 @@ export default function Home() {
                 <div className="flex gap-4 px-5 py-5">
                   <span className="font-mono text-signal-red select-none mt-0.5">−</span>
                   <div>
-                    <p className="font-mono text-xs text-signal-red mb-2">direct translation — rejected</p>
+                    <p className="font-mono text-xs text-signal-red mb-2">{t.directRejected}</p>
                     <p className="text-bone-500 line-through decoration-signal-red/60 leading-relaxed">
-                      {currentTeardown.direct}
+                      {TEARDOWN_CONTENT.direct}
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4 px-5 py-5">
                   <span className="font-mono text-signal-green select-none mt-0.5">+</span>
                   <div>
-                    <p className="font-mono text-xs text-signal-green mb-2">structural adaptation — shipped</p>
+                    <p className="font-mono text-xs text-signal-green mb-2">{t.structuralShipped}</p>
                     <p className="text-bone-100 leading-relaxed">
-                      {currentTeardown.structural}
+                      {TEARDOWN_CONTENT.structural}
                     </p>
                   </div>
                 </div>
               </div>
               <div className="px-5 py-5 md:w-72 md:border-l border-ink-700 space-y-5">
                 <div>
-                  <p className="font-mono text-xs text-bone-500 mb-1">why it failed</p>
-                  <p className="text-sm text-bone-300 leading-relaxed">{currentTeardown.whyFailed}</p>
+                  <p className="font-mono text-xs text-bone-500 mb-1">{t.whyFailedHeading}</p>
+                  <p className="text-sm text-bone-300 leading-relaxed">{TEARDOWN_CONTENT.whyFailed}</p>
                 </div>
                 <div>
-                  <p className="font-mono text-xs text-bone-500 mb-1">the anchor</p>
-                  <p className="text-sm text-bone-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: currentTeardown.anchorHtml }} />
+                  <p className="font-mono text-xs text-bone-500 mb-1">{t.anchorHeading}</p>
+                  <p className="text-sm text-bone-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: TEARDOWN_CONTENT.anchorHtml }} />
                 </div>
                 <div>
-                  <p className="font-mono text-xs text-bone-500 mb-1">the restructure</p>
-                  <p className="text-sm text-bone-300 leading-relaxed">{currentTeardown.restructure}</p>
+                  <p className="font-mono text-xs text-bone-500 mb-1">{t.restructureHeading}</p>
+                  <p className="text-sm text-bone-300 leading-relaxed">{TEARDOWN_CONTENT.restructure}</p>
                 </div>
               </div>
             </div>
@@ -165,56 +250,78 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
           <div className="max-w-xl mb-12">
             <h2 className="font-display font-semibold text-3xl md:text-4xl tracking-tight text-bone-100">
-              Audit Library
+              {t.auditLibTitle}
             </h2>
             <p className="mt-4 text-base text-bone-500 leading-relaxed">
-              Full-length memorandums evaluating technical intent and localization integrity across primary B2B infrastructure surfaces.
+              {t.auditLibDesc}
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <Link href="/audits/resend" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-green transition-colors flex flex-col justify-between h-full">
+            <Link href="/audits/resend" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">Free Access</span>
-                  <span className="font-mono text-xs text-bone-500">Memo No. 04</span>
+                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo4}</span>
                 </div>
-                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-green transition-colors">Resend</h3>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">Resend</h3>
                 <p className="text-sm text-bone-500 leading-relaxed mb-6">Evaluating technical intent across regional conversion surfaces. Contrasting US baseline intent against traditional agency output.</p>
               </div>
               <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
-                Read Memorandum →
+                {t.readMemo}
               </div>
             </Link>
 
             <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">Premium</span>
-                  <span className="font-mono text-xs text-bone-500">Memo No. 05</span>
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo5}</span>
                 </div>
                 <h3 className="font-display text-xl text-bone-300 mb-2">Vercel</h3>
                 <p className="text-sm text-bone-600 leading-relaxed mb-6">Deconstructing enterprise caching documentation for strict DACH compliance and operational rigor.</p>
               </div>
               <div className="font-mono text-xs text-bone-600">
-                Subscriber Exclusive
+                {t.subscriberOnly}
               </div>
             </div>
 
             <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">Premium</span>
-                  <span className="font-mono text-xs text-bone-500">Memo No. 06</span>
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo6}</span>
                 </div>
                 <h3 className="font-display text-xl text-bone-300 mb-2">Supabase</h3>
                 <p className="text-sm text-bone-600 leading-relaxed mb-6">Shifting US conversational abstractions into declarative database management vernacular for LATAM engineering teams.</p>
               </div>
               <div className="font-mono text-xs text-bone-600">
-                Subscriber Exclusive
+                {t.subscriberOnly}
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="border-t border-ink-700 bg-ink-900/20 py-16">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <h3 className="font-display text-2xl text-bone-100 mb-3">{t.newsletterTitle}</h3>
+          <p className="text-sm text-bone-500 mb-6">{t.newsletterDesc}</p>
+          <form onSubmit={(e) => { e.preventDefault(); alert('Subscribed successfully.'); }} className="flex gap-2 max-w-md mx-auto">
+            <input 
+              type="email" 
+              required 
+              placeholder="name@company.com" 
+              className="bg-ink-950 border border-ink-700 px-4 py-2 text-sm text-bone-100 focus:outline-none focus:border-signal-gold flex-1 font-mono"
+            />
+            <button 
+              type="submit" 
+              className="bg-ink-900 border border-ink-700 px-5 py-2 font-mono text-xs text-bone-300 hover:border-signal-gold hover:text-signal-gold transition-colors cursor-pointer uppercase tracking-wider"
+            >
+              {t.subscribeBtn}
+            </button>
+          </form>
         </div>
       </section>
 
@@ -224,10 +331,10 @@ export default function Home() {
             <div>
               <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
               <p className="text-sm text-bone-500 mt-1">Audits &amp; native re-engineering.</p>
-              <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">Structural copy adaptation for European tech markets (ES | FR | DE).</p>
+              <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
             </div>
             <div className="font-mono text-xs text-bone-500">
-              © 2026 VeraVox — all copy audited, none of it translated
+              {t.footerCopy}
             </div>
           </div>
         </div>
