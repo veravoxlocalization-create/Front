@@ -391,7 +391,8 @@ export default function HomePage() {
 
         {/* FEATURES / VALUE PROP GRID */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.features.map((feature: { title: string; description: string }, idx: number) => (
+          {t.features.map((feature, idx) => (
+
             <div
               key={idx}
               className="p-6 border border-ink-800 rounded bg-ink-900/30 space-y-3"
