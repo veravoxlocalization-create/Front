@@ -410,3 +410,13 @@ export default function HomePage() {
     </div>
   );
 }
+      {/* FOOTER SECTION */}
+      <footer className="border-t border-ink-800 py-8 px-6 md:px-12 text-center font-mono text-xs text-ink-500">
+        <p>{t.footerCopy}</p>
+      </footer>
+    </div>
+  );
+}
+
+export default LandingPage;
+
