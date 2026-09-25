@@ -288,8 +288,9 @@ const translations = {
 // 2. MAIN HOMEPAGE COMPONENT
 // ============================================================================
 export default function HomePage() {
-  const [lang, setLang] = useState('es');
-  const [showInline, setShowInline] = useState(false);
+    const [lang, setLang] = useState('es');
+  const [isInterlinear, setIsInterlinear] = useState(false);
+
 
   const t = translations[lang] || translations.en;
 
