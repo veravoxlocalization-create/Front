@@ -168,7 +168,7 @@ const TEARDOWN_CONTENT = {
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('de');
-  const t = UI_TEXT[lang as keyof typeof UI_TEXT];
+  const t = UI_TEXT[lang];
 
   return (
     <>
@@ -187,7 +187,6 @@ export default function Home() {
                 <span className="text-ink-600">/</span>
               </React.Fragment>
             ))}
-            {/* Override English Button */}
             <button
               onClick={() => setLang(lang === 'en' ? 'de' : 'en')}
               className={`ml-2 px-2.5 py-1 border font-mono text-[10px] uppercase tracking-wider transition-colors cursor-pointer rounded-sm ${
@@ -332,4 +331,5 @@ export default function Home() {
             <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.prem
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs tex
