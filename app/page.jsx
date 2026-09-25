@@ -54,6 +54,13 @@ const translations = {
     tier2Price: "$1,450",
     tier2Desc: "Complete localization of API reference guides, SDK installation pages, and technical onboarding docs.",
 
+    // Features
+    features: [
+      { title: "Native Flow", description: "Adapting idioms, humor, and cultural context." },
+      { title: "Technical Accuracy", description: "Preserving specialized terminology." },
+      { title: "Speed & Scale", description: "Optimized pipelines for rapid turnaround." }
+    ],
+
     // Footer
     footerRights: "VeraVox Localization Lab. All rights reserved.",
   },
@@ -100,6 +107,13 @@ const translations = {
     tier2Price: "$1,450",
     tier2Desc: "Localización completa de guías de referencia de API, páginas de instalación de SDK y documentación de onboarding.",
 
+    // Features
+    features: [
+      { title: "Flujo Nativo", description: "Adaptando modismos, humor y contexto cultural." },
+      { title: "Precisión Técnica", description: "Preservando terminología especializada." },
+      { title: "Velocidad y Escala", description: "Pipelines optimizados para entregas rápidas." }
+    ],
+
     footerRights: "VeraVox Localization Lab. Todos los derechos reservados.",
   },
   de: {
@@ -144,6 +158,13 @@ const translations = {
     tier2Title: "Vollständige Dokus & API-Suite",
     tier2Price: "$1,450",
     tier2Desc: "Vollständige Lokalisierung von API-Referenzen, SDK-Installationsseiten und technischem Onboarding.",
+
+    // Features
+    features: [
+      { title: "Nativer Lesefluss", description: "Anpassung von Redewendungen, Humor und kulturellem Kontext." },
+      { title: "Technische Präzision", description: "Erhalt von Fachterminologie." },
+      { title: "Geschwindigkeit & Skalierbarkeit", description: "Optimierte Pipelines für schnelle Durchlaufzeiten." }
+    ],
 
     footerRights: "VeraVox Localization Lab. Alle Rechte vorbehalten.",
   },
@@ -190,6 +211,13 @@ const translations = {
     tier2Price: "$1,450",
     tier2Desc: "Localisation complète des références API, pages d'installation SDK et documentation d'intégration.",
 
+    // Features
+    features: [
+      { title: "Fluidité Native", description: "Adaptation des expressions, de l'humour et du contexte culturel." },
+      { title: "Précision Technique", description: "Préservation de la terminologie spécialisée." },
+      { title: "Vitesse et Évolutivité", description: "Pipelines optimisés pour des délais de livraison rapides." }
+    ],
+
     footerRights: "VeraVox Localization Lab. Tous droits réservés.",
   },
   it: {
@@ -234,6 +262,13 @@ const translations = {
     tier2Title: "Documentazione & Suite API",
     tier2Price: "$1,450",
     tier2Desc: "Localizzazione completa di guide API, pagine di installazione SDK e documentazione di onboarding.",
+
+    // Features
+    features: [
+      { title: "Flusso Nativo", description: "Adattamento di modi di dire, umorismo e contesto culturale." },
+      { title: "Precisione Tecnica", description: "Conservazione della terminologia specializzata." },
+      { title: "Velocità e Scalabilità", description: "Pipeline ottimizzate per tempi di consegna rapidi." }
+    ],
 
     footerRights: "VeraVox Localization Lab. Tutti i diritti riservati.",
   },
@@ -280,9 +315,22 @@ const translations = {
     tier2Price: "$1,450",
     tier2Desc: "Localização completa de guias de referência de API, páginas de instalação de SDK e onboarding.",
 
+    // Features
+    features: [
+      { title: "Fluidez Nativa", description: "Adaptação de expressões, humor e contexto cultural." },
+      { title: "Precisão Técnica", description: "Preservação de terminologia especializada." },
+      { title: "Velocidade e Escala", description: "Pipelines otimizados para entregas rápidas." }
+    ],
+
     footerRights: "VeraVox Localization Lab. Todos os direitos reservados.",
   },
 };
+
+
+    
+
+    
+    
 
 // ============================================================================
 // 2. MAIN HOMEPAGE COMPONENT
