@@ -320,8 +320,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <div className="flex items-baseline gap-6">
   <Link href="#top" className="font-display font-semibold text-lg tracking-tight text-bone-100">VeraVox</Link>
-  <Link href="/about" className="hidden md:block font-mono text-xs text-bone-500 hover:text-signal-gold transition-colors">/ About</Link>
+  <Link href="/about" className="hidden md:block font-mono text-xs text-bone-500 hover:text-signal-gold transition-colors">{t.aboutLink}</Link>
 </div>
+
 
           <div className="flex items-center gap-2 md:gap-3 font-mono text-xs">
             {['es', 'fr', 'de', 'it', 'pt'].map((l) => (
