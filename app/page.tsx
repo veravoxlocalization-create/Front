@@ -168,7 +168,7 @@ const TEARDOWN_CONTENT = {
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('de');
-  const t = UI_TEXT[lang];
+  const t = UI_TEXT[lang as keyof typeof UI_TEXT];
 
   return (
     <>
@@ -332,5 +332,4 @@ export default function Home() {
             <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
-            
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.prem
