@@ -21,8 +21,11 @@ const UI_TEXT = {
     directRejected: 'Direktübersetzung — abgelehnt',
     structuralShipped: 'Strukturelle Anpassung — veröffentlicht',
     whyFailedHeading: 'Warum es scheitert',
+    whyFailedText: '"Fastest" und "high-performing" sind übertriebene Superlative. Wörtlich übersetzt wirken sie auf deutsche Tech-Leads wie ungeprüfte Marketing-Versprechungen.',
     anchorHeading: 'Der Anker',
+    anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (traceable, verifiable) ist ein Begriff, nach dem deutsche technische Käufer direkt suchen — er leistet die Vertrauensarbeit, die "fast" zu erreichen versuchte.',
     restructureHeading: 'Die Umstrukturierung',
+    restructureText: 'Beginnt mit der Funktion statt mit der Geschwindigkeit — entsprechend der üblichen Struktur deutscher Produktdokumentationen.',
     auditLibTitle: 'Audit-Bibliothek',
     auditLibDesc: 'Ausführliche Memos zur Evaluierung technischer Absichten und Lokalisierungsintegrität über primäre B2B-Infrastruktur-Oberflächen.',
     freeAccess: 'Kostenfreier Zugriff',
@@ -37,6 +40,7 @@ const UI_TEXT = {
     newsletterTitle: 'Technischer Newsletter',
     newsletterDesc: 'Erhalten Sie monatliche Memos zur Lokalisierungsarchitektur direkt in Ihr Postfach.',
     subscribeBtn: 'Abonnieren',
+    overrideBtn: 'US Original (Override)',
   },
   es: {
     navTag: 'Asesoría Editorial',
@@ -55,8 +59,11 @@ const UI_TEXT = {
     directRejected: 'Traducción directa — rechazada',
     structuralShipped: 'Adaptación estructural — publicada',
     whyFailedHeading: 'Por qué falló',
+    whyFailedText: '"Fastest" y "high-performing" son superlativos exagerados. Traducidos literalmente, se leen como afirmaciones de marketing sin verificar para un líder de ingeniería alemán.',
     anchorHeading: 'El anclaje',
+    anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (rastreable, verificable) es un término que los compradores técnicos alemanes buscan directamente; hace el trabajo de generar confianza que "rápido" intentaba lograr.',
     restructureHeading: 'La reestructuración',
+    restructureText: 'Lidera con la función, no con la velocidad, coincidiendo con cómo se ordena convencionalmente la documentación de productos en Alemania.',
     auditLibTitle: 'Biblioteca de Auditorías',
     auditLibDesc: 'Memorandos completos que evalúan la intención técnica y la integridad de localización en superficies B2B.',
     freeAccess: 'Acceso libre',
@@ -71,6 +78,7 @@ const UI_TEXT = {
     newsletterTitle: 'Boletín Técnico',
     newsletterDesc: 'Recibe memorandos mensuales de arquitectura de localización directamente en tu bandeja.',
     subscribeBtn: 'Suscribirse',
+    overrideBtn: 'US Original (Override)',
   },
   fr: {
     navTag: 'Conseil Éditorial',
@@ -89,8 +97,11 @@ const UI_TEXT = {
     directRejected: 'Traduction littérale — rejetée',
     structuralShipped: 'Adaptation structurelle — publiée',
     whyFailedHeading: 'Pourquoi cela échoue',
+    whyFailedText: '"Fastest" et "high-performing" sont des superlatifs exagérés. Traduits littéralement, ils apparaissent comme des arguments marketing non vérifiés pour un lead technique allemand.',
     anchorHeading: 'L’ancrage',
+    anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (traçable, vérifiable) est un terme que les acheteurs techniques recherchent directement — il établit la confiance que "fast" essayait d’obtenir.',
     restructureHeading: 'La restructuration',
+    restructureText: 'Met en avant la fonction plutôt que la vitesse — ce qui correspond à la structure conventionnelle de la documentation tech en Allemagne.',
     auditLibTitle: 'Bibliothèque d’Audits',
     auditLibDesc: 'Mémorandums complets évaluant l’intention technique et l’intégrité de localisation sur les surfaces B2B.',
     freeAccess: 'Accès libre',
@@ -105,19 +116,54 @@ const UI_TEXT = {
     newsletterTitle: 'Bulletin Technique',
     newsletterDesc: 'Recevez des mémos mensuels sur l’architecture de localisation directement dans votre boîte.',
     subscribeBtn: 'S’inscrire',
+    overrideBtn: 'US Original (Override)',
   },
+  en: {
+    navTag: 'Editorial Advisory',
+    h1: 'Re-engineer your US SaaS copy for European technical buyers.',
+    sub: 'Literal translations destroy conversion intent. We build structural adaptations for cynical EU markets.',
+    desc: 'You are losing pipeline efficiency in Europe due to mismatched tone and structural translation errors. VeraVox deploys Adversarial Audits and Contextual Anchors to map your US messaging to the exact pragmatic vocabulary expected by European decision-makers. Zero marketing fluff. High-signal localization.',
+    libraryLink: 'Explore the Audit Library ↓',
+    specTitle: 'Engagement Spec',
+    targetMarkets: 'Target Markets',
+    method: 'Method',
+    methodVal: 'structural, not literal',
+    diagCall: 'Diagnostic call',
+    fluff: 'Marketing fluff',
+    teardownTitle: 'Featured: The Linear teardown',
+    teardownDesc: 'An illustrative reconstruction of how we structurally re-engineer a US product’s core messaging for a German technical buyer — line by line, decision by decision.',
+    directRejected: 'Direct translation — rejected',
+    structuralShipped: 'Structural adaptation — shipped',
+    whyFailedHeading: 'Why it failed',
+    whyFailedText: '"Fastest" and "high-performing" are hype superlatives. Translated literally, they read as unverified marketing claims to a DE engineering lead.',
+    anchorHeading: 'The anchor',
+    anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (traceable, verifiable) is a term DE technical buyers search for directly — it does the trust-building work "fast" was trying to do.',
+    restructureHeading: 'The restructure',
+    restructureText: 'Leads with function, not speed — matching how DE product documentation is conventionally ordered.',
+    auditLibTitle: 'Audit Library',
+    auditLibDesc: 'Full-length memorandums evaluating technical intent and localization integrity across primary B2B infrastructure surfaces.',
+    freeAccess: 'Free Access',
+    memo4: 'Memo No. 04',
+    readMemo: 'Read Resend audit →',
+    premium: 'Premium',
+    memo5: 'Memo No. 05',
+    memo6: 'Memo No. 06',
+    subscriberOnly: 'Subscriber-only',
+    footerSub: 'Structural copy adaptation for European tech markets (ES | FR | DE).',
+    footerCopy: '© 2026 VeraVox — all copy audited, none of it translated',
+    newsletterTitle: 'Technical Newsletter',
+    newsletterDesc: 'Receive monthly memos on localization architecture directly in your inbox.',
+    subscribeBtn: 'Subscribe',
+    overrideBtn: 'View in Local Language',
+  }
 };
 
-type Lang = 'es' | 'fr' | 'de';
+type Lang = 'es' | 'fr' | 'de' | 'en';
 
 const TEARDOWN_CONTENT = {
-  buyerLang: 'German',
   label: 'asset.headline — us-en → de-de',
   direct: 'Linear ist der schnellste Weg, moderne Software zu planen, zu verfolgen und auszuliefern — gebaut für die Geschwindigkeit leistungsstarker Teams.',
   structural: 'Linear strukturiert Planung, Entwicklung und Auslieferung in einem System — nachvollziehbar für Teams, die Präzision brauchen.',
-  whyFailed: '"Fastest" and "high-performing" are hype superlatives. Translated literally, they read as unverified marketing claims to a DE engineering lead.',
-  anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (traceable, verifiable) is a term DE technical buyers search for directly — it does the trust-building work "fast" was trying to do.',
-  restructure: 'Leads with function, not speed — matching how DE product documentation is conventionally ordered.',
 };
 
 export default function Home() {
@@ -130,7 +176,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <Link href="#top" className="font-display font-semibold text-lg tracking-tight text-bone-100">VeraVox</Link>
           <div className="flex items-center gap-3 font-mono text-xs">
-            {(['es', 'fr', 'de'] as Lang[]).map((l) => (
+            {(['es', 'fr', 'de'] as const).map((l) => (
               <React.Fragment key={l}>
                 <button
                   onClick={() => setLang(l)}
@@ -138,9 +184,20 @@ export default function Home() {
                 >
                   {l.toUpperCase()}
                 </button>
-                {l !== 'de' && <span className="text-ink-600">/</span>}
+                <span className="text-ink-600">/</span>
               </React.Fragment>
             ))}
+            {/* Override English Button */}
+            <button
+              onClick={() => setLang(lang === 'en' ? 'de' : 'en')}
+              className={`ml-2 px-2.5 py-1 border font-mono text-[10px] uppercase tracking-wider transition-colors cursor-pointer rounded-sm ${
+                lang === 'en' 
+                  ? 'bg-signal-gold text-ink-950 border-signal-gold font-medium' 
+                  : 'bg-transparent text-signal-gold border-signal-gold/40 hover:border-signal-gold'
+              }`}
+            >
+              {lang === 'en' ? 'EN (Active) ⟲' : 'US Override'}
+            </button>
           </div>
         </div>
       </header>
@@ -230,15 +287,15 @@ export default function Home() {
               <div className="px-5 py-5 md:w-72 md:border-l border-ink-700 space-y-5">
                 <div>
                   <p className="font-mono text-xs text-bone-500 mb-1">{t.whyFailedHeading}</p>
-                  <p className="text-sm text-bone-300 leading-relaxed">{TEARDOWN_CONTENT.whyFailed}</p>
+                  <p className="text-sm text-bone-300 leading-relaxed">{t.whyFailedText}</p>
                 </div>
                 <div>
                   <p className="font-mono text-xs text-bone-500 mb-1">{t.anchorHeading}</p>
-                  <p className="text-sm text-bone-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: TEARDOWN_CONTENT.anchorHtml }} />
+                  <p className="text-sm text-bone-300 leading-relaxed" dangerouslySetInnerHTML={{ __html: t.anchorHtml }} />
                 </div>
                 <div>
                   <p className="font-mono text-xs text-bone-500 mb-1">{t.restructureHeading}</p>
-                  <p className="text-sm text-bone-300 leading-relaxed">{TEARDOWN_CONTENT.restructure}</p>
+                  <p className="text-sm text-bone-300 leading-relaxed">{t.restructureText}</p>
                 </div>
               </div>
             </div>
@@ -276,69 +333,4 @@ export default function Home() {
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
-                  <span className="font-mono text-xs text-bone-500">{t.memo5}</span>
-                </div>
-                <h3 className="font-display text-xl text-bone-300 mb-2">Vercel</h3>
-                <p className="text-sm text-bone-600 leading-relaxed mb-6">Deconstructing enterprise caching documentation for strict DACH compliance and operational rigor.</p>
-              </div>
-              <div className="font-mono text-xs text-bone-600">
-                {t.subscriberOnly}
-              </div>
-            </div>
-
-            <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
-              <div>
-                <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
-                  <span className="font-mono text-xs text-bone-500">{t.memo6}</span>
-                </div>
-                <h3 className="font-display text-xl text-bone-300 mb-2">Supabase</h3>
-                <p className="text-sm text-bone-600 leading-relaxed mb-6">Shifting US conversational abstractions into declarative database management vernacular for LATAM engineering teams.</p>
-              </div>
-              <div className="font-mono text-xs text-bone-600">
-                {t.subscriberOnly}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="border-t border-ink-700 bg-ink-900/20 py-16">
-        <div className="max-w-xl mx-auto px-6 text-center">
-          <h3 className="font-display text-2xl text-bone-100 mb-3">{t.newsletterTitle}</h3>
-          <p className="text-sm text-bone-500 mb-6">{t.newsletterDesc}</p>
-          <form onSubmit={(e) => { e.preventDefault(); alert('Subscribed successfully.'); }} className="flex gap-2 max-w-md mx-auto">
-            <input 
-              type="email" 
-              required 
-              placeholder="name@company.com" 
-              className="bg-ink-950 border border-ink-700 px-4 py-2 text-sm text-bone-100 focus:outline-none focus:border-signal-gold flex-1 font-mono"
-            />
-            <button 
-              type="submit" 
-              className="bg-ink-900 border border-ink-700 px-5 py-2 font-mono text-xs text-bone-300 hover:border-signal-gold hover:text-signal-gold transition-colors cursor-pointer uppercase tracking-wider"
-            >
-              {t.subscribeBtn}
-            </button>
-          </form>
-        </div>
-      </section>
-
-      <footer className="border-t border-ink-700">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 py-14">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-            <div>
-              <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
-              <p className="text-sm text-bone-500 mt-1">Audits &amp; native re-engineering.</p>
-              <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
-            </div>
-            <div className="font-mono text-xs text-bone-500">
-              {t.footerCopy}
-            </div>
-          </div>
-        </div>
-      </footer>
-    </>
-  );
-}
+            
