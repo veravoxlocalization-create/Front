@@ -580,10 +580,11 @@ export default function Home() {
   <div className="flex items-center gap-4 mt-1">
     <p className="text-sm text-bone-500">Audits &amp; native re-engineering.</p>
     <span className="text-ink-700">|</span>
-    <Link href="/about" className="text-sm font-mono text-bone-400 hover:text-signal-gold transition-colors">Read About</Link>
+    <Link href="/about" className="text-sm font-mono text-bone-400 hover:text-signal-gold transition-colors">{t.aboutLink}</Link>
   </div>
   <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
 </div>
+
 
             <div className="font-mono text-xs text-bone-500">
               {t.footerCopy}
