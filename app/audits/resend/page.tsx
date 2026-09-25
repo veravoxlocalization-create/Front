@@ -4,18 +4,36 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 // ============================================================================
-// 1. DICTIONARY (Placed outside the component to preserve memory)
+// FULL MULTI-LANGUAGE DICTIONARY FOR THE ENTIRE MEMO BODY
 // ============================================================================
 const AUDIT_CONTENT = {
-  de: {
-    navTag: 'Lokalisierungs-Audit #04',
-    title: 'Resend: Technische Intent-Analyse & Regionalisierung',
-    subtitle: 'Dekonstruktion von Entwickler-Marketing-Narrativen für europäische B2B-Anforderungen.',
-    readingTime: '8 Min. Lesezeit',
+  en: {
+    navTag: 'Localization Audit #04',
+    title: 'Resend: Technical Intent & Regionalization Audit',
+    subtitle: 'Deconstructing developer-marketing narratives for European B2B procurement standards.',
+    readingTime: '8 min read',
     date: 'September 2026',
-    overviewHeading: 'Kontext & Zielsetzung',
-    overviewBody: 'Resend hat das Entwickler-Erlebnis für E-Mail-APIs in den USA neu definiert. Bei der Expansion in den europäischen Raum stoßen rein wörtliche Übersetzungen jedoch auf Vorbehalte hinsichtlich Datenarchitektur, Compliance und technischer Präzision.',
-    breakdownHeading: 'Struktureller Teardown',
+    client: 'Resend',
+    markets: 'EU, LATAM, DACH',
+    audience: 'CTOs & Engineering Leads',
+    s1Title: 'Section 1 / Perspective & Intent',
+    overviewHeading: 'Context & Intent',
+    overviewBody: 'In Silicon Valley, restraint is positioning. Conversational shorthand like "email" or "reach humans" signals simplicity and confidence. However, when developer infrastructure expands into LATAM and DACH markets, verbatim agency translations strip away that prestige—rendering high-margin developer tools as basic webmail clients or consumer marketing fluff.',
+    overviewSub: 'This audit evaluates three critical touchpoints on Resend\'s primary acquisition layer, contrasting US baseline intent against traditional agency output and developer-native positioning.',
+    s2Title: 'Section 2 / Core Acquisition Teardown',
+    b1Title: '01 / The Hero Headline (H1)',
+    b1Analysis: 'In US tech culture, "email" is recognized shorthand for backend delivery infrastructure. Translated literally into European Spanish or German, "correo electrónico" shifts product categorization toward consumer webmail inbox clients like Outlook or Gmail. Inserting "API" restores category prestige while capturing high-volume regional search intent.',
+    b2Title: '02 / The Core Value Proposition (H2)',
+    b2Analysis: '"Reach humans" works in English because founder-led copy feels fresh here. Translated word-for-word, however, "llegar a humanos" sounds bizarre and unpolished to international B2B buyers. Engineering leads evaluate infrastructure on inbox placement, not vibes. Anchoring on deliverability metrics grounds the promise in parameters evaluators trust.',
+    b3Title: '03 / The Primary Call to Action (CTA)',
+    b3Analysis: 'Passive verbs like "Empezar" or "Loslegen" carry zero technical momentum for engineering buyers. High-intent buyers don\'t want generic onboarding flows—they want immediate utility, such as generating an API key or running a payload test.',
+    s3Title: 'Section 3 / Applied Surface Audits',
+    s3Heading: '01 / React Email Integration',
+    s3Body: 'Resend\'s native integration with React Email is its definitive technical moat. When localizing this documentation block, the messaging must preserve the gravity of component-driven architecture. Verbatim translation fails here because terms like "templating engine" carry different connotations across European enterprise developer tooling.',
+    returnDir: '← Return to Directory',
+    usBaseline: 'US Baseline',
+    tradAgency: 'Traditional Agency Output',
+    refinedIntent: 'Refined Technical Intent'
   },
   es: {
     navTag: 'Auditoría de Localización #04',
@@ -23,9 +41,55 @@ const AUDIT_CONTENT = {
     subtitle: 'Desmontando la narrativa para desarrolladores en entornos B2B europeos y de LATAM.',
     readingTime: '8 min de lectura',
     date: 'Septiembre 2026',
+    client: 'Resend',
+    markets: 'EU, LATAM, DACH',
+    audience: 'CTOs y Lideres de Ingeniería',
+    s1Title: 'Sección 1 / Perspectiva e Intención',
     overviewHeading: 'Contexto y Objetivo',
-    overviewBody: 'Resend redefinió la experiencia de desarrollo para APIs de correo en EE. UU. Sin embargo, al expandirse a Europa y LATAM, las traducciones literales generan fricción sobre la arquitectura de datos, el cumplimiento normativo y el rigor técnico.',
-    breakdownHeading: 'Desglose Estructural',
+    overviewBody: 'En Silicon Valley, la sobriedad es posicionamiento. El lenguaje informal como "email" o "llegar a humanos" transmite simplicidad y confianza. Sin embargo, cuando la infraestructura para desarrolladores se expande a LATAM y DACH, las traducciones literales eliminan ese prestigio, reduciendo herramientas técnicas de alto margen a simples clientes de correo web.',
+    overviewSub: 'Esta auditoría evalúa tres puntos críticos en la capa de adquisición principal de Resend, contrastando la intención original de EE. UU. frente al resultado de agencias tradicionales y el posicionamiento técnico nativo.',
+    s2Title: 'Sección 2 / Desglose Estructural de Adquisición',
+    b1Title: '01 / El Titular Principal (H1)',
+    b1Analysis: 'En la cultura tech de EE. UU., "email" es una abreviación entendida para la infraestructura de entrega backend. Traducido literalmente como "correo electrónico", desplaza la categoría del producto hacia clientes webmail de consumo como Outlook o Gmail. Insertar "API" restaura el prestigio de la categoría mientras captura búsquedas regionales de alta intención.',
+    b2Title: '02 / La Propuesta de Valor Central (H2)',
+    b2Analysis: '"Reach humans" funciona en inglés porque el texto directo del fundador se siente fresco. Traducido palabra por palabra, "llegar a humanos" suena extraño eimpreciso para compradores B2B internacionales. Los líderes de ingeniería evalúan infraestructura por la entregabilidad en bandeja de entrada, no por sensaciones. Anclarse en métricas de entregabilidad fundamenta la promesa en parámetros técnicos reales.',
+    b3Title: '03 / La Llamada a la Acción Principal (CTA)',
+    b3Analysis: 'Verbos pasivos como "Empezar" carecen de impulso técnico para un comprador de ingeniería. Los usuarios de alta intención no buscan un flujo de registro genérico; quieren utilidad inmediata, como generar una clave de API o ejecutar una prueba de payload.',
+    s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
+    s3Heading: '01 / Integración con React Email',
+    s3Body: 'La integración nativa de Resend con React Email es su ventaja técnica definitiva. Al localizar este bloque de documentación, el mensaje debe preservar el rigor de la arquitectura basada en componentes. La traducción literal falla aquí porque conceptos como "templating engine" tienen connotaciones muy distintas en el software empresarial europeo.',
+    returnDir: '← Volver al Directorio',
+    usBaseline: 'Línea Base (EE. UU.)',
+    tradAgency: 'Resultado de Agencia Tradicional',
+    refinedIntent: 'Intención Técnica Refinada'
+  },
+  de: {
+    navTag: 'Lokalisierungs-Audit #04',
+    title: 'Resend: Technische Intent-Analyse & Regionalisierung',
+    subtitle: 'Dekonstruktion von Entwickler-Marketing-Narrativen für europäische B2B-Anforderungen.',
+    readingTime: '8 Min. Lesezeit',
+    date: 'September 2026',
+    client: 'Resend',
+    markets: 'EU, LATAM, DACH',
+    audience: 'CTOs & Lead Engineers',
+    s1Title: 'Abschnitt 1 / Perspektive & Intent',
+    overviewHeading: 'Kontext & Zielsetzung',
+    overviewBody: 'Im Silicon Valley ist Zurückhaltung Positionierung. Informelle Begriffe wie „E-Mail“ oder „Menschen erreichen“ signalisieren Einfachheit. Bei der Expansion in den DACH-Raum nehmen wortwörtliche Agenturübersetzungen diesem B2B-Tool jedoch die technische Autorität und lassen es wie einen einfachen Webmail-Client wirken.',
+    overviewSub: 'Dieses Audit analysiert drei kritische Touchpoints der primären Akquisitions-Ebene von Resend und stellt den US-Standard den typischen Agenturergebnissen sowie einer entwickler-nativen Positionierung gegenüber.',
+    s2Title: 'Abschnitt 2 / Strukturelle Akquisitions-Analyse',
+    b1Title: '01 / Die Hauptüberschrift (H1)',
+    b1Analysis: 'In der US-Tech-Kultur steht „E-Mail“ als Synonym für Backend-Zustellinfrastruktur. Wörtlich ins Deutsche übersetzt verschiebt „E-Mail“ die Produktkategorie in Richtung Consumer-Webmail. Das Einfügen von „API“ stellt das Kategorie-Prestige wieder her und deckt hochvolumigen regionalen Suchintent ab.',
+    b2Title: '02 / Das zentrale Wertversprechen (H2)',
+    b2Analysis: '„Reach humans“ funktioniert im US-Markt durch den nahbaren Gründer-Ton. Wortwörtlich übersetzt („Menschen erreichen“) wirkt es im europäischen B2B-Umfeld unpräzise. Engineering Leads bewerten Infrastruktur nach Posteingangszustellbarkeit, nicht nach Vibe. Die Verankerung auf Zustellbarkeits-Metriken schafft Vertrauen.',
+    b3Title: '03 / Der primäre Call-to-Action (CTA)',
+    b3Analysis: 'Passive Verben wie „Loslegen“ bieten keinerlei technisches Momentum. High-Intent-Käufer suchen keine generischen Onboarding-Prozesse, sondern sofortige technische Verifizierung – etwa das Generieren eines API-Keys oder das Testen eines Payloads.',
+    s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
+    s3Heading: '01 / React-Email-Integration',
+    s3Body: 'Die native Integration von Resend mit React Email ist der entscheidende technische Wettbewerbsvorteil. Bei der Lokalisierung dieser Dokumentation muss die Architektursprache gewahrt bleiben. Wörtliche Übersetzungen scheitern an Begriffen wie „Templating Engine“, die im europäischen Enterprise-Umfeld abweichend konnotiert sind.',
+    returnDir: '← Zurück zum Verzeichnis',
+    usBaseline: 'US-Ausgangslage',
+    tradAgency: 'Klassisches Agenturergebnis',
+    refinedIntent: 'Präzisierter technischer Intent'
   },
   fr: {
     navTag: 'Audit de Localisation #04',
@@ -33,9 +97,27 @@ const AUDIT_CONTENT = {
     subtitle: 'Déconstruction des récits dev-marketing pour les exigences B2B européennes.',
     readingTime: '8 min de lecture',
     date: 'Septembre 2026',
+    client: 'Resend',
+    markets: 'EU, LATAM, DACH',
+    audience: 'CTOs & Directeurs Ingenerie',
+    s1Title: 'Section 1 / Perspective & Intention',
     overviewHeading: 'Contexte & Objectif',
-    overviewBody: 'Resend a redéfini l’expérience développeur pour les API e-mail aux États-Unis. Lors de l’expansion européenne, les traductions littérales heurtent les exigences d’architecture de données et de conformité.',
-    breakdownHeading: 'Analyse Structurelle',
+    overviewBody: 'Dans la Silicon Valley, la sobriété sert de positionnement. Des expressions comme "email" ou "reach humans" traduisent la simplicité. Mais lors de l’expansion européenne, les traductions mot à mot des agences retirent ce prestige, réduisant un outil dev à un simple service de messagerie grand public.',
+    overviewSub: 'Cet audit évalue trois points de conversion cruciaux sur la page principale de Resend, en opposant le texte US aux traductions d’agences et au positionnement technique natif.',
+    s2Title: 'Section 2 / Déconstruction Structurelle de la Conversion',
+    b1Title: '01 / Le Titre Principal (H1)',
+    b1Analysis: 'Dans la culture tech américaine, "email" désigne l’infrastructure de livraison backend. Traduit littéralement en français par "courrier électronique", le produit ressemble à un client webmail grand public. L’ajout du terme "API" restaure la valeur technique tout en ciblant les recherches régionales qualifiées.',
+    b2Title: '02 / La Proposition de Valeur (H2)',
+    b2Analysis: '"Reach humans" fonctionne en anglais car le style fondateur paraît authentique. Traduit mot à mot, "atteindre des humains" manque de rigueur pour les acheteurs B2B européens. Les responsables techniques évaluent l’infrastructure sur la délivrabilité en boîte de réception, pas sur l’émotion.',
+    b3Title: '03 / L’Appel à l’Action Principal (CTA)',
+    b3Analysis: 'Des verbes passifs comme "Commencer" n’offrent aucun élan technique. Les profils à forte intention ne cherchent pas un parcours d’inscription générique : ils veulent générer une clé API ou tester une requête immédiatement.',
+    s3Title: 'Section 3 / Audit des Surfaces Appliquées',
+    s3Heading: '01 / Intégration React Email',
+    s3Body: 'L’intégration native avec React Email constitue l’avantage concurrentiel majeur de Resend. La localisation de cette documentation doit préserver la rigueur de l’architecture orientée composants. La traduction littérale échoue ici car des termes comme "moteur de rendu" ont des connotations spécifiques dans l’IT européen.',
+    returnDir: '← Retour au Répertoire',
+    usBaseline: 'Référence US',
+    tradAgency: 'Rendu Agence Traditionnelle',
+    refinedIntent: 'Intention Technique Affinée'
   },
   it: {
     navTag: 'Audit di Localizzazione #04',
@@ -43,9 +125,27 @@ const AUDIT_CONTENT = {
     subtitle: 'Ristrutturazione delle narrative dev-marketing per i requisiti B2B europei.',
     readingTime: '8 min di lettura',
     date: 'Settembre 2026',
+    client: 'Resend',
+    markets: 'EU, LATAM, DACH',
+    audience: 'CTOs & Engineering Leads',
+    s1Title: 'Sezione 1 / Prospettiva e Intento',
     overviewHeading: 'Contesto e Obiettivo',
-    overviewBody: 'Resend ha ridefinito l’esperienza di sviluppo per le API e-mail negli Stati Uniti. Durante l’espansione in Europa, le traduzioni letterali creano attrito riguardo all’architettura dei dati e alla conformità.',
-    breakdownHeading: 'Analisi Strutturale',
+    overviewBody: 'In Silicon Valley, la essenzialità è posizionamento. L’uso di termini colloquiali come "email" o "raggiungere persone" trasmette semplicità. Tuttavia, quando l’infrastruttura per sviluppatori si espande in Europa, le traduzioni letterali delle agenzie eliminano questo prestigio, riducendo strumenti ad alto margine a semplici client di posta.',
+    overviewSub: 'Questo audit valuta tre punti critici sulla pagina d’acquisizione principale di Resend, mettendo a confronto il testo originale US con i risultati delle agenzie tradizionali e il posizionamento tecnico nativo.',
+    s2Title: 'Sezione 2 / Analisi Strutturale della Conversione',
+    b1Title: '01 / L’Titolo Principale (H1)',
+    b1Analysis: 'Nella cultura tech statunitense, "email" è l’abbreviazione riconosciuta per l’infrastruttura di consegna backend. Tradotto letteralmente come "posta elettronica", sposta la categoria del prodotto verso client di posta consumer come Outlook o Gmail. Inserire "API" ripristina il prestigio della categoria e intercetta le ricerche regionali ad alto valore.',
+    b2Title: '02 / La Proposta di Valore Principale (H2)',
+    b2Analysis: '"Reach humans" funziona in inglese grazie allo stile diretto dei fondatori. Tradotto parola per parola, "raggiungere umani" risulta bizzarro per i buyer B2B internazionali. I responsabili dell’ingegneria valutano l’infrastruttura sulla recapitabilità in inbox, non sulle sensazioni.',
+    b3Title: '03 / La Call to Action Principale (CTA)',
+    b3Analysis: 'Verbi passivi come "Iniziare" non offrono alcun impulso tecnico per i buyer engineering. Gli utenti ad alto intento non cercano un flusso di registrazione generico, ma utilità immediata come generare una API key o testare una chiamata.',
+    s3Title: 'Sezione 3 / Audit delle Superfici Applicate',
+    s3Heading: '01 / Integrazione React Email',
+    s3Body: 'L’integrazione nativa con React Email è il fossato difensivo di Resend. Nel localizzare questa documentazione, il messaggio deve preservare il rigore dell’architettura basata su componenti. La traduzione letterale fallisce qui poiché termini come "templating engine" hanno connotazioni diverse nel software enterprise europeo.',
+    returnDir: '← Torna al Direttorio',
+    usBaseline: 'Linea Base US',
+    tradAgency: 'Output Agenzia Tradizionale',
+    refinedIntent: 'Intento Tecnico Rifinito'
   },
   pt: {
     navTag: 'Auditoria de Localização #04',
@@ -53,24 +153,32 @@ const AUDIT_CONTENT = {
     subtitle: 'Desconstruindo narrativas de dev-marketing para requisitos B2B europeus e LATAM.',
     readingTime: '8 min de leitura',
     date: 'Setembro 2026',
+    client: 'Resend',
+    markets: 'EU, LATAM, DACH',
+    audience: 'CTOs e Líderes de Engenharia',
+    s1Title: 'Seção 1 / Perspectiva e Intenção',
     overviewHeading: 'Contexto e Objetivo',
-    overviewBody: 'A Resend redefiniu a experiência do desenvolvedor para APIs de e-mail nos EUA. Ao expandir para a Europa e América Latina, traduções literais geram fricção sobre arquitetura de dados e conformidade.',
-    breakdownHeading: 'Análise Estrutural',
-  },
-  en: {
-    navTag: 'Localization Audit #04',
-    title: 'Resend: Technical Intent & Regionalization Audit',
-    subtitle: 'Deconstructing developer-marketing narratives for European B2B procurement standards.',
-    readingTime: '8 min read',
-    date: 'September 2026',
-    overviewHeading: 'Context & Intent',
-    overviewBody: 'Resend redefined the developer experience for email APIs in North America. However, when expanding into EU markets, literal copy translation introduces friction around data architecture, compliance, and technical rigor.',
-    breakdownHeading: 'Structural Breakdown',
+    overviewBody: 'No Vale do Silício, a sobriedade é posicionamento. Termos informais como "email" ou "alcançar humanos" sinalizam simplicidade. Contudo, quando a infraestrutura para desenvolvedores se expande para LATAM e Europa, traduções literais de agências removem esse prestígio, transformando ferramentas técnicas em simples clientes de e-mail.',
+    overviewSub: 'Esta auditoria avalia três pontos críticos na camada de aquisição da Resend, contrastando a intenção original dos EUA com o resultado de agências tradicionais e o posicionamento técnico nativo.',
+    s2Title: 'Seção 2 / Desmontagem Estrutural de Aquisição',
+    b1Title: '01 / O Título Principal (H1)',
+    b1Analysis: 'Na cultura tech dos EUA, "email" é um atalho reconhecido para infraestrutura de entrega backend. Traduzido literalmente como "correio eletrônico", desvia a categoria do produto para clientes webmail de consumo. Inserir "API" restaura o prestígio da categoria e captura buscas regionais de alta intenção.',
+    b2Title: '02 / A Proposta de Valor Central (H2)',
+    b2Analysis: '"Reach humans" funciona em inglês porque o texto direto do fundador soa autêntico. Traduzido palavra por palavra, "alcançar humanos" soa estranho para compradores B2B internacionais. Líderes de engenharia avaliam infraestrutura pela entregabilidade na caixa de entrada, não por intuição.',
+    b3Title: '03 / A Chamada para Ação Principal (CTA)',
+    b3Analysis: 'Verbos passivos como "Começar" não possuem impulso técnico para compradores de engenharia. Usuários de alta intenção não querem fluxos genéricos de cadastro; buscam utilidade imediata, como gerar uma chave de API ou testar uma requisição.',
+    s3Title: 'Seção 3 / Auditoria de Superfícies Aplicadas',
+    s3Heading: '01 / Integração com React Email',
+    s3Body: 'A integração nativa da Resend com React Email é sua vantagem técnica definitiva. Ao localizá-la, a mensagem deve preservar o rigor da arquitetura baseada em componentes. A tradução literal falha aqui porque termos como "engine de templates" possuem conotações distintas no mercado empresarial europeu.',
+    returnDir: '← Voltar ao Diretório',
+    usBaseline: 'Linha de Base (EUA)',
+    tradAgency: 'Resultado de Agência Tradicional',
+    refinedIntent: 'Intenção Técnica Refinada'
   }
 };
 
 // ============================================================================
-// 2. SINGLE DEFAULT EXPORT COMPONENT
+// COMPONENT
 // ============================================================================
 export default function ResendAuditPage() {
   const [lang, setLang] = useState('en');
@@ -82,7 +190,7 @@ export default function ResendAuditPage() {
 
   return (
     <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950">
-      {/* Sticky Header with Language Switcher & Export Controls */}
+      {/* Sticky Top Bar with Language Controls */}
       <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
@@ -116,9 +224,8 @@ export default function ResendAuditPage() {
         </div>
       </header>
 
-      {/* Main Content Area */}
+      {/* Main Memo Content */}
       <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32">
-        {/* Memo Header */}
         <header className="mb-20">
           <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4">
             <span>{t.navTag}</span>
@@ -135,27 +242,26 @@ export default function ResendAuditPage() {
             {t.subtitle}
           </p>
           
-          {/* Metadata Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ink-700 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed">
             <div>
               <span className="text-bone-300 block mb-1">Client</span>
-              Resend
+              {t.client}
             </div>
             <div>
               <span className="text-bone-300 block mb-1">Markets</span>
-              EU, LATAM, DACH
+              {t.markets}
             </div>
             <div>
               <span className="text-bone-300 block mb-1">Audience</span>
-              CTOs & Engineering Leads
+              {t.audience}
             </div>
           </div>
         </header>
 
-        {/* Section 1: Dynamic Overview Context */}
+        {/* Section 1 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
-            Section 1 / Perspective & Intent
+            {t.s1Title}
           </div>
           <div className="max-w-none text-bone-300 leading-relaxed space-y-6">
             <h2 className="font-display font-semibold text-xl text-bone-100 mb-2">
@@ -164,38 +270,41 @@ export default function ResendAuditPage() {
             <p className="text-bone-300 leading-relaxed">
               {t.overviewBody}
             </p>
+            <p className="text-bone-400 text-sm leading-relaxed">
+              {t.overviewSub}
+            </p>
           </div>
         </section>
 
-        {/* Section 2: Core Acquisition Teardowns */}
+        {/* Section 2 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
-            Section 2 / {t.breakdownHeading}
+            {t.s2Title}
           </div>
           
-          {/* Audit Block 01 */}
+          {/* Block 01 */}
           <div className="mb-16">
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
-              01 / The Hero Headline (H1)
+              {t.b1Title}
             </h3>
             
             <div className="space-y-6 mb-8">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">US Baseline</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
                 <p className="text-bone-300 italic">"Email for developers."</p>
               </div>
               
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">Traditional Agency Output</p>
-                <ul className="text-bone-300 space-y-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
                   <li><span className="text-bone-500 mr-2">ES:</span> Correo electrónico para desarrolladores.</li>
                   <li><span className="text-bone-500 mr-2">DE:</span> E-Mail für Entwickler.</li>
                 </ul>
               </div>
 
               <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">Refined Technical Intent</p>
-                <ul className="text-bone-100 font-medium space-y-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
                   <li><span className="text-bone-500 font-normal mr-2">ES:</span> La API de email para desarrolladores.</li>
                   <li><span className="text-bone-500 font-normal mr-2">DE:</span> Die E-Mail-API für Entwickler.</li>
                 </ul>
@@ -203,33 +312,33 @@ export default function ResendAuditPage() {
             </div>
 
             <p className="text-bone-300 leading-relaxed text-sm">
-              In US tech culture, "email" is recognized shorthand for backend delivery infrastructure. Translated literally into European Spanish or German, "correo electrónico" shifts product categorization toward consumer webmail inbox clients like Outlook or Gmail. <strong className="text-bone-100 font-medium">Inserting "API" restores category prestige while capturing high-volume regional search intent.</strong>
+              {t.b1Analysis}
             </p>
           </div>
 
-          {/* Audit Block 02 */}
+          {/* Block 02 */}
           <div className="mb-16">
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
-              02 / The Core Value Proposition (H2)
+              {t.b2Title}
             </h3>
             
             <div className="space-y-6 mb-8">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">US Baseline</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
                 <p className="text-bone-300 italic">"The best API to reach humans instead of spam folders. Build, test, and deliver transactional emails at scale."</p>
               </div>
               
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">Traditional Agency Output</p>
-                <ul className="text-bone-300 space-y-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
                   <li><span className="text-bone-500 mr-2">ES:</span> La mejor API para llegar a humanos en lugar de carpetas de spam...</li>
                   <li><span className="text-bone-500 mr-2">DE:</span> Die beste API, um Menschen statt Spam-Ordner zu erreichen...</li>
                 </ul>
               </div>
 
               <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">Refined Technical Intent</p>
-                <ul className="text-bone-100 font-medium space-y-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
                   <li><span className="text-bone-500 font-normal mr-2">ES:</span> Máxima entregabilidad al inbox. Construye, prueba y envía correos transaccionales a escala.</li>
                   <li><span className="text-bone-500 font-normal mr-2">DE:</span> Maximale Posteingangszustellbarkeit. Entwickeln, testen und versenden Sie transaktionale E-Mails im großen Stil.</li>
                 </ul>
@@ -237,33 +346,33 @@ export default function ResendAuditPage() {
             </div>
 
             <p className="text-bone-300 leading-relaxed text-sm">
-              "Reach humans" works in English because founder-led copy feels fresh here. Translated word-for-word, however, "llegar a humanos" sounds bizarre and unpolished to international B2B buyers. <strong className="text-bone-100 font-medium">Engineering leads evaluate infrastructure on inbox placement, not vibes.</strong> Anchoring on entregabilidad and Zustellbarkeit grounds the promise in metrics evaluators trust.
+              {t.b2Analysis}
             </p>
           </div>
 
-          {/* Audit Block 03 */}
+          {/* Block 03 */}
           <div>
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
-              03 / The Primary Call to Action (CTA)
+              {t.b3Title}
             </h3>
             
             <div className="space-y-6 mb-8">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">US Baseline</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
                 <p className="text-bone-300 italic">"Get Started"</p>
               </div>
               
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">Traditional Agency Output</p>
-                <ul className="text-bone-300 space-y-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
                   <li><span className="text-bone-500 mr-2">ES:</span> Empezar</li>
                   <li><span className="text-bone-500 mr-2">DE:</span> Loslegen</li>
                 </ul>
               </div>
 
               <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">Refined Technical Intent</p>
-                <ul className="text-bone-100 font-medium space-y-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
                   <li><span className="text-bone-500 font-normal mr-2">ES:</span> Probar API / Crear cuenta gratis</li>
                   <li><span className="text-bone-500 font-normal mr-2">DE:</span> API testen / Kostenloses Konto erstellen</li>
                 </ul>
@@ -271,29 +380,29 @@ export default function ResendAuditPage() {
             </div>
 
             <p className="text-bone-300 leading-relaxed text-sm">
-              Passive verbs like "Empezar" carry zero technical momentum for engineering buyers. High-intent buyers don't want generic onboarding flows—they want immediate utility, such as generating an API key or running a payload test.
+              {t.b3Analysis}
             </p>
           </div>
         </section>
 
-        {/* Section 3: Applied Surface Audits */}
+        {/* Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
-            Section 3 / Applied Surface Audits
+            {t.s3Title}
           </div>
           
           <div className="space-y-6 text-bone-300 leading-relaxed">
-            <h3 className="font-display text-xl text-bone-100 mb-2">01 / React Email Integration</h3>
-            <p>
-              Resend's native integration with React Email is its definitive technical moat. When localizing this documentation block, the messaging must preserve the gravity of component-driven architecture. Verbatim translation fails here because terms like "templating engine" carry different connotations across European enterprise developer tooling.
+            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
+            <p className="text-sm">
+              {t.s3Body}
             </p>
           </div>
         </section>
         
-        {/* Return Navigation */}
+        {/* Navigation */}
         <div className="mt-32 pt-8 border-t border-ink-700">
           <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
-            ← Return to Directory
+            {t.returnDir}
           </Link>
         </div>
       </main>
