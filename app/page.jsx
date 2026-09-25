@@ -421,8 +421,9 @@ export default function Home() {
   onClick={() => setShowInline(!showInline)}
   className="font-mono text-xs text-signal-gold bg-transparent border border-signal-gold/30 px-3 py-1.5 cursor-pointer hover:border-signal-gold transition-colors self-start sm:self-auto rounded-sm"
 >
-  {showInline ? `✕ ${t.toggleInlineActive}` : `+ ${t.toggleInlineInactive}`}
+  {showInline ? `✕ ${t.toggleActive}` : `+ ${t.toggleInactive}`}
 </button>
+
 
             )}
           </div>
