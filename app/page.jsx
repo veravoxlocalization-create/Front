@@ -316,13 +316,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Expanded UI-Language Native Teardown Note */}
-            {expandedBreakdown && (
-              <div className="px-5 py-4 border-t border-ink-700 bg-ink-900/60 font-mono text-xs text-bone-300 leading-relaxed">
-                <span className="text-signal-gold font-medium mr-2">NATIVE BREAKDOWN NOTE [{lang.toUpperCase()}]:</span> 
-                {lang === 'de' && 'Dieses Beispiel zeigt, wie deutsche Ingenieure Produktversprechen durch verifizierbare Funktionsmerkmale statt durch Marketing-Hyperbeln bewerten.'}
-                {lang === 'es' && 'Este ejemplo demuestra cómo los ingenieros europeos evalúan las afirmaciones de productos a través de características funcionales verificables en lugar de hipérboles de marketing.'}
-                {lang ==
+          
             {/* Expanded UI-Language Native Teardown Note */}
             {expandedBreakdown && (
               <div className="px-5 py-4 border-t border-ink-700 bg-ink-900/60 font-mono text-xs text-bone-300 leading-relaxed">
