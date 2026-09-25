@@ -389,10 +389,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* FEATURES / VALUE PROP GRID */}
+                {/* FEATURES / VALUE PROP GRID */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.features.map((feature, idx) => (
-
             <div
               key={idx}
               className="p-6 border border-ink-800 rounded bg-ink-900/30 space-y-3"
@@ -408,9 +407,7 @@ export default function HomePage() {
         </section>
 
       </main>
-    </div>
-  );
-}
+
       {/* FOOTER SECTION */}
       <footer className="border-t border-ink-800 py-8 px-6 md:px-12 text-center font-mono text-xs text-ink-500">
         <p>{t.footerCopy}</p>
@@ -419,5 +416,4 @@ export default function HomePage() {
   );
 }
 
-export default LandingPage;
-
+export default LandingPage; // Adjust if your component has a different name
