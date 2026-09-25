@@ -415,5 +415,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-export default LandingPage; // Adjust if your component has a different name
