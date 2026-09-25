@@ -265,108 +265,6 @@ const UI_TEXT = {
   }
 };
 
-    memo4: 'Memo N. 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Valutazione dell’intento tecnico sulle superfici di conversione regionali rispetto agli standard tradizionali.',
-    readMemo: 'Leggi l’audit di Resend →',
-    premium: 'Premium',
-    memo5: 'Memo N. 05',
-    memo6: 'Memo N. 06',
-    subscriberOnly: 'Riservato agli abbonati',
-    footerSub: 'Adattamento strutturale dei testi per i mercati tecnologici europei (ES | FR | DE | IT | PT).',
-    footerCopy: '© 2026 VeraVox — tutti i contenuti auditati, nessuno tradotto',
-    newsletterTitle: 'Newsletter',
-    newsletterDesc: 'Memorandum mensili sull’architettura di localizzazione direttamente nella tua casella di posta.',
-    newsletterTooltip: 'Include: Analisi della deriva semantica, posizionamento developer tools e brief di audit.',
-    subscribeBtn: 'Iscriviti',
-    overrideBtn: 'US Original (Override)',
-  },
-  pt: {
-    navTag: 'Editorial Advisory',
-    h1: 'Arquitetura de localização para mercados B2B técnicos.',
-    sub: 'Traduções literais quebram a intenção de conversão. Alinhamos narrativas de produtos às expectativas de engenharia.',
-    desc: 'Traduções não calibradas introduzem atrito nos ciclos de vendas técnicas. A VeraVox audita e estrutura interfaces SaaS para atender aos critérios de avaliação de compradores técnicos. Zero marketing vazio. Rigor semântico estrito.',
-    libraryLink: 'Explorar a Biblioteca de Auditorias ↓',
-    specTitle: 'Especificação do Projeto',
-    targetMarkets: 'Mercados-alvo',
-    method: 'Método',
-    methodVal: 'estrutural, preciso',
-    diagCall: 'Consulta inicial',
-    fluff: 'Marketing superficial',
-    teardownTitle: 'Estudo de caso: O teardown da `Linear`',
-    teardownDesc: 'Uma análise de como a mensagem central é estruturalmente adaptada para compradores técnicos na Europa.',
-    directRejected: 'Tradução literal — inadequada',
-    structuralShipped: 'Adaptação estrutural — implementada',
-    whyFailedHeading: 'Análise',
-    whyFailedText: 'Termos superlativos são lidos como alegações de marketing sem verificação em contextos de engenharia.',
-    anchorHeading: 'Âncora contextual',
-    anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (verificável, rastreável) reflete diretamente os critérios de validação de equipes técnicas.',
-    restructureHeading: 'Arquitetura da informação',
-    restructureText: 'A priorização espelha a documentação europeia padrão: função e integridade vêm antes de promessas de velocidade.',
-    toggleTranslation: 'Mostrar traduções em linha',
-    auditLibTitle: 'Biblioteca de Auditorias',
-    auditLibDesc: 'Memorandos completos avaliando a integridade de localização e consistência semântica em superfícies B2B.',
-    freeAccess: 'Acesso Livre',
-    memo4: 'Memo Nº 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Avaliação da intenção técnica em superfícies de conversão regionais e contraste com agências tradicionais.',
-    readMemo: 'Ler auditoria da Resend →',
-    premium: 'Premium',
-    memo5: 'Memo Nº 05',
-    memo6: 'Memo Nº 06',
-    subscriberOnly: 'Exclusivo para assinantes',
-    footerSub: 'Adaptação estrutural de texto para mercados tecnológicos europeus (ES | FR | DE | IT | PT).',
-    footerCopy: '© 2026 VeraVox — todo o conteúdo auditado, nenhum traduzido',
-    newsletterTitle: 'Newsletter',
-    newsletterDesc: 'Memorandos mensais sobre arquitetura de localização entregues diretamente na sua caixa de entrada.',
-    newsletterTooltip: 'Inclui: Análise de desvio semântico, posicionamento de ferramentas de desenvolvedor e resumos de auditoria.',
-    subscribeBtn: 'Inscrever-se',
-    overrideBtn: 'US Original (Override)',
-  },
-  en: {
-    navTag: 'Editorial Advisory',
-    h1: 'Localization architecture for technical B2B markets.',
-    sub: 'Literal translations break conversion intent in European markets. We align product narratives with engineering expectations.',
-    desc: 'Uncalibrated translations introduce friction in technical sales cycles. VeraVox audits and structures US SaaS interfaces to match the evaluation criteria of technical buyers. Zero marketing fluff. Strict semantic alignment.',
-    libraryLink: 'Explore the Audit Library ↓',
-    specTitle: 'Engagement Spec',
-    targetMarkets: 'Target Markets',
-    method: 'Method',
-    methodVal: 'structural, precise',
-    diagCall: 'Initial consultation',
-    fluff: 'Marketing fluff',
-    teardownTitle: 'Case study: The `Linear` teardown',
-    teardownDesc: 'An examination of how core messaging is structurally adapted for technical buyers—moving from literal translation to functional relevance.',
-    directRejected: 'Literal translation — unsuited',
-    structuralShipped: 'Structural adaptation — deployed',
-    whyFailedHeading: 'Analysis',
-    whyFailedText: 'Superlatives like "fastest" and "high-performing" read as unverified marketing claims in technical procurement contexts.',
-    anchorHeading: 'Contextual anchor',
-    anchorHtml: '<span class="text-bone-100">nachvollziehbar</span> (verifiable, traceable) directly reflects the search intent and validation criteria of engineering leads.',
-    restructureHeading: 'Information architecture',
-    restructureText: 'Prioritization mirrors standard European documentation: function and architectural integrity precede speed claims.',
-    toggleTranslation: 'Show inline translations',
-    auditLibTitle: 'Audit Library',
-    auditLibDesc: 'Full-length memorandums evaluating localization integrity and semantic consistency across B2B surfaces.',
-    freeAccess: 'Free Access',
-    memo4: 'Memo No. 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Evaluating technical intent across regional conversion surfaces. Contrasting US baseline intent against traditional agency output.',
-    readMemo: 'Read Resend audit →',
-    premium: 'Premium',
-    memo5: 'Memo No. 05',
-    memo6: 'Memo No. 06',
-    subscriberOnly: 'Subscriber-only',
-    footerSub: 'Structural copy adaptation for European tech markets (ES | FR | DE | IT | PT).',
-    footerCopy: '© 2026 VeraVox — all copy audited, none of it translated',
-    newsletterTitle: 'Newsletter',
-    newsletterDesc: 'Monthly memorandums on localization architecture delivered straight to your inbox.',
-    newsletterTooltip: 'Includes: Semantic drift analysis, developer tool positioning frameworks, and audit briefs.',
-    subscribeBtn: 'Subscribe',
-    overrideBtn: 'View in Local Language',
-  }
-};
-
 const TEARDOWN_CONTENT = {
   label: 'asset.headline — us-en → de-de',
   direct: 'Linear ist der schnellste Weg, moderne Software zu planen, zu verfolgen und auszuliefern — gebaut für die Geschwindigkeit leistungsstarker Teams.',
@@ -412,7 +310,11 @@ export default function Home() {
 
       <header className="border-b border-ink-700">
         <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-          <Link href="#top" className="font-display font-semibold text-lg tracking-tight text-bone-100">VeraVox</Link>
+          <div className="flex items-baseline gap-6">
+  <Link href="#top" className="font-display font-semibold text-lg tracking-tight text-bone-100">VeraVox</Link>
+  <Link href="/about" className="hidden md:block font-mono text-xs text-bone-500 hover:text-signal-gold transition-colors">/ About</Link>
+</div>
+
           <div className="flex items-center gap-2 md:gap-3 font-mono text-xs">
             {['es', 'fr', 'de', 'it', 'pt'].map((l) => (
               <React.Fragment key={l}>
@@ -507,11 +409,12 @@ export default function Home() {
             </div>
             {lang !== 'de' && (
               <button 
-                onClick={() => setShowInline(!showInline)}
-                className="font-mono text-xs text-signal-gold bg-transparent border border-signal-gold/30 px-3 py-1.5 cursor-pointer hover:border-signal-gold transition-colors self-start sm:self-auto rounded-sm"
-              >
-                {showInline ? '✕ Hide inline translations' : `+ ${t.toggleTranslation}`}
-              </button>
+  onClick={() => setShowInline(!showInline)}
+  className="font-mono text-xs text-signal-gold bg-transparent border border-signal-gold/30 px-3 py-1.5 cursor-pointer hover:border-signal-gold transition-colors self-start sm:self-auto rounded-sm"
+>
+  {showInline ? `✕ ${t.toggleInlineActive}` : `+ ${t.toggleInlineInactive}`}
+</button>
+
             )}
           </div>
           
@@ -663,10 +566,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-14">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
-              <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
-              <p className="text-sm text-bone-500 mt-1">Audits &amp; native re-engineering.</p>
-              <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
-            </div>
+  <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
+  <div className="flex items-center gap-4 mt-1">
+    <p className="text-sm text-bone-500">Audits &amp; native re-engineering.</p>
+    <span className="text-ink-700">|</span>
+    <Link href="/about" className="text-sm font-mono text-bone-400 hover:text-signal-gold transition-colors">Read About</Link>
+  </div>
+  <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
+</div>
+
             <div className="font-mono text-xs text-bone-500">
               {t.footerCopy}
             </div>
