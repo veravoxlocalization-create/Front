@@ -323,3 +323,124 @@ export default function Home() {
                 {lang === 'de' && 'Dieses Beispiel zeigt, wie deutsche Ingenieure Produktversprechen durch verifizierbare Funktionsmerkmale statt durch Marketing-Hyperbeln bewerten.'}
                 {lang === 'es' && 'Este ejemplo demuestra cómo los ingenieros europeos evalúan las afirmaciones de productos a través de características funcionales verificables en lugar de hipérboles de marketing.'}
                 {lang ==
+            {/* Expanded UI-Language Native Teardown Note */}
+            {expandedBreakdown && (
+              <div className="px-5 py-4 border-t border-ink-700 bg-ink-900/60 font-mono text-xs text-bone-300 leading-relaxed">
+                <span className="text-signal-gold font-medium mr-2">NATIVE BREAKDOWN NOTE [{lang.toUpperCase()}]:</span> 
+                {lang === 'de' && 'Dieses Beispiel zeigt, wie deutsche Ingenieure Produktversprechen durch verifizierbare Funktionsmerkmale statt durch Marketing-Hyperbeln bewerten.'}
+                {lang === 'es' && 'Este ejemplo demuestra cómo los ingenieros evalúan las afirmaciones de productos a través de características funcionales verificables en lugar de hipérboles de marketing.'}
+                {lang === 'fr' && 'Cet exemple montre comment les ingénieurs évaluent les promesses de produits par des fonctionnalités vérifiables plutôt que par des superlatifs marketing.'}
+                {lang === 'en' && 'This example demonstrates how European engineering leads evaluate product promises through verifiable functional features rather than marketing hyperbole.'}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section id="audits" className="border-t border-ink-700 bg-ink-950">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+          <div className="max-w-xl mb-12">
+            <h2 className="font-display font-semibold text-3xl md:text-4xl tracking-tight text-bone-100">
+              {t.auditLibTitle}
+            </h2>
+            <p className="mt-4 text-base text-bone-500 leading-relaxed">
+              {t.auditLibDesc}
+            </p>
+          </div>
+                    <div className="grid md:grid-cols-3 gap-6">
+            <Link href="/audits/resend" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo4}</span>
+                </div>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">Resend</h3>
+                <p className="text-sm text-bone-500 leading-relaxed mb-6">Evaluating technical intent across regional conversion surfaces. Contrasting US baseline intent against traditional agency output.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
+                {t.readMemo}
+              </div>
+            </Link>
+
+            <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo5}</span>
+                </div>
+                <h3 className="font-display text-xl text-bone-300 mb-2">Vercel</h3>
+                <p className="text-sm text-bone-600 leading-relaxed mb-6">Deconstructing enterprise caching documentation for strict DACH compliance and operational rigor.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-600">
+                {t.subscriberOnly}
+              </div>
+            </div>
+
+            <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo6}</span>
+                </div>
+                <h3 className="font-display text-xl text-bone-300 mb-2">Supabase</h3>
+                <p className="text-sm text-bone-600 leading-relaxed mb-6">Shifting US conversational abstractions into declarative database management vernacular for LATAM engineering teams.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-600">
+                {t.subscriberOnly}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section with [i] Hover Tooltip */}
+      <section className="border-t border-ink-700 bg-ink-950 py-20">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold">{t.newsletterTitle}</div>
+            <div className="group relative cursor-help inline-block">
+              <span className="font-mono text-[10px] text-bone-500 border border-ink-700 rounded-full px-1.5 py-0.2 hover:border-signal-gold transition-colors">i</span>
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-ink-900 border border-ink-700 font-mono text-[11px] text-bone-300 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 text-left leading-relaxed">
+                {t.newsletterTooltip}
+              </div>
+            </div>
+          </div>
+          
+          <h3 className="font-display text-2xl text-bone-100 mb-2">{t.newsletterTitle}</h3>
+          <p className="text-sm text-bone-400 mb-8 max-w-md mx-auto">{t.newsletterDesc}</p>
+          
+          <form onSubmit={(e) => { e.preventDefault(); alert('Subscribed successfully.'); }} className="flex gap-2 max-w-md mx-auto">
+            <input 
+              type="email" 
+              required 
+              placeholder="name@company.com" 
+              className="bg-ink-900 border border-ink-700 px-4 py-2.5 text-sm text-bone-100 focus:outline-none focus:border-signal-gold flex-1 font-mono rounded-none"
+            />
+            <button 
+              type="submit" 
+              className="bg-ink-900 border border-ink-700 px-6 py-2.5 font-mono text-xs text-bone-200 hover:border-signal-gold hover:text-signal-gold transition-colors cursor-pointer uppercase tracking-wider rounded-none"
+            >
+              {t.subscribeBtn}
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <footer className="border-t border-ink-700">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 py-14">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <div>
+              <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
+              <p className="text-sm text-bone-500 mt-1">Audits &amp; native re-engineering.</p>
+              <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
+            </div>
+            <div className="font-mono text-xs text-bone-500">
+              {t.footerCopy}
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+        }
+        
