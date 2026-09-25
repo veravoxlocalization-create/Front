@@ -333,3 +333,66 @@ export default function Home() {
                   <span className="font-mono text-xs text-bone-500">{t.memo5}</span>
                 </div>
      
+               <h3 className="font-display text-xl text-bone-300 mb-2">Vercel</h3>
+                <p className="text-sm text-bone-600 leading-relaxed mb-6">Deconstructing enterprise caching documentation for strict DACH compliance and operational rigor.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-600">
+                {t.subscriberOnly}
+              </div>
+            </div>
+
+            <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo6}</span>
+                </div>
+                <h3 className="font-display text-xl text-bone-300 mb-2">Supabase</h3>
+                <p className="text-sm text-bone-600 leading-relaxed mb-6">Shifting US conversational abstractions into declarative database management vernacular for LATAM engineering teams.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-600">
+                {t.subscriberOnly}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-ink-700 bg-ink-900/20 py-16">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <h3 className="font-display text-2xl text-bone-100 mb-3">{t.newsletterTitle}</h3>
+          <p className="text-sm text-bone-500 mb-6">{t.newsletterDesc}</p>
+          <form onSubmit={(e) => { e.preventDefault(); alert('Subscribed successfully.'); }} className="flex gap-2 max-w-md mx-auto">
+            <input 
+              type="email" 
+              required 
+              placeholder="name@company.com" 
+              className="bg-ink-950 border border-ink-700 px-4 py-2 text-sm text-bone-100 focus:outline-none focus:border-signal-gold flex-1 font-mono"
+            />
+            <button 
+              type="submit" 
+              className="bg-ink-900 border border-ink-700 px-5 py-2 font-mono text-xs text-bone-300 hover:border-signal-gold hover:text-signal-gold transition-colors cursor-pointer uppercase tracking-wider"
+            >
+              {t.subscribeBtn}
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <footer className="border-t border-ink-700">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 py-14">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <div>
+              <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
+              <p className="text-sm text-bone-500 mt-1">Audits &amp; native re-engineering.</p>
+              <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
+            </div>
+            <div className="font-mono text-xs text-bone-500">
+              {t.footerCopy}
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
