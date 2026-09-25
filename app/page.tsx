@@ -168,7 +168,8 @@ const TEARDOWN_CONTENT = {
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('de');
-  const t = UI_TEXT[lang];
+  const t = UI_TEXT[lang as keyof typeof UI_TEXT];
+  
 
   return (
     <>
