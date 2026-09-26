@@ -223,3 +223,179 @@ const AUDIT_CONTENT = {
     refinedIntent: 'Intenção Técnica Refinada'
   }
 };
+
+// ============================================================================
+// COMPONENT
+// ============================================================================
+export default function ResendAuditPage() {
+  const [lang, setLang] = useState('en');
+  const t = AUDIT_CONTENT[lang] || AUDIT_CONTENT.en;
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  return (
+    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950">
+      {/* Sticky Top Bar with Language Controls */}
+      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
+        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
+            ← VeraVox Main
+          </Link>
+
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 font-mono text-xs">
+              {['es', 'fr', 'de', 'it', 'pt', 'en'].map((l) => (
+                <React.Fragment key={l}>
+                  <button
+                    onClick={() => setLang(l)}
+                    className={`bg-transparent border-0 p-0 cursor-pointer transition-colors hover:text-bone-200 ${
+                      lang === l ? 'text-signal-gold font-semibold' : 'text-bone-500'
+                    }`}
+                  >
+                    {l.toUpperCase()}
+                  </button>
+                  {l !== 'en' && <span className="text-ink-600">/</span>}
+                </React.Fragment>
+              ))}
+            </div>
+
+            <button 
+              onClick={handlePrint}
+              className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors cursor-pointer bg-transparent border-0"
+            >
+              Export PDF
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Memo Content */}
+      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32">
+        <header className="mb-20">
+          <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4">
+            <span>{t.navTag}</span>
+            <span className="text-ink-600">·</span>
+            <span className="text-bone-500">{t.date}</span>
+            <span className="text-ink-600">·</span>
+            <span className="text-bone-500">{t.readingTime}</span>
+          </div>
+
+          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100">
+            {t.title}
+          </h1>
+          <p className="text-lg md:text-xl text-bone-400 max-w-2xl mt-4 leading-relaxed">
+            {t.subtitle}
+          </p>
+
+          {/* Meta Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-ink-800">
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-ink-500 mb-2">Subject</div>
+              <div className="text-bone-200">{t.client}</div>
+            </div>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-ink-500 mb-2">Target Markets</div>
+              <div className="text-bone-200">{t.markets}</div>
+            </div>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-ink-500 mb-2">Primary Audience</div>
+              <div className="text-bone-200">{t.audience}</div>
+            </div>
+          </div>
+        </header>
+
+        {/* Section 1 */}
+        <section className="mb-20">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-signal-gold mb-8">
+            {t.s1Title}
+          </h2>
+          <h3 className="text-2xl font-medium mb-6">{t.overviewHeading}</h3>
+          <div className="space-y-6 text-bone-300 leading-relaxed max-w-3xl">
+            <p>{t.overviewBody}</p>
+            <p>{t.overviewSub}</p>
+          </div>
+        </section>
+
+        {/* Section 2 */}
+        <section className="mb-20">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-signal-gold mb-8">
+            {t.s2Title}
+          </h2>
+          
+          <div className="space-y-12">
+            {[
+              { 
+                title: t.b1Title, 
+                baseline: t.b1Baseline, 
+                agency: t.b1Agency, 
+                refined: t.b1Refined, 
+                body: t.b1Analysis 
+              },
+              { 
+                title: t.b2Title, 
+                baseline: t.b2Baseline, 
+                agency: t.b2Agency, 
+                refined: t.b2Refined, 
+                body: t.b2Analysis 
+              },
+              { 
+                title: t.b3Title, 
+                baseline: t.b3Baseline, 
+                agency: t.b3Agency, 
+                refined: t.b3Refined, 
+                body: t.b3Analysis 
+              }
+            ].map((block, idx) => (
+              <div key={idx} className="bg-ink-900 p-8 border border-ink-800 rounded-sm">
+                <h3 className="font-medium text-lg mb-6 text-bone-100">{block.title}</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 pb-6 border-b border-ink-800 font-mono text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-ink-500 mb-1">{t.usBaseline}</div>
+                    <div className="text-bone-300 italic">{block.baseline}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-ink-500 mb-1">{t.tradAgency}</div>
+                    <div className="text-bone-400 whitespace-pre-line">{block.agency}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-signal-gold mb-1">{t.refinedIntent}</div>
+                    <div className="text-signal-gold whitespace-pre-line">{block.refined}</div>
+                  </div>
+                </div>
+
+                <p className="text-bone-400 leading-relaxed">{block.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section 3 */}
+        <section className="mb-24">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-signal-gold mb-8">
+            {t.s3Title}
+          </h2>
+          <div className="border-l-2 border-signal-green pl-6 py-2">
+            <h3 className="font-medium text-lg mb-4">{t.s3Heading}</h3>
+            <p className="text-bone-300 leading-relaxed max-w-3xl">{t.s3Body}</p>
+          </div>
+        </section>
+
+        {/* Footer / Return Directory Link */}
+        <footer className="mt-32 pt-16 border-t border-ink-800 flex justify-between items-center">
+          <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
+            {t.returnDir}
+          </Link>
+          <button 
+            onClick={handlePrint}
+            className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors cursor-pointer bg-transparent border-0"
+          >
+            Export PDF
+          </button>
+        </footer>
+      </main>
+    </div>
+  );
+}
