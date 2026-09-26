@@ -139,7 +139,7 @@ const AUDIT_CONTENT = {
     b2Analysis: '"Reach humans" funziona in inglese grazie allo stile diretto dei fondatori. Tradotto parola per parola, "raggiungere umani" risulta bizzarro per i buyer B2B internazionali. I responsabili dell’ingegneria valutano l’infrastruttura sulla recapitabilità in inbox, non sulle sensazioni.',
     b3Title: '03 / La Call to Action Principale (CTA)',
     b3Analysis: 'Verbi passivi come "Iniziare" non offrono alcun impulso tecnico per i buyer engineering. Gli utenti ad alto intento non cercano un flusso di registrazione generico, ma utilità immediata come generare una API key o testare una chiamata.',
-    s3Title: 'Sezione 3 / Audit delle Superfici Applicate',
+    s3Title: 'Section 3 / Audit delle Superfici Applicate',
     s3Heading: '01 / Integrazione React Email',
     s3Body: 'L’integrazione nativa con React Email è il fossato difensivo di Resend. Nel localizzare questa documentazione, il messaggio deve preservare il rigore dell’architettura basata su componenti. La traduzione letterale fallisce qui poiché termini come "templating engine" hanno connotazioni diverse nel software enterprise europeo.',
     returnDir: '← Torna al Direttorio',
@@ -160,17 +160,17 @@ const AUDIT_CONTENT = {
     overviewHeading: 'Contexto e Objetivo',
     overviewBody: 'No Vale do Silício, a sobriedade é posicionamento. Termos informais como "email" ou "alcançar humanos" sinalizam simplicidade. Contudo, quando a infraestrutura para desenvolvedores se expande para LATAM e Europa, traduções literais de agências removem esse prestígio, transformando ferramentas técnicas em simples clientes de e-mail.',
     overviewSub: 'Esta auditoria avalia três pontos críticos na camada de aquisição da Resend, contrastando a intenção original dos EUA com o resultado de agências tradicionais e o posicionamento técnico nativo.',
-    s2Title: 'Seção 2 / Desmontagem Estrutural de Aquisição',
+    s2Title: 'Section 2 / Desmontagem Estrutural de Aquisição',
     b1Title: '01 / O Título Principal (H1)',
     b1Analysis: 'Na cultura tech dos EUA, "email" é um atalho reconhecido para infraestrutura de entrega backend. Traduzido literalmente como "correio eletrônico", desvia a categoria do produto para clientes webmail de consumo. Inserir "API" restaura o prestígio da categoria e captura buscas regionais de alta intenção.',
     b2Title: '02 / A Proposta de Valor Central (H2)',
     b2Analysis: '"Reach humans" funciona em inglês porque o texto direto do fundador soa autêntico. Traduzido palavra por palavra, "alcançar humanos" soa estranho para compradores B2B internacionais. Líderes de engenharia avaliam infraestrutura pela entregabilidade na caixa de entrada, não por intuição.',
     b3Title: '03 / A Chamada para Ação Principal (CTA)',
     b3Analysis: 'Verbos passivos como "Começar" não possuem impulso técnico para compradores de engenharia. Usuários de alta intenção não querem fluxos genéricos de cadastro; buscam utilidade imediata, como gerar uma chave de API ou testar uma requisição.',
-    s3Title: 'Seção 3 / Auditoria de Superfícies Aplicadas',
+    s3Title: 'Section 3 / Auditoria de Superfícies Aplicadas',
     s3Heading: '01 / Integração com React Email',
     s3Body: 'A integração nativa da Resend com React Email é sua vantagem técnica definitiva. Ao localizá-la, a mensagem deve preservar o rigor da arquitetura baseada em componentes. A tradução literal falha aqui porque termos como "engine de templates" possuem conotações distintas no mercado empresarial europeu.',
-    returnDir: '← Voltar ao Diretório',
+    returnDir: '← Voltar ao Diretorio',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
     refinedIntent: 'Intenção Técnica Refinada'
@@ -194,7 +194,7 @@ export default function ResendAuditPage() {
       <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
-            ← VeraVox Main
+            {t.returnDir}
           </Link>
 
           <div className="flex items-center gap-6">
@@ -235,7 +235,7 @@ export default function ResendAuditPage() {
             <span className="text-bone-500">{t.readingTime}</span>
           </div>
 
-            <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100">
+          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100">
             {t.title}
           </h1>
           <p className="text-lg md:text-xl text-bone-400 max-w-2xl mt-4 leading-relaxed">
