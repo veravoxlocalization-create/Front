@@ -222,7 +222,7 @@ const AUDIT_CONTENT = {
         tradAgency: 'Resultado de Agência Tradicional',
     refinedIntent: 'Intenção Técnica Refinada', // <-- Add this comma
   }
-};
+}
 
 
 // ============================================================================
