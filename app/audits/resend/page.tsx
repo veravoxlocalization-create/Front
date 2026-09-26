@@ -235,7 +235,7 @@ export default function ResendAuditPage() {
             <span className="text-bone-500">{t.readingTime}</span>
           </div>
 
-          <h1           <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4">
+          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4">
             {t.title}
           </h1>
           <p className="text-lg text-bone-300 mb-10">
@@ -258,7 +258,6 @@ export default function ResendAuditPage() {
           </div>
         </header>
 
-        
         {/* Section 1 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
@@ -317,7 +316,7 @@ export default function ResendAuditPage() {
             </p>
           </div>
 
-                    {/* Block 02 */}
+          {/* Block 02 */}
           <div className="mb-16">
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
               {t.b2Title}
@@ -351,7 +350,6 @@ export default function ResendAuditPage() {
             </p>
           </div>
 
-          
           {/* Block 03 */}
           <div>
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
@@ -408,6 +406,6 @@ export default function ResendAuditPage() {
           </Link>
         </div>
       </main>
-      </div>
+    </div>
   );
-}
+        }
