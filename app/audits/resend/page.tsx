@@ -219,10 +219,11 @@ const AUDIT_CONTENT = {
     s3Body: 'A integração nativa da Resend com React Email é sua vantagem técnica definitiva. Ao localizá-la, a mensagem deve preservar o rigor da arquitetura baseada em componentes. A tradução literal falha aqui porque termos como "engine de templates" possuem conotações distintas no mercado empresarial europeo.',
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
-    tradAgency: 'Resultado de Agência Tradicional',
-    refinedIntent: 'Intenção Técnica Refinada'
+        tradAgency: 'Resultado de Agência Tradicional',
+    refinedIntent: 'Intenção Técnica Refinada', // <-- Add this comma
   }
 };
+
 
 // ============================================================================
 // COMPONENT
