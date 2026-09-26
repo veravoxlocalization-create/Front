@@ -235,4 +235,93 @@ export default function ResendAuditPage() {
             <span className="text-bone-500">{t.readingTime}</span>
           </div>
 
-          <h1 className="font-display font-medium text-4xl md:text-5xl text-b
+            <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100">
+            {t.title}
+          </h1>
+          <p className="text-lg md:text-xl text-bone-400 max-w-2xl mt-4 leading-relaxed">
+            {t.subtitle}
+          </p>
+
+          {/* Meta Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-ink-800">
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-ink-500 mb-2">Subject</div>
+              <div className="text-bone-200">{t.client}</div>
+            </div>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-ink-500 mb-2">Target Markets</div>
+              <div className="text-bone-200">{t.markets}</div>
+            </div>
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-ink-500 mb-2">Primary Audience</div>
+              <div className="text-bone-200">{t.audience}</div>
+            </div>
+          </div>
+        </header>
+
+        {/* Section 1 */}
+        <section className="mb-20">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-signal-gold mb-8">
+            {t.s1Title}
+          </h2>
+          <h3 className="text-2xl font-medium mb-6">{t.overviewHeading}</h3>
+          <div className="space-y-6 text-bone-300 leading-relaxed max-w-3xl">
+            <p>{t.overviewBody}</p>
+            <p>{t.overviewSub}</p>
+          </div>
+        </section>
+
+        {/* Section 2 */}
+        <section className="mb-20">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-signal-gold mb-8">
+            {t.s2Title}
+          </h2>
+          
+          <div className="space-y-12">
+            {[
+              { title: t.b1Title, body: t.b1Analysis },
+              { title: t.b2Title, body: t.b2Analysis },
+              { title: t.b3Title, body: t.b3Analysis }
+            ].map((block, idx) => (
+              <div key={idx} className="bg-ink-900 p-8 border border-ink-800 rounded-sm">
+                <h3 className="font-medium text-lg mb-4 text-bone-100">{block.title}</h3>
+                <p className="text-bone-400 leading-relaxed">{block.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section 3 */}
+        <section className="mb-24">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-signal-gold mb-8">
+            {t.s3Title}
+          </h2>
+          <div className="border-l-2 border-signal-green pl-6 py-2">
+            <h3 className="font-medium text-lg mb-4">{t.s3Heading}</h3>
+            <p className="text-bone-300 leading-relaxed max-w-3xl">{t.s3Body}</p>
+          </div>
+        </section>
+
+        {/* SEO Citation / Social Proof Block */}
+        <section className="mt-32 pt-16 border-t border-ink-800 text-center flex flex-col items-center">
+          <h2 className="font-medium text-xl mb-4 text-bone-100">
+            Reference the Baseline
+          </h2>
+          <p className="text-bone-400 max-w-lg mb-8 leading-relaxed">
+            This audit is an independent teardown. To examine how these positioning frameworks are currently structured in production, review the primary source material.
+          </p>
+
+          {/* Direct Outbound Link */}
+          <a
+            href="https://resend.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-12 px-8 font-mono text-xs uppercase tracking-widest bg-bone-100 text-ink-950 hover:bg-signal-gold transition-colors font-semibold"
+          >
+            Visit Resend.com →
+          </a>
+        </section>
+      </main>
+    </div>
+  );
+}
