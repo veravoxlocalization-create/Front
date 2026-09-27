@@ -335,3 +335,22 @@ export default function VercelAuditPage() {
           </div>
 
           <div
+          className="mt-6 pt-4 border-t border-bone-800/80 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-3 bg-bone-950/50 border border-bone-800/50 font-mono text-xs">
+              <p className="text-[10px] uppercase tracking-widest text-bone-500 mb-1">
+                {t.technicalAccuracy || "Technical Precision"}
+              </p>
+              <p className="text-bone-200 font-medium">100% Intent Retention</p>
+            </div>
+            
+            <div className="p-3 bg-bone-950/50 border border-bone-800/50 font-mono text-xs">
+              <p className="text-[10px] uppercase tracking-widest text-bone-500 mb-1">
+                {t.toneAlignment || "Tone Alignment"}
+              </p>
+              <p className="text-signal-gold font-medium">B2B Developer Focused</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
