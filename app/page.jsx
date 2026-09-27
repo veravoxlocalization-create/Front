@@ -34,12 +34,15 @@ const UI_TEXT = {
     auditLibDesc: 'Analysen zur Lokalisierungsintegrität und semantischen Konsistenz von B2B-Infrastrukturen.',
     freeAccess: 'Öffentlicher Zugriff',
     memo4: 'Memo Nr. 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Auswertung der technischen Intent-Verteilung auf regionalen Konversionsflächen. Gegenüberstellung der US-Basisausrichtung gegenüber traditionellen Agenturausgaben.',
-    readMemo: 'Resend-Audit lesen →',
-    premium: 'Premium',
     memo5: 'Memo Nr. 05',
     memo6: 'Memo Nr. 06',
+    memo7: 'Memo Nr. 07',
+    memo8: 'Memo Nr. 08',
+    memo9: 'Memo Nr. 09',
+    resendTitle: 'Resend',
+    resendDesc: 'Auswertung der technischen Intent-Verteilung auf regionalen Konversionsflächen. Gegenüberstellung der US-Basisausrichtung gegenüber traditionellen Agenturausgaben.',
+    readMemo: 'Audit lesen →',
+    premium: 'Premium',
     subscriberOnly: 'Nur für Abonnenten',
     footerSub: 'Strukturelle Textanpassung für europäische Tech-Märkte (ES | FR | DE | IT | PT).',
     footerCopy: '© 2026 VeraVox — alle Texte auditiert, keiner davon übersetzt',
@@ -78,12 +81,15 @@ const UI_TEXT = {
     auditLibDesc: 'Análisis sobre la integridad de localización y la consistencia semántica en plataformas B2B.',
     freeAccess: 'Acceso libre',
     memo4: 'Memo N° 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Evaluación de la intención técnica en superficies de conversión regionales. Contraste de la intención base de EE. UU. frente al enfoque de agencias tradicionales.',
-    readMemo: 'Leer auditoría Resend →',
-    premium: 'Premium',
     memo5: 'Memo N° 05',
     memo6: 'Memo N° 06',
+    memo7: 'Memo N° 07',
+    memo8: 'Memo N° 08',
+    memo9: 'Memo N° 09',
+    resendTitle: 'Resend',
+    resendDesc: 'Evaluación de la intención técnica en superficies de conversión regionales. Contraste de la intención base de EE. UU. frente al enfoque de agencias tradicionales.',
+    readMemo: 'Leer auditoría →',
+    premium: 'Premium',
     subscriberOnly: 'Exclusivo para suscriptores',
     footerSub: 'Adaptación estructural de textos para mercados tecnológicos (ES | FR | DE | IT | PT).',
     footerCopy: '© 2026 VeraVox — todo el contenido auditado, ninguno traducido',
@@ -122,12 +128,15 @@ const UI_TEXT = {
     auditLibDesc: 'Analyses de l’intégrité de localisation et de la cohérence sémantique des environnements B2B.',
     freeAccess: 'Accès libre',
     memo4: 'Mémo n° 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Évaluation de l’intention technique sur les surfaces de conversion régionales. Contraste entre intention américaine et agences traditionnelles.',
-    readMemo: 'Lire l’audit Resend →',
-    premium: 'Premium',
     memo5: 'Mémo n° 05',
     memo6: 'Mémo n° 06',
+    memo7: 'Mémo n° 07',
+    memo8: 'Mémo n° 08',
+    memo9: 'Mémo n° 09',
+    resendTitle: 'Resend',
+    resendDesc: 'Évaluation de l’intention technique sur les surfaces de conversion régionales. Contraste entre intention américaine et agences traditionnelles.',
+    readMemo: 'Lire l’audit →',
+    premium: 'Premium',
     subscriberOnly: 'Exclusif abonnés',
     footerSub: 'Adaptation textuelle structurelle pour les marchés tech (ES | FR | DE | IT | PT).',
     footerCopy: '© 2026 VeraVox — tout le contenu audité, aucun traduit',
@@ -166,12 +175,15 @@ const UI_TEXT = {
     auditLibDesc: 'Memorandum completi che valutano l’integrità della localizzazione e la coerenza semantica.',
     freeAccess: 'Accesso libero',
     memo4: 'Memo N. 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Valutazione dell’intento tecnico sulle superfici di conversione regionali rispetto agli standard tradizionali.',
-    readMemo: 'Leggi l’audit di Resend →',
-    premium: 'Premium',
     memo5: 'Memo N. 05',
     memo6: 'Memo N. 06',
+    memo7: 'Memo N. 07',
+    memo8: 'Memo N. 08',
+    memo9: 'Memo N. 09',
+    resendTitle: 'Resend',
+    resendDesc: 'Valutazione dell’intento tecnico sulle superfici di conversione regionali rispetto agli standard tradizionali.',
+    readMemo: 'Leggi l’audit →',
+    premium: 'Premium',
     subscriberOnly: 'Riservato agli abbonati',
     footerSub: 'Adattamento strutturale dei testi per i mercati tecnologici europei (ES | FR | DE | IT | PT).',
     footerCopy: '© 2026 VeraVox — tutti i contenuti auditati, nessuno tradotto',
@@ -210,12 +222,15 @@ const UI_TEXT = {
     auditLibDesc: 'Memorandos completos avaliando a integridade de localização e consistência semântica em superfícies B2B.',
     freeAccess: 'Acesso Livre',
     memo4: 'Memo Nº 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Avaliação da intenção técnica em superfícies de conversão regionais e contraste com agências tradicionais.',
-    readMemo: 'Ler auditoria da Resend →',
-    premium: 'Premium',
     memo5: 'Memo Nº 05',
     memo6: 'Memo Nº 06',
+    memo7: 'Memo Nº 07',
+    memo8: 'Memo Nº 08',
+    memo9: 'Memo Nº 09',
+    resendTitle: 'Resend',
+    resendDesc: 'Avaliação da intenção técnica em superfícies de conversão regionais e contraste com agências tradicionais.',
+    readMemo: 'Ler auditoria →',
+    premium: 'Premium',
     subscriberOnly: 'Exclusivo para assinantes',
     footerSub: 'Adaptação estrutural de texto para mercados tecnológicos europeus (ES | FR | DE | IT | PT).',
     footerCopy: '© 2026 VeraVox — todo o conteúdo auditado, nenhum traduzido',
@@ -254,12 +269,15 @@ const UI_TEXT = {
     auditLibDesc: 'Full-length memorandums evaluating localization integrity and semantic consistency across B2B surfaces.',
     freeAccess: 'Free Access',
     memo4: 'Memo No. 04',
-    resendTitle: 'Resend',
-    resendDesc: 'Evaluating technical intent across regional conversion surfaces. Contrasting US baseline intent against traditional agency output.',
-    readMemo: 'Read Resend audit →',
-    premium: 'Premium',
     memo5: 'Memo No. 05',
     memo6: 'Memo No. 06',
+    memo7: 'Memo No. 07',
+    memo8: 'Memo No. 08',
+    memo9: 'Memo No. 09',
+    resendTitle: 'Resend',
+    resendDesc: 'Evaluating technical intent across regional conversion surfaces. Contrasting US baseline intent against traditional agency output.',
+    readMemo: 'Read audit →',
+    premium: 'Premium',
     subscriberOnly: 'Subscriber-only',
     footerSub: 'Structural copy adaptation for European tech markets (ES | FR | DE | IT | PT).',
     footerCopy: '© 2026 VeraVox — all copy audited, none of it translated',
@@ -270,8 +288,6 @@ const UI_TEXT = {
     overrideBtn: 'View in Local Language',
   }
 };
-
-  
 
 const TEARDOWN_CONTENT = {
   label: 'asset.headline — us-en → de-de',
@@ -319,17 +335,16 @@ export default function Home() {
       <header className="border-b border-ink-700">
         <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <div className="flex items-baseline gap-6">
-  <Link href="#top" className="font-display font-semibold text-lg tracking-tight text-bone-100">VeraVox</Link>
-  <Link href="/about" className="hidden md:block font-mono text-xs text-bone-500 hover:text-signal-gold transition-colors">{t.aboutLink}</Link>
-</div>
-
+            <Link href="#top" className="font-display font-semibold text-lg tracking-tight text-bone-100">VeraVox</Link>
+            <Link href="/about" className="hidden md:block font-mono text-xs text-bone-500 hover:text-signal-gold transition-colors">{t.aboutLink}</Link>
+          </div>
 
           <div className="flex items-center gap-2 md:gap-3 font-mono text-xs">
             {['es', 'fr', 'de', 'it', 'pt'].map((l) => (
               <React.Fragment key={l}>
                 <button
                   onClick={() => setLang(l)}
-                                    className={`bg-transparent border-0 p-0 cursor-pointer transition-colors hover:text-bone-300 ${lang === l ? 'text-signal-gold' : 'text-bone-500'}`}
+                  className={`bg-transparent border-0 p-0 cursor-pointer transition-colors hover:text-bone-300 ${lang === l ? 'text-signal-gold' : 'text-bone-500'}`}
                 >
                   {l.toUpperCase()}
                 </button>
@@ -418,13 +433,11 @@ export default function Home() {
             </div>
             {lang !== 'de' && (
               <button 
-  onClick={() => setShowInline(!showInline)}
-  className="font-mono text-xs text-signal-gold bg-transparent border border-signal-gold/30 px-3 py-1.5 cursor-pointer hover:border-signal-gold transition-colors self-start sm:self-auto rounded-sm"
->
-  {showInline ? `✕ ${t.toggleActive}` : `+ ${t.toggleInactive}`}
-</button>
-
-
+                onClick={() => setShowInline(!showInline)}
+                className="font-mono text-xs text-signal-gold bg-transparent border border-signal-gold/30 px-3 py-1.5 cursor-pointer hover:border-signal-gold transition-colors self-start sm:self-auto rounded-sm"
+              >
+                {showInline ? `✕ ${t.toggleActive}` : `+ ${t.toggleInactive}`}
+              </button>
             )}
           </div>
           
@@ -494,48 +507,96 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Memo 04: Resend */}
             <Link href="/audits/resend" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
                   <span className="font-mono text-xs text-bone-500">{t.memo4}</span>
                 </div>
-                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">{t.resendTitle}</h3>
-                <p className="text-sm text-bone-500 leading-relaxed mb-6">{t.resendDesc}</p>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">Resend</h3>
+                <p className="text-sm text-bone-500 leading-relaxed mb-6">Technical intent evaluation on transactional email infrastructure and deliverability positioning.</p>
               </div>
               <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
                 {t.readMemo}
               </div>
             </Link>
 
-            <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
+            {/* Memo 05: Vercel */}
+            <Link href="/audits/vercel" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
                   <span className="font-mono text-xs text-bone-500">{t.memo5}</span>
                 </div>
-                <h3 className="font-display text-xl text-bone-300 mb-2">Vercel</h3>
-                <p className="text-sm text-bone-600 leading-relaxed mb-6">Deconstructing enterprise caching documentation for strict DACH compliance and operational rigor.</p>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">Vercel</h3>
+                <p className="text-sm text-bone-500 leading-relaxed mb-6">Deconstructing enterprise caching &amp; edge network narratives for strict DACH operational compliance.</p>
               </div>
-              <div className="font-mono text-xs text-bone-600">
-                {t.subscriberOnly}
+              <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
+                {t.readMemo}
               </div>
-            </div>
+            </Link>
 
-            <div className="border border-ink-700 bg-ink-900/50 p-6 flex flex-col justify-between h-full opacity-75">
+            {/* Memo 06: Supabase */}
+            <Link href="/audits/supabase" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="font-mono text-xs text-bone-500 uppercase tracking-wider">{t.premium}</span>
+                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
                   <span className="font-mono text-xs text-bone-500">{t.memo6}</span>
                 </div>
-                <h3 className="font-display text-xl text-bone-300 mb-2">Supabase</h3>
-                <p className="text-sm text-bone-600 leading-relaxed mb-6">Shifting US conversational abstractions into declarative database management vernacular for LATAM engineering teams.</p>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">Supabase</h3>
+                <p className="text-sm text-bone-500 leading-relaxed mb-6">Shifting US conversational abstractions into declarative database management vernacular for LATAM &amp; EU engineering leads.</p>
               </div>
-              <div className="font-mono text-xs text-bone-600">
-                {t.subscriberOnly}
+              <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
+                {t.readMemo}
               </div>
-            </div>
+            </Link>
+
+            {/* Memo 07: Stripe */}
+            <Link href="/audits/stripe" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo7}</span>
+                </div>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">Stripe</h3>
+                <p className="text-sm text-bone-500 leading-relaxed mb-6">Re-engineering US fintech copy for European SEPA, PSD2, and SCA regulatory compliance standards.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
+                {t.readMemo}
+              </div>
+            </Link>
+
+            {/* Memo 08: PostHog */}
+            <Link href="/audits/posthog" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo8}</span>
+                </div>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">PostHog</h3>
+                <p className="text-sm text-bone-500 leading-relaxed mb-6">Adapting developer analytics &amp; feature flag narratives for strict DSGVO/GDPR privacy-conscious engineering teams.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
+                {t.readMemo}
+              </div>
+            </Link>
+
+            {/* Memo 09: Clerk */}
+            <Link href="/audits/clerk" className="group block border border-ink-700 bg-ink-900 p-6 hover:border-signal-gold transition-colors flex flex-col justify-between h-full">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="font-mono text-xs text-signal-green uppercase tracking-wider">{t.freeAccess}</span>
+                  <span className="font-mono text-xs text-bone-500">{t.memo9}</span>
+                </div>
+                <h3 className="font-display text-xl text-bone-100 mb-2 group-hover:text-signal-gold transition-colors">Clerk</h3>
+                <p className="text-sm text-bone-500 leading-relaxed mb-6">Adapting identity &amp; user management copy from friction-free US growth language to European security frameworks.</p>
+              </div>
+              <div className="font-mono text-xs text-bone-300 flex items-center gap-2">
+                {t.readMemo}
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -576,15 +637,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-14">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
-  <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
-  <div className="flex items-center gap-4 mt-1">
-    <p className="text-sm text-bone-500">Audits &amp; native re-engineering.</p>
-    <span className="text-ink-700">|</span>
-    <Link href="/about" className="text-sm font-mono text-bone-400 hover:text-signal-gold transition-colors">{t.aboutLink}</Link>
-  </div>
-  <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
-</div>
-
+              <p className="font-display font-semibold text-lg text-bone-100">VeraVox Localization</p>
+              <div className="flex items-center gap-4 mt-1">
+                <p className="text-sm text-bone-500">Audits &amp; native re-engineering.</p>
+                <span className="text-ink-700">|</span>
+                <Link href="/about" className="text-sm font-mono text-bone-400 hover:text-signal-gold transition-colors">{t.aboutLink}</Link>
+              </div>
+              <p className="text-sm text-bone-500 mt-4 max-w-sm leading-relaxed">{t.footerSub}</p>
+            </div>
 
             <div className="font-mono text-xs text-bone-500">
               {t.footerCopy}
