@@ -381,4 +381,10 @@ export default function PostHogAuditPage() {
         </section>
         
         <div className="mt-32 pt-8 border-t border-ink-700">
-          <Link href="/" className="font-mono text-[10px] uppe
+          <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-400 hover:text-signal-gold transition-colors inline-flex items-center gap-2">
+            <span className="text-signal-gold">←</span> {t.backHome || "Return to Overview"}
+          </Link>
+        </div>
+      </div>
+    </main>
+    
