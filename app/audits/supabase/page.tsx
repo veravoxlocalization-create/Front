@@ -356,33 +356,36 @@ export default function SupabaseAuditPage() {
               <div className="border-l-2 border-signal-gold pl-4 py-1">
                 <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
                 <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Aprovisiona tu base de datos Postgres y autenticación al instante.</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Postgres-Datenbank und Authentifizierung sofort bereitstellen.</li>
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Aprovisionar base de datos / Probar API</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Postgres-Instanz anlegen / Kostenlos testen</li>
                 </ul>
               </div>
             </div>
 
             <p className="text-bone-300 leading-relaxed text-sm">
-              {t.b3Analysis || t.supabaseAnalysis}
+              {t.b3Analysis}
             </p>
           </div>
+        </section>
 
-          <div className="mt-6 pt-4 border-t border-bone-800/80 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-3 bg-bone-950/50 border border-bone-800/50 font-mono text-xs">
-              <p className="text-[10px] uppercase tracking-widest text-bone-500 mb-1">
-                {t.technicalAccuracy || "Technical Precision"}
-              </p>
-              <p className="text-bone-200 font-medium">100% Intent Retention</p>
-            </div>
-            
-            <div className="p-3 bg-bone-950/50 border border-bone-800/50 font-mono text-xs">
-              <p className="text-[10px] uppercase tracking-widest text-bone-500 mb-1">
-                {t.toneAlignment || "Tone Alignment"}
-              </p>
-              <p className="text-signal-gold font-medium">Postgres & Backend Focused</p>
-            </div>
+        <section className="mb-20">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
+            {t.s3Title}
           </div>
+          <div className="space-y-6 text-bone-300 leading-relaxed">
+            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
+            <p className="text-sm">
+              {t.s3Body}
+            </p>
+          </div>
+        </section>
+        
+        <div className="mt-32 pt-8 border-t border-ink-700">
+          <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
+            {t.returnDir}
+          </Link>
         </div>
-      </div>
-    </section>
-    
+      </main>
+    </div>
+  );
+}
