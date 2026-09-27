@@ -369,4 +369,63 @@ export default function StripeAuditPage() {
         </section>
 
         <section className="mb-20">
-          <div
+          <div className="p-6 md:p-8 bg-bone-950/40 border border-bone-800 rounded-none">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-bone-800/60">
+              <div className="flex items-center space-x-3">
+                <span className="font-mono text-xs text-signal-gold font-bold uppercase tracking-widest px-2 py-0.5 bg-signal-gold/10 border border-signal-gold/30">
+                  Case 03
+                </span>
+                <h3 className="text-lg font-mono font-semibold text-bone-100">Stripe</h3>
+              </div>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500">
+                Fintech / Infrastructure
+              </span>
+            </div>
+
+            {/* Comparison Details */}
+            <div className="space-y-6">
+              <div>
+                <p className="text-bone-300 italic">"Financial infrastructure for the internet."</p>
+              </div>
+
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 mr-2">DE:</span> Finanzielle Infrastruktur für das Internet.</li>
+                  <li><span className="text-bone-500 mr-2">ES:</span> Infraestructura financiera para Internet.</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Skalierbare Zahlungsinfrastruktur und Finanz-APIs für globale Digitalunternehmen.</li>
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Plataforma global de pagos e infraestructura financiera para negocios digitales.</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-bone-300 leading-relaxed text-sm mt-6">
+              {t.stripeAnalysis || t.b4Analysis}
+            </p>
+
+            {/* Metrics */}
+            <div className="mt-6 pt-4 border-t border-bone-800/80 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-3 bg-bone-950/50 border border-bone-800/50 font-mono text-xs">
+                <p className="text-[10px] uppercase tracking-widest text-bone-500 mb-1">
+                  {t.technicalAccuracy || "Technical Precision"}
+                </p>
+                <p className="text-bone-200 font-medium">100% Intent Retention</p>
+              </div>
+
+              <div className="p-3 bg-bone-950/50 border border-bone-800/50 font-mono text-xs">
+                <p className="text-[10px] uppercase tracking-widest text-bone-500 mb-1">
+                  {t.toneAlignment || "Tone Alignment"}
+                </p>
+                <p className="text-signal-gold font-medium">Fintech & Enterprise Grade</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
