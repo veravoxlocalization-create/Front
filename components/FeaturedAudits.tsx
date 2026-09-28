@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import auditData from '@/public/data/audits.json';
+import { auditData } from '../data/audits';
+
 
 export default function FeaturedAudits() {
   const [activeLangs, setActiveLangs] = useState<Record<string, string>>({
