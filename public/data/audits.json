@@ -1,0 +1,101 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-09-28",
+  "audits": [
+    {
+      "id": "resend",
+      "brand": "Resend",
+      "surface": "Developer Email Infrastructure",
+      "usLiveBaseline": {
+        "h1": "Email for developers",
+        "subheadline": "The best way to reach humans instead of spam folders. Deliver transactional and marketing emails at scale."
+      },
+      "variants": {
+        "ES": {
+          "h1": "Email para desarrolladores.",
+          "subheadline": "API para Tokens de Auth. Alertas de Sistema y campañas. Reputacion de IP optimizada, baja latencia y cumplimiento GDPR."
+        },
+        "DE": {
+          "h1": "E-Mail-Infrastruktur für Entwickler.",
+          "subheadline": "API für Auth-Tokens, System-Alerts und Kampagnen. Optimierte IP-Reputation, geringe Latenz und DSGVO-Konformität."
+        }
+      }
+    },
+    {
+      "id": "vercel",
+      "brand": "Vercel",
+      "surface": "Web Application & AI Infrastructure",
+      "usLiveBaseline": {
+        "h1": "Agentic Infrastructure",
+        "subheadline": "Build agents on infrastructure that thinks like them. Ship apps that scale from zero to millions instantly."
+      },
+      "variants": {
+        "FR": {
+          "h1": "Plateforme de déploiement pour applications web et IA.",
+          "subheadline": "Déployez frameworks et conteneurs en un commit. Exécution serverless, invalidation de cache instantanée er zéro downtime."
+        },
+        "IT": {
+          "h1": "Plattaforma di deployment per app web e IA.",
+          "subheadline": "Pubblica qualsiasi framework o container Al commit. Esecuzione serverless, gestione della cache e rollback senza downtime."
+        }
+      }
+    },
+    {
+      "id": "supabase",
+      "brand": "Supabase",
+      "surface": "Managed Postgres & Application APIs",
+      "usLiveBaseline": {
+        "h1": "Build in a weekend. Scale to millions.",
+        "subheadline": "Start your project with a Postgres database. Add Authentication, Data APIs, Edge Functions, Realtime Data, Storage, and Vector embeddings."
+      },
+      "variants": {
+        "EN": {
+          "h1": "Postgres database, Auth, and APIs in a single platform.",
+          "subheadline": "Complete relational control with Row Level Security and instant REST & GraphQL endpoints. Zero vendor lock-in."
+        },
+        "PT": {
+          "h1": "Postgres, Auth e APIs em uma única plataforma.",
+          "subheadline": "Controle relacional completo com Row Level Security e endpoints REST e GraphQL instantâneos Sem vendor lock-in."
+        }
+      }
+    },
+    {
+      "id": "stripe",
+      "brand": "Stripe",
+      "surface": "Global Payment Infrastructure & Billing",
+      "usLiveBaseline": {
+        "h1": "Financial infrastructure to grow your revenue.",
+        "subheadline": "Grow your business with the most comprehensive set of payments and financial tools."
+      },
+      "variants": {
+        "ES": {
+          "h1": "Infrastructure de pagos globales y facturacion por API.",
+          "subheadline": "Procesamiento de tarjetas, gestion de suscripciones y cumplimiento normativo PSD2 con integración SCA."
+        },
+        "FR": {
+          "h1": "Infrastructure de paiement globale et facturation par API.",
+          "subheadline": "Traitement des cartes, gestion des abonnements et conformité stricte aux normes DSP2 et SCA."
+        }
+      }
+    },
+    {
+      "id": "posthog",
+      "brand": "PostHog",
+      "surface": "All-in-One Developer Telemetry",
+      "usLiveBaseline": {
+        "h1": "Your product's context layer",
+        "subheadline": "PostHog ingests and stores your analytics, errors, replays, and business data so you and your agents can query and act on it."
+      },
+      "variants": {
+        "EN": {
+          "h1": "Product analytics, session replay, and feature flags in one stack.",
+          "subheadline": "Analyze user behavior, test features, and debug errors with full data residency control--replacing multiple single-purpose tools."
+        },
+        "IT": {
+          "h1": "Product analytics e registratione sessioni per team tecnici.",
+          "subheadline": "Riproduci le sessioni utente, individua bug di UX e gestisci le feature flag con pieno controllo sui dati e zero tracking di terze parti."
+        }
+      }
+    }
+  ]
+}
