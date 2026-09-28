@@ -1,0 +1,39 @@
+# VeraVox Positioning Audits Manifest (Verified 2026)
+
+## Methodology
+VeraVox eliminates fluff, unearned jargon, and hype cycles from US tech positioning, re-engineering hero copy into precise technical primitives for EU and LatAm engineering decision-makers.
+
+### 01. Resend (ES / DE)
+- Surface: Developer Email Infrastructure
+- ES H1: Email para desarrolladores.
+- ES Subheadline: API para Tokens de Auth. Alertas de Sistema y campañas. Reputacion de IP optimizada, baja latencia y cumplimiento GDPR.
+- DE H1: E-Mail-Infrastruktur für Entwickler.
+- DE Subheadline: API für Auth-Tokens, System-Alerts und Kampagnen. Optimierte IP-Reputation, geringe Latenz und DSGVO-Konformität.
+
+### 02. Vercel (FR / IT)
+- Surface: Web Application & AI Infrastructure
+- FR H1: Plateforme de déploiement pour applications web et IA.
+- FR Subheadline: Déployez frameworks et conteneurs en un commit. Exécution serverless, invalidation de cache instantanée er zéro downtime.
+- IT H1: Plattaforma di deployment per app web e IA.
+- IT Subheadline: Pubblica qualsiasi framework o container Al commit. Esecuzione serverless, gestione della cache e rollback senza downtime.
+
+### 03. Supabase (EN / PT)
+- Surface: Managed Postgres & Application APIs
+- EN H1: Postgres database, Auth, and APIs in a single platform.
+- EN Subheadline: Complete relational control with Row Level Security and instant REST & GraphQL endpoints. Zero vendor lock-in.
+- PT H1: Postgres, Auth e APIs em uma única plataforma.
+- PT Subheadline: Controle relacional completo com Row Level Security e endpoints REST e GraphQL instantâneos Sem vendor lock-in.
+
+### 04. Stripe (ES / FR)
+- Surface: Global Payment Infrastructure & Billing
+- ES H1: Infrastructure de pagos globales y facturacion por API.
+- ES Subheadline: Procesamiento de tarjetas, gestion de suscripciones y cumplimiento normativo PSD2 con integración SCA.
+- FR H1: Infrastructure de paiement globale et facturation par API.
+- FR Subheadline: Traitement des cartes, gestion des abonnements et conformité stricte aux normes DSP2 et SCA.
+
+### 05. PostHog (EN / IT)
+- Surface: All-in-One Developer Telemetry
+- EN H1: Product analytics, session replay, and feature flags in one stack.
+- EN Subheadline: Analyze user behavior, test features, and debug errors with full data residency control--replacing multiple single-purpose tools.
+- IT H1: Product analytics e registratione sessioni per team tecnici.
+- IT Subheadline: Riproduci le sessioni utente, individua bug di UX e gestisci le feature flag con pieno controllo sui dati e zero tracking di terze parti.
