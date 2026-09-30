@@ -25,8 +25,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Primary Call to Action (CTA)',
     b3Analysis: 'Generic CTAs like "Start your project" sound like a casual hobby workflow. B2B buyers respond to explicit database provisioning actions like "Provision Postgres Instance".',
     s3Title: 'Section 3 / Applied Surface Audits',
-    s3Heading: '01 / Realtime Replication & RLS Security Policies',
-    s3Body: 'Security policies written in SQL require exact terminological parity when explained in documentation. Agency mistranslations of security terms create compliance risks for European financial and healthcare SaaS teams.',
+    s3Heading: '01 / Row Level Security (RLS) & Multi-Tenant Data Isolation',
+    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
+    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
+    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
+    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
+    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
+    s3Analysis: 'Phrasing RLS as "securing data" makes it sound optional or trivial. In European compliance reviews, explicitly framing RLS as multi-tenant isolation via JWT claims satisfies CISO security requirements immediately.',
     returnDir: '← Return to Directory',
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
@@ -53,8 +58,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Llamada a la Acción Principal (CTA)',
     b3Analysis: 'Reemplazar "Crear proyecto" por acciones precisas de aprovisionamiento de bases de datos.',
     s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
-    s3Heading: '01 / Replicación en Tiempo Real y Políticas RLS',
-    s3Body: 'La traducción precisa de las políticas de seguridad a nivel de fila garantiza que los equipos de cumplimiento legal aprueben la migración.',
+    s3Heading: '01 / Seguridad RLS y Aislamiento Multinquilino',
+    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
+    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
+    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
+    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
+    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
+    s3Analysis: 'La traducción precisa de las políticas de seguridad a nivel de fila garantiza que los equipos de cumplimiento legal aprueben la migración.',
     returnDir: '← Volver al Directorio',
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
@@ -82,7 +92,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Anstelle von „Projekt starten“ generiert „Postgres-Instanz bereitstellen“ deutlich höhere Relevanz bei professionellen Entwicklern.',
     s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
     s3Heading: '01 / Echtzeit-Replikation & Row-Level Security',
-    s3Body: 'Präzise Fachbegriffe bei Zeilensicherheits-Regeln (RLS) sichern die Einhaltung europäischer Compliance-Vorgaben.',
+    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
+    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
+    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
+    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
+    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
+    s3Analysis: 'Präzise Fachbegriffe bei Zeilensicherheits-Regeln (RLS) sichern die Einhaltung europäischer Compliance-Vorgaben.',
     returnDir: '← Zurück zum Verzeichnis',
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
@@ -110,7 +125,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Privilégier un CTA explicite : "Provisionner une instance Postgres".',
     s3Title: 'Section 3 / Audit des Surfaces Appliquées',
     s3Heading: '01 / Sécurité RLS et Politiques d’Accès',
-    s3Body: 'Traduction rigoureuse des concepts de sécurité au niveau des lignes SQL pour garantir la conformité.',
+    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
+    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
+    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
+    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
+    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
+    s3Analysis: 'Traduction rigoureuse des concepts de sécurité au niveau des lignes SQL pour garantir la conformité.',
     returnDir: '← Retour au Répertoire',
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
@@ -138,7 +158,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Utilizzare un linguaggio orientato alla configurazione dell’infrastruttura.',
     s3Title: 'Sezione 3 / Audit Documentazione',
     s3Heading: '01 / Replicazione Realtime e RLS',
-    s3Body: 'Massima accuratezza nei termini SQL e nelle politiche di sicurezza.',
+    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
+    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
+    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
+    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
+    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
+    s3Analysis: 'Massima accuratezza nei termini SQL e nelle politiche di sicurezza.',
     returnDir: '← Torna al Direttorio',
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
@@ -161,12 +186,17 @@ const AUDIT_CONTENT = {
     b1Title: '01 / Título Principal (H1)',
     b1Analysis: 'Definição precisa de banco de dados relacional gerenciado e replicação em tempo real.',
     b2Title: '02 / Proposta de Valor (H2)',
-    b2Analysis: 'Enfase na liberdade de código aberto e controle total dos datos.',
+    b2Analysis: 'Ênfase na liberdade de código aberto e controle total dos dados.',
     b3Title: '03 / Chamada para Ação (CTA)',
     b3Analysis: 'Substituição por ações diretas de provisionamento de banco de dados.',
     s3Title: 'Seção 3 / Documentação Técnica',
     s3Heading: '01 / Políticas de Segurança a Nível de Linha (RLS)',
-    s3Body: 'Precisão absoluta na tradução de termos SQL e controle de acesso.',
+    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
+    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
+    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
+    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
+    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
+    s3Analysis: 'Precisão absoluta na tradução de termos SQL e controle de acesso.',
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
@@ -368,14 +398,42 @@ export default function SupabaseAuditPage() {
           </div>
         </section>
 
+        {/* Upgraded Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
           </div>
-          <div className="space-y-6 text-bone-300 leading-relaxed">
-            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
-            <p className="text-sm">
-              {t.s3Body}
+          
+          <div className="mb-12">
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
+              {t.s3Heading}
+            </h3>
+            
+            <div className="space-y-6 mb-8">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
+                <p className="text-bone-300 italic">{t.s3UsBaseline}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 mr-2">ES:</span> {t.s3TradAgencyEs}</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> {t.s3TradAgencyDe}</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> {t.s3RefinedEs}</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> {t.s3RefinedDe}</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-bone-300 leading-relaxed text-sm">
+              {t.s3Analysis}
             </p>
           </div>
         </section>
