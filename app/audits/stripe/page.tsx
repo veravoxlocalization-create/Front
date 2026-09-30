@@ -26,7 +26,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Generic "Start now" CTAs lack financial gravitas. Replacing them with direct portal account creation or API integration tests drives higher qualified merchant activation.',
     s3Title: 'Section 3 / Applied Surface Audits',
     s3Heading: '01 / Strong Customer Authentication (SCA) & 3D Secure 2',
-    s3Body: 'Documentation regarding 3DS2 mandates requires legal and technical precision to ensure engineering teams implement frictionless authentication flows.',
+    s3UsBaseline: 'Seamless 3D Secure authentication and PSD2 compliance built into Checkout.',
+    s3TradAgencyEs: 'Autenticación 3D Secure fluida y cumplimiento de PSD2 integrado en Checkout.',
+    s3TradAgencyDe: 'Nahtlose 3D-Secure-Authentifizierung und PSD2-Konformität in Checkout integriert.',
+    s3RefinedEs: 'Enrutamiento dinámico 3DS2 y cumplimiento normativo PSD2. Minimiza la fricción en la verificación sin degradar la tasa de autorización.',
+    s3RefinedDe: 'Dynamisches 3DS2-Routing und automatische PSD2-Konformität. Reduziert Verifizierungsabbrüche bei maximaler Autorisierungsrate.',
+    s3Analysis: 'Calling 3DS2 "seamless" triggers skepticism in EU payments engineering because 3DS2 inherently adds step-up friction. Highlighting dynamic routing and authorization rate optimization proves deep domain authority.',
     returnDir: '← Return to Directory',
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
@@ -54,7 +59,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Verbindliche CTAs wie „Live-Konto eröffnen / API testen“ ersetzen unpräzises „Jetzt starten“.',
     s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
     s3Heading: '01 / Strong Customer Authentication (SCA) & PSD2',
-    s3Body: 'Exakte Lokalisierung von 3DS2-Prozessen zur Vermeidung von Kaufabbrüchen im Checkout-Prozess.',
+    s3UsBaseline: 'Seamless 3D Secure authentication and PSD2 compliance built into Checkout.',
+    s3TradAgencyEs: 'Autenticación 3D Secure fluida y cumplimiento de PSD2 integrado en Checkout.',
+    s3TradAgencyDe: 'Nahtlose 3D-Secure-Authentifizierung und PSD2-Konformität in Checkout integriert.',
+    s3RefinedEs: 'Enrutamiento dinámico 3DS2 y cumplimiento normativo PSD2. Minimiza la fricción en la verificación sin degradar la tasa de autorización.',
+    s3RefinedDe: 'Dynamisches 3DS2-Routing und automatische PSD2-Konformität. Reduziert Verifizierungsabbrüche bei maximaler Autorisierungsrate.',
+    s3Analysis: 'Exakte Lokalisierung von 3DS2-Prozessen zur Vermeidung von Kaufabbrüchen im Checkout-Prozess.',
     returnDir: '← Zurück zum Verzeichnis',
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
@@ -82,7 +92,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Sustituir CTAs informales por acceso directo a la consola de integración.',
     s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
     s3Heading: '01 / Autenticación Reforzada de Clientes (SCA) y PSD2',
-    s3Body: 'Garantizar el máximo rigor técnico en los textos de integración de checkout.',
+    s3UsBaseline: 'Seamless 3D Secure authentication and PSD2 compliance built into Checkout.',
+    s3TradAgencyEs: 'Autenticación 3D Secure fluida y cumplimiento de PSD2 integrado en Checkout.',
+    s3TradAgencyDe: 'Nahtlose 3D-Secure-Authentifizierung und PSD2-Konformität in Checkout integriert.',
+    s3RefinedEs: 'Enrutamiento dinámico 3DS2 y cumplimiento normativo PSD2. Minimiza la fricción en la verificación sin degradar la tasa de autorización.',
+    s3RefinedDe: 'Dynamisches 3DS2-Routing und automatische PSD2-Konformität. Reduziert Verifizierungsabbrüche bei maximaler Autorisierungsrate.',
+    s3Analysis: 'Garantizar el máximo rigor técnico en los textos de integración de checkout.',
     returnDir: '← Volver al Directorio',
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
@@ -110,7 +125,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Privilégier "Créer un compte marchand" ou "Tester l’API de paiement".',
     s3Title: 'Section 3 / Audit des Surfaces Appliquées',
     s3Heading: '01 / Authentification Forte (SCA / DSP2)',
-    s3Body: 'Rigueur absolue sur les termes juridiques et monétiques.',
+    s3UsBaseline: 'Seamless 3D Secure authentication and PSD2 compliance built into Checkout.',
+    s3TradAgencyEs: 'Autenticación 3D Secure fluida y cumplimiento de PSD2 integrado en Checkout.',
+    s3TradAgencyDe: 'Nahtlose 3D-Secure-Authentifizierung und PSD2-Konformität in Checkout integriert.',
+    s3RefinedEs: 'Enrutamiento dinámico 3DS2 y cumplimiento normativo PSD2. Minimiza la fricción en la verificación sin degradar la tasa de autorización.',
+    s3RefinedDe: 'Dynamisches 3DS2-Routing und automatische PSD2-Konformität. Reduziert Verifizierungsabbrüche bei maximaler Autorisierungsrate.',
+    s3Analysis: 'Rigueur absolue sur les termes juridiques et monétiques.',
     returnDir: '← Retour au Répertoire',
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
@@ -138,7 +158,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Utilizzare terminologia professionale specifica per i servizi finanziari.',
     s3Title: 'Sezione 3 / Audit Documentazione',
     s3Heading: '01 / Autenticazione Forte del Cliente (SCA)',
-    s3Body: 'Chiarezza nei flussi di autenticazione 3D Secure 2.',
+    s3UsBaseline: 'Seamless 3D Secure authentication and PSD2 compliance built into Checkout.',
+    s3TradAgencyEs: 'Autenticación 3D Secure fluida y cumplimiento de PSD2 integrado en Checkout.',
+    s3TradAgencyDe: 'Nahtlose 3D-Secure-Authentifizierung und PSD2-Konformität in Checkout integriert.',
+    s3RefinedEs: 'Enrutamiento dinámico 3DS2 y cumplimiento normativo PSD2. Minimiza la fricción en la verificación sin degradar la tasa de autorización.',
+    s3RefinedDe: 'Dynamisches 3DS2-Routing und automatische PSD2-Konformität. Reduziert Verifizierungsabbrüche bei maximaler Autorisierungsrate.',
+    s3Analysis: 'Chiarezza nei flussi di autenticazione 3D Secure 2.',
     returnDir: '← Torna al Direttorio',
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
@@ -166,7 +191,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'CTAs focados na criação de contas corporativas e testes de API.',
     s3Title: 'Seção 3 / Documentação Técnica',
     s3Heading: '01 / Autenticação Forte do Cliente (SCA)',
-    s3Body: 'Precisão máxima nos protocolos de segurança de transações.',
+    s3UsBaseline: 'Seamless 3D Secure authentication and PSD2 compliance built into Checkout.',
+    s3TradAgencyEs: 'Autenticación 3D Secure fluida y cumplimiento de PSD2 integrado en Checkout.',
+    s3TradAgencyDe: 'Nahtlose 3D-Secure-Authentifizierung und PSD2-Konformität in Checkout integriert.',
+    s3RefinedEs: 'Enrutamiento dinámico 3DS2 y cumplimiento normativo PSD2. Minimiza la fricción en la verificación sin degradar la tasa de autorización.',
+    s3RefinedDe: 'Dynamisches 3DS2-Routing und automatische PSD2-Konformität. Reduziert Verifizierungsabbrüche bei maximaler Autorisierungsrate.',
+    s3Analysis: 'Precisão máxima nos protocolos de segurança de transações.',
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
@@ -368,14 +398,42 @@ export default function StripeAuditPage() {
           </div>
         </section>
 
+        {/* Upgraded Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
           </div>
-          <div className="space-y-6 text-bone-300 leading-relaxed">
-            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
-            <p className="text-sm">
-              {t.s3Body}
+          
+          <div className="mb-12">
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
+              {t.s3Heading}
+            </h3>
+            
+            <div className="space-y-6 mb-8">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
+                <p className="text-bone-300 italic">{t.s3UsBaseline}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 mr-2">ES:</span> {t.s3TradAgencyEs}</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> {t.s3TradAgencyDe}</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> {t.s3RefinedEs}</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> {t.s3RefinedDe}</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-bone-300 leading-relaxed text-sm">
+              {t.s3Analysis}
             </p>
           </div>
         </section>
