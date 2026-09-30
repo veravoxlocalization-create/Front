@@ -25,8 +25,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Primary Call to Action (CTA)',
     b3Analysis: 'Slogans like "Start Deploying" feel non-committal to technical decision-makers. High-intent enterprise leads respond to functional, diagnostic actions such as deploying a sandbox payload or testing edge routing latency.',
     s3Title: 'Section 3 / Applied Surface Audits',
-    s3Heading: '01 / Enterprise Cache Control & ISR Documentation',
-    s3Body: 'When localizing Incremental Static Regeneration (ISR) and stale-while-revalidate docs, exact technical terminology is paramount. Direct agency translations frequently mangle cache state vocabulary, causing confusion during enterprise infrastructure audits.',
+    s3Heading: '01 / Incremental Static Regeneration (ISR) & Cache Directives',
+    s3UsBaseline: 'Instant static regeneration and stale-while-revalidate headers out of the box.',
+    s3TradAgencyEs: 'Regeneración estática instantánea y encabezados stale-while-revalidate listos para usar.',
+    s3TradAgencyDe: 'Sofortige statische Regenerierung und Stale-while-revalidate-Header direkt einsatzbereit.',
+    s3RefinedEs: 'Invalidación asíncrona de caché en el borde (ISR) y directivas Cache-Control deterministas sin purgas manuales.',
+    s3RefinedDe: 'Asynchrone Edge-Cache-Invalidierung (ISR) und deterministische Cache-Control-Header ohne manuelle Purgings.',
+    s3Analysis: 'US marketing framing presents ISR as a magic trick ("instant"). European DevOps leads demand explicit technical clarity on asynchronous cache purging, edge TTL behavior, and stale-while-revalidate fallbacks under high load.',
     returnDir: '← Return to Directory',
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
@@ -54,7 +59,12 @@ const AUDIT_CONTENT = {
     b3Analysis: '„Jetzt deployen“ ist für Enterprise-Entscheider ohne Aussagekraft. Erforderlich ist ein klarer Einstieg in technische Tests oder Sandbox-Evaluierungen.',
     s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
     s3Heading: '01 / Enterprise Cache-Control & ISR Dokumentation',
-    s3Body: 'Bei Incremental Static Regeneration (ISR) müssen Fachbegriffe exakt sitzen. Wörtliche Übersetzungen verwischen Cache-Zustände und führen zu Unklarheiten bei Sicherheitsaudits.',
+    s3UsBaseline: 'Instant static regeneration and stale-while-revalidate headers out of the box.',
+    s3TradAgencyEs: 'Regeneración estática instantánea y encabezados stale-while-revalidate listos para usar.',
+    s3TradAgencyDe: 'Sofortige statische Regenerierung und Stale-while-revalidate-Header direkt einsatzbereit.',
+    s3RefinedEs: 'Invalidación asíncrona de caché en el borde (ISR) y directivas Cache-Control deterministas sin purgas manuales.',
+    s3RefinedDe: 'Asynchrone Edge-Cache-Invalidierung (ISR) und deterministische Cache-Control-Header ohne manuelle Purgings.',
+    s3Analysis: 'Bei Incremental Static Regeneration (ISR) müssen Fachbegriffe exakt sitzen. Wörtliche Übersetzungen verwischen Cache-Zustände und führen zu Unklarheiten bei Sicherheitsaudits.',
     returnDir: '← Zurück zum Verzeichnis',
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
@@ -82,7 +92,12 @@ const AUDIT_CONTENT = {
     b3Analysis: '"Comenzar despliegue" es demasiado pasivo. Se requiere un CTA técnico centrado en pruebas de rendimiento o integración.',
     s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
     s3Heading: '01 / Documentación de ISR y Cache-Control',
-    s3Body: 'La precisión conceptual en la regeneración estática incremental (ISR) evita malentendidos en evaluaciones de infraestructura crítica.',
+    s3UsBaseline: 'Instant static regeneration and stale-while-revalidate headers out of the box.',
+    s3TradAgencyEs: 'Regeneración estática instantánea y encabezados stale-while-revalidate listos para usar.',
+    s3TradAgencyDe: 'Sofortige statische Regenerierung und Stale-while-revalidate-Header direkt einsatzbereit.',
+    s3RefinedEs: 'Invalidación asíncrona de caché en el borde (ISR) y directivas Cache-Control deterministas sin purgas manuales.',
+    s3RefinedDe: 'Asynchrone Edge-Cache-Invalidierung (ISR) und deterministische Cache-Control-Header ohne manuelle Purgings.',
+    s3Analysis: 'La precisión conceptual en la regeneración estática incremental (ISR) evita malentendidos en evaluaciones de infraestructura crítica.',
     returnDir: '← Volver al Directorio',
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
@@ -110,7 +125,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Un CTA orienté diagnostic ("Tester l’infrastructure Edge") convertit mieux qu’un simple bouton d’inscription.',
     s3Title: 'Section 3 / Audit des Surfaces Appliquées',
     s3Heading: '01 / Documentation ISR & Invalidation de Cache',
-    s3Body: 'La rigueur terminologique dans la documentation serverless garantit une adoption sans friction par les équipes DevOps.',
+    s3UsBaseline: 'Instant static regeneration and stale-while-revalidate headers out of the box.',
+    s3TradAgencyEs: 'Regeneración estática instantánea y encabezados stale-while-revalidate listos para usar.',
+    s3TradAgencyDe: 'Sofortige statische Regenerierung und Stale-while-revalidate-Header direkt einsatzbereit.',
+    s3RefinedEs: 'Invalidación asíncrona de caché en el borde (ISR) y directivas Cache-Control deterministas sin purgas manuales.',
+    s3RefinedDe: 'Asynchrone Edge-Cache-Invalidierung (ISR) und deterministische Cache-Control-Header ohne manuelle Purgings.',
+    s3Analysis: 'La rigueur terminologique dans la documentation serverless garantit une adoption sans friction par les équipes DevOps.',
     returnDir: '← Retour au Répertoire',
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
@@ -138,7 +158,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Privilegiare azioni ad alto valore tecnico come la verifica delle prestazioni Edge.',
     s3Title: 'Sezione 3 / Audit Documentazione',
     s3Heading: '01 / Controllo Cache ISR',
-    s3Body: 'Garantire massima chiarezza nei termini relativi allo stato della cache ed all’invalidazione asincrona.',
+    s3UsBaseline: 'Instant static regeneration and stale-while-revalidate headers out of the box.',
+    s3TradAgencyEs: 'Regeneración estática instantánea y encabezados stale-while-revalidate listos para usar.',
+    s3TradAgencyDe: 'Sofortige statische Regenerierung und Stale-while-revalidate-Header direkt einsatzbereit.',
+    s3RefinedEs: 'Invalidación asíncrona de caché en el borde (ISR) y directivas Cache-Control deterministas sin purgas manuales.',
+    s3RefinedDe: 'Asynchrone Edge-Cache-Invalidierung (ISR) und deterministische Cache-Control-Header ohne manuelle Purgings.',
+    s3Analysis: 'Garantire massima chiarezza nei termini relativi allo stato della cache ed all’invalidazione asincrona.',
     returnDir: '← Torna al Direttorio',
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
@@ -166,7 +191,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Substituir botões genéricos por testes diretos de ambiente e integração.',
     s3Title: 'Seção 3 / Documentação Técnica',
     s3Heading: '01 / Regeneração Estática Incremental (ISR)',
-    s3Body: 'Alinhamento rigoroso dos vocábulos de engenharia para aprovação em auditorias de TI enterprise.',
+    s3UsBaseline: 'Instant static regeneration and stale-while-revalidate headers out of the box.',
+    s3TradAgencyEs: 'Regeneración estática instantánea y encabezados stale-while-revalidate listos para usar.',
+    s3TradAgencyDe: 'Sofortige statische Regenerierung und Stale-while-revalidate-Header direkt einsatzbereit.',
+    s3RefinedEs: 'Invalidación asíncrona de caché en el borde (ISR) y directivas Cache-Control deterministas sin purgas manuales.',
+    s3RefinedDe: 'Asynchrone Edge-Cache-Invalidierung (ISR) und deterministische Cache-Control-Header ohne manuelle Purgings.',
+    s3Analysis: 'Alinhamento rigoroso dos vocábulos de engenharia para aprovação em auditorias de TI enterprise.',
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
@@ -330,7 +360,7 @@ export default function VercelAuditPage() {
             </div>
 
             <p className="text-bone-300 leading-relaxed text-sm">
-              {t.b2Analysis}
+              {t.b1Analysis}
             </p>
           </div>
 
@@ -368,14 +398,42 @@ export default function VercelAuditPage() {
           </div>
         </section>
 
+        {/* Upgraded Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
           </div>
-          <div className="space-y-6 text-bone-300 leading-relaxed">
-            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
-            <p className="text-sm">
-              {t.s3Body}
+          
+          <div className="mb-12">
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
+              {t.s3Heading}
+            </h3>
+            
+            <div className="space-y-6 mb-8">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
+                <p className="text-bone-300 italic">{t.s3UsBaseline}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 mr-2">ES:</span> {t.s3TradAgencyEs}</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> {t.s3TradAgencyDe}</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> {t.s3RefinedEs}</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> {t.s3RefinedDe}</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-bone-300 leading-relaxed text-sm">
+              {t.s3Analysis}
             </p>
           </div>
         </section>
