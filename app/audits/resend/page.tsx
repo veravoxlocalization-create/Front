@@ -3,9 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-// ============================================================================
-// FULL MULTI-LANGUAGE DICTIONARY FOR THE ENTIRE MEMO BODY
-// ============================================================================
 const AUDIT_CONTENT = {
   en: {
     navTag: 'Localization Audit #04',
@@ -28,8 +25,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / The Primary Call to Action (CTA)',
     b3Analysis: 'Passive verbs like "Empezar" or "Loslegen" carry zero technical momentum for engineering buyers. High-intent buyers don\'t want generic onboarding flows—they want immediate utility, such as generating an API key or running a payload test.',
     s3Title: 'Section 3 / Applied Surface Audits',
-    s3Heading: '01 / React Email Integration',
-    s3Body: 'Resend\'s native integration with React Email is its definitive technical moat. When localizing this documentation block, the messaging must preserve the gravity of component-driven architecture. Verbatim translation fails here because terms like "templating engine" carry different connotations across European enterprise developer tooling.',
+    s3Heading: '01 / React Email & Component-Driven Architecture',
+    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
+    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
+    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
+    s3RefinedEs: 'Motor de plantillas en código con React Email. Renderizado determinista y compatibilidad total con clientes de correo.',
+    s3RefinedDe: 'Code-native E-Mail-Engine mit React Email. Deterministische Darstellung und volle Client-Kompatibilität.',
+    s3Analysis: 'Translating "write emails" sounds like an authoring tool for marketers. European senior frontend architects care about component reusability, deterministic CSS-inlining, and avoiding Outlook table hacks at the build step.',
     returnDir: '← Return to Directory',
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
@@ -52,12 +54,17 @@ const AUDIT_CONTENT = {
     b1Title: '01 / El Titular Principal (H1)',
     b1Analysis: 'En la cultura tech de EE. UU., "email" es una abreviación entendida para la infraestructura de entrega backend. Traducido literalmente como "correo electrónico", desplaza la categoría del producto hacia clientes webmail de consumo como Outlook o Gmail. Insertar "API" restaura el prestigio de la categoría mientras captura búsquedas regionales de alta intención.',
     b2Title: '02 / La Propuesta de Valor Central (H2)',
-    b2Analysis: '"Reach humans" funciona en inglés porque el texto directo del fundador se siente fresco. Traducido palabra por palabra, "llegar a humanos" suena extraño eimpreciso para compradores B2B internacionales. Los líderes de ingeniería evalúan infraestructura por la entregabilidad en bandeja de entrada, no por sensaciones. Anclarse en métricas de entregabilidad fundamenta la promesa en parámetros técnicos reales.',
+    b2Analysis: '"Reach humans" funciona en inglés porque el texto directo del fundador se siente fresco. Traducido palabra por palabra, "llegar a humanos" suena extraño e impreciso para compradores B2B internacionales. Los líderes de ingeniería evalúan infraestructura por la entregabilidad en bandeja de entrada, no por sensaciones. Anclarse en métricas de entregabilidad fundamenta la promesa en parámetros técnicos reales.',
     b3Title: '03 / La Llamada a la Acción Principal (CTA)',
     b3Analysis: 'Verbos pasivos como "Empezar" carecen de impulso técnico para un comprador de ingeniería. Los usuarios de alta intención no buscan un flujo de registro genérico; quieren utilidad inmediata, como generar una clave de API o ejecutar una prueba de payload.',
     s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
-    s3Heading: '01 / Integración con React Email',
-    s3Body: 'La integración nativa de Resend con React Email es su ventaja técnica definitiva. Al localizar este bloque de documentación, el mensaje debe preservar el rigor de la arquitectura basada en componentes. La traducción literal falla aquí porque conceptos como "templating engine" tienen connotaciones muy distintas en el software empresarial europeo.',
+    s3Heading: '01 / Arquitectura React Email Basada en Componentes',
+    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
+    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
+    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
+    s3RefinedEs: 'Motor de plantillas en código con React Email. Renderizado determinista y compatibilidad total con clientes de correo.',
+    s3RefinedDe: 'Code-native E-Mail-Engine mit React Email. Deterministische Darstellung und volle Client-Kompatibilität.',
+    s3Analysis: 'Traducir "escribir correos" suena a herramienta de edición para marketing. Los arquitectos frontend europeos evalúan reutilización de componentes, inyección determinista de CSS y eliminación de hacks para Outlook en el proceso de compilación.',
     returnDir: '← Volver al Directorio',
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
@@ -84,8 +91,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Der primäre Call-to-Action (CTA)',
     b3Analysis: 'Passive Verben wie „Loslegen“ bieten keinerlei technisches Momentum. High-Intent-Käufer suchen keine generischen Onboarding-Prozesse, sondern sofortige technische Verifizierung – etwa das Generieren eines API-Keys oder das Testen eines Payloads.',
     s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
-    s3Heading: '01 / React-Email-Integration',
-    s3Body: 'Die native Integration von Resend mit React Email ist der entscheidende technische Wettbewerbsvorteil. Bei der Lokalisierung dieser Dokumentation muss die Architektursprache gewahrt bleiben. Wörtliche Übersetzungen scheitern an Begriffen wie „Templating Engine“, die im europäischen Enterprise-Umfeld abweichend konnotiert sind.',
+    s3Heading: '01 / React-Email-Komponentenarchitektur',
+    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
+    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
+    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
+    s3RefinedEs: 'Motor de plantillas en código con React Email. Renderizado determinista y compatibilidad total con clientes de correo.',
+    s3RefinedDe: 'Code-native E-Mail-Engine mit React Email. Deterministische Darstellung und volle Client-Kompatibilität.',
+    s3Analysis: 'Wörtliche Übersetzungen wie „E-Mails schreiben“ klingen nach Marketing-Tools. Senior-Frontend-Architekten im DACH-Raum achten auf Wiederverwendbarkeit von Komponenten, deterministisches CSS-Inlining und saubere Email-Client-Kompatibilität im Build-Prozess.',
     returnDir: '← Zurück zum Verzeichnis',
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
@@ -112,8 +124,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / L’Appel à l’Action Principal (CTA)',
     b3Analysis: 'Des verbes passifs comme "Commencer" n’offrent aucun élan technique. Les profils à forte intention ne cherchent pas un parcours d’inscription générique : ils veulent générer une clé API ou tester une requête immédiatement.',
     s3Title: 'Section 3 / Audit des Surfaces Appliquées',
-    s3Heading: '01 / Intégration React Email',
-    s3Body: 'L’intégration native avec React Email constitue l’avantage concurrentiel majeur de Resend. La localisation de cette documentation doit préserver la rigueur de l’architecture orientée composants. La traduction littérale échoue ici car des termes comme "moteur de rendu" ont des connotations spécifiques dans l’IT européen.',
+    s3Heading: '01 / Architecture React Email & Composants',
+    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
+    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
+    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
+    s3RefinedEs: 'Motor de plantillas en código con React Email. Renderizado determinista y compatibilidad total con clientes de correo.',
+    s3RefinedDe: 'Code-native E-Mail-Engine mit React Email. Deterministische Darstellung und volle Client-Kompatibilität.',
+    s3Analysis: 'Traduire "écrire des emails" ressemble à un outil pour rédacteurs marketing. Les architectes frontend recherchent la réutilisabilité des composants, l’inlining CSS déterministe et l’élimination des hacks de tableaux HTML.',
     returnDir: '← Retour au Répertoire',
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
@@ -140,8 +157,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / La Call to Action Principale (CTA)',
     b3Analysis: 'Verbi passivi come "Iniziare" non offrono alcun impulso tecnico per i buyer engineering. Gli utenti ad alto intento non cercano un flusso di registrazione generico, ma utilità immediata come generare una API key o testare una chiamata.',
     s3Title: 'Sezione 3 / Audit delle Superfici Applicate',
-    s3Heading: '01 / Integrazione React Email',
-    s3Body: 'L’integrazione nativa con React Email è il fossato difensivo di Resend. Nel localizzare questa documentazione, il messaggio deve preservare il rigore dell’architettura basata su componenti. La traduzione letterale fallisce qui poiché termini come "templating engine" hanno connotazioni diverse nel software enterprise europeo.',
+    s3Heading: '01 / Architettura React Email Basata su Componenti',
+    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
+    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
+    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
+    s3RefinedEs: 'Motor de plantillas en código con React Email. Renderizado determinista y compatibilidad total con clientes de correo.',
+    s3RefinedDe: 'Code-native E-Mail-Engine mit React Email. Deterministische Darstellung und volle Client-Kompatibilität.',
+    s3Analysis: 'Tradurre "scrivere email" suona come uno strumento per copywriter. Gli architetti frontend cercano la riutilizzabilità dei componenti, il rendering deterministico del codice e l’assenza di hack per tabelle HTML.',
     returnDir: '← Torna al Direttorio',
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
@@ -168,8 +190,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / A Chamada para Ação Principal (CTA)',
     b3Analysis: 'Verbos passivos como "Começar" não possuem impulso técnico para compradores de engenharia. Usuários de alta intenção não querem fluxos genéricos de cadastro; buscam utilidade imediata, como gerar uma chave de API ou testar uma requisição.',
     s3Title: 'Seção 3 / Auditoria de Superfícies Aplicadas',
-    s3Heading: '01 / Integração com React Email',
-    s3Body: 'A integração nativa da Resend com React Email é sua vantagem técnica definitiva. Ao localizá-la, a mensagem deve preservar o rigor da arquitetura baseada em componentes. A tradução literal falha aqui porque termos como "engine de templates" possuem conotações distintas no mercado empresarial europeu.',
+    s3Heading: '01 / Arquitetura React Email Baseada em Componentes',
+    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
+    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
+    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
+    s3RefinedEs: 'Motor de plantillas en código con React Email. Renderizado determinista y compatibilidad total con clientes de correo.',
+    s3RefinedDe: 'Code-native E-Mail-Engine mit React Email. Deterministische Darstellung und volle Client-Kompatibilität.',
+    s3Analysis: 'Traduzir "escrever e-mails" soa como uma ferramenta de escrita para marketing. Arquitetos frontend valorizam reuso de componentes, renderização determinística e eliminação de tabelas HTML manuais.',
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
@@ -177,20 +204,12 @@ const AUDIT_CONTENT = {
   }
 };
 
-// ============================================================================
-// COMPONENT
-// ============================================================================
 export default function ResendAuditPage() {
   const [lang, setLang] = useState('en');
   const t = AUDIT_CONTENT[lang] || AUDIT_CONTENT.en;
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950">
-      {/* Sticky Top Bar with Language Controls */}
       <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
@@ -215,7 +234,7 @@ export default function ResendAuditPage() {
             </div>
 
             <button 
-              onClick={handlePrint}
+              onClick={() => window.print()}
               className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors cursor-pointer bg-transparent border-0"
             >
               Export PDF
@@ -224,7 +243,6 @@ export default function ResendAuditPage() {
         </div>
       </header>
 
-      {/* Main Memo Content */}
       <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32">
         <header className="mb-20">
           <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4">
@@ -258,7 +276,6 @@ export default function ResendAuditPage() {
           </div>
         </header>
 
-        {/* Section 1 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s1Title}
@@ -276,13 +293,11 @@ export default function ResendAuditPage() {
           </div>
         </section>
 
-        {/* Section 2 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s2Title}
           </div>
           
-          {/* Block 01 */}
           <div className="mb-16">
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
               {t.b1Title}
@@ -316,7 +331,6 @@ export default function ResendAuditPage() {
             </p>
           </div>
 
-          {/* Block 02 */}
           <div className="mb-16">
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
               {t.b2Title}
@@ -350,7 +364,6 @@ export default function ResendAuditPage() {
             </p>
           </div>
 
-          {/* Block 03 */}
           <div>
             <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
               {t.b3Title}
@@ -385,21 +398,46 @@ export default function ResendAuditPage() {
           </div>
         </section>
 
-        {/* Section 3 */}
+        {/* Upgraded Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
           </div>
           
-          <div className="space-y-6 text-bone-300 leading-relaxed">
-            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
-            <p className="text-sm">
-              {t.s3Body}
+          <div className="mb-12">
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
+              {t.s3Heading}
+            </h3>
+            
+            <div className="space-y-6 mb-8">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
+                <p className="text-bone-300 italic">{t.s3UsBaseline}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 mr-2">ES:</span> {t.s3TradAgencyEs}</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> {t.s3TradAgencyDe}</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> {t.s3RefinedEs}</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> {t.s3RefinedDe}</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-bone-300 leading-relaxed text-sm">
+              {t.s3Analysis}
             </p>
           </div>
         </section>
         
-        {/* Navigation */}
         <div className="mt-32 pt-8 border-t border-ink-700">
           <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
             {t.returnDir}
@@ -408,4 +446,4 @@ export default function ResendAuditPage() {
       </main>
     </div>
   );
-        }
+}
