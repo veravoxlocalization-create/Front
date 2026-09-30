@@ -25,8 +25,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Primary Call to Action (CTA)',
     b3Analysis: 'Replacing "Start building for free" with "Integrate Auth SDK / Review Security Docs" matches the rigor expected by software architects.',
     s3Title: 'Section 3 / Applied Surface Audits',
-    s3Heading: '01 / Multi-Factor Authentication & OIDC Protocols',
-    s3Body: 'Exact technical terminology for session token management and passkey implementation.',
+    s3Heading: '01 / OpenID Connect (OIDC) & Zero-Trust Session Tokens',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: '"Drop-in components" sounds like a toy UI kit. For enterprise SaaS procurement, emphasizing short-lived JWT tokens, Passkey support, and OIDC standards positions Clerk as robust security infrastructure.',
     returnDir: '← Return to Directory',
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
@@ -53,8 +58,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Primärer Call-to-Action (CTA)',
     b3Analysis: '„Auth-SDK integrieren / Dokumentation lesen“ statt unverbindlichem Gratis-Slogan.',
     s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
-    s3Heading: '01 / Multi-Faktor-Authentifizierung & OIDC-Protokolle',
-    s3Body: 'Abschließende Klärung von Token-Handhabung und Passkey-Implementierung.',
+    s3Heading: '01 / OpenID Connect (OIDC) & Zero-Trust Session-Tokens',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Die Betonung von kurzlebigen JWT-Tokens und Passkey-Unterstützung verankert Clerk als vollwertige Sicherheitsinfrastruktur.',
     returnDir: '← Zurück zum Verzeichnis',
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
@@ -81,8 +91,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Llamada a la Acción Principal (CTA)',
     b3Analysis: 'Acciones orientadas a la integración del SDK y revisión técnica.',
     s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
-    s3Heading: '01 / Autenticación Multifactor y Estándares OIDC',
-    s3Body: 'Terminología precisa en gestión de tokens de sesión.',
+    s3Heading: '01 / OpenID Connect (OIDC) y Tokens de Sesión Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Sustituir "componentes listos para usar" por estándares OIDC y tokens JWT de corta duración asegura la aprobación de CISOs.',
     returnDir: '← Volver al Directorio',
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
@@ -109,8 +124,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Appel à l’Action (CTA)',
     b3Analysis: 'Privilégier "Intégrer le SDK Auth".',
     s3Title: 'Section 3 / Audit des Surfaces Appliquées',
-    s3Heading: '01 / MFA & Protocole OIDC',
-    s3Body: 'Rigueure absolue sur la terminologie de sécurité.',
+    s3Heading: '01 / OpenID Connect (OIDC) & Tokens Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Mettre en avant les tokens JWT éphémères et les standards OIDC crédibilise l’architecture sécurité.',
     returnDir: '← Retour au Répertoire',
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
@@ -137,8 +157,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Call to Action (CTA)',
     b3Analysis: 'Invito all’integrazione tecnica diretta del SDK.',
     s3Title: 'Sezione 3 / Audit Documentazione',
-    s3Heading: '01 / Autenticazione Multifattore e OIDC',
-    s3Body: 'Terminologia precisa per la sicurezza informatica.',
+    s3Heading: '01 / OpenID Connect (OIDC) e Token di Sessione Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'La precisione nei token di sessione a breve durata e negli standard OIDC è fondamentale per le valutazioni CISO.',
     returnDir: '← Torna al Direttorio',
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
@@ -165,8 +190,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Chamada para Ação (CTA)',
     b3Analysis: 'Ações voltadas para integração do SDK.',
     s3Title: 'Seção 3 / Documentação Técnica',
-    s3Heading: '01 / Autenticação Multifator e Protocolos OIDC',
-    s3Body: 'Precisão nos protocolos de segurança de sessão.',
+    s3Heading: '01 / OpenID Connect (OIDC) e Tokens de Sessão Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Transição de "componentes prontos" para padrões OIDC e tokens de curta duração para validação técnica.',
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
@@ -368,14 +398,42 @@ export default function ClerkAuditPage() {
           </div>
         </section>
 
+        {/* Upgraded Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
           </div>
-          <div className="space-y-6 text-bone-300 leading-relaxed">
-            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
-            <p className="text-sm">
-              {t.s3Body}
+          
+          <div className="mb-12">
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
+              {t.s3Heading}
+            </h3>
+            
+            <div className="space-y-6 mb-8">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
+                <p className="text-bone-300 italic">{t.s3UsBaseline}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 mr-2">ES:</span> {t.s3TradAgencyEs}</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> {t.s3TradAgencyDe}</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> {t.s3RefinedEs}</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> {t.s3RefinedDe}</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-bone-300 leading-relaxed text-sm">
+              {t.s3Analysis}
             </p>
           </div>
         </section>
@@ -388,5 +446,4 @@ export default function ClerkAuditPage() {
       </main>
     </div>
   );
-    }
-    
+}
