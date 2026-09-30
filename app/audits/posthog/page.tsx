@@ -25,8 +25,13 @@ const AUDIT_CONTENT = {
     b3Title: '03 / Primary Call to Action (CTA)',
     b3Analysis: 'CTAs like "Get Started Free" are replaced with developer-native actions like "Deploy Instance" or "Explore EU Cloud".',
     s3Title: 'Section 3 / Applied Surface Audits',
-    s3Heading: '01 / Feature Flags & Session Replay Telemetry',
-    s3Body: 'Technical precision regarding data masking and localized storage is required for DACH software audits.',
+    s3Heading: '01 / Session Replay & Privacy Data Masking',
+    s3UsBaseline: 'Autocapture events and session recordings without extra engineering work.',
+    s3TradAgencyEs: 'Captura automática de eventos y grabaciones de sesión sin trabajo de ingeniería adicional.',
+    s3TradAgencyDe: 'Automatische Ereigniserfassung und Sitzungsaufzeichnungen ohne zusätzlichen Entwicklungsaufwand.',
+    s3RefinedEs: 'Reproducción de sesiones con enmascaramiento estricto de PII en el cliente. Captura de eventos sin cookies de terceros ni fuga de datos.',
+    s3RefinedDe: 'Session-Replay mit clientseitiger PII-Maskierung. Telemetrie-Erfassung ohne Drittanbieter-Cookies und ohne Datenabfluss.',
+    s3Analysis: 'Autocapture event marketing alarms DPOs regarding unwanted PII ingestion. Explicitly framing it as client-side PII masking and cookieless telemetry secures DPO sign-off.',
     returnDir: '← Return to Directory',
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
@@ -54,7 +59,12 @@ const AUDIT_CONTENT = {
     b3Analysis: '„Instanz bereitstellen / EU-Cloud testen“ ersetzt generisches Registrieren.',
     s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
     s3Heading: '01 / Feature-Flags & Session-Replay-Telemetrie',
-    s3Body: 'Absolute Präzision bei Datenmaskierung und lokaler Speicherung.',
+    s3UsBaseline: 'Autocapture events and session recordings without extra engineering work.',
+    s3TradAgencyEs: 'Captura automática de eventos y grabaciones de sesión sin trabajo de ingeniería adicional.',
+    s3TradAgencyDe: 'Automatische Ereigniserfassung und Sitzungsaufzeichnungen ohne zusätzlichen Entwicklungsaufwand.',
+    s3RefinedEs: 'Reproducción de sesiones con enmascaramiento estricto de PII en el cliente. Captura de eventos sin cookies de terceros ni fuga de datos.',
+    s3RefinedDe: 'Session-Replay mit clientseitiger PII-Maskierung. Telemetrie-Erfassung ohne Drittanbieter-Cookies und ohne Datenabfluss.',
+    s3Analysis: 'Absolute Präzision bei Datenmaskierung und lokaler Speicherung garantiert die Freigabe durch Datenschutzbeauftragte.',
     returnDir: '← Zurück zum Verzeichnis',
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
@@ -82,7 +92,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Incentivar el despliegue técnico inmediato o pruebas en servidor europeo.',
     s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
     s3Heading: '01 / Feature Flags y Enmascaramiento de Datos',
-    s3Body: 'Garantía técnica de privacidad por diseño.',
+    s3UsBaseline: 'Autocapture events and session recordings without extra engineering work.',
+    s3TradAgencyEs: 'Captura automática de eventos y grabaciones de sesión sin trabajo de ingeniería adicional.',
+    s3TradAgencyDe: 'Automatische Ereigniserfassung und Sitzungsaufzeichnungen ohne zusätzlichen Entwicklungsaufwand.',
+    s3RefinedEs: 'Reproducción de sesiones con enmascaramiento estricto de PII en el cliente. Captura de eventos sin cookies de terceros ni fuga de datos.',
+    s3RefinedDe: 'Session-Replay mit clientseitiger PII-Maskierung. Telemetrie-Erfassung ohne Drittanbieter-Cookies und ohne Datenabfluss.',
+    s3Analysis: 'Garantía técnica de privacidad por diseño y enmascaramiento explícito de datos sensibles.',
     returnDir: '← Volver al Directorio',
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
@@ -110,7 +125,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Privilégier "Déployer sur Cloud UE" ou "Tester l’instance".',
     s3Title: 'Section 3 / Audit des Surfaces Appliquées',
     s3Heading: '01 / Télémétrie et Feature Flags',
-    s3Body: 'Explicitation claire du masquage des données.',
+    s3UsBaseline: 'Autocapture events and session recordings without extra engineering work.',
+    s3TradAgencyEs: 'Captura automática de eventos y grabaciones de sesión sin trabajo de ingeniería adicional.',
+    s3TradAgencyDe: 'Automatische Ereigniserfassung und Sitzungsaufzeichnungen ohne zusätzlichen Entwicklungsaufwand.',
+    s3RefinedEs: 'Reproducción de sesiones con enmascaramiento estricto de PII en el cliente. Captura de eventos sin cookies de terceros ni fuga de datos.',
+    s3RefinedDe: 'Session-Replay mit clientseitiger PII-Maskierung. Telemetrie-Erfassung ohne Drittanbieter-Cookies und ohne Datenabfluss.',
+    s3Analysis: 'Explicitation claire du masquage des données personnelles dès le navigateur.',
     returnDir: '← Retour au Répertoire',
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
@@ -138,7 +158,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Incentivare il deployment tecnico diretto.',
     s3Title: 'Sezione 3 / Audit Documentazione',
     s3Heading: '01 / Gestione Dati e Session Replay',
-    s3Body: 'Accuratezza nelle definizioni di anonimizzazione dei dati.',
+    s3UsBaseline: 'Autocapture events and session recordings without extra engineering work.',
+    s3TradAgencyEs: 'Captura automática de eventos y grabaciones de sesión sin trabajo de ingeniería adicional.',
+    s3TradAgencyDe: 'Automatische Ereigniserfassung und Sitzungsaufzeichnungen ohne zusätzlichen Entwicklungsaufwand.',
+    s3RefinedEs: 'Reproducción de sesiones con enmascaramiento estricto de PII en el cliente. Captura de eventos sin cookies de terceros ni fuga de datos.',
+    s3RefinedDe: 'Session-Replay mit clientseitiger PII-Maskierung. Telemetrie-Erfassung ohne Drittanbieter-Cookies und ohne Datenabfluss.',
+    s3Analysis: 'Accuratezza nelle definizioni di anonimizzazione dei dati per l’approvazione da parte del DPO.',
     returnDir: '← Torna al Direttorio',
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
@@ -166,7 +191,12 @@ const AUDIT_CONTENT = {
     b3Analysis: 'Ações focadas em implantação de instâncias.',
     s3Title: 'Seção 3 / Documentação Técnica',
     s3Heading: '01 / Telemetria e Controle de Recursos',
-    s3Body: 'Precisão nos protocolos de proteção de dados.',
+    s3UsBaseline: 'Autocapture events and session recordings without extra engineering work.',
+    s3TradAgencyEs: 'Captura automática de eventos y grabaciones de sesión sin trabajo de ingeniería adicional.',
+    s3TradAgencyDe: 'Automatische Ereigniserfassung und Sitzungsaufzeichnungen ohne zusätzlichen Entwicklungsaufwand.',
+    s3RefinedEs: 'Reproducción de sesiones con enmascaramiento estricto de PII en el cliente. Captura de eventos sin cookies de terceros ni fuga de datos.',
+    s3RefinedDe: 'Session-Replay mit clientseitiger PII-Maskierung. Telemetrie-Erfassung ohne Drittanbieter-Cookies und ohne Datenabfluss.',
+    s3Analysis: 'Precisão nos protocolos de proteção de dados e anonimização.',
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
@@ -368,14 +398,42 @@ export default function PostHogAuditPage() {
           </div>
         </section>
 
+        {/* Upgraded Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
           </div>
-          <div className="space-y-6 text-bone-300 leading-relaxed">
-            <h3 className="font-display text-xl text-bone-100 mb-2">{t.s3Heading}</h3>
-            <p className="text-sm">
-              {t.s3Body}
+          
+          <div className="mb-12">
+            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
+              {t.s3Heading}
+            </h3>
+            
+            <div className="space-y-6 mb-8">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
+                <p className="text-bone-300 italic">{t.s3UsBaseline}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
+                <ul className="text-bone-300 space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 mr-2">ES:</span> {t.s3TradAgencyEs}</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> {t.s3TradAgencyDe}</li>
+                </ul>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
+                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> {t.s3RefinedEs}</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> {t.s3RefinedDe}</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-bone-300 leading-relaxed text-sm">
+              {t.s3Analysis}
             </p>
           </div>
         </section>
