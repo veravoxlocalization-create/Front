@@ -125,7 +125,7 @@ const AUDIT_CONTENT = {
     summaryText: 'Um Großkunden in Europa zu gewinnen, muss Clerk vom "Indie-Liebling" zur "Enterprise-Sicherheitsplattform" reifen. Marketing und Dokumentation müssen DSGVO, SOC2 Type II und regionale Garantien gleichrangig mit Code-Beispielen präsentieren.',
 
     returnDir: '← Zurück zum Verzeichnis',
-    lblProblem: 'Problem',
+    lblProblem: 'Problema',
     lblImpact: 'Auswirkung',
     lblFix: 'Lösung',
     usBaseline: 'US-Ausgangslage',
@@ -383,7 +383,7 @@ const AUDIT_CONTENT = {
     returnDir: '← Voltar ao Diretório',
     lblProblem: 'Problema',
     lblImpact: 'Impacto',
-    lblFix: 'Solução',
+    lblFix: 'Solución',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Agência Tradicional',
     refinedIntent: 'Intenção Refinada'
@@ -435,36 +435,31 @@ export default function ClerkAuditPage() {
           .print\\:hidden {
             display: none !important;
           }
-          .print\\:border-gray-300 {
-            border-color: #d1d5db !important;
-          }
           .print\\:text-black {
             color: #000000 !important;
           }
         }
       `}</style>
 
-      {/* MINIMAL TOP NAV */}
-      <header className="border-b border-ink-800 sticky top-0 bg-ink-950/95 backdrop-blur z-40 print:hidden">
-        <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between font-mono text-xs text-bone-400">
+      {/* TOP NAV — NO LINES */}
+      <header className="sticky top-0 bg-ink-950/95 backdrop-blur z-40 print:hidden">
+        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between font-mono text-xs text-bone-400">
           <Link href="/" className="hover:text-bone-100 transition-colors">
             ← VeraVox
           </Link>
 
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               {['es', 'fr', 'de', 'it', 'pt', 'en'].map((l) => (
-                <React.Fragment key={l}>
-                  <button
-                    onClick={() => setLang(l)}
-                    className={`bg-transparent border-0 p-0 cursor-pointer transition-colors ${
-                      lang === l ? 'text-bone-100 font-bold underline underline-offset-4' : 'text-bone-500 hover:text-bone-300'
-                    }`}
-                  >
-                    {l.toUpperCase()}
-                  </button>
-                  {l !== 'en' && <span className="text-ink-700">/</span>}
-                </React.Fragment>
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`bg-transparent border-0 p-0 cursor-pointer transition-colors ${
+                    lang === l ? 'text-bone-100 font-bold underline underline-offset-4' : 'text-bone-500 hover:text-bone-300'
+                  }`}
+                >
+                  {l.toUpperCase()}
+                </button>
               ))}
             </div>
 
@@ -479,22 +474,22 @@ export default function ClerkAuditPage() {
       </header>
 
       {/* DOCUMENT BODY */}
-      <main className="max-w-4xl mx-auto px-6 pt-12 pb-24 print:pt-0 print:pb-0 print:px-0">
+      <main className="max-w-4xl mx-auto px-6 pt-12 pb-32 print:pt-0 print:pb-0 print:px-0">
         
         {/* HEADER */}
-        <header className="mb-16 border-b border-ink-800 pb-10 print:border-gray-300">
-          <div className="font-mono text-xs text-bone-500 mb-4 print:text-gray-600">
+        <header className="mb-20 print:mb-12">
+          <div className="font-mono text-xs text-bone-500 mb-6 print:text-gray-600">
             {t.navTag} — {t.date}
           </div>
 
-          <h1 className="font-display font-medium text-3xl md:text-4xl text-bone-100 tracking-tight mb-4 print:text-black">
+          <h1 className="font-display font-medium text-3xl md:text-5xl text-bone-100 tracking-tight mb-6 leading-tight print:text-black">
             {t.title}
           </h1>
-          <p className="text-base text-bone-300 mb-8 leading-relaxed print:text-gray-700">
+          <p className="text-base md:text-lg text-bone-300 mb-12 leading-relaxed print:text-gray-700 max-w-3xl">
             {t.subtitle}
           </p>
           
-          <div className="grid grid-cols-3 gap-4 font-mono text-[11px] text-bone-400 border-t border-ink-800 pt-6 print:border-gray-300 print:text-gray-700">
+          <div className="grid grid-cols-3 gap-8 font-mono text-xs text-bone-400 print:text-gray-700">
             <div>
               <span className="text-bone-600 block uppercase tracking-wider text-[9px] mb-1 print:text-gray-500">Client</span>
               {t.client}
@@ -511,52 +506,52 @@ export default function ClerkAuditPage() {
         </header>
 
         {/* SECTION 1 */}
-        <section className="mb-16">
-          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-4 print:text-black print:font-bold">
+        <section className="mb-24">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-6 print:text-black print:font-bold">
             {t.s1Title}
           </h2>
-          <div className="space-y-4 text-bone-200 leading-relaxed text-sm print:text-gray-800">
-            <h3 className="font-display text-lg text-bone-100 print:text-black">
+          <div className="space-y-4 text-bone-200 leading-relaxed text-sm print:text-gray-800 max-w-3xl">
+            <h3 className="font-display text-xl text-bone-100 mb-2 print:text-black">
               {t.overviewHeading}
             </h3>
-            <p className="text-bone-300">{t.overviewBody}</p>
-            <p className="text-bone-400 italic text-xs border-l border-ink-700 pl-4 py-1 print:border-gray-400 print:text-gray-600">
+            <p className="text-bone-300 leading-relaxed">{t.overviewBody}</p>
+            <p className="text-bone-400 italic text-xs pt-2 print:text-gray-600">
               {t.overviewSub}
             </p>
           </div>
         </section>
 
         {/* SECTION 2: EDITORIAL BREAKDOWN */}
-        <section className="mb-20">
-          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-8 print:text-black print:font-bold">
+        <section className="mb-24">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-12 print:text-black print:font-bold">
             {t.s2Title}
           </h2>
 
-          <div className="space-y-16">
+          <div className="space-y-20">
             {blocks.map((item, idx) => (
-              <div key={idx} className="border-t border-ink-800 pt-6 print:border-gray-300">
-                <h3 className="font-mono text-sm font-semibold text-bone-100 mb-6 print:text-black">
+              <div key={idx} className="space-y-8">
+                <h3 className="font-mono text-base font-semibold text-bone-100 print:text-black">
                   {item.title}
                 </h3>
 
                 {/* ARCHITECTURAL TRIO */}
-                <div className="space-y-4 text-xs leading-relaxed mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-xs leading-relaxed">
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-1 print:text-gray-600">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-2 print:text-gray-600">
                       {t.lblProblem}
                     </span>
                     <p className="text-bone-300 print:text-gray-800">{item.problem}</p>
                   </div>
 
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-1 print:text-gray-600">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-2 print:text-gray-600">
                       {t.lblImpact}
                     </span>
                     <p className="text-bone-300 print:text-gray-800">{item.impact}</p>
                   </div>
 
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-1 print:text-gray-600">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-2 print:text-gray-600">
                       {t.lblFix}
                     </span>
                     <p className="text-bone-200 print:text-black">{item.fix}</p>
@@ -564,18 +559,20 @@ export default function ClerkAuditPage() {
                 </div>
 
                 {/* COPY COMPARISON */}
-                <div className="bg-ink-900/60 p-4 border-l border-ink-700 space-y-3 text-xs print:bg-gray-50 print:border-gray-400">
-                  <div>
-                    <span className="font-mono text-[9px] text-bone-500 block print:text-gray-500">{t.usBaseline}</span>
-                    <p className="text-bone-400 italic print:text-gray-700">{item.us}</p>
-                  </div>
-                  <div>
-                    <span className="font-mono text-[9px] text-bone-500 block print:text-gray-500">{t.tradAgency}</span>
-                    <p className="text-bone-400 font-mono print:text-gray-700">{item.trad}</p>
-                  </div>
-                  <div>
-                    <span className="font-mono text-[9px] text-bone-300 block print:text-black">{t.refinedIntent}</span>
-                    <p className="text-bone-100 font-mono font-medium print:text-black">{item.refined}</p>
+                <div className="space-y-4 text-xs pt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                      <span className="font-mono text-[9px] text-bone-500 block mb-1 print:text-gray-500">{t.usBaseline}</span>
+                      <p className="text-bone-400 italic print:text-gray-700">{item.us}</p>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] text-bone-500 block mb-1 print:text-gray-500">{t.tradAgency}</span>
+                      <p className="text-bone-400 font-mono print:text-gray-700">{item.trad}</p>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[9px] text-bone-300 block mb-1 print:text-black">{t.refinedIntent}</span>
+                      <p className="text-bone-100 font-mono font-medium print:text-black">{item.refined}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -584,33 +581,33 @@ export default function ClerkAuditPage() {
         </section>
 
         {/* SECTION 3: ROADMAP & MATRIX */}
-        <section className="mb-20">
-          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-6 print:text-black print:font-bold">
+        <section className="mb-24">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-8 print:text-black print:font-bold">
             {t.s3Title}
           </h2>
           
-          <h3 className="font-display text-lg text-bone-100 mb-6 print:text-black">{t.s3Heading}</h3>
+          <h3 className="font-display text-xl text-bone-100 mb-8 print:text-black">{t.s3Heading}</h3>
           
-          {/* MINIMAL ROADMAP LIST */}
-          <div className="border-t border-ink-800 divide-y divide-ink-800 font-mono text-xs mb-12 print:border-gray-300 print:divide-gray-300">
-            <div className="py-4 grid grid-cols-1 md:grid-cols-3 gap-2">
+          {/* MINIMAL ROADMAP SPACING */}
+          <div className="space-y-6 font-mono text-xs mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <span className="text-bone-100 print:text-black">{t.r1Strength}</span>
               <span className="text-bone-400 print:text-gray-600">{t.r1Bottleneck}</span>
               <span className="text-bone-200 font-medium print:text-black">{t.r1Solution}</span>
             </div>
-            <div className="py-4 grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <span className="text-bone-100 print:text-black">{t.r2Strength}</span>
               <span className="text-bone-400 print:text-gray-600">{t.r2Bottleneck}</span>
               <span className="text-bone-200 font-medium print:text-black">{t.r2Solution}</span>
             </div>
-            <div className="py-4 grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <span className="text-bone-100 print:text-black">{t.r3Strength}</span>
               <span className="text-bone-400 print:text-gray-600">{t.r3Bottleneck}</span>
               <span className="text-bone-200 font-medium print:text-black">{t.r3Solution}</span>
             </div>
           </div>
 
-          <div className="space-y-3 border-t border-ink-800 pt-6 print:border-gray-300">
+          <div className="space-y-3 max-w-3xl">
             <h4 className="font-mono text-xs uppercase tracking-widest text-bone-400 print:text-black print:font-bold">
               {t.summaryHeading}
             </h4>
@@ -621,7 +618,7 @@ export default function ClerkAuditPage() {
         </section>
 
         {/* FOOTER LINK */}
-        <div className="mt-20 pt-8 border-t border-ink-800 print:hidden">
+        <div className="mt-24 print:hidden">
           <Link href="/" className="font-mono text-xs text-bone-500 hover:text-bone-100 transition-colors">
             {t.returnDir}
           </Link>
