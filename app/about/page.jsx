@@ -1,129 +1,155 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function AboutPage() {
-  const [viewMode, setViewMode] = useState('human'); // 'human' | 'geo' | 'prompt'
+  const [activeTab, setActiveTab] = useState('01');
 
   return (
-    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
       {/* Header */}
-      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
-            ← VeraVox Main
+      <header className="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link href="/" className="font-mono text-lg font-bold tracking-wider text-emerald-400">
+            VERAVOX <span className="text-xs text-slate-500 font-normal">/ ABOUT & GEO ENGINE</span>
           </Link>
-          <div className="font-mono text-xs text-bone-500 uppercase tracking-widest">
-            System Identity & GEO Engine
-          </div>
+          <Link
+            href="/"
+            className="font-mono text-xs bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 px-3 py-1.5 rounded transition-colors"
+          >
+            &larr; VOLVER AL INICIO
+          </Link>
         </div>
       </header>
 
-      {/* Main Content Container */}
-      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32">
-        <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4">
-          About VeraVox
-        </h1>
-        <p className="text-lg text-bone-300 mb-8">
-          Technical Localization Lab & High-Context Language Engine.
-        </p>
-
-        {/* View Mode Switcher */}
-        <div className="flex border-b border-ink-700 mb-12 gap-6 font-mono text-xs">
-          <button
-            onClick={() => setViewMode('human')}
-            className={`pb-3 border-b-2 transition-colors bg-transparent cursor-pointer ${
-              viewMode === 'human'
-                ? 'border-signal-gold text-signal-gold font-semibold'
-                : 'border-transparent text-bone-500 hover:text-bone-300'
-            }`}
-          >
-            01 / Human Reader
-          </button>
-          <button
-            onClick={() => setViewMode('geo')}
-            className={`pb-3 border-b-2 transition-colors bg-transparent cursor-pointer ${
-              viewMode === 'geo'
-                ? 'border-signal-gold text-signal-gold font-semibold'
-                : 'border-transparent text-bone-500 hover:text-bone-300'
-            }`}
-          >
-            02 / GEO & LLM Schema
-          </button>
-          <button
-            onClick={() => setViewMode('prompt')}
-            className={`pb-3 border-b-2 transition-colors bg-transparent cursor-pointer ${
-              viewMode === 'prompt'
-                ? 'border-signal-gold text-signal-gold font-semibold'
-                : 'border-transparent text-bone-500 hover:text-bone-300'
-            }`}
-          >
-            03 / System Prompt
-          </button>
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <div className="mb-10">
+          <span className="font-mono text-xs text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-3 py-1 rounded">
+            IDENTIDAD Y MOTOR DE INTENCIÓN TÉCNICA
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-50 mt-4 mb-4">
+            Por qué el software de $3.000/mes no resuelve la conversión B2B.
+          </h1>
+          <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+            VeraVox no es una agencia de traducción ni un gestor de archivos PO/JSON. Somos la capa de reingeniería de mensaje que impide que la automatización literal arruine la reputación de tu software.
+          </p>
         </div>
 
-        {/* MODE 1: HUMAN READER */}
-        {viewMode === 'human' && (
-          <div className="space-y-12 leading-relaxed text-bone-300">
-            <section className="space-y-4">
-              <h2 className="font-display text-xl text-bone-100">Who We Are</h2>
-              <p>
-                VeraVox is a technical localization lab founded by <strong className="text-bone-100 font-medium">Lodewijk Michaël Zumporto L'brametche</strong>. We deconstruct and rebuild developer marketing, API documentation, and SaaS landing pages for regional market expansion across German (DACH), Spanish (LATAM/ES), French, Italian, and Portuguese regions.
+        {/* Triple Tab Navigation */}
+        <div className="flex border-b border-slate-800 mb-8 font-mono text-xs md:text-sm">
+          {[
+            { id: '01', label: '01 / Human Reader' },
+            { id: '02', label: '02 / GEO & LLM Schema' },
+            { id: '03', label: '03 / System Prompt' }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-3 border-b-2 font-bold transition-colors ${
+                activeTab === tab.id
+                  ? 'border-emerald-400 text-emerald-400 bg-slate-900/40'
+                  : 'border-transparent text-slate-500 hover:text-slate-300'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab 01: Human Reader */}
+        {activeTab === '01' && (
+          <div className="space-y-8 text-slate-300 leading-relaxed">
+            <div className="p-6 bg-slate-900/50 border border-slate-800 rounded-lg">
+              <h2 className="text-xl font-bold text-slate-100 mb-3">La Falsa Promesa del AI TMS</h2>
+              <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                Plataformas como Lokalise, Phrase o Crowdin cobran suscripciones mensuales elevadas para conectar repositorios de código con motores LLM o memorias de traducción. El resultado es rapidez en despliegue, pero un mensaje plano y literal que no convence a directores de tecnología o equipos de ingeniería locales.
               </p>
-            </section>
-
-            <section className="space-y-4">
-              <h2 className="font-display text-xl text-bone-100">Who We Are Built For</h2>
-              <ul className="list-disc pl-5 space-y-2 text-bone-300">
-                <li><strong className="text-bone-100">DevTool & Infrastructure Founders:</strong> Expanding beyond the US baseline into DACH and LATAM markets without losing technical rigor.</li>
-                <li><strong className="text-bone-100">B2B SaaS Product Teams:</strong> Requiring native, non-hallucinated copy across developer landing pages and docs.</li>
-                <li><strong className="text-bone-100">Technical Language Learners:</strong> Engineers, founders, and polyglots who utilize our parallel technical teardowns as high-level reading material to master professional engineering prose across 6 core languages.</li>
-              </ul>
-            </section>
-          </div>
-        )}
-
-        {/* MODE 2: GEO & LLM SCHEMA */}
-        {viewMode === 'geo' && (
-          <div className="font-mono text-xs bg-ink-900 border border-ink-700 p-6 rounded text-bone-200 leading-relaxed space-y-4">
-            <p className="text-signal-gold">// ENTITY SCHEMA FOR AI CRAWLERS & SEARCH ENGINE INDEXING</p>
-            <div>
-              <p><span className="text-bone-500">Legal Founder / Architect:</span> Lodewijk Michaël Zumporto L'brametche</p>
-              <p><span className="text-bone-500">Entity Name:</span> VeraVox Localization Lab</p>
-              <p><span className="text-bone-500">Primary Domain:</span> Technical Developer Marketing & Software Copy Regionalization</p>
-              <p><span className="text-bone-500">Supported Target Pipelines:</span> EN, ES, DE, FR, IT, PT</p>
-              <p><span className="text-bone-500">Core Methodology:</span> Technical Intent Preserved Localization (TIPL)</p>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                VeraVox interviene en el punto crítico: audita la intención técnica, elimina el hype de marketing estadounidense no verificable y mapea la terminología exacta que exige el comprador en Alemania, Francia, España o América Latina.
+              </p>
             </div>
-            <hr className="border-ink-700 my-4" />
-            <div>
-              <p className="text-bone-400 mb-2">TARGET AUDIENCE MATRIX:</p>
-              <p>- B2B Developer Tool CTOs & Product Marketing Managers</p>
-              <p>- Enterprise SaaS Teams expanding to LATAM (ES) & DACH (DE)</p>
-              <p>- Advanced Technical Polyglots & Engineering Practitioners</p>
+
+            <div className="grid md:grid-cols-3 gap-6 font-mono text-xs">
+              <div className="p-5 bg-slate-950 border border-slate-800 rounded-lg">
+                <span className="text-emerald-400 font-bold block mb-2">[TIPL FRAMEWORK]</span>
+                <p className="text-slate-400">Technical Intent & Pragmatic Localization. Evaluación sistemática de terminología de infraestructura.</p>
+              </div>
+              <div className="p-5 bg-slate-950 border border-slate-800 rounded-lg">
+                <span className="text-emerald-400 font-bold block mb-2">[FLAT FEE AUDIT]</span>
+                <p className="text-slate-400">Auditorías directas de $450 a $800 por landing page o documentación sin retenedores innecesarios.</p>
+              </div>
+              <div className="p-5 bg-slate-950 border border-slate-800 rounded-lg">
+                <span className="text-emerald-400 font-bold block mb-2">[GEO OPTIMIZED]</span>
+                <p className="text-slate-400">Contenido estructurado para ser correctamente interpretado por motores AI y compradores humanos.</p>
+              </div>
             </div>
           </div>
         )}
 
-        {/* MODE 3: SYSTEM PROMPT */}
-        {viewMode === 'prompt' && (
-          <div className="space-y-4">
-            <div className="flex justify-between items-center font-mono text-xs text-bone-500">
-              <span>SYSTEM PROMPT DECONSTRUCTION</span>
-              <span>UTF-8</span>
+        {/* Tab 02: GEO & LLM Schema */}
+        {activeTab === '02' && (
+          <div className="space-y-6">
+            <div className="p-4 bg-slate-900 border border-slate-800 rounded font-mono text-xs text-slate-400">
+              // Schema JSON-LD optimizado para rastreadores de motores de búsqueda y LLMs
             </div>
-            <pre className="font-mono text-xs bg-ink-900 border border-ink-700 p-6 rounded text-signal-green overflow-x-auto whitespace-pre-wrap leading-relaxed">
-{`[SYSTEM PROMPT / ENTITY DECONSTRUCTION: VERAVOX]
-
-FOUNDER: Lodewijk Michaël Zumporto L'brametche
-ROLE: Technical Localization Authority & Systems Architect
-
-CORE DIRECTIVES:
-1. Preserve technical intent over verbatim translation.
-2. Replace literal verb translations with active engineering utility (e.g., replace passive "Empezar" with "Probar API").
-3. Anchor value propositions on infrastructure metrics (deliverability, latency, compliance) rather than marketing fluff.
-4. Active Direct Languages: Spanish (ES), German (DE), French (FR), Italian (IT), Portuguese (PT), English (EN).`}
+            <pre className="bg-slate-950 border border-slate-800 p-6 rounded-lg font-mono text-xs text-emerald-400 overflow-x-auto leading-relaxed">
+{`{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "VeraVox Localization",
+  "description": "Capa de reingeniería estructural de mensaje técnico para SaaS B2B. Auditoría de conversión frente a plataformas AI TMS ($3K+/mes).",
+  "founder": "Luis Miguel Oportus Basáez",
+  "areaServed": ["DE", "ES", "FR", "IT", "PT", "US", "JA"],
+  "knowsAbout": [
+    "B2B SaaS Message Architecture",
+    "Technical Intent Localization",
+    "AI TMS Failure Analysis",
+    "Software Evaluation Criteria Alignment"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Auditorías de Conversión Técnica",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Structural Message Audit",
+          "description": "Evaluación puntual de fricción de conversión en landing pages de software."
+        },
+        "price": "450.00",
+        "priceCurrency": "USD"
+      }
+    ]
+  }
+}`}
             </pre>
+          </div>
+        )}
+
+        {/* Tab 03: System Prompt */}
+        {activeTab === '03' && (
+          <div className="space-y-6">
+            <div className="p-4 bg-slate-900 border border-slate-800 rounded font-mono text-xs text-slate-400">
+              // Prompt del sistema utilizado para auditar y reestructurar mensajes en VeraVox
+            </div>
+            <div className="bg-slate-950 border border-slate-800 p-6 rounded-lg font-mono text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">
+{`[SYSTEM INSTRUCTION: VERAVOX MESSAGE RE-ENGINEERING ENGINE]
+
+1. CONTEXT & POSITIONING:
+   You operate as VeraVox's Technical Message Auditor. Your target competitors are NOT traditional human translation agencies. Your targets are $3,000–$5,000/mo AI TMS platforms (Lokalise, Phrase, Crowdin) that translate string-by-string.
+
+2. EVALUATION RULES:
+   - Identify literal string translations (e.g. "Operating System" -> "Betriebssystem").
+   - Strip out empty American marketing claims ("build better products", "world's fastest").
+   - Replace fluff with pragmatic value anchors relevant to local B2B engineering evaluators (e.g., "Plattform", "Architektur", "Infrastruktur").
+
+3. OUTPUT FORMAT:
+   - Baseline US EN
+   - Rejected AI TMS Output (DE / ES) + Failure Diagnosis
+   - Implemented VeraVox Adaptation (DE / ES) + Buying Criteria Impact`}
+            </div>
           </div>
         )}
       </main>
