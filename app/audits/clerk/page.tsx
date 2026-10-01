@@ -66,7 +66,10 @@ const AUDIT_CONTENT = {
     returnDir: '← Return to Directory',
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
-    refinedIntent: 'Refined Technical Intent'
+    refinedIntent: 'Refined Technical Intent',
+    lblProblem: 'The Problem',
+    lblImpact: 'Operational Impact',
+    lblFix: 'Architectural Fix'
   },
   de: {
     navTag: 'Lokalisierungs-Audit #09',
@@ -130,7 +133,10 @@ const AUDIT_CONTENT = {
     returnDir: '← Zurück zum Verzeichnis',
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
-    refinedIntent: 'Präzisierter technischer Intent'
+    refinedIntent: 'Präzisierter technischer Intent',
+    lblProblem: 'Das Problem',
+    lblImpact: 'Betriebliche Auswirkung',
+    lblFix: 'Architektonische Lösung'
   },
   es: {
     navTag: 'Auditoría de Localización #09',
@@ -194,7 +200,10 @@ const AUDIT_CONTENT = {
     returnDir: '← Volver al Directorio',
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
-    refinedIntent: 'Intención Técnica Refinada'
+    refinedIntent: 'Intención Técnica Refinada',
+    lblProblem: 'El Problema',
+    lblImpact: 'Impacto Operativo',
+    lblFix: 'Solución Arquitectónica'
   },
   fr: {
     navTag: 'Audit de Localisation #09',
@@ -258,7 +267,10 @@ const AUDIT_CONTENT = {
     returnDir: '← Retour au Répertoire',
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
-    refinedIntent: 'Intention Technique Affinée'
+    refinedIntent: 'Intention Technique Affinée',
+    lblProblem: 'Le Problème',
+    lblImpact: 'Impact Opérationnel',
+    lblFix: 'Solution Architecturale'
   },
   it: {
     navTag: 'Audit di Localizzazione #09',
@@ -309,7 +321,7 @@ const AUDIT_CONTENT = {
     r1Strength: 'Migliore DX su React/Next',
     r1Bottleneck: 'Conformità EU/LATAM',
     r1Solution: 'Dati PII Regionali (EU-central-1)',
-    r2Strength: 'Componenti UI Pronti',
+    r2Strength: 'Componenti UI Pranti',
     r2Bottleneck: 'Vendite SSO/SAML',
     r2Solution: 'SAML B2B Self-Service',
     r3Strength: 'Supporto Middleware Edge',
@@ -322,7 +334,10 @@ const AUDIT_CONTENT = {
     returnDir: '← Torna al Direttorio',
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
-    refinedIntent: 'Intento Tecnico Rifinito'
+    refinedIntent: 'Intento Tecnico Rifinito',
+    lblProblem: 'Il Problema',
+    lblImpact: 'Impatto Operativo',
+    lblFix: 'Soluzione Architetturale'
   },
   pt: {
     navTag: 'Auditoria de Localização #09',
@@ -342,7 +357,7 @@ const AUDIT_CONTENT = {
     s2Title: 'Seção 2 / Análise Detalhada dos Pontos de Fricção',
     
     b1Title: '01 / Residência de Dados e Soberania LGPD / GDPR',
-    b1Problem: 'Almacenamento de PII em clusters centralizados nos EUA.',
+    b1Problem: 'Armazenamento de PII em clusters centralizados nos EUA.',
     b1Impact: 'Bloqueio em auditorias de segurança antes do início da integração.',
     b1Fix: 'Instâncias regionais nativas (EU-central-1) sem necessidade de planos corporativos customizados.',
     b1Us: 'Linha de Base EUA: "More than authentication. Complete user management."',
@@ -386,7 +401,10 @@ const AUDIT_CONTENT = {
     returnDir: '← Voltar ao Diretório',
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
-    refinedIntent: 'Intenção Técnica Refinada'
+    refinedIntent: 'Intenção Técnica Refinada',
+    lblProblem: 'O Problema',
+    lblImpact: 'Impacto Operacional',
+    lblFix: 'Solução Arquitetônica'
   }
 };
 
@@ -395,9 +413,31 @@ export default function ClerkAuditPage() {
   const t = AUDIT_CONTENT[lang] || AUDIT_CONTENT.en;
 
   return (
-    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950">
-      {/* HEADER */}
-      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
+    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950 print:bg-white print:text-black">
+      {/* GLOBAL PRINT STYLES TO FORCE CLEAN DOCUMENT OUTPUT */}
+      <style jsx global>{`
+        @media print {
+          body {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+          }
+          .print\\:hidden {
+            display: none !important;
+          }
+          .print\\:text-black {
+            color: #000000 !important;
+          }
+          .print\\:border-gray-300 {
+            border-color: #d1d5db !important;
+          }
+          .print\\:bg-gray-50 {
+            background-color: #f9fafb !important;
+          }
+        }
+      `}</style>
+
+      {/* HEADER - HIDDEN ON PRINT */}
+      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40 print:hidden">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
             ← VeraVox Main
@@ -431,150 +471,184 @@ export default function ClerkAuditPage() {
       </header>
 
       {/* MAIN CONTENT */}
-      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32">
+      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32 print:pt-0 print:pb-0 print:px-0">
         {/* AUDIT TITLE & METADATA */}
-        <header className="mb-20">
-          <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4">
+        <header className="mb-16">
+          <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4 print:text-black">
             <span>{t.navTag}</span>
-            <span className="text-ink-600">·</span>
-            <span className="text-bone-500">{t.date}</span>
-            <span className="text-ink-600">·</span>
-            <span className="text-bone-500">{t.readingTime}</span>
+            <span className="text-ink-600 print:text-gray-400">·</span>
+            <span className="text-bone-500 print:text-gray-600">{t.date}</span>
+            <span className="text-ink-600 print:text-gray-400">·</span>
+            <span className="text-bone-500 print:text-gray-600">{t.readingTime}</span>
           </div>
 
-          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4">
+          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4 print:text-black">
             {t.title}
           </h1>
-          <p className="text-lg text-bone-300 mb-10">
+          <p className="text-lg text-bone-300 mb-8 print:text-gray-700">
             {t.subtitle}
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ink-700 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ink-700 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed print:border-gray-300 print:text-gray-600">
             <div>
-              <span className="text-bone-300 block mb-1">Client</span>
+              <span className="text-bone-300 block mb-1 print:text-black">Client</span>
               {t.client}
             </div>
             <div>
-              <span className="text-bone-300 block mb-1">Markets</span>
+              <span className="text-bone-300 block mb-1 print:text-black">Markets</span>
               {t.markets}
             </div>
             <div>
-              <span className="text-bone-300 block mb-1">Audience</span>
+              <span className="text-bone-300 block mb-1 print:text-black">Audience</span>
               {t.audience}
             </div>
           </div>
         </header>
 
         {/* SECTION 1: PERSPECTIVE & INTENT */}
-        <section className="mb-20">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
+        <section className="mb-16">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-6 print:text-black print:font-bold">
             {t.s1Title}
           </div>
-          <div className="max-w-none text-bone-300 leading-relaxed space-y-6">
-            <h2 className="font-display font-semibold text-xl text-bone-100 mb-2">
+          <div className="max-w-none text-bone-300 leading-relaxed space-y-6 print:text-gray-800">
+            <h2 className="font-display font-semibold text-xl text-bone-100 mb-2 print:text-black">
               {t.overviewHeading}
             </h2>
-            <p className="text-bone-300 leading-relaxed">
+            <p className="text-bone-300 leading-relaxed print:text-gray-800">
               {t.overviewBody}
             </p>
-            <p className="text-bone-400 text-sm leading-relaxed border-l-2 border-ink-700 pl-4 italic">
+            <p className="text-bone-400 text-sm leading-relaxed border-l-2 border-ink-700 pl-4 italic print:border-gray-400 print:text-gray-600">
               {t.overviewSub}
             </p>
           </div>
         </section>
 
         {/* SECTION 2: ARCHITECTURAL BREAKDOWN */}
-        <section className="mb-20">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
+        <section className="mb-16">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black print:font-bold">
             {t.s2Title}
           </div>
           
           {/* BLOCK 1 */}
-          <div className="mb-16">
-            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4">
+          <div className="mb-14">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4 print:text-black">
               {t.b1Title}
             </h3>
             
-            <div className="bg-ink-900 border border-ink-700 p-5 rounded-sm space-y-3 mb-6 text-xs font-mono">
-              <div><span className="text-signal-red">The Problem:</span> <span className="text-bone-300">{t.b1Problem}</span></div>
-              <div><span className="text-signal-gold">Operational Impact:</span> <span className="text-bone-300">{t.b1Impact}</span></div>
-              <div><span className="text-signal-green">Architectural Fix:</span> <span className="text-bone-300">{t.b1Fix}</span></div>
+            {/* REFACTORED: Dynamic Flow Layout replacing the boxy square cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-ink-800 print:border-gray-200">
+              <div className="border-l-2 border-signal-red/80 pl-3 py-1 print:border-red-600">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-red block mb-1 print:text-red-700 font-semibold">{t.lblProblem}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b1Problem}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-gold/80 pl-3 py-1 print:border-amber-500">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-gold block mb-1 print:text-amber-700 font-semibold">{t.lblImpact}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b1Impact}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-green/80 pl-3 py-1 print:border-emerald-600">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-green block mb-1 print:text-emerald-700 font-semibold">{t.lblFix}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b1Fix}</p>
+              </div>
             </div>
 
-            <div className="space-y-4 mb-6">
+            <div className="space-y-4 pt-2">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.usBaseline}</p>
-                <p className="text-bone-400 italic text-sm">{t.b1Us}</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.usBaseline}</p>
+                <p className="text-bone-400 italic text-sm print:text-gray-700">{t.b1Us}</p>
               </div>
               
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.tradAgency}</p>
-                <p className="text-bone-400 text-sm font-mono">{t.b1Trad}</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.tradAgency}</p>
+                <p className="text-bone-400 text-sm font-mono print:text-gray-700">{t.b1Trad}</p>
               </div>
 
-              <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1">{t.refinedIntent}</p>
-                <p className="text-bone-100 font-medium text-sm font-mono">{t.b1Refined}</p>
+              <div className="border-l-2 border-signal-gold pl-4 py-1 print:border-black">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1 print:text-black print:font-bold">{t.refinedIntent}</p>
+                <p className="text-bone-100 font-medium text-sm font-mono print:text-black">{t.b1Refined}</p>
               </div>
             </div>
           </div>
 
           {/* BLOCK 2 */}
-          <div className="mb-16">
-            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4">
+          <div className="mb-14">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4 print:text-black">
               {t.b2Title}
             </h3>
             
-            <div className="bg-ink-900 border border-ink-700 p-5 rounded-sm space-y-3 mb-6 text-xs font-mono">
-              <div><span className="text-signal-red">The Problem:</span> <span className="text-bone-300">{t.b2Problem}</span></div>
-              <div><span className="text-signal-gold">Operational Impact:</span> <span className="text-bone-300">{t.b2Impact}</span></div>
-              <div><span className="text-signal-green">Architectural Fix:</span> <span className="text-bone-300">{t.b2Fix}</span></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-ink-800 print:border-gray-200">
+              <div className="border-l-2 border-signal-red/80 pl-3 py-1 print:border-red-600">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-red block mb-1 print:text-red-700 font-semibold">{t.lblProblem}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b2Problem}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-gold/80 pl-3 py-1 print:border-amber-500">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-gold block mb-1 print:text-amber-700 font-semibold">{t.lblImpact}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b2Impact}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-green/80 pl-3 py-1 print:border-emerald-600">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-green block mb-1 print:text-emerald-700 font-semibold">{t.lblFix}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b2Fix}</p>
+              </div>
             </div>
 
-            <div className="space-y-4 mb-6">
+            <div className="space-y-4 pt-2">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.usBaseline}</p>
-                <p className="text-bone-400 italic text-sm">{t.b2Us}</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.usBaseline}</p>
+                <p className="text-bone-400 italic text-sm print:text-gray-700">{t.b2Us}</p>
               </div>
               
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.tradAgency}</p>
-                <p className="text-bone-400 text-sm font-mono">{t.b2Trad}</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.tradAgency}</p>
+                <p className="text-bone-400 text-sm font-mono print:text-gray-700">{t.b2Trad}</p>
               </div>
 
-              <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1">{t.refinedIntent}</p>
-                <p className="text-bone-100 font-medium text-sm font-mono">{t.b2Refined}</p>
+              <div className="border-l-2 border-signal-gold pl-4 py-1 print:border-black">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1 print:text-black print:font-bold">{t.refinedIntent}</p>
+                <p className="text-bone-100 font-medium text-sm font-mono print:text-black">{t.b2Refined}</p>
               </div>
             </div>
           </div>
 
           {/* BLOCK 3 */}
-          <div className="mb-16">
-            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4">
+          <div className="mb-14">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4 print:text-black">
               {t.b3Title}
             </h3>
             
-            <div className="bg-ink-900 border border-ink-700 p-5 rounded-sm space-y-3 mb-6 text-xs font-mono">
-              <div><span className="text-signal-red">The Problem:</span> <span className="text-bone-300">{t.b3Problem}</span></div>
-              <div><span className="text-signal-gold">Operational Impact:</span> <span className="text-bone-300">{t.b3Impact}</span></div>
-              <div><span className="text-signal-green">Architectural Fix:</span> <span className="text-bone-300">{t.b3Fix}</span></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-ink-800 print:border-gray-200">
+              <div className="border-l-2 border-signal-red/80 pl-3 py-1 print:border-red-600">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-red block mb-1 print:text-red-700 font-semibold">{t.lblProblem}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b3Problem}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-gold/80 pl-3 py-1 print:border-amber-500">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-gold block mb-1 print:text-amber-700 font-semibold">{t.lblImpact}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b3Impact}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-green/80 pl-3 py-1 print:border-emerald-600">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-green block mb-1 print:text-emerald-700 font-semibold">{t.lblFix}</span>
+                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b3Fix}</p>
+              </div>
             </div>
 
-            <div className="space-y-4 mb-6">
+            <div className="space-y-4 pt-2">
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.usBaseline}</p>
-                <p className="text-bone-400 italic text-sm">{t.b3Us}</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.usBaseline}</p>
+                <p className="text-bone-400 italic text-sm print:text-gray-700">{t.b3Us}</p>
               </div>
               
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.tradAgency}</p>
-                <p className="text-bone-400 text-sm font-mono">{t.b3Trad}</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.tradAgency}</p>
+                <p className="text-bone-400 text-sm font-mono print:text-gray-700">{t.b3Trad}</p>
               </div>
 
-              <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1">{t.refinedIntent}</p>
-                <p className="text-bone-100 font-medium text-sm font-mono">{t.b3Refined}</p>
+              <div className="border-l-2 border-signal-gold pl-4 py-1 print:border-black">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1 print:text-black print:font-bold">{t.refinedIntent}</p>
+                <p className="text-bone-100 font-medium text-sm font-mono print:text-black">{t.b3Refined}</p>
               </div>
             </div>
           </div>
@@ -582,52 +656,52 @@ export default function ClerkAuditPage() {
 
         {/* SECTION 3: ROADMAP & MATRIX */}
         <section className="mb-20">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black print:font-bold">
             {t.s3Title}
           </div>
           
-          <h3 className="font-display text-xl text-bone-100 mb-6">{t.s3Heading}</h3>
+          <h3 className="font-display text-xl text-bone-100 mb-6 print:text-black">{t.s3Heading}</h3>
           
           {/* MATRIX TABLE */}
-          <div className="overflow-x-auto mb-12 border border-ink-700 bg-ink-900">
+          <div className="overflow-x-auto mb-12 border border-ink-700 bg-ink-900 print:bg-white print:border-gray-300">
             <table className="w-full text-left font-mono text-xs border-collapse">
               <thead>
-                <tr className="border-b border-ink-700 bg-ink-950 text-bone-500 uppercase">
-                  <th className="p-4 border-r border-ink-700">{t.s3TableCurrent}</th>
-                  <th className="p-4 border-r border-ink-700">{t.s3TableGrowth}</th>
+                <tr className="border-b border-ink-700 bg-ink-950 text-bone-500 uppercase print:bg-gray-100 print:text-black print:border-gray-300">
+                  <th className="p-4 border-r border-ink-700 print:border-gray-300">{t.s3TableCurrent}</th>
+                  <th className="p-4 border-r border-ink-700 print:border-gray-300">{t.s3TableGrowth}</th>
                   <th className="p-4">{t.s3TableSolution}</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-ink-700 text-bone-300">
+              <tbody className="divide-y divide-ink-700 text-bone-300 print:divide-gray-300 print:text-gray-800">
                 <tr>
-                  <td className="p-4 border-r border-ink-700 text-bone-100">{t.r1Strength}</td>
-                  <td className="p-4 border-r border-ink-700 text-signal-red">{t.r1Bottleneck}</td>
-                  <td className="p-4 text-signal-green">{t.r1Solution}</td>
+                  <td className="p-4 border-r border-ink-700 text-bone-100 print:border-gray-300 print:text-black">{t.r1Strength}</td>
+                  <td className="p-4 border-r border-ink-700 text-signal-red print:border-gray-300 print:text-red-700">{t.r1Bottleneck}</td>
+                  <td className="p-4 text-signal-green print:text-emerald-700">{t.r1Solution}</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border-r border-ink-700 text-bone-100">{t.r2Strength}</td>
-                  <td className="p-4 border-r border-ink-700 text-signal-red">{t.r2Bottleneck}</td>
-                  <td className="p-4 text-signal-green">{t.r2Solution}</td>
+                  <td className="p-4 border-r border-ink-700 text-bone-100 print:border-gray-300 print:text-black">{t.r2Strength}</td>
+                  <td className="p-4 border-r border-ink-700 text-signal-red print:border-gray-300 print:text-red-700">{t.r2Bottleneck}</td>
+                  <td className="p-4 text-signal-green print:text-emerald-700">{t.r2Solution}</td>
                 </tr>
                 <tr>
-                  <td className="p-4 border-r border-ink-700 text-bone-100">{t.r3Strength}</td>
-                  <td className="p-4 border-r border-ink-700 text-signal-red">{t.r3Bottleneck}</td>
-                  <td className="p-4 text-signal-green">{t.r3Solution}</td>
+                  <td className="p-4 border-r border-ink-700 text-bone-100 print:border-gray-300 print:text-black">{t.r3Strength}</td>
+                  <td className="p-4 border-r border-ink-700 text-signal-red print:border-gray-300 print:text-red-700">{t.r3Bottleneck}</td>
+                  <td className="p-4 text-signal-green print:text-emerald-700">{t.r3Solution}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-signal-gold">{t.summaryHeading}</h4>
-            <p className="text-bone-300 leading-relaxed text-sm">
+            <h4 className="font-mono text-xs uppercase tracking-widest text-signal-gold print:text-black print:font-bold">{t.summaryHeading}</h4>
+            <p className="text-bone-300 leading-relaxed text-sm print:text-gray-800">
               {t.summaryText}
             </p>
           </div>
         </section>
         
-        {/* FOOTER NAVIGATION */}
-        <div className="mt-32 pt-8 border-t border-ink-700">
+        {/* FOOTER NAVIGATION - HIDDEN ON PRINT */}
+        <div className="mt-32 pt-8 border-t border-ink-700 print:hidden">
           <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
             {t.returnDir}
           </Link>
