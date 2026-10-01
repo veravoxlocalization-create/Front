@@ -3,444 +3,239 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-const AUDIT_CONTENT = {
-  en: {
-    navTag: 'Localization Audit #06',
-    title: 'Supabase: Managed Postgres & RLS Regional Audit',
-    subtitle: 'Shifting US conversational abstractions into declarative database vernacular for EU & LATAM technical leads.',
-    readingTime: '8 min read',
-    date: 'October 2026',
-    client: 'Supabase',
-    markets: 'LATAM, EU, DACH',
-    audience: 'Principal Database Architects & CTOs',
-    s1Title: 'Section 1 / Perspective & Intent',
-    overviewHeading: 'Context & Intent',
-    overviewBody: 'Supabase’s iconic baseline "Build in a weekend. Scale to millions." captures startup speed in North America. However, conservative European and Latin American engineering leads often interpret "weekend project" as an indicator of amateur or hobby-tier tooling unfit for core enterprise workloads.',
-    overviewSub: 'This audit repositions Supabase around ACID compliance, native Row Level Security (RLS), automated read-replicas, and open-source database sovereignty.',
-    s2Title: 'Section 2 / Core Acquisition Teardown',
-    b1Title: '01 / The Primary Headline (H1)',
-    b1Analysis: 'Translating "Build in a weekend" literally undermines enterprise authority. Technical evaluators require direct framing around managed PostgreSQL, connection pooling, and real-time database CDC (Change Data Capture).',
-    b2Title: '02 / Core Value Proposition (H2)',
-    b2Analysis: 'US marketing framing highlights "Firebase Alternative". In European markets, anti-lock-in sentiment is strong; framing the product directly on open-source Postgres standards and data sovereignty delivers higher conversion signal.',
-    b3Title: '03 / Primary Call to Action (CTA)',
-    b3Analysis: 'Generic CTAs like "Start your project" sound like a casual hobby workflow. B2B buyers respond to explicit database provisioning actions like "Provision Postgres Instance".',
-    s3Title: 'Section 3 / Applied Surface Audits',
-    s3Heading: '01 / Row Level Security (RLS) & Multi-Tenant Data Isolation',
-    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
-    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
-    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
-    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
-    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
-    s3Analysis: 'Phrasing RLS as "securing data" makes it sound optional or trivial. In European compliance reviews, explicitly framing RLS as multi-tenant isolation via JWT claims satisfies CISO security requirements immediately.',
-    returnDir: '← Return to Directory',
-    usBaseline: 'US Baseline',
-    tradAgency: 'Traditional Agency Output',
-    refinedIntent: 'Refined Technical Intent'
+interface AuditPageProps {
+  params: {
+    id: string;
+  };
+}
+
+const AUDIT_DATA: Record<string, {
+  name: string;
+  category: string;
+  summary: string;
+  usBaseline: string;
+  tmsOutput: { de: string; es: string };
+  veravoxOutput: { de: string; es: string };
+  diagnosis: string;
+  impact: string;
+  tableRows: Array<{ criterion: string; tms: string; veravox: string }>;
+}> = {
+  clerk: {
+    name: 'Clerk',
+    category: 'Authentication & User Management',
+    summary: 'Auditoría de arquitectura de mensaje para infraestructura de autenticación B2B.',
+    usBaseline: 'More than authentication. Complete user management for modern applications.',
+    tmsOutput: {
+      de: 'Mehr als Authentifizierung. Vollständiges Benutzermanagement für moderne Anwendungen.',
+      es: 'Más que autenticación. Gestión completa de usuarios para aplicaciones modernas.'
+    },
+    veravoxOutput: {
+      de: 'Identity-Infrastruktur & Sessions-Verwaltung für Enterprise-SaaS-Architekturen.',
+      es: 'Infraestructura de identidad y gestión de sesiones para arquitecturas SaaS de alto rendimiento.'
+    },
+    diagnosis: 'El software TMS traduce "user management" como "Benutzermanagement/Gestión de usuarios", haciendo que el software parezca un panel administrativo básico en lugar de un motor de identidad seguro.',
+    impact: 'Re-orienta el posicionamiento hacia seguridad de sesión e infraestructura enterprise, acelerando la aprobación de equipos DevSecOps locales.',
+    tableRows: [
+      {
+        criterion: 'Categorización Técnica',
+        tms: 'Clasifica el software como "gestión de usuarios" estándar.',
+        veravox: 'Posiciona la herramienta como "Infraestructura de Identidad y Sesiones".'
+      },
+      {
+        criterion: 'Criterio de Evaluación',
+        tms: 'Enfocado en características cosméticas de interfaz de usuario.',
+        veravox: 'Enfocado en cumplimiento normativo, latencia y arquitectura de seguridad.'
+      },
+      {
+        criterion: 'Coste Operativo',
+        tms: 'Suscripción TMS $3K-$5K/mes acumulando deuda de traducción.',
+        veravox: 'Reingeniería puntual de alta conversión para landing de producto.'
+      }
+    ]
   },
-  es: {
-    navTag: 'Auditoría de Localización #06',
-    title: 'Supabase: Infraestructura Postgres y Seguridad RLS',
-    subtitle: 'Transformando abstracciones de desarrollo rápido en vocabulario declarativo para líderes de ingeniería.',
-    readingTime: '8 min de lectura',
-    date: 'Octubre 2026',
-    client: 'Supabase',
-    markets: 'LATAM, EU, DACH',
-    audience: 'Arquitectos de Bases de Datos y CTOs',
-    s1Title: 'Sección 1 / Perspectiva e Intención',
-    overviewHeading: 'Contexto y Objetivo',
-    overviewBody: 'La frase "Construye en un fin de semana" evoca agilidad en EE. UU. En LATAM y Europa, los directores de tecnología asocian "proyecto de fin de semana" con herramientas no preparadas para entornos de producción críticos.',
-    overviewSub: 'Esta auditoría reestructura la propuesta de Supabase resaltando el cumplimiento ACID, políticas RLS nativas y soberanía de datos sobre código abierto.',
-    s2Title: 'Sección 2 / Desglose Estructural de Adquisición',
-    b1Title: '01 / El Titular Principal (H1)',
-    b1Analysis: 'Sustituir referencias a proyectos informales por la definición formal de Postgres administrado y replicación en tiempo real restaura el prestigio técnico.',
-    b2Title: '02 / Propuesta de Valor Central (H2)',
-    b2Analysis: 'En lugar de definirse solo como "Alternativa a Firebase", enfatizar la portabilidad de datos sin bloqueo de proveedor resuena con decisiones de arquitectura corporativa.',
-    b3Title: '03 / Llamada a la Acción Principal (CTA)',
-    b3Analysis: 'Reemplazar "Crear proyecto" por acciones precisas de aprovisionamiento de bases de datos.',
-    s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
-    s3Heading: '01 / Seguridad RLS y Aislamiento Multinquilino',
-    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
-    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
-    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
-    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
-    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
-    s3Analysis: 'La traducción precisa de las políticas de seguridad a nivel de fila garantiza que los equipos de cumplimiento legal aprueben la migración.',
-    returnDir: '← Volver al Directorio',
-    usBaseline: 'Línea Base (EE. UU.)',
-    tradAgency: 'Resultado de Agencia Tradicional',
-    refinedIntent: 'Intención Técnica Refinada'
-  },
-  de: {
-    navTag: 'Lokalisierungs-Audit #06',
-    title: 'Supabase: Verwaltetes Postgres & RLS-Sicherheitsarchitektur',
-    subtitle: 'Übertragung von US-Startup-Slogans in präzise Datenbank-Fachsprache.',
-    readingTime: '8 Min. Lesezeit',
-    date: 'Oktober 2026',
-    client: 'Supabase',
-    markets: 'LATAM, EU, DACH',
-    audience: 'Datenbank-Architects & CTOs',
-    s1Title: 'Abschnitt 1 / Perspektive & Intent',
-    overviewHeading: 'Kontext & Zielsetzung',
-    overviewBody: 'Der US-Slogan „Build in a weekend“ wird im DACH-Raum oft als Unreife missverstanden. Enterprise-Entscheider suchen nach ACID-Konformität, PostgreSQL-Standardtreue und datenschutzkonformer Mandantenfähigkeit.',
-    overviewSub: 'Dieses Audit positioniert Supabase als vollwertige PostgreSQL-Plattform mit gewohntem Open-Source-Standard und integrierter Zeilensicherheit.',
-    s2Title: 'Abschnitt 2 / Strukturelle Akquisitions-Analyse',
-    b1Title: '01 / Die Hauptüberschrift (H1)',
-    b1Analysis: 'Klarheit schlägt Marketing: Technische Einkäufer verlangen direkte Angaben zu Postgres-Versionen, Verbindungspooling und skalierbarer Datenhaltung.',
-    b2Title: '02 / Das zentrale Wertversprechen (H2)',
-    b2Analysis: 'Die Positionierung gegen Vendor-Lock-in überzeugt deutsche Architekten mehr als ein diffuser Vergleich mit proprietären US-Clouddiensten.',
-    b3Title: '03 / Primärer Call-to-Action (CTA)',
-    b3Analysis: 'Anstelle von „Projekt starten“ generiert „Postgres-Instanz bereitstellen“ deutlich höhere Relevanz bei professionellen Entwicklern.',
-    s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
-    s3Heading: '01 / Echtzeit-Replikation & Row-Level Security',
-    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
-    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
-    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
-    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
-    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
-    s3Analysis: 'Präzise Fachbegriffe bei Zeilensicherheits-Regeln (RLS) sichern die Einhaltung europäischer Compliance-Vorgaben.',
-    returnDir: '← Zurück zum Verzeichnis',
-    usBaseline: 'US-Ausgangslage',
-    tradAgency: 'Klassisches Agenturergebnis',
-    refinedIntent: 'Präzisierter technischer Intent'
-  },
-  fr: {
-    navTag: 'Audit de Localisation #06',
-    title: 'Supabase : Postgres Géré & Sécurité RLS',
-    subtitle: 'Conversion des métaphores rapides US en terminologie base de données déclarative.',
-    readingTime: '8 min de lecture',
-    date: 'Octobre 2026',
-    client: 'Supabase',
-    markets: 'LATAM, EU, DACH',
-    audience: 'Architectes Données & CTOs',
-    s1Title: 'Section 1 / Perspective & Intention',
-    overviewHeading: 'Contexte & Objectif',
-    overviewBody: 'Traduire littéralement "Construisez en un week-end" affaiblit la crédibilité auprès des décideurs IT européens que recherchent la conformité ACID et l’absence de verrouillage propriétaire.',
-    overviewSub: 'Reconstitution de la valeur autour de PostgreSQL géré, des politiques RLS et de la réplication de données en temps réel.',
-    s2Title: 'Section 2 / Déconstruction de la Conversion',
-    b1Title: '01 / Titre Principal (H1)',
-    b1Analysis: 'Mettre l’accent sur la robustesse de l’infrastructure PostgreSQL gérée plutôt que sur la vitesse de bricolage du week-end.',
-    b2Title: '02 / Proposition de Valeur (H2)',
-    b2Analysis: 'Mettre en avant la souveraineté des données et l’open-source face aux solutions propriétaires.',
-    b3Title: '03 / Appel à l’Action (CTA)',
-    b3Analysis: 'Privilégier un CTA explicite : "Provisionner une instance Postgres".',
-    s3Title: 'Section 3 / Audit des Surfaces Appliquées',
-    s3Heading: '01 / Sécurité RLS et Politiques d’Accès',
-    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
-    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
-    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
-    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
-    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
-    s3Analysis: 'Traduction rigoureuse des concepts de sécurité au niveau des lignes SQL pour garantir la conformité.',
-    returnDir: '← Retour au Répertoire',
-    usBaseline: 'Référence US',
-    tradAgency: 'Rendu Agence Traditionnelle',
-    refinedIntent: 'Intention Technique Affinée'
-  },
-  it: {
-    navTag: 'Audit di Localizzazione #06',
-    title: 'Supabase: Gestione Postgres e Sicurezza RLS',
-    subtitle: 'Traduzione dei concetti rapida US in terminologia dichiarativa per database enterprise.',
-    readingTime: '8 min di lettura',
-    date: 'Ottobre 2026',
-    client: 'Supabase',
-    markets: 'LATAM, EU, DACH',
-    audience: 'Database Architect & CTO',
-    s1Title: 'Sezione 1 / Prospettiva e Intento',
-    overviewHeading: 'Contesto e Obiettivo',
-    overviewBody: 'Sostituire la narrazione dei progetti informali con garanzie formali su ACID compliance, sicurezza a livello di riga e assenza di lock-in.',
-    overviewSub: 'Riorganizzazione del messaggio per decisori tecnici europei e latini.',
-    s2Title: 'Sezione 2 / Analisi Conversione',
-    b1Title: '01 / Titolo Principale (H1)',
-    b1Analysis: 'Focalizzarsi sull’architettura di Postgres gestito e real-time CDC.',
-    b2Title: '02 / Valore Centrale (H2)',
-    b2Analysis: 'Evidenziare la sovranità dei dati e l’interoperabilità Open Source.',
-    b3Title: '03 / Call to Action (CTA)',
-    b3Analysis: 'Utilizzare un linguaggio orientato alla configurazione dell’infrastruttura.',
-    s3Title: 'Sezione 3 / Audit Documentazione',
-    s3Heading: '01 / Replicazione Realtime e RLS',
-    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
-    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
-    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
-    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
-    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
-    s3Analysis: 'Massima accuratezza nei termini SQL e nelle politiche di sicurezza.',
-    returnDir: '← Torna al Direttorio',
-    usBaseline: 'Linea Base US',
-    tradAgency: 'Output Agenzia Tradizionale',
-    refinedIntent: 'Intento Tecnico Rifinito'
-  },
-  pt: {
-    navTag: 'Auditoria de Localização #06',
-    title: 'Supabase: Infraestrutura Postgres e Segurança RLS',
-    subtitle: 'Conversão de slogans de desenvolvimento rápido para vocabulário declarativo de banco de dados.',
-    readingTime: '8 min de leitura',
-    date: 'Outubro 2026',
-    client: 'Supabase',
-    markets: 'LATAM, EU, DACH',
-    audience: 'Arquitetos de Banco de Dados & CTOs',
-    s1Title: 'Seção 1 / Perspectiva e Intenção',
-    overviewHeading: 'Contexto e Objetivo',
-    overviewBody: 'A expressão "Construa em um fim de semana" transmite falta de maturidade enterprise para diretores de TI na Europa e América Latina.',
-    overviewSub: 'Auditoria focada em estabelecer o Supabase como infraestrutura PostgreSQL totalmente gerenciada e segura.',
-    s2Title: 'Seção 2 / Análise de Conversão',
-    b1Title: '01 / Título Principal (H1)',
-    b1Analysis: 'Definição precisa de banco de dados relacional gerenciado e replicação em tempo real.',
-    b2Title: '02 / Proposta de Valor (H2)',
-    b2Analysis: 'Ênfase na liberdade de código aberto e controle total dos dados.',
-    b3Title: '03 / Chamada para Ação (CTA)',
-    b3Analysis: 'Substituição por ações diretas de provisionamento de banco de dados.',
-    s3Title: 'Seção 3 / Documentação Técnica',
-    s3Heading: '01 / Políticas de Segurança a Nível de Linha (RLS)',
-    s3UsBaseline: 'Secure your data with Row Level Security policies directly in Postgres.',
-    s3TradAgencyEs: 'Asegura tus datos con políticas de seguridad a nivel de fila directamente en Postgres.',
-    s3TradAgencyDe: 'Sichern Sie Ihre Daten mit Row-Level-Security-Richtlinien direkt in Postgres.',
-    s3RefinedEs: 'Aislamiento multinquilino mediante políticas RLS nativas en SQL. Control de acceso granular por token JWT sin capa middleware extra.',
-    s3RefinedDe: 'Multi-Tenant-Datenisolierung durch native SQL-RLS-Policies. Granulare Zugriffskontrolle via JWT-Claim ohne zusätzliche Middleware.',
-    s3Analysis: 'Precisão absoluta na tradução de termos SQL e controle de acesso.',
-    returnDir: '← Voltar ao Diretório',
-    usBaseline: 'Linha de Base (EUA)',
-    tradAgency: 'Resultado de Agência Tradicional',
-    refinedIntent: 'Intenção Técnica Refinada'
+  resend: {
+    name: 'Resend',
+    category: 'Email Infrastructure',
+    summary: 'Auditoría de arquitectura de mensaje para plataformas de envío de email transaccional.',
+    usBaseline: 'Email for developers. Reimagined for modern engineering workflows.',
+    tmsOutput: {
+      de: 'E-Mail für Entwickler. Neu erfunden für moderne Entwicklungs-Workflows.',
+      es: 'Email para desarrolladores. Reorganizado para flujos de trabajo modernos.'
+    },
+    veravoxOutput: {
+      de: 'Transaktionale E-Mail-API mit hoher Zustellbarkeit für Entwicklungs-Teams.',
+      es: 'API de email transaccional de alta entregabilidad diseñada para pipelines de desarrollo.'
+    },
+    diagnosis: 'Las plataformas TMS mantienen la adjetivación vacía de marketing ("Neu erfunden / Reorganizado"), sin detallar métricas de entregabilidad ni capacidad de API.',
+    impact: 'Pone en primer plano la entregabilidad transaccional y la integración por API, clave para la decisión de ingenieros backend.',
+    tableRows: [
+      {
+        criterion: 'Intención Principal',
+        tms: 'Destaca un concepto abstracto de "reinvención".',
+        veravox: 'Ancla la propuesta en la entregabilidad de API y fiabilidad del pipeline.'
+      },
+      {
+        criterion: 'Terminología API',
+        tms: 'Traducción genérica de "email" y "workflows".',
+        veravox: 'Mapeo preciso a "transaktionale E-Mail-API" y "pipelines de desarrollo".'
+      },
+      {
+        criterion: 'Retorno de Inversión',
+        tms: 'Gasto recurrente en traducción por palabras sin validación.',
+        veravox: 'Garantía de resonancia técnica en la evaluación inicial de desarrolladores.'
+      }
+    ]
   }
 };
 
-export default function SupabaseAuditPage() {
-  const [lang, setLang] = useState('en');
-  const t = AUDIT_CONTENT[lang] || AUDIT_CONTENT.en;
+export default function AuditDetailPage({ params }: AuditPageProps) {
+  const [activeLang, setActiveLang] = useState<'es' | 'de' | 'en'>('es');
+  
+  const auditId = params.id.toLowerCase();
+  const data = AUDIT_DATA[auditId] || AUDIT_DATA.clerk;
 
   return (
-    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950">
-      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
-            ← VeraVox Main
-          </Link>
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+      {/* Header Navigation */}
+      <header className="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link href="/" className="font-mono text-lg font-bold tracking-wider text-emerald-400 hover:opacity-80">
+              VERAVOX
+            </Link>
+            <span className="text-slate-600 font-mono text-sm">/</span>
+            <span className="font-mono text-xs uppercase text-slate-400">AUDITS</span>
+            <span className="text-slate-600 font-mono text-sm">/</span>
+            <span className="font-mono text-xs uppercase text-emerald-400">{data.name}</span>
+          </div>
 
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 font-mono text-xs">
-              {['es', 'fr', 'de', 'it', 'pt', 'en'].map((l) => (
-                <React.Fragment key={l}>
-                  <button
-                    onClick={() => setLang(l)}
-                    className={`bg-transparent border-0 p-0 cursor-pointer transition-colors hover:text-bone-200 ${
-                      lang === l ? 'text-signal-gold font-semibold' : 'text-bone-500'
-                    }`}
-                  >
-                    {l.toUpperCase()}
-                  </button>
-                  {l !== 'en' && <span className="text-ink-600">/</span>}
-                </React.Fragment>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => window.print()}
+              className="px-3 py-1 bg-slate-900 border border-slate-700 hover:border-slate-500 rounded font-mono text-xs text-slate-300 transition-colors"
+            >
+              [EXPORT PDF]
+            </button>
+            <div className="flex items-center gap-1 bg-slate-900 border border-slate-800 p-1 rounded font-mono text-xs">
+              {(['es', 'de', 'en'] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setActiveLang(l)}
+                  className={`px-2 py-1 rounded uppercase transition-colors ${
+                    activeLang === l ? 'bg-emerald-500 text-slate-950 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  {l}
+                </button>
               ))}
             </div>
-
-            <button 
-              onClick={() => window.print()}
-              className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors cursor-pointer bg-transparent border-0"
-            >
-              Export PDF
-            </button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32">
-        <header className="mb-20">
-          <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4">
-            <span>{t.navTag}</span>
-            <span className="text-ink-600">·</span>
-            <span className="text-bone-500">{t.date}</span>
-            <span className="text-ink-600">·</span>
-            <span className="text-bone-500">{t.readingTime}</span>
+      <main className="max-w-6xl mx-auto px-6 py-12">
+        {/* Title and Meta */}
+        <div className="mb-10 border-b border-slate-800 pb-8">
+          <div className="inline-block font-mono text-xs text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-3 py-1 rounded mb-4">
+            AUDITORÍA TÉCNICA COMPLETADA &bull; ID: {auditId.toUpperCase()}
           </div>
-
-          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4">
-            {t.title}
+          <h1 className="text-4xl font-extrabold text-slate-50 mb-3">
+            Informe de Auditoría Estructural: {data.name}
           </h1>
-          <p className="text-lg text-bone-300 mb-10">
-            {t.subtitle}
+          <p className="text-slate-400 text-lg max-w-3xl">
+            {data.summary}
           </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ink-700 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed">
-            <div>
-              <span className="text-bone-300 block mb-1">Client</span>
-              {t.client}
-            </div>
-            <div>
-              <span className="text-bone-300 block mb-1">Markets</span>
-              {t.markets}
-            </div>
-            <div>
-              <span className="text-bone-300 block mb-1">Audience</span>
-              {t.audience}
-            </div>
-          </div>
-        </header>
+        </div>
 
-        <section className="mb-20">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
-            {t.s1Title}
-          </div>
-          <div className="max-w-none text-bone-300 leading-relaxed space-y-6">
-            <h2 className="font-display font-semibold text-xl text-bone-100 mb-2">
-              {t.overviewHeading}
-            </h2>
-            <p className="text-bone-300 leading-relaxed">
-              {t.overviewBody}
-            </p>
-            <p className="text-bone-400 text-sm leading-relaxed">
-              {t.overviewSub}
-            </p>
+        {/* 3-Column Comparison Teardown */}
+        <section className="mb-12">
+          <h2 className="font-mono text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">
+            Teardown de Mensaje: AI TMS ($3K+/mes) vs. VeraVox Layer
+          </h2>
+
+          <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
+            {/* US Baseline */}
+            <div className="mb-6 p-4 rounded bg-slate-950 border border-slate-800">
+              <span className="font-mono text-xs text-slate-500 block mb-1">
+                [01] LÍNEA BASE ORIGINAL (US EN)
+              </span>
+              <p className="font-mono text-sm text-slate-200 font-semibold">
+                "{data.usBaseline}"
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Native AI TMS Output */}
+              <div className="p-5 rounded-lg bg-rose-950/10 border border-rose-900/40">
+                <span className="font-mono text-xs font-bold text-rose-400 bg-rose-950/80 border border-rose-800/60 px-2 py-1 rounded block w-fit mb-3">
+                  [02] PLATAFORMA AI TMS / LOKALISE / PHRASE ($3K+/MES)
+                </span>
+                <div className="space-y-2 font-mono text-xs text-slate-300 mb-4 bg-slate-950 p-3 rounded border border-rose-950">
+                  <p><strong className="text-rose-400">DE:</strong> "{data.tmsOutput.de}"</p>
+                  <p><strong className="text-rose-400">ES:</strong> "{data.tmsOutput.es}"</p>
+                </div>
+                <div className="border-t border-rose-900/30 pt-3">
+                  <span className="font-mono text-xs text-rose-400 font-semibold block mb-1">Fallo de Conversión:</span>
+                  <p className="text-xs text-slate-400 leading-relaxed">{data.diagnosis}</p>
+                </div>
+              </div>
+
+              {/* VeraVox Adaptation */}
+              <div className="p-5 rounded-lg bg-emerald-950/10 border border-emerald-900/40">
+                <span className="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-1 rounded block w-fit mb-3">
+                  [03] REINGENIERÍA DE MENSAJE ESTRUCTURAL VERAVOX
+                </span>
+                <div className="space-y-2 font-mono text-xs text-slate-100 mb-4 bg-slate-950 p-3 rounded border border-emerald-950 font-medium">
+                  <p><strong className="text-emerald-400">DE:</strong> "{data.veravoxOutput.de}"</p>
+                  <p><strong className="text-emerald-400">ES:</strong> "{data.veravoxOutput.es}"</p>
+                </div>
+                <div className="border-t border-emerald-900/30 pt-3">
+                  <span className="font-mono text-xs text-emerald-400 font-semibold block mb-1">Impacto Técnico:</span>
+                  <p className="text-xs text-slate-400 leading-relaxed">{data.impact}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="mb-20">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
-            {t.s2Title}
+        {/* Matrix Table */}
+        <section className="mb-12">
+          <h2 className="font-mono text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">
+            Matriz de Evaluación de Arquitectura
+          </h2>
+          <div className="overflow-x-auto border border-slate-800 rounded-lg">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-slate-900 border-b border-slate-800 font-mono text-xs text-slate-400 uppercase">
+                  <th className="p-4 w-1/4">Criterio</th>
+                  <th className="p-4 w-3/8 text-rose-300">Stack AI TMS ($3K+/mes)</th>
+                  <th className="p-4 w-3/8 text-emerald-400">Capa VeraVox</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800 text-sm">
+                {data.tableRows.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-slate-900/30">
+                    <td className="p-4 font-mono font-semibold text-slate-200">{row.criterion}</td>
+                    <td className="p-4 text-slate-400 leading-relaxed">{row.tms}</td>
+                    <td className="p-4 text-slate-200 leading-relaxed bg-emerald-950/5 font-medium">{row.veravox}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          
-          <div className="mb-16">
-            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
-              {t.b1Title}
-            </h3>
-            
-            <div className="space-y-6 mb-8">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
-                <p className="text-bone-300 italic">"Build in a weekend. Scale to millions."</p>
-              </div>
-              
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
-                <ul className="text-bone-300 space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 mr-2">ES:</span> Construye en un fin de semana. Escala a millones.</li>
-                  <li><span className="text-bone-500 mr-2">DE:</span> Bauen Sie an einem Wochenende. Skalieren Sie auf Millionen.</li>
-                </ul>
-              </div>
+        </section>
 
-              <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
-                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Infraestructura Postgres gestionada. Seguridad a nivel de fila y escalabilidad distribuida.</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Verwaltete Postgres-Infrastruktur mit automatischer Skalierung und Zeilensicherheit.</li>
-                </ul>
-              </div>
-            </div>
-
-            <p className="text-bone-300 leading-relaxed text-sm">
-              {t.b1Analysis}
-            </p>
-          </div>
-
-          <div className="mb-16">
-            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
-              {t.b2Title}
-            </h3>
-            
-            <div className="space-y-6 mb-8">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
-                <p className="text-bone-300 italic">"The Open Source Firebase Alternative."</p>
-              </div>
-              
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
-                <ul className="text-bone-300 space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 mr-2">ES:</span> La alternativa de código abierto a Firebase.</li>
-                  <li><span className="text-bone-500 mr-2">DE:</span> Die Open-Source-Alternative zu Firebase.</li>
-                </ul>
-              </div>
-
-              <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
-                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> La suite de base de datos Open Source nativa en PostgreSQL. Sin bloqueo de proveedor.</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Die quelloffene Postgres-Plattform ohne Vendor-Lock-in. Full-Stack Data Engine.</li>
-                </ul>
-              </div>
-            </div>
-
-            <p className="text-bone-300 leading-relaxed text-sm">
-              {t.b2Analysis}
-            </p>
-          </div>
-
+        {/* Call To Action */}
+        <div className="p-8 bg-slate-900 border border-slate-800 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
-              {t.b3Title}
-            </h3>
-            
-            <div className="space-y-6 mb-8">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
-                <p className="text-bone-300 italic">"Start your project"</p>
-              </div>
-              
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
-                <ul className="text-bone-300 space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 mr-2">ES:</span> Iniciar tu proyecto</li>
-                  <li><span className="text-bone-500 mr-2">DE:</span> Starten Sie Ihr Projekt</li>
-                </ul>
-              </div>
-
-              <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
-                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Aprovisionar base de datos / Probar API</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Postgres-Instanz anlegen / Kostenlos testen</li>
-                </ul>
-              </div>
-            </div>
-
-            <p className="text-bone-300 leading-relaxed text-sm">
-              {t.b3Analysis}
-            </p>
+            <h3 className="text-xl font-bold text-slate-100 mb-2">¿Necesitas auditar tu stack de conversión técnico?</h3>
+            <p className="text-slate-400 text-sm">Revisa tu propuesta antes de invertir miles de dólares en suscripciones recurrentes de traducción automática.</p>
           </div>
-        </section>
-
-        {/* Upgraded Section 3 */}
-        <section className="mb-20">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
-            {t.s3Title}
-          </div>
-          
-          <div className="mb-12">
-            <h3 className="font-mono text-[10px] uppercase tracking-widest text-bone-300 mb-6">
-              {t.s3Heading}
-            </h3>
-            
-            <div className="space-y-6 mb-8">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
-                <p className="text-bone-300 italic">{t.s3UsBaseline}</p>
-              </div>
-              
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
-                <ul className="text-bone-300 space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 mr-2">ES:</span> {t.s3TradAgencyEs}</li>
-                  <li><span className="text-bone-500 mr-2">DE:</span> {t.s3TradAgencyDe}</li>
-                </ul>
-              </div>
-
-              <div className="border-l-2 border-signal-gold pl-4 py-1">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
-                <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> {t.s3RefinedEs}</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> {t.s3RefinedDe}</li>
-                </ul>
-              </div>
-            </div>
-
-            <p className="text-bone-300 leading-relaxed text-sm">
-              {t.s3Analysis}
-            </p>
-          </div>
-        </section>
-        
-        <div className="mt-32 pt-8 border-t border-ink-700">
-          <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
-            {t.returnDir}
+          <Link
+            href="/#audits"
+            className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono font-bold text-sm rounded whitespace-nowrap transition-colors"
+          >
+            SOLICITAR AUDITORÍA ($450)
           </Link>
         </div>
       </main>
