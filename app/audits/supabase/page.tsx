@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 interface AuditPageProps {
-  params: {
-    id: string;
+  params?: {
+    id?: string;
   };
 }
 
@@ -20,6 +20,39 @@ const AUDIT_DATA: Record<string, {
   impact: string;
   tableRows: Array<{ criterion: string; tms: string; veravox: string }>;
 }> = {
+  supabase: {
+    name: 'Supabase',
+    category: 'Managed PostgreSQL & Backend Infrastructure',
+    summary: 'Auditoría de arquitectura de mensaje para posicionamiento de infraestructura Postgres de grado empresarial.',
+    usBaseline: 'Build in a weekend. Scale to millions.',
+    tmsOutput: {
+      de: 'Bauen Sie an einem Wochenende. Skalieren Sie auf Millionen.',
+      es: 'Construye en un fin de semana. Escala a millones.'
+    },
+    veravoxOutput: {
+      de: 'Entwickeln Sie Prototypen in Tagen. Skalieren Sie auf Enterprise-PostgreSQL mit RLS.',
+      es: 'Infraestructura PostgreSQL de alto rendimiento con RLS nativo y soberanía de datos.'
+    },
+    diagnosis: 'La traducción literal del eslogan ("Build in a weekend") proyecta una percepción informal de herramienta para proyectos secundarios, en lugar de un motor de base de datos enterprise para mercados regulados.',
+    impact: 'Reposiciona la plataforma hacia PostgreSQL gestionado, seguridad RLS nativa e infraestructura ACID de misión crítica para decisiones B2B.',
+    tableRows: [
+      {
+        criterion: 'Posicionamiento Enterprise',
+        tms: 'Traducción directa enfocada en rapidez informal ("fin de semana").',
+        veravox: 'Enfoque en soberanía de datos, RLS nativo y cumplimiento ACID.'
+      },
+      {
+        criterion: 'Percepción de Seguridad',
+        tms: 'Lemas de marketing genéricos sin contexto DevSecOps.',
+        veravox: 'Destaca la arquitectura Postgres aislada y controles de acceso de nivel empresarial.'
+      },
+      {
+        criterion: 'Conversión B2B',
+        tms: 'Genera dudas sobre idoneidad para cargas de trabajo de producción.',
+        veravox: 'Valida la plataforma para comités de evaluación técnica y Directores de Tecnología (CTO).'
+      }
+    ]
+  },
   clerk: {
     name: 'Clerk',
     category: 'Authentication & User Management',
@@ -91,8 +124,10 @@ const AUDIT_DATA: Record<string, {
 export default function AuditDetailPage({ params }: AuditPageProps) {
   const [activeLang, setActiveLang] = useState<'es' | 'de' | 'en'>('es');
   
-  const auditId = params.id.toLowerCase();
-  const data = AUDIT_DATA[auditId] || AUDIT_DATA.clerk;
+  // Safe extraction to prevent TypeError during SSG/build
+  const rawId = params?.id;
+  const auditId = typeof rawId === 'string' && rawId.length > 0 ? rawId.toLowerCase() : 'supabase';
+  const data = AUDIT_DATA[auditId] ?? AUDIT_DATA.supabase;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
@@ -111,7 +146,7 @@ export default function AuditDetailPage({ params }: AuditPageProps) {
 
           <div className="flex items-center gap-4">
             <button
-              onClick={() => window.print()}
+              onClick={() => typeof window !== 'undefined' && window.print()}
               className="px-3 py-1 bg-slate-900 border border-slate-700 hover:border-slate-500 rounded font-mono text-xs text-slate-300 transition-colors"
             >
               [EXPORT PDF]
@@ -171,8 +206,8 @@ export default function AuditDetailPage({ params }: AuditPageProps) {
                   [02] PLATAFORMA AI TMS / LOKALISE / PHRASE ($3K+/MES)
                 </span>
                 <div className="space-y-2 font-mono text-xs text-slate-300 mb-4 bg-slate-950 p-3 rounded border border-rose-950">
-                  <p><strong className="text-rose-400">DE:</strong> "{data.tmsOutput.de}"</p>
-                  <p><strong className="text-rose-400">ES:</strong> "{data.tmsOutput.es}"</p>
+                  <p><strong className="text-rose-400">DE:</strong> "{data.tmsOutput?.de ?? ''}"</p>
+                  <p><strong className="text-rose-400">ES:</strong> "{data.tmsOutput?.es ?? ''}"</p>
                 </div>
                 <div className="border-t border-rose-900/30 pt-3">
                   <span className="font-mono text-xs text-rose-400 font-semibold block mb-1">Fallo de Conversión:</span>
@@ -186,8 +221,8 @@ export default function AuditDetailPage({ params }: AuditPageProps) {
                   [03] REINGENIERÍA DE MENSAJE ESTRUCTURAL VERAVOX
                 </span>
                 <div className="space-y-2 font-mono text-xs text-slate-100 mb-4 bg-slate-950 p-3 rounded border border-emerald-950 font-medium">
-                  <p><strong className="text-emerald-400">DE:</strong> "{data.veravoxOutput.de}"</p>
-                  <p><strong className="text-emerald-400">ES:</strong> "{data.veravoxOutput.es}"</p>
+                  <p><strong className="text-emerald-400">DE:</strong> "{data.veravoxOutput?.de ?? ''}"</p>
+                  <p><strong className="text-emerald-400">ES:</strong> "{data.veravoxOutput?.es ?? ''}"</p>
                 </div>
                 <div className="border-t border-emerald-900/30 pt-3">
                   <span className="font-mono text-xs text-emerald-400 font-semibold block mb-1">Impacto Técnico:</span>
@@ -213,7 +248,7 @@ export default function AuditDetailPage({ params }: AuditPageProps) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800 text-sm">
-                {data.tableRows.map((row, idx) => (
+                {(data.tableRows ?? []).map((row, idx) => (
                   <tr key={idx} className="hover:bg-slate-900/30">
                     <td className="p-4 font-mono font-semibold text-slate-200">{row.criterion}</td>
                     <td className="p-4 text-slate-400 leading-relaxed">{row.tms}</td>
