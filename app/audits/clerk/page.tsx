@@ -5,119 +5,206 @@ import Link from 'next/link';
 
 const AUDIT_CONTENT = {
   en: {
-    navTag: 'Localization Audit #04',
-    title: 'Resend: Why US Dev Copy Fails in EU & LATAM Tech Sales',
-    subtitle: 'How literal translations turn high-margin developer infrastructure into generic webmail software—and cost you enterprise pipeline.',
-    readingTime: '6 min read',
-    date: 'September 2026',
-    client: 'Resend',
-    markets: 'EU, LATAM, DACH',
-    audience: 'CTOs & Engineering Leads',
-    s1Title: 'Executive Summary / The Commercial Problem',
-    overviewHeading: 'Literal Copy Costs You Enterprise Deals',
-    overviewBody: 'In Silicon Valley, saying "Email for developers" sounds clean and founder-led. But when you launch in Europe or LATAM, translating that literally into "Correo electrónico" or "E-Mail" drops your brand into the wrong bucket. Buyers think of Gmail or Outlook, not API infrastructure built to handle millions of transactional webhooks without hitting spam filters.',
-    overviewSub: 'When CTOs and Senior Devs evaluate email infrastructure, they don\'t buy "vibes"—they buy deliverability, Outlook compatibility without HTML table hacks, and reliable webhooks. This audit shows where current US copy breaks in international sales and how to fix it.',
-    s2Title: 'Teardown / Landing Page Conversion Friction',
-    b1Title: '01 / The Hero Headline (H1)',
-    b1Analysis: 'Translating "Email for developers" word-for-word creates product ambiguity. In EU and LATAM procurement, "correo electrónico" or "E-Mail" sounds like an inbox client. Adding "API" immediately tells technical buyers they are looking at developer infrastructure, while capturing high-intent search traffic.',
-    b2Title: '02 / The Value Proposition (H2)',
-    b2Analysis: '"Reach humans instead of spam folders" works as a casual US pitch. Translated word-for-word into Spanish ("llegar a humanos") or German, it sounds bizarre and amateurish to B2B buyers. Engineering leads want hard metrics: inbox placement rates, DKIM/SPF setup speed, and bulk delivery performance under load.',
+    navTag: 'Localization Audit #09',
+    title: 'Clerk: Identity & User Security Regionalization Audit',
+    subtitle: 'Adapting authentication narratives from US friction-free growth copy to European security frameworks.',
+    readingTime: '8 min read',
+    date: 'December 2026',
+    client: 'Clerk',
+    markets: 'EU, DACH, LATAM',
+    audience: 'Chief Information Security Officers & SaaS Architects',
+    s1Title: 'Section 1 / Perspective & Intent',
+    overviewHeading: 'Context & Intent',
+    overviewBody: 'Clerk’s US copy "More than authentication. Complete user management." focuses on rapid integration and frictionless UI components. In European SaaS security reviews, CISOs evaluate authentication vendors based on OpenID Connect (OIDC) compliance, multi-factor security, SOC2/ISO auditability, and European tenant isolation.',
+    overviewSub: 'This audit repositions Clerk’s drop-in auth components around zero-trust identity management and regulatory data protection.',
+    s2Title: 'Section 2 / Core Acquisition Teardown',
+    b1Title: '01 / The Primary Headline (H1)',
+    b1Analysis: 'In European procurement, casual claims like "Complete user management" sound like light consumer software. Anchoring on identity infrastructure, OAuth2/OIDC standards, and session security drives higher conversion.',
+    b2Title: '02 / Security & Session Narrative (H2)',
+    b2Analysis: 'US copy highlights "frictionless sign-in". European tech buyers require explicit reassurance on multi-tenant security, RBAC (Role-Based Access Control), and data residency.',
     b3Title: '03 / Primary Call to Action (CTA)',
-    b3Analysis: 'Generic CTAs like "Get Started" or "Empezar" have low intent. Developers testing infrastructure don\'t want a slow onboarding survey; they want to copy an API key, run a `curl` request, or test a React Email template in a sandbox.',
-    s3Title: 'Real-World Production Impact',
-    s3Heading: '01 / React Email & Component Architecture',
-    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
-    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
-    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
-    s3RefinedEs: 'Componentes React para email con renderizado automático sin tablas HTML en Outlook.',
-    s3RefinedDe: 'Code-native E-Mail-Templates mit React. Einwandfreies Rendering ohne HTML-Tabellen-Hacks.',
-    s3Analysis: 'Traditional translation makes this sound like a tool for marketing copywriters. Senior frontend leads care about one specific pain point: preventing broken layouts in legacy clients like Outlook 2019 without writing manual fallback tables.',
-    ctaTitle: 'Stop losing international developer pipeline',
-    ctaBody: 'We audit developer docs, API onboarding flows, and landing pages to eliminate regional messaging friction and drive higher activation across EU and LATAM.',
-    ctaPrimary: 'Book a 15-Min Live Teardown',
-    ctaSecondary: 'Email Engineering Team',
+    b3Analysis: 'Replacing "Start building for free" with "Integrate Auth SDK / Review Security Docs" matches the rigor expected by software architects.',
+    s3Title: 'Section 3 / Applied Surface Audits',
+    s3Heading: '01 / OpenID Connect (OIDC) & Zero-Trust Session Tokens',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: '"Drop-in components" sounds like a toy UI kit. For enterprise SaaS procurement, emphasizing short-lived JWT tokens, Passkey support, and OIDC standards positions Clerk as robust security infrastructure.',
     returnDir: '← Return to Directory',
-    usBaseline: 'Current US Copy',
-    tradAgency: 'Standard Agency Translation',
-    refinedIntent: 'High-Converting Technical Copy'
-  },
-  es: {
-    navTag: 'Auditoría de Localización #04',
-    title: 'Resend: Por qué el Copy Técnico de EE.UU. Falla en Europa y LATAM',
-    subtitle: 'Cómo las traducciones literales reducen infraestructura de alto margen a simple webmail y te hacen perder clientes.',
-    readingTime: '6 min de lectura',
-    date: 'Septiembre 2026',
-    client: 'Resend',
-    markets: 'EU, LATAM, DACH',
-    audience: 'CTOs y Líderes de Ingeniería',
-    s1Title: 'Resumen Ejecutivo / El Problema Comercial',
-    overviewHeading: 'Las Traducciones Literales te Cuestan Ventas',
-    overviewBody: 'En Silicon Valley, "Email for developers" suena simple y directo. Pero en Europa o LATAM, traducir eso literalmente como "Correo electrónico" malinterpreta tu producto. Los compradores piensan en Gmail o Outlook, no en una API creada para procesar millones de webhooks sin caer en la carpeta de spam.',
-    overviewSub: 'Los CTOs no compran "sensaciones": compran entregabilidad real, compatibilidad con Outlook sin trucos de tablas HTML y fiabilidad en los webhooks. Esta auditoría muestra dónde falla tu texto actual y cómo solucionarlo.',
-    s2Title: 'Desglose / Fricción de Conversión en Landing Page',
-    b1Title: '01 / El Titular Principal (H1)',
-    b1Analysis: 'Traducir "Email for developers" palabra por palabra genera confusión sobre la categoría del producto. En compras B2B, "correo electrónico" suena a cliente webmail. Añadir "API" deja claro que se trata de infraestructura para desarrolladores y captura búsquedas de alta intención.',
-    b2Title: '02 / La Propuesta de Valor (H2)',
-    b2Analysis: '"Reach humans" funciona en EE.UU. pero traducido como "llegar a humanos" resulta extraño e informal en LATAM y España. Los ingenieros evalúan infraestructura según métricas reales: tasa de entrega en la bandeja de entrada, configuración rápida de SPF/DKIM y velocidad de envío masivo.',
-    b3Title: '03 / Llamada a la Acción Principal (CTA)',
-    b3Analysis: 'CTAs genéricos como "Empezar" ofrecen cero impulso técnico. Un desarrollador probando infraestructura no quiere un formulario largo; quiere copiar una clave de API, ejecutar un `curl` o probar una plantilla en tiempo real.',
-    s3Title: 'Impacto en Producción Real',
-    s3Heading: '01 / Arquitectura de Email con Componentes React',
-    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
-    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
-    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
-    s3RefinedEs: 'Componentes React para email con renderizado automático sin tablas HTML en Outlook.',
-    s3RefinedDe: 'Code-native E-Mail-Templates mit React. Einwandfreies Rendering ohne HTML-Tabellen-Hacks.',
-    s3Analysis: 'La traducción tradicional hace que parezca una herramienta de edición para redactores. A los desarrolladores frontend les importa solucionar un problema real: evitar que los correos se rompan en clientes antiguos como Outlook sin escribir tablas HTML a mano.',
-    ctaTitle: 'Deja de perder clientes técnicos internacionales',
-    ctaBody: 'Auditamos documentación para desarrolladores, flujos de API y landing pages para eliminar la fricción regional y aumentar el registro de usuarios en Europa y LATAM.',
-    ctaPrimary: 'Reservar Auditoría en Vivo (15 min)',
-    ctaSecondary: 'Contactar al Equipo Técnico',
-    returnDir: '← Volver al Directorio',
-    usBaseline: 'Texto Actual (EE.UU.)',
-    tradAgency: 'Traducción Tradicional',
-    refinedIntent: 'Texto Técnico de Alta Conversión'
+    usBaseline: 'US Baseline',
+    tradAgency: 'Traditional Agency Output',
+    refinedIntent: 'Refined Technical Intent'
   },
   de: {
-    navTag: 'Lokalisierungs-Audit #04',
-    title: 'Resend: Warum US-Tech-Messaging im DACH-Raum scheitert',
-    subtitle: 'Wie wortwörtliche Übersetzungen B2B-Infrastruktur in billiges Webmail verwandeln und Leads kosten.',
-    readingTime: '6 Min. Lesezeit',
-    date: 'September 2026',
-    client: 'Resend',
-    markets: 'EU, LATAM, DACH',
-    audience: 'CTOs & Lead Engineers',
-    s1Title: 'Executive Summary / Das kommerzielle Problem',
-    overviewHeading: 'Wortwörtliche Texte kosten B2B-Umsatz',
-    overviewBody: 'In den USA klingt „Email for developers“ nahbar. Im DACH-Raum führt die Übersetzung „E-Mail für Entwickler“ zu falscher Kategorisierung. Technische Entscheider denken an Postfächer statt an hochverfügbare E-Mail-APIs für transaktionale Workflows.',
-    overviewSub: 'CTOs und Senior Engineers kaufen keine Versprechen – sie kaufen Posteingangszustellbarkeit, funktionierende Outlook-Darstellung und zuverlässige Webhooks. Dieses Audit deckt Schwachstellen im aktuellen Auftritt auf.',
-    s2Title: 'Teardown / Konvertierungsfrikation auf der Homepage',
+    navTag: 'Lokalisierungs-Audit #09',
+    title: 'Clerk: Identitätsinfrastruktur & Sicherheitsarchitektur',
+    subtitle: 'Anpassung von Authentifizierungs-Narrativen an europäische Sicherheitsstandards.',
+    readingTime: '8 Min. Lesezeit',
+    date: 'Dezember 2026',
+    client: 'Clerk',
+    markets: 'EU, DACH, LATAM',
+    audience: 'CISOs & SaaS-Architekten',
+    s1Title: 'Abschnitt 1 / Perspektive & Intent',
+    overviewHeading: 'Kontext & Zielsetzung',
+    overviewBody: 'In europäischen Sicherheitsüberprüfungen bewerten CISOs Authentifizierungsdienste nach OIDC-Standardtreue, Rollenkonzepten (RBAC) und Mandantentrennung. „Benutzerverwaltung“ klingt zu banal.',
+    overviewSub: 'Dieses Audit strukturiert die Ansprache auf Zero-Trust-Identitätsarchitektur um.',
+    s2Title: 'Abschnitt 2 / Strukturelle Akquisitions-Analyse',
     b1Title: '01 / Die Hauptüberschrift (H1)',
-    b1Analysis: 'Wortwörtliche Übersetzungen ordnen das Produkt falsch ein. Das Einfügen von „API“ macht sofort klar, dass es sich um Entwickler-Infrastruktur handelt, und bedient direkte B2B-Suchanfragen.',
-    b2Title: '02 / Das Wertversprechen (H2)',
-    b2Analysis: '„Reach humans“ klingt auf Deutsch („Menschen erreichen“) im B2B-Kontext unprofessionell. Lead Engineers bewerten E-Mail-Infrastruktur nach Posteingangsraten, DKIM/SPF-Einrichtung und Durchsatz unter Volllast.',
+    b1Analysis: 'Direkte Positionierung als Identitätsinfrastruktur für Enterprise-SaaS-Anwendungen.',
+    b2Title: '02 / Sicherheits- & Sitzungs-Narrativ (H2)',
+    b2Analysis: 'MFA, Session-Management und datenschutzkonforme Benutzerisolation statt bloßer Bequemlichkeit beim Login.',
     b3Title: '03 / Primärer Call-to-Action (CTA)',
-    b3Analysis: 'Ein schwacher CTA wie „Loslegen“ bremst Entwickler ab. Wer eine API testen will, sucht keine Umfragen, sondern will direkt einen API-Key erstellen oder ein Payload-Beispiel ausführen.',
-    s3Title: 'Praktischer Auswirkung im Live-Betrieb',
-    s3Heading: '01 / React Email & Komponenten-Architektur',
-    s3UsBaseline: 'Write emails using React components. Modern email templates without HTML tables.',
-    s3TradAgencyEs: 'Escribe correos usando componentes React. Plantillas modernas sin tablas HTML.',
-    s3TradAgencyDe: 'Schreiben Sie E-Mails mit React-Komponenten. Moderne Vorlagen ohne HTML-Tabellen.',
-    s3RefinedEs: 'Componentes React para email con renderizado automático sin tablas HTML en Outlook.',
-    s3RefinedDe: 'Code-native E-Mail-Templates mit React. Einwandfreies Rendering ohne HTML-Tabellen-Hacks.',
-    s3Analysis: 'Normale Übersetzungen klingen nach Editoren für Marketingteams. Frontend-Architekten wollen wissen, ob das Tool das fehlerfreie Rendering in Outlook garantiert, ohne dass manuelle HTML-Tabellen geschrieben werden müssen.',
-    ctaTitle: 'Internationale Entwickler-Pipelines optimieren',
-    ctaBody: 'Wir analysieren Entwickler-Dokumentationen, API-Onboarding-Prozesse und Landingpages, um regionale Frikation zu beseitigen und die Aktivierung in der EU zu steigern.',
-    ctaPrimary: '15-Min. Live-Audit buchen',
-    ctaSecondary: 'Entwickler-Team kontaktieren',
+    b3Analysis: '„Auth-SDK integrieren / Dokumentation lesen“ statt unverbindlichem Gratis-Slogan.',
+    s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
+    s3Heading: '01 / OpenID Connect (OIDC) & Zero-Trust Session-Tokens',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Die Betonung von kurzlebigen JWT-Tokens und Passkey-Unterstützung verankert Clerk als vollwertige Sicherheitsinfrastruktur.',
     returnDir: '← Zurück zum Verzeichnis',
-    usBaseline: 'Aktueller US-Text',
-    tradAgency: 'Standard-Übersetzung',
-    refinedIntent: 'Konvertierender Fachtext'
+    usBaseline: 'US-Ausgangslage',
+    tradAgency: 'Klassisches Agenturergebnis',
+    refinedIntent: 'Präzisierter technischer Intent'
+  },
+  es: {
+    navTag: 'Auditoría de Localización #09',
+    title: 'Clerk: Arquitectura de Identidad y Seguridad de Usuarios',
+    subtitle: 'Adaptación de componentes de autenticación a marcos de seguridad europeos.',
+    readingTime: '8 min de lectura',
+    date: 'Diciembre 2026',
+    client: 'Clerk',
+    markets: 'EU, DACH, LATAM',
+    audience: 'Directores de Seguridad de la Información (CISO) y Arquitectos',
+    s1Title: 'Sección 1 / Perspectiva e Intención',
+    overviewHeading: 'Contexto y Objetivo',
+    overviewBody: 'Reemplazar afirmaciones informales por garantías formales de control de acceso (RBAC), protocolos OIDC e aislamiento de datos.',
+    overviewSub: 'Auditoría enfocada en clientes corporativos B2B.',
+    s2Title: 'Sección 2 / Desglose Estructural de Adquisición',
+    b1Title: '01 / El Titular Principal (H1)',
+    b1Analysis: 'Posicionamiento como infraestructura de gestión de identidad para aplicaciones SaaS.',
+    b2Title: '02 / Narrativa de Seguridad (H2)',
+    b2Analysis: 'Énfasis en autenticación multifactor y residencia de datos en la UE.',
+    b3Title: '03 / Llamada a la Acción Principal (CTA)',
+    b3Analysis: 'Acciones orientadas a la integración del SDK y revisión técnica.',
+    s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
+    s3Heading: '01 / OpenID Connect (OIDC) y Tokens de Sesión Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Sustituir "componentes listos para usar" por estándares OIDC y tokens JWT de corta duración asegura la aprobación de CISOs.',
+    returnDir: '← Volver al Directorio',
+    usBaseline: 'Línea Base (EE. UU.)',
+    tradAgency: 'Resultado de Agencia Tradicional',
+    refinedIntent: 'Intención Técnica Refinada'
+  },
+  fr: {
+    navTag: 'Audit de Localisation #09',
+    title: 'Clerk : Architecture d’Identité & Sécurité Utilisateur',
+    subtitle: 'Adaptation du discours d’authentification aux exigences de sécurité IT européennes.',
+    readingTime: '8 min de lecture',
+    date: 'Décembre 2026',
+    client: 'Clerk',
+    markets: 'EU, DACH, LATAM',
+    audience: 'CISO & Architectes SaaS',
+    s1Title: 'Section 1 / Perspective & Intention',
+    overviewHeading: 'Contexte & Objectif',
+    overviewBody: 'Restructuration du message vers l’infrastructure d’identité, les normes OIDC et le contrôle d’accès basé sur les rôles (RBAC).',
+    overviewSub: 'Positionnement axé sur la sécurité B2B.',
+    s2Title: 'Section 2 / Déconstruction de la Conversion',
+    b1Title: '01 / Titre Principal (H1)',
+    b1Analysis: 'Sustituir la gestion utilisateur simpliste par l’infrastructure d’identité globale.',
+    b2Title: '02 / Sécurité et Sessions (H2)',
+    b2Analysis: 'Focus sur le MFA, la protection des tokens et la souveraineté des données.',
+    b3Title: '03 / Appel à l’Action (CTA)',
+    b3Analysis: 'Privilégier "Intégrer le SDK Auth".',
+    s3Title: 'Section 3 / Audit des Surfaces Appliquées',
+    s3Heading: '01 / OpenID Connect (OIDC) & Tokens Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Mettre en avant les tokens JWT éphémères et les standards OIDC crédibilise l’architecture sécurité.',
+    returnDir: '← Retour au Répertoire',
+    usBaseline: 'Référence US',
+    tradAgency: 'Rendu Agence Traditionnelle',
+    refinedIntent: 'Intention Technique Affinée'
+  },
+  it: {
+    navTag: 'Audit di Localizzazione #09',
+    title: 'Clerk: Architettura di Identità e Sicurezza Utente',
+    subtitle: 'Riorganizzazione delle narrative di autenticazione per i framework di sicurezza europei.',
+    readingTime: '8 min di lettura',
+    date: 'Dicembre 2026',
+    client: 'Clerk',
+    markets: 'EU, DACH, LATAM',
+    audience: 'CISO e Architetti Software',
+    s1Title: 'Sezione 1 / Prospettiva e Intento',
+    overviewHeading: 'Contesto e Obiettivo',
+    overviewBody: 'Focalizzarsi sugli standard OIDC, RBAC e sull’isolamento dei dati dei tenant.',
+    overviewSub: 'Analisi per i mercati ad alta conformità.',
+    s2Title: 'Sezione 2 / Analisi Strutturale',
+    b1Title: '01 / Titolo Principale (H1)',
+    b1Analysis: 'Infrastruttura di gestione delle identità per software B2B.',
+    b2Title: '02 / Sicurezza e Autenticazione (H2)',
+    b2Analysis: 'Enfasi sulla protezione delle sessioni e sull’autenticazione a più fattori.',
+    b3Title: '03 / Call to Action (CTA)',
+    b3Analysis: 'Invito all’integrazione tecnica diretta del SDK.',
+    s3Title: 'Sezione 3 / Audit Documentazione',
+    s3Heading: '01 / OpenID Connect (OIDC) e Token di Sessione Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'La precisione nei token di sessione a breve durata e negli standard OIDC è fondamentale per le valutazioni CISO.',
+    returnDir: '← Torna al Direttorio',
+    usBaseline: 'Linea Base US',
+    tradAgency: 'Output Agenzia Tradizionale',
+    refinedIntent: 'Intento Tecnico Rifinito'
+  },
+  pt: {
+    navTag: 'Auditoria de Localização #09',
+    title: 'Clerk: Arquitetura de Identidade e Segurança de Usuários',
+    subtitle: 'Adequação de componentes de autenticação para normas de segurança europeias.',
+    readingTime: '8 min de leitura',
+    date: 'Dezembro 2026',
+    client: 'Clerk',
+    markets: 'EU, DACH, LATAM',
+    audience: 'CISOs e Arquitetos SaaS',
+    s1Title: 'Seção 1 / Perspectiva e Intenção',
+    overviewHeading: 'Contexto e Objetivo',
+    overviewBody: 'Adequação de narrativas de autenticação para auditorias técnicas de segurança.',
+    overviewSub: 'Reestruturação de posicionamento.',
+    s2Title: 'Seção 2 / Análise de Conversão',
+    b1Title: '01 / Título Principal (H1)',
+    b1Analysis: 'Posicionamento como infraestrutura de identidade corporativa.',
+    b2Title: '02 / Segurança e Sessões (H2)',
+    b2Analysis: 'Foco em MFA, RBAC e isolamento de dados de usuários.',
+    b3Title: '03 / Chamada para Ação (CTA)',
+    b3Analysis: 'Ações voltadas para integração do SDK.',
+    s3Title: 'Seção 3 / Documentação Técnica',
+    s3Heading: '01 / OpenID Connect (OIDC) e Tokens de Sessão Zero-Trust',
+    s3UsBaseline: 'Drop-in sign-in components and full session management out of the box.',
+    s3TradAgencyEs: 'Componentes de inicio de sesión listos para usar y gestión completa de sesiones.',
+    s3TradAgencyDe: 'Sofort einsetzbare Anmeldekomponenten und vollständige Sitzungsverwaltung.',
+    s3RefinedEs: 'Infraestructura de autenticación basada en OIDC y Passkeys. Emisión de tokens JWT de corta duración y control de acceso RBAC.',
+    s3RefinedDe: 'OIDC-basierte Identitätsinfrastruktur mit Passkey-Support. Kurzlebige JWT-Tokens und feingranulares RBAC-Rollenkonzepte.',
+    s3Analysis: 'Transição de "componentes prontos" para padrões OIDC e tokens de curta duração para validação técnica.',
+    returnDir: '← Voltar ao Diretório',
+    usBaseline: 'Linha de Base (EUA)',
+    tradAgency: 'Resultado de Agência Tradicional',
+    refinedIntent: 'Intenção Técnica Refinada'
   }
 };
 
-export default function ResendAuditPage() {
+export default function ClerkAuditPage() {
   const [lang, setLang] = useState('en');
   const t = AUDIT_CONTENT[lang] || AUDIT_CONTENT.en;
 
@@ -131,7 +218,7 @@ export default function ResendAuditPage() {
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 font-mono text-xs">
-              {['es', 'de', 'en'].map((l) => (
+              {['es', 'fr', 'de', 'it', 'pt', 'en'].map((l) => (
                 <React.Fragment key={l}>
                   <button
                     onClick={() => setLang(l)}
@@ -175,15 +262,15 @@ export default function ResendAuditPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ink-700 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed">
             <div>
-              <span className="text-bone-300 block mb-1">Target Client</span>
+              <span className="text-bone-300 block mb-1">Client</span>
               {t.client}
             </div>
             <div>
-              <span className="text-bone-300 block mb-1">Key Markets</span>
+              <span className="text-bone-300 block mb-1">Markets</span>
               {t.markets}
             </div>
             <div>
-              <span className="text-bone-300 block mb-1">Target Audience</span>
+              <span className="text-bone-300 block mb-1">Audience</span>
               {t.audience}
             </div>
           </div>
@@ -219,22 +306,22 @@ export default function ResendAuditPage() {
             <div className="space-y-6 mb-8">
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
-                <p className="text-bone-300 italic">"Email for developers."</p>
+                <p className="text-bone-300 italic">"More than authentication. Complete user management."</p>
               </div>
               
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
                 <ul className="text-bone-300 space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 mr-2">ES:</span> Correo electrónico para desarrolladores.</li>
-                  <li><span className="text-bone-500 mr-2">DE:</span> E-Mail für Entwickler.</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> Mehr als Authentifizierung. Vollständige Benutzerverwaltung.</li>
+                  <li><span className="text-bone-500 mr-2">ES:</span> Más que autenticación. Gestión completa de usuarios.</li>
                 </ul>
               </div>
 
               <div className="border-l-2 border-signal-gold pl-4 py-1">
                 <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
                 <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> La API de email para desarrolladores.</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Die E-Mail-API für Entwickler.</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Identitätsinfrastruktur und DSGVO-konforme Benutzerverwaltung für B2B-SaaS.</li>
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Infraestructura de gestión de identidad y autenticación segura con estándar OIDC.</li>
                 </ul>
               </div>
             </div>
@@ -252,22 +339,22 @@ export default function ResendAuditPage() {
             <div className="space-y-6 mb-8">
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
-                <p className="text-bone-300 italic">"The best API to reach humans instead of spam folders. Build, test, and deliver transactional emails at scale."</p>
+                <p className="text-bone-300 italic">"Frictionless sign-in components for modern web apps."</p>
               </div>
               
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
                 <ul className="text-bone-300 space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 mr-2">ES:</span> La mejor API para llegar a humanos en lugar de carpetas de spam...</li>
-                  <li><span className="text-bone-500 mr-2">DE:</span> Die beste API, um Menschen statt Spam-Ordner zu erreichen...</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> Reibungslose Anmeldekomponenten für moderne Web-Apps.</li>
+                  <li><span className="text-bone-500 mr-2">ES:</span> Componentes de inicio de sesión sin fricción para aplicaciones web modernas.</li>
                 </ul>
               </div>
 
               <div className="border-l-2 border-signal-gold pl-4 py-1">
                 <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
                 <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Entregabilidad directa al inbox. Envía correos transaccionales a escala con soporte para React.</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Maximale Posteingangszustellbarkeit. Transaktionale E-Mails im großen Stil versenden.</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Multi-Faktor-Authentifizierung, Session-Schutz und Rollenkonzepte (RBAC) out-of-the-box.</li>
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Autenticación multifactor nativa, gestión de sesiones y control de acceso basado en roles (RBAC).</li>
                 </ul>
               </div>
             </div>
@@ -285,22 +372,22 @@ export default function ResendAuditPage() {
             <div className="space-y-6 mb-8">
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.usBaseline}</p>
-                <p className="text-bone-300 italic">"Get Started"</p>
+                <p className="text-bone-300 italic">"Start building for free"</p>
               </div>
               
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-2">{t.tradAgency}</p>
                 <ul className="text-bone-300 space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 mr-2">ES:</span> Empezar</li>
-                  <li><span className="text-bone-500 mr-2">DE:</span> Loslegen</li>
+                  <li><span className="text-bone-500 mr-2">DE:</span> Kostenlos entwickeln</li>
+                  <li><span className="text-bone-500 mr-2">ES:</span> Empieza a construir gratis</li>
                 </ul>
               </div>
 
               <div className="border-l-2 border-signal-gold pl-4 py-1">
                 <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-2">{t.refinedIntent}</p>
                 <ul className="text-bone-100 font-medium space-y-1 font-mono text-xs">
-                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Generar clave API gratis / Probar en Sandbox</li>
-                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Gratis API-Key erstellen / Sandbox testen</li>
+                  <li><span className="text-bone-500 font-normal mr-2">DE:</span> Auth-SDK integrieren / Sicherheitskonzept prüfen</li>
+                  <li><span className="text-bone-500 font-normal mr-2">ES:</span> Integrar SDK de Auth / Revisar documentación de seguridad</li>
                 </ul>
               </div>
             </div>
@@ -311,6 +398,7 @@ export default function ResendAuditPage() {
           </div>
         </section>
 
+        {/* Upgraded Section 3 */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
@@ -349,37 +437,8 @@ export default function ResendAuditPage() {
             </p>
           </div>
         </section>
-
-        {/* Commercial Conversion Call to Action */}
-        <section className="mt-20 p-8 border border-signal-gold/40 bg-ink-900">
-          <div className="font-mono text-[10px] text-signal-gold uppercase tracking-widest mb-2">
-            Diagnostic & Implementation
-          </div>
-          <h3 className="font-display font-medium text-2xl text-bone-100 mb-4">
-            {t.ctaTitle}
-          </h3>
-          <p className="text-bone-300 text-sm leading-relaxed mb-6">
-            {t.ctaBody}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 font-mono text-xs">
-            <a 
-              href="https://veravox.io/book" 
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3 bg-signal-gold text-ink-950 font-bold uppercase tracking-wider text-center hover:bg-bone-100 transition-colors no-underline"
-            >
-              {t.ctaPrimary}
-            </a>
-            <a 
-              href="mailto:contact@veravox.io?subject=Technical%20Localization%20Audit" 
-              className="px-6 py-3 border border-ink-700 text-bone-300 font-bold uppercase tracking-wider text-center hover:border-bone-400 transition-colors no-underline"
-            >
-              {t.ctaSecondary}
-            </a>
-          </div>
-        </section>
         
-        <div className="mt-20 pt-8 border-t border-ink-700">
+        <div className="mt-32 pt-8 border-t border-ink-700">
           <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
             {t.returnDir}
           </Link>
