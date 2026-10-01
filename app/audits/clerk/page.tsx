@@ -47,9 +47,6 @@ const AUDIT_CONTENT = {
 
     s3Title: 'Section 3 / Expansion Roadmap & Strategic Matrix',
     s3Heading: 'Repositioning for Enterprise Procurement & Self-Serve Growth',
-    s3TableCurrent: 'Current Strength',
-    s3TableGrowth: 'Growth Bottleneck',
-    s3TableSolution: 'Solution',
     r1Strength: 'Fastest React/Next DX',
     r1Bottleneck: 'EU/LATAM Compliance',
     r1Solution: 'Regional PII (EU-central-1)',
@@ -64,12 +61,12 @@ const AUDIT_CONTENT = {
     summaryText: 'To capture enterprise contracts in Europe and LATAM, Clerk must bridge the gap between "indie-hacker favorite" and "enterprise-compliant identity platform." Marketing and documentation must emphasize GDPR, LGPD, SOC2 Type II, and explicit regional data guarantees alongside React code snippets. Offering self-serve enterprise SSO (Okta, Azure AD, Ping Identity) and zero-latency auth state resolution will allow B2B SaaS builders to close corporate customers without custom enterprise friction.',
 
     returnDir: '← Return to Directory',
-    usBaseline: 'US Baseline',
-    tradAgency: 'Traditional Agency Output',
-    refinedIntent: 'Refined Technical Intent',
     lblProblem: 'Problem',
-    lblImpact: 'Impact',
-    lblFix: 'Architectural Fix'
+    lblImpact: 'Procurement Impact',
+    lblFix: 'Architectural Solution',
+    usBaseline: 'US Baseline',
+    tradAgency: 'Traditional Agency',
+    refinedIntent: 'Refined Intent'
   },
   de: {
     navTag: 'Lokalisierungs-Audit #09',
@@ -114,9 +111,6 @@ const AUDIT_CONTENT = {
 
     s3Title: 'Abschnitt 3 / Expansions-Roadmap',
     s3Heading: 'Strategische Neupositionierung für Enterprise-Sales',
-    s3TableCurrent: 'Aktuelle Stärke',
-    s3TableGrowth: 'Wachstums-Engpass',
-    s3TableSolution: 'Lösung',
     r1Strength: 'Schnellste React/Next DX',
     r1Bottleneck: 'EU/LATAM-Compliance',
     r1Solution: 'Regionale PII (EU-central-1)',
@@ -131,12 +125,12 @@ const AUDIT_CONTENT = {
     summaryText: 'Um Großkunden in Europa zu gewinnen, muss Clerk vom "Indie-Liebling" zur "Enterprise-Sicherheitsplattform" reifen. Marketing und Dokumentation müssen DSGVO, SOC2 Type II und regionale Garantien gleichrangig mit Code-Beispielen präsentieren.',
 
     returnDir: '← Zurück zum Verzeichnis',
-    usBaseline: 'US-Ausgangslage',
-    tradAgency: 'Klassisches Agenturergebnis',
-    refinedIntent: 'Präzisierter technischer Intent',
     lblProblem: 'Problem',
     lblImpact: 'Auswirkung',
-    lblFix: 'Lösung'
+    lblFix: 'Lösung',
+    usBaseline: 'US-Ausgangslage',
+    tradAgency: 'Klassisch',
+    refinedIntent: 'Präzisiert'
   },
   es: {
     navTag: 'Auditoría de Localización #09',
@@ -181,9 +175,6 @@ const AUDIT_CONTENT = {
 
     s3Title: 'Sección 3 / Matriz de Expansión',
     s3Heading: 'Alineación para Ventas Corporativas',
-    s3TableCurrent: 'Fortaleza Actual',
-    s3TableGrowth: 'Cuello de Botella',
-    s3TableSolution: 'Solución',
     r1Strength: 'Mejor DX en React/Next',
     r1Bottleneck: 'Cumplimiento EU/LATAM',
     r1Solution: 'Residencia de PII (EU-central-1)',
@@ -198,12 +189,12 @@ const AUDIT_CONTENT = {
     summaryText: 'Clerk debe pasar de ser la herramienta favorita de proyectos independientes a una plataforma de identidad corporativa. Garantizar residencia de datos local y autoservicio SSO permitirá a sus clientes cerrar contratos Enterprise sin fricciones.',
 
     returnDir: '← Volver al Directorio',
-    usBaseline: 'Línea Base (EE. UU.)',
-    tradAgency: 'Resultado de Agencia Tradicional',
-    refinedIntent: 'Intención Técnica Refinada',
     lblProblem: 'Problema',
     lblImpact: 'Impacto',
-    lblFix: 'Solución'
+    lblFix: 'Solución',
+    usBaseline: 'Línea Base (EE. UU.)',
+    tradAgency: 'Agencia Tradicional',
+    refinedIntent: 'Intención Refinada'
   },
   fr: {
     navTag: 'Audit de Localisation #09',
@@ -248,9 +239,6 @@ const AUDIT_CONTENT = {
 
     s3Title: 'Section 3 / Feuille de Route Expansive',
     s3Heading: 'Positionnement pour le Marché Enterprise',
-    s3TableCurrent: 'Force Actuelle',
-    s3TableGrowth: 'Mégablocage',
-    s3TableSolution: 'Solution',
     r1Strength: 'Meilleure DX React/Next',
     r1Bottleneck: 'Conformité UE/LATAM',
     r1Solution: 'PII Régionalisé (EU-central-1)',
@@ -265,12 +253,12 @@ const AUDIT_CONTENT = {
     summaryText: 'Pour convaincre les acheteurs grands comptes en Europe, Clerk doit mettre en avant la souveraineté des données et les fonctionnalités SSO en libre-service aux côtés de ses exemples de code React.',
 
     returnDir: '← Retour au Répertoire',
-    usBaseline: 'Référence US',
-    tradAgency: 'Rendu Agence Traditionnelle',
-    refinedIntent: 'Intention Technique Affinée',
     lblProblem: 'Problème',
     lblImpact: 'Impact',
-    lblFix: 'Solution'
+    lblFix: 'Solution',
+    usBaseline: 'Référence US',
+    tradAgency: 'Agence Trad',
+    refinedIntent: 'Intention Affinée'
   },
   it: {
     navTag: 'Audit di Localizzazione #09',
@@ -315,9 +303,6 @@ const AUDIT_CONTENT = {
 
     s3Title: 'Sezione 3 / Matrice di Espansione',
     s3Heading: 'Strategia per il Mercato Enterprise',
-    s3TableCurrent: 'Punto di Forza',
-    s3TableGrowth: 'Collo di Bottiglia',
-    s3TableSolution: 'Soluzione',
     r1Strength: 'Migliore DX su React/Next',
     r1Bottleneck: 'Conformità EU/LATAM',
     r1Solution: 'Dati PII Regionali (EU-central-1)',
@@ -332,12 +317,12 @@ const AUDIT_CONTENT = {
     summaryText: 'Per conquistare i mercati europei, Clerk deve affiancare alle sue funzionalità per desarrollatori solide garanzie di sovranità dei dati e gestione SSO aziendale.',
 
     returnDir: '← Torna al Direttorio',
-    usBaseline: 'Linea Base US',
-    tradAgency: 'Output Agenzia Tradizionale',
-    refinedIntent: 'Intento Tecnico Rifinito',
     lblProblem: 'Problema',
     lblImpact: 'Impatto',
-    lblFix: 'Soluzione'
+    lblFix: 'Soluzione',
+    usBaseline: 'Linea Base US',
+    tradAgency: 'Output Agenzia',
+    refinedIntent: 'Intento Rifinito'
   },
   pt: {
     navTag: 'Auditoria de Localização #09',
@@ -382,9 +367,6 @@ const AUDIT_CONTENT = {
 
     s3Title: 'Seção 3 / Matriz de Expansão',
     s3Heading: 'Estratégia de Posicionamento Enterprise',
-    s3TableCurrent: 'Força Atual',
-    s3TableGrowth: 'Gargalo de Crescimento',
-    s3TableSolution: 'Solução',
     r1Strength: 'Melhor DX React/Next',
     r1Bottleneck: 'Conformidade UE/LATAM',
     r1Solution: 'Dados PII Regionais (EU-central-1)',
@@ -399,12 +381,12 @@ const AUDIT_CONTENT = {
     summaryText: 'Para conquistar grandes clientes na Europa e LATAM, o Clerk deve evoluir de uma ferramenta para desenvolvedores independentes para uma plataforma de identidade corporativa sólida, garantindo soberania de dados e autosserviço SSO.',
 
     returnDir: '← Voltar ao Diretório',
-    usBaseline: 'Linha de Base (EUA)',
-    tradAgency: 'Resultado de Agência Tradicional',
-    refinedIntent: 'Intenção Técnica Refinada',
     lblProblem: 'Problema',
     lblImpact: 'Impacto',
-    lblFix: 'Solução'
+    lblFix: 'Solução',
+    usBaseline: 'Linha de Base (EUA)',
+    tradAgency: 'Agência Tradicional',
+    refinedIntent: 'Intenção Refinada'
   }
 };
 
@@ -443,8 +425,7 @@ export default function ClerkAuditPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950 print:bg-white print:text-black">
-      {/* EXPLICIT PRINT UTILITIES TO REMOVE HEADER AND BOTTOM DIRECTORY LINK */}
+    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-bone-100 selection:text-ink-950 print:bg-white print:text-black">
       <style jsx global>{`
         @media print {
           body {
@@ -457,42 +438,39 @@ export default function ClerkAuditPage() {
           .print\\:border-gray-300 {
             border-color: #d1d5db !important;
           }
-          .print\\:bg-white {
-            background-color: #ffffff !important;
-          }
           .print\\:text-black {
             color: #000000 !important;
           }
         }
       `}</style>
 
-      {/* HEADER - HIDDEN ON PRINT */}
-      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40 print:hidden">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
-            ← VeraVox Main
+      {/* MINIMAL TOP NAV */}
+      <header className="border-b border-ink-800 sticky top-0 bg-ink-950/95 backdrop-blur z-40 print:hidden">
+        <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between font-mono text-xs text-bone-400">
+          <Link href="/" className="hover:text-bone-100 transition-colors">
+            ← VeraVox
           </Link>
 
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 font-mono text-xs">
+            <div className="flex items-center gap-2">
               {['es', 'fr', 'de', 'it', 'pt', 'en'].map((l) => (
                 <React.Fragment key={l}>
                   <button
                     onClick={() => setLang(l)}
-                    className={`bg-transparent border-0 p-0 cursor-pointer transition-colors hover:text-bone-200 ${
-                      lang === l ? 'text-signal-gold font-semibold' : 'text-bone-500'
+                    className={`bg-transparent border-0 p-0 cursor-pointer transition-colors ${
+                      lang === l ? 'text-bone-100 font-bold underline underline-offset-4' : 'text-bone-500 hover:text-bone-300'
                     }`}
                   >
                     {l.toUpperCase()}
                   </button>
-                  {l !== 'en' && <span className="text-ink-600">/</span>}
+                  {l !== 'en' && <span className="text-ink-700">/</span>}
                 </React.Fragment>
               ))}
             </div>
 
             <button 
               onClick={() => window.print()}
-              className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors cursor-pointer bg-transparent border-0"
+              className="text-[10px] uppercase tracking-widest text-bone-500 hover:text-bone-100 transition-colors cursor-pointer bg-transparent border-0"
             >
               Export PDF
             </button>
@@ -500,135 +478,104 @@ export default function ClerkAuditPage() {
         </div>
       </header>
 
-      {/* MAIN DOCUMENT BODY */}
-      <main className="max-w-5xl mx-auto px-6 md:px-12 pt-12 pb-32 print:pt-0 print:pb-0 print:px-0">
+      {/* DOCUMENT BODY */}
+      <main className="max-w-4xl mx-auto px-6 pt-12 pb-24 print:pt-0 print:pb-0 print:px-0">
         
-        {/* DOCUMENT METADATA */}
-        <header className="mb-16 border-b border-ink-800 pb-12 print:border-gray-300">
-          <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4 print:text-black">
-            <span>{t.navTag}</span>
-            <span className="text-ink-600 print:text-gray-400">·</span>
-            <span className="text-bone-500 print:text-gray-600">{t.date}</span>
-            <span className="text-ink-600 print:text-gray-400">·</span>
-            <span className="text-bone-500 print:text-gray-600">{t.readingTime}</span>
+        {/* HEADER */}
+        <header className="mb-16 border-b border-ink-800 pb-10 print:border-gray-300">
+          <div className="font-mono text-xs text-bone-500 mb-4 print:text-gray-600">
+            {t.navTag} — {t.date}
           </div>
 
-          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4 print:text-black">
+          <h1 className="font-display font-medium text-3xl md:text-4xl text-bone-100 tracking-tight mb-4 print:text-black">
             {t.title}
           </h1>
-          <p className="text-lg text-bone-300 mb-8 print:text-gray-700">
+          <p className="text-base text-bone-300 mb-8 leading-relaxed print:text-gray-700">
             {t.subtitle}
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed print:text-gray-600">
+          <div className="grid grid-cols-3 gap-4 font-mono text-[11px] text-bone-400 border-t border-ink-800 pt-6 print:border-gray-300 print:text-gray-700">
             <div>
-              <span className="text-bone-300 block mb-1 print:text-black">Client</span>
+              <span className="text-bone-600 block uppercase tracking-wider text-[9px] mb-1 print:text-gray-500">Client</span>
               {t.client}
             </div>
             <div>
-              <span className="text-bone-300 block mb-1 print:text-black">Markets</span>
+              <span className="text-bone-600 block uppercase tracking-wider text-[9px] mb-1 print:text-gray-500">Markets</span>
               {t.markets}
             </div>
             <div>
-              <span className="text-bone-300 block mb-1 print:text-black">Audience</span>
+              <span className="text-bone-600 block uppercase tracking-wider text-[9px] mb-1 print:text-gray-500">Audience</span>
               {t.audience}
             </div>
           </div>
         </header>
 
-        {/* SECTION 1: PERSPECTIVE */}
+        {/* SECTION 1 */}
         <section className="mb-16">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-4 print:text-black print:font-bold">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-4 print:text-black print:font-bold">
             {t.s1Title}
-          </div>
-          <div className="max-w-none text-bone-300 leading-relaxed space-y-4 print:text-gray-800">
-            <h2 className="font-display font-semibold text-xl text-bone-100 mb-2 print:text-black">
+          </h2>
+          <div className="space-y-4 text-bone-200 leading-relaxed text-sm print:text-gray-800">
+            <h3 className="font-display text-lg text-bone-100 print:text-black">
               {t.overviewHeading}
-            </h2>
-            <p className="text-bone-300 leading-relaxed print:text-gray-800">
-              {t.overviewBody}
-            </p>
-            <p className="text-bone-400 text-sm leading-relaxed border-l-2 border-ink-700 pl-4 italic print:border-gray-400 print:text-gray-600">
+            </h3>
+            <p className="text-bone-300">{t.overviewBody}</p>
+            <p className="text-bone-400 italic text-xs border-l border-ink-700 pl-4 py-1 print:border-gray-400 print:text-gray-600">
               {t.overviewSub}
             </p>
           </div>
         </section>
 
-        {/* SECTION 2: CLEAN INTEGRATED-BORDER CARD LAYOUT */}
-        <section className="mb-16">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black print:font-bold">
+        {/* SECTION 2: EDITORIAL BREAKDOWN */}
+        <section className="mb-20">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-8 print:text-black print:font-bold">
             {t.s2Title}
-          </div>
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="space-y-16">
             {blocks.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="flex flex-col justify-between border border-ink-800 bg-ink-900/40 p-5 rounded-none print:border-gray-300 print:bg-white"
-              >
-                <div>
-                  <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-bone-100 mb-5 pb-3 border-b border-ink-800 print:text-black print:border-gray-200">
-                    {item.title}
-                  </h3>
+              <div key={idx} className="border-t border-ink-800 pt-6 print:border-gray-300">
+                <h3 className="font-mono text-sm font-semibold text-bone-100 mb-6 print:text-black">
+                  {item.title}
+                </h3>
 
-                  {/* PROBLEM BLOCK - RED INTEGRATED BORDER */}
-                  <div className="mb-3 p-3 bg-signal-red/5 border-l-2 border-signal-red text-xs print:bg-red-50/50 print:border-red-600">
-                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-signal-red block mb-1 print:text-red-700">
+                {/* ARCHITECTURAL TRIO */}
+                <div className="space-y-4 text-xs leading-relaxed mb-8">
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-1 print:text-gray-600">
                       {t.lblProblem}
                     </span>
-                    <p className="text-bone-300 leading-relaxed print:text-gray-800">
-                      {item.problem}
-                    </p>
+                    <p className="text-bone-300 print:text-gray-800">{item.problem}</p>
                   </div>
 
-                  {/* IMPACT BLOCK - AMBER INTEGRATED BORDER */}
-                  <div className="mb-3 p-3 bg-signal-gold/5 border-l-2 border-signal-gold text-xs print:bg-amber-50/50 print:border-amber-600">
-                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-signal-gold block mb-1 print:text-amber-800">
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-1 print:text-gray-600">
                       {t.lblImpact}
                     </span>
-                    <p className="text-bone-300 leading-relaxed print:text-gray-800">
-                      {item.impact}
-                    </p>
+                    <p className="text-bone-300 print:text-gray-800">{item.impact}</p>
                   </div>
 
-                  {/* FIX BLOCK - GREEN INTEGRATED BORDER */}
-                  <div className="mb-6 p-3 bg-signal-green/5 border-l-2 border-signal-green text-xs print:bg-emerald-50/50 print:border-emerald-600">
-                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-signal-green block mb-1 print:text-emerald-800">
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-bone-500 block mb-1 print:text-gray-600">
                       {t.lblFix}
                     </span>
-                    <p className="text-bone-300 leading-relaxed print:text-gray-800">
-                      {item.fix}
-                    </p>
+                    <p className="text-bone-200 print:text-black">{item.fix}</p>
                   </div>
                 </div>
 
-                {/* COPYWRITING NARRATIVE COMPARISON */}
-                <div className="pt-4 border-t border-ink-800 space-y-3 print:border-gray-200">
+                {/* COPY COMPARISON */}
+                <div className="bg-ink-900/60 p-4 border-l border-ink-700 space-y-3 text-xs print:bg-gray-50 print:border-gray-400">
                   <div>
-                    <span className="block font-mono text-[9px] uppercase tracking-widest text-bone-600 mb-0.5 print:text-gray-500">
-                      {t.usBaseline}
-                    </span>
-                    <p className="text-[11px] text-bone-400 italic print:text-gray-600">
-                      {item.us}
-                    </p>
+                    <span className="font-mono text-[9px] text-bone-500 block print:text-gray-500">{t.usBaseline}</span>
+                    <p className="text-bone-400 italic print:text-gray-700">{item.us}</p>
                   </div>
-
                   <div>
-                    <span className="block font-mono text-[9px] uppercase tracking-widest text-bone-600 mb-0.5 print:text-gray-500">
-                      {t.tradAgency}
-                    </span>
-                    <p className="text-[11px] text-bone-400 font-mono print:text-gray-600">
-                      {item.trad}
-                    </p>
+                    <span className="font-mono text-[9px] text-bone-500 block print:text-gray-500">{t.tradAgency}</span>
+                    <p className="text-bone-400 font-mono print:text-gray-700">{item.trad}</p>
                   </div>
-
-                  <div className="pt-1">
-                    <span className="block font-mono text-[9px] uppercase tracking-widest text-signal-gold mb-0.5 print:text-black print:font-bold">
-                      {t.refinedIntent}
-                    </span>
-                    <p className="text-xs text-bone-100 font-mono font-medium print:text-black">
-                      {item.refined}
-                    </p>
+                  <div>
+                    <span className="font-mono text-[9px] text-bone-300 block print:text-black">{t.refinedIntent}</span>
+                    <p className="text-bone-100 font-mono font-medium print:text-black">{item.refined}</p>
                   </div>
                 </div>
               </div>
@@ -636,54 +583,46 @@ export default function ClerkAuditPage() {
           </div>
         </section>
 
-        {/* SECTION 3: EXPANSION ROADMAP & MATRIX */}
+        {/* SECTION 3: ROADMAP & MATRIX */}
         <section className="mb-20">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black print:font-bold">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-bone-500 mb-6 print:text-black print:font-bold">
             {t.s3Title}
-          </div>
+          </h2>
           
-          <h3 className="font-display text-xl text-bone-100 mb-6 print:text-black">{t.s3Heading}</h3>
+          <h3 className="font-display text-lg text-bone-100 mb-6 print:text-black">{t.s3Heading}</h3>
           
-          <div className="overflow-x-auto mb-12 border border-ink-700 bg-ink-900 print:bg-white print:border-gray-300">
-            <table className="w-full text-left font-mono text-xs border-collapse">
-              <thead>
-                <tr className="border-b border-ink-700 bg-ink-950 text-bone-500 uppercase print:bg-gray-100 print:text-black print:border-gray-300">
-                  <th className="p-4 border-r border-ink-700 print:border-gray-300">{t.s3TableCurrent}</th>
-                  <th className="p-4 border-r border-ink-700 print:border-gray-300">{t.s3TableGrowth}</th>
-                  <th className="p-4">{t.s3TableSolution}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-ink-700 text-bone-300 print:divide-gray-300 print:text-gray-800">
-                <tr>
-                  <td className="p-4 border-r border-ink-700 text-bone-100 print:border-gray-300 print:text-black">{t.r1Strength}</td>
-                  <td className="p-4 border-r border-ink-700 text-signal-red print:border-gray-300 print:text-red-700">{t.r1Bottleneck}</td>
-                  <td className="p-4 text-signal-green print:text-emerald-700">{t.r1Solution}</td>
-                </tr>
-                <tr>
-                  <td className="p-4 border-r border-ink-700 text-bone-100 print:border-gray-300 print:text-black">{t.r2Strength}</td>
-                  <td className="p-4 border-r border-ink-700 text-signal-red print:border-gray-300 print:text-red-700">{t.r2Bottleneck}</td>
-                  <td className="p-4 text-signal-green print:text-emerald-700">{t.r2Solution}</td>
-                </tr>
-                <tr>
-                  <td className="p-4 border-r border-ink-700 text-bone-100 print:border-gray-300 print:text-black">{t.r3Strength}</td>
-                  <td className="p-4 border-r border-ink-700 text-signal-red print:border-gray-300 print:text-red-700">{t.r3Bottleneck}</td>
-                  <td className="p-4 text-signal-green print:text-emerald-700">{t.r3Solution}</td>
-                </tr>
-              </tbody>
-            </table>
+          {/* MINIMAL ROADMAP LIST */}
+          <div className="border-t border-ink-800 divide-y divide-ink-800 font-mono text-xs mb-12 print:border-gray-300 print:divide-gray-300">
+            <div className="py-4 grid grid-cols-1 md:grid-cols-3 gap-2">
+              <span className="text-bone-100 print:text-black">{t.r1Strength}</span>
+              <span className="text-bone-400 print:text-gray-600">{t.r1Bottleneck}</span>
+              <span className="text-bone-200 font-medium print:text-black">{t.r1Solution}</span>
+            </div>
+            <div className="py-4 grid grid-cols-1 md:grid-cols-3 gap-2">
+              <span className="text-bone-100 print:text-black">{t.r2Strength}</span>
+              <span className="text-bone-400 print:text-gray-600">{t.r2Bottleneck}</span>
+              <span className="text-bone-200 font-medium print:text-black">{t.r2Solution}</span>
+            </div>
+            <div className="py-4 grid grid-cols-1 md:grid-cols-3 gap-2">
+              <span className="text-bone-100 print:text-black">{t.r3Strength}</span>
+              <span className="text-bone-400 print:text-gray-600">{t.r3Bottleneck}</span>
+              <span className="text-bone-200 font-medium print:text-black">{t.r3Solution}</span>
+            </div>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-signal-gold print:text-black print:font-bold">{t.summaryHeading}</h4>
+          <div className="space-y-3 border-t border-ink-800 pt-6 print:border-gray-300">
+            <h4 className="font-mono text-xs uppercase tracking-widest text-bone-400 print:text-black print:font-bold">
+              {t.summaryHeading}
+            </h4>
             <p className="text-bone-300 leading-relaxed text-sm print:text-gray-800">
               {t.summaryText}
             </p>
           </div>
         </section>
 
-        {/* BOTTOM RETURN DIRECTORY LINK - STRICTLY HIDDEN ON PRINT */}
-        <div className="mt-32 pt-8 border-t border-ink-700 print:hidden">
-          <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
+        {/* FOOTER LINK */}
+        <div className="mt-20 pt-8 border-t border-ink-800 print:hidden">
+          <Link href="/" className="font-mono text-xs text-bone-500 hover:text-bone-100 transition-colors">
             {t.returnDir}
           </Link>
         </div>
