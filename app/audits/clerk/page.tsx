@@ -3,530 +3,409 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-type Language = 'en' | 'de' | 'es' | 'fr' | 'it' | 'pt' | 'ja';
-
-const AUDIT_CONTENT: Record<Language, {
-  navTag: string;
-  title: string;
-  subtitle: string;
-  readingTime: string;
-  date: string;
-  client: string;
-  markets: string;
-  audience: string;
-  s1Title: string;
-  overviewHeading: string;
-  overviewBody: string;
-  overviewSub: string;
-  s2Title: string;
-  items: Array<{
-    id: string;
-    label: string;
-    usBaseline: string;
-    rejectedLabel: string;
-    tradAgency: string;
-    shippedLabel: string;
-    refinedIntent: string;
-    whyFailedHeading: string;
-    whyFailedText: string;
-    anchorHeading: string;
-    anchorHtml: string;
-    restructureHeading: string;
-    restructureText: string;
-  }>;
-  s3Title: string;
-  s3Heading: string;
-  s3Body: string;
-  returnDir: string;
-  exportPdf: string;
-}> = {
+const AUDIT_CONTENT = {
   en: {
     navTag: 'Localization Audit #09',
-    title: 'Clerk: Identity & User Security Regionalization Audit',
-    subtitle: 'Adapting authentication narratives from US friction-free growth copy to European security frameworks.',
-    readingTime: '8 min read',
-    date: 'December 2026',
+    title: 'Clerk: Developer-First Identity & Enterprise Procurement Friction',
+    subtitle: 'Adapting authentication narratives from US friction-free growth copy to European & LATAM compliance, data residency, and enterprise multi-tenancy frameworks.',
+    readingTime: '10 min read',
+    date: 'October 2026',
     client: 'Clerk',
-    markets: 'EU, DACH, LATAM, JP',
-    audience: 'Chief Information Security Officers & SaaS Architects',
+    markets: 'EU, DACH, LATAM',
+    audience: 'Chief Information Security Officers, Enterprise Buyers & SaaS Architects',
+    
     s1Title: 'Section 1 / Perspective & Intent',
-    overviewHeading: 'Context & Intent',
-    overviewBody: 'Clerk’s US copy "More than authentication. Complete user management." focuses on rapid integration and frictionless UI components. In European SaaS security reviews, CISOs evaluate authentication vendors based on OpenID Connect (OIDC) compliance, multi-factor security, SOC2/ISO auditability, and European tenant isolation.',
-    overviewSub: 'This audit repositions Clerk’s drop-in auth components around zero-trust identity management and regulatory data protection.',
-    s2Title: 'Section 2 / Core Acquisition Teardown',
-    items: [
-      {
-        id: 'h1',
-        label: 'asset.headline — us-en → eu-regional',
-        usBaseline: 'More than authentication. Complete user management.',
-        rejectedLabel: 'direct translation — rejected',
-        tradAgency: 'Mehr als Authentifizierung. Vollständige Benutzerverwaltung.',
-        shippedLabel: 'structural adaptation — shipped',
-        refinedIntent: 'Identitätsinfrastruktur und DSGVO-konforme Benutzerverwaltung für B2B-SaaS.',
-        whyFailedHeading: 'Analysis',
-        whyFailedText: '"Complete user management" sounds like light consumer CRM software to European procurement officers evaluating auth systems.',
-        anchorHeading: 'Contextual anchor',
-        anchorHtml: '<span class="text-bone-100">Identitätsinfrastruktur</span> establishes enterprise security posture over consumer-grade convenience.',
-        restructureHeading: 'Information architecture',
-        restructureText: 'Replaces generic management claims with explicit compliance and infrastructure security framing.'
-      },
-      {
-        id: 'h2',
-        label: 'asset.subhead — us-en → eu-regional',
-        usBaseline: 'Frictionless sign-in components for modern web apps.',
-        rejectedLabel: 'direct translation — rejected',
-        tradAgency: 'Reibungslose Anmeldekomponenten für moderne Web-Apps.',
-        shippedLabel: 'structural adaptation — shipped',
-        refinedIntent: 'Multi-Faktor-Authentifizierung, Session-Schutz und Rollenkonzepte (RBAC) out-of-the-box.',
-        whyFailedHeading: 'Analysis',
-        whyFailedText: '"Frictionless" raises red flags for CISOs who associate low friction with weak MFA or permissive session handling.',
-        anchorHeading: 'Contextual anchor',
-        anchorHtml: '<span class="text-bone-100">Rollenkonzepte (RBAC)</span> targets the exact architectural check required in enterprise security evaluations.',
-        restructureHeading: 'Information architecture',
-        restructureText: 'Leads with multi-factor authentication and access control mechanisms rather than UI ease.'
-      },
-      {
-        id: 'cta',
-        label: 'asset.cta — us-en → eu-regional',
-        usBaseline: 'Start building for free',
-        rejectedLabel: 'direct translation — rejected',
-        tradAgency: 'Kostenlos entwickeln',
-        shippedLabel: 'structural adaptation — shipped',
-        refinedIntent: 'Auth-SDK integrieren / Sicherheitskonzept prüfen',
-        whyFailedHeading: 'Analysis',
-        whyFailedText: '"Build for free" appeals to hobby developers but causes high bounce rates with security leads seeking technical specs.',
-        anchorHeading: 'Contextual anchor',
-        anchorHtml: '<span class="text-bone-100">Sicherheitskonzept prüfen</span> offers a friction-free entry point for technical auditors.',
-        restructureHeading: 'Information architecture',
-        restructureText: 'Provides dual technical tracks: developer SDK integration and CISO compliance verification.'
-      }
-    ],
-    s3Title: 'Section 3 / Applied Surface Audits',
-    s3Heading: '01 / Multi-Factor Authentication & OIDC Protocols',
-    s3Body: 'Exact technical terminology for session token management, passkey implementation, and regional tenant isolation.',
+    overviewHeading: 'Executive Context & Strategic Operational Friction',
+    overviewBody: 'Clerk has established itself as the gold standard for developer experience (DX) and user management in the React/Next.js ecosystem. However, as client applications cross-border scale into enterprise procurement in Europe (EU) and Latin America (LATAM), Clerk encounters significant friction. Unlike email infrastructure providers whose friction lies in deliverability, Clerk’s bottlenecks stem from data residency, strict GDPR sovereignty compliance, enterprise-grade multi-tenancy constraints, and session synchronization across localized legal jurisdictions.',
+    overviewSub: 'This audit repositions Clerk’s drop-in auth components around zero-trust identity management, regional data sovereignty (EU-central-1), decoupled SAML/SSO routing, and low-latency edge caching.',
+
+    s2Title: 'Section 2 / Architectural Breakdown & Friction Points',
+    
+    b1Title: '01 / Data Residency & GDPR Sovereignty',
+    b1Problem: 'Enterprise buyers in the EU and LATAM (under regulations like Brazil’s LGPD) require strict data residency. Authenticated user PII (emails, names, phone numbers, IP logs, session tokens) often defaults to being stored or processed through US-centric primary database clusters.',
+    b1Impact: 'European procurement teams flag non-EU PII storage during compliance audits, halting enterprise SaaS deals before sales integration can even begin.',
+    b1Fix: 'Native region-bound project instances (EU-central-1 database hosting for metadata) without requiring expensive enterprise custom setups.',
+    b1Us: 'US Baseline: "More than authentication. Complete user management for modern web apps."',
+    b1Trad: 'Traditional Translation: "Mehr als Authentifizierung. Vollständige Benutzerverwaltung für moderne Web-Apps."',
+    b1Refined: 'Refined Technical Intent (DE): "DSGVO-konforme Identitätsinfrastruktur mit regionaler Datenspeicherung (EU-central-1) und lokaler Mandantentrennung."',
+
+    b2Title: '02 / Enterprise Multi-Tenancy & B2B Sub-Organizations',
+    b2Problem: 'Clerk’s Organizations feature handles basic team management well, but enterprise B2B customers demand granular Role-Based Access Control (RBAC), custom SAML/SSO mapping per sub-tenant, and isolated audit logging.',
+    b2Impact: 'Scaling B2B SaaS products run into architectural limits when mapping complex corporate hierarchies or custom enterprise identity providers (IdPs) directly through standard Clerk dashboard flows.',
+    b2Fix: 'Decoupled, API-first enterprise SSO routing that allows tenant-level SAML configuration without manual administrative intervention.',
+    b2Us: 'US Baseline: "Frictionless B2B team management and Organization switching."',
+    b2Trad: 'Traditional Translation: "Gestión de equipos B2B sin fricción y cambio de organizaciones."',
+    b2Refined: 'Refined Technical Intent (ES): "Control de acceso basado en roles (RBAC) con enrutamiento SSO/SAML autoservicio para entornos B2B corporativos."',
+
+    b3Title: '03 / Edge Session Synchronization & Latency',
+    b3Problem: 'While Clerk middleware operates at the edge (Vercel Edge Functions, Cloudflare Workers), verifying session tokens and syncing state across globally distributed users can introduce cold-start latency or token stale-state issues when checking database-backed permissions in real time.',
+    b3Impact: 'UI jitter or minor latency spikes during initial page loads and route protection checks in regions distant from primary US regions (such as Southern LATAM).',
+    b3Fix: 'Optimized JWT claim caching at the edge paired with localized session revocation webhooks.',
+    b3Us: 'US Baseline: "Drop-in UI components and edge middleware for rapid integration."',
+    b3Trad: 'Traditional Translation: "Composants UI prêts à l’emploi et middleware edge pour une intégration rapide."',
+    b3Refined: 'Refined Technical Intent (FR): "Sychronisation de session à très faible latence sur les réseaux Edge avec gestion distribuée des jetons JWT."',
+
+    s3Title: 'Section 3 / Expansion Roadmap & Strategic Matrix',
+    s3Heading: 'Repositioning for Enterprise Procurement & Self-Serve Growth',
+    s3TableCurrent: 'Current Strength',
+    s3TableGrowth: 'Growth Bottleneck',
+    s3TableSolution: 'Solution',
+    r1Strength: 'Fastest React/Next DX',
+    r1Bottleneck: 'EU/LATAM Compliance',
+    r1Solution: 'Regional PII (EU-central-1)',
+    r2Strength: 'Pre-built Auth UI',
+    r2Bottleneck: 'SAML/SSO Procurement',
+    r2Solution: 'Self-serve Enterprise SAML',
+    r3Strength: 'Edge Middleware Support',
+    r3Bottleneck: 'Global Edge Latency',
+    r3Solution: 'Local JWT Caching & Webhooks',
+
+    summaryHeading: 'Strategic Procurement Narrative',
+    summaryText: 'To capture enterprise contracts in Europe and LATAM, Clerk must bridge the gap between "indie-hacker favorite" and "enterprise-compliant identity platform." Marketing and documentation must emphasize GDPR, LGPD, SOC2 Type II, and explicit regional data guarantees alongside React code snippets. Offering self-serve enterprise SSO (Okta, Azure AD, Ping Identity) and zero-latency auth state resolution will allow B2B SaaS builders to close corporate customers without custom enterprise friction.',
+
     returnDir: '← Return to Directory',
-    exportPdf: 'Export PDF'
+    usBaseline: 'US Baseline',
+    tradAgency: 'Traditional Agency Output',
+    refinedIntent: 'Refined Technical Intent'
   },
   de: {
     navTag: 'Lokalisierungs-Audit #09',
-    title: 'Clerk: Identitätsinfrastruktur & Sicherheitsarchitektur',
-    subtitle: 'Anpassung von Authentifizierungs-Narrativen an europäische Sicherheitsstandards.',
-    readingTime: '8 Min. Lesezeit',
-    date: 'Dezember 2026',
+    title: 'Clerk: Identitätsinfrastruktur & Enterprise-Beschaffungshürden',
+    subtitle: 'Anpassung von Authentifizierungs-Narrativen an europäische DSGVO-Standards, regionale Datenhaltung und Mandantentrennung.',
+    readingTime: '10 Min. Lesezeit',
+    date: 'Oktober 2026',
     client: 'Clerk',
-    markets: 'EU, DACH, LATAM, JP',
-    audience: 'CISOs & SaaS-Architekten',
+    markets: 'EU, DACH, LATAM',
+    audience: 'CISOs, Enterprise-Einkäufer & SaaS-Architekten',
+    
     s1Title: 'Abschnitt 1 / Perspektive & Intent',
-    overviewHeading: 'Kontext & Zielsetzung',
-    overviewBody: 'In europäischen Sicherheitsüberprüfungen bewerten CISOs Authentifizierungsdienste nach OIDC-Standardtreue, Rollenkonzepten (RBAC) und Mandantentrennung. „Benutzerverwaltung“ klingt zu banal.',
-    overviewSub: 'Dieses Audit strukturiert die Ansprache auf Zero-Trust-Identitätsarchitektur um.',
-    s2Title: 'Abschnitt 2 / Strukturelle Akquisitions-Analyse',
-    items: [
-      {
-        id: 'h1',
-        label: 'asset.headline — us-en → de-de',
-        usBaseline: 'More than authentication. Complete user management.',
-        rejectedLabel: 'Wörtliche Übersetzung — verworfen',
-        tradAgency: 'Mehr als Authentifizierung. Vollständige Benutzerverwaltung.',
-        shippedLabel: 'Strukturelle Anpassung — implementiert',
-        refinedIntent: 'Identitätsinfrastruktur und DSGVO-konforme Benutzerverwaltung für B2B-SaaS.',
-        whyFailedHeading: 'Analyse',
-        whyFailedText: '„Benutzerverwaltung“ klingt für IT-Einkäufer nach einfacher Nutzerdatenbank statt nach sicherer Authentifizierungsschicht.',
-        anchorHeading: 'Kontextueller Anker',
-        anchorHtml: '<span class="text-bone-100">Identitätsinfrastruktur</span> signalisiert höchste Enterprise-Sicherheitsstandards.',
-        restructureHeading: 'Informationsarchitektur',
-        restructureText: 'Ersetzt allgemeine Marketingversprechen durch konkrete Compliance- und Sicherheitsmerkmale.'
-      },
-      {
-        id: 'h2',
-        label: 'asset.subhead — us-en → de-de',
-        usBaseline: 'Frictionless sign-in components for modern web apps.',
-        rejectedLabel: 'Wörtliche Übersetzung — verworfen',
-        tradAgency: 'Reibungslose Anmeldekomponenten für moderne Web-Apps.',
-        shippedLabel: 'Strukturelle Anpassung — implementiert',
-        refinedIntent: 'Multi-Faktor-Authentifizierung, Session-Schutz und Rollenkonzepte (RBAC) out-of-the-box.',
-        whyFailedHeading: 'Analyse',
-        whyFailedText: '„Reibungslos“ weckt bei CISOs die Befürchtung unzureichender Sicherheit oder fehlender MFA-Erzwingung.',
-        anchorHeading: 'Kontextueller Anker',
-        anchorHtml: '<span class="text-bone-100">Rollenkonzepte (RBAC)</span> bedient die Kernanforderung europäischer Sicherheitsaudits.',
-        restructureHeading: 'Informationsarchitektur',
-        restructureText: 'Fokussiert auf Autorisierungsmodelle und Session-Integrität statt vereinfachter Login-Flows.'
-      },
-      {
-        id: 'cta',
-        label: 'asset.cta — us-en → de-de',
-        usBaseline: 'Start building for free',
-        rejectedLabel: 'Wörtliche Übersetzung — verworfen',
-        tradAgency: 'Kostenlos entwickeln',
-        shippedLabel: 'Strukturelle Anpassung — implementiert',
-        refinedIntent: 'Auth-SDK integrieren / Sicherheitskonzept prüfen',
-        whyFailedHeading: 'Analyse',
-        whyFailedText: '„Kostenlos entwickeln“ wirkt auf Entscheidungsträger im Enterprise-Bereich unprofessionell.',
-        anchorHeading: 'Kontextueller Anker',
-        anchorHtml: '<span class="text-bone-100">Sicherheitskonzept prüfen</span> erlaubt Auditoren den direkten Zugriff auf technische Spezifikationen.',
-        restructureHeading: 'Informationsarchitektur',
-        restructureText: 'Bietet zwei Pfade: Entwickler-Integration und IT-Security-Prüfung.'
-      }
-    ],
-    s3Title: 'Abschnitt 3 / Angewandte Oberflächen-Audits',
-    s3Heading: '01 / Multi-Faktor-Authentifizierung & OIDC-Protokolle',
-    s3Body: 'Abschließende Klärung von Token-Handhabung, Passkey-Implementierung und regionaler Datenspeicherung.',
+    overviewHeading: 'Kontext & Strategische Reibungspunkte',
+    overviewBody: 'Clerk ist der Goldstandard für Entwicklerfreundlichkeit (DX) im React/Next.js-Ökosystem. Beim Skalieren in europäische und lateinamerikanische Märkte stößt Clerk jedoch auf strukturelle Grenzen: Datenresidenz, strikte DSGVO-Souveränität, komplexe B2B-Mandantentrennung und globale Sitzungssynchronisation.',
+    overviewSub: 'Dieses Audit strukturiert die Positionierung auf Zero-Trust-Architektur, EU-Datenspeicherung (EU-central-1), entkoppeltes SAML/SSO-Routing und latenzarme Edge-Validierung um.',
+
+    s2Title: 'Abschnitt 2 / Strukturelle Sicherheits-Analyse',
+    
+    b1Title: '01 / Datenresidenz & DSGVO-Souveränität',
+    b1Problem: 'Europäische Einkäufer verlangen strikte Datenhaltung. Personenenbezogene Daten (PII) werden bei US-Zentralisierung bemängelt.',
+    b1Impact: 'Sicherheits-Audits stoppen Verträge vor der technischen Integration.',
+    b1Fix: 'Regionale Instanzen (EU-central-1 Datenbank-Cluster für Metadaten) ohne Enterprise-Sonderverträge.',
+    b1Us: 'US-Ausgangslage: "More than authentication. Complete user management."',
+    b1Trad: 'Klassisches Ergebnis: "Mehr als Authentifizierung. Vollständige Benutzerverwaltung."',
+    b1Refined: 'Präzisierter Intent: "DSGVO-konforme Identitätsinfrastruktur mit lokaler Datenhaltung (EU-central-1) und Mandantentrennung."',
+
+    b2Title: '02 / Enterprise Multi-Tenancy & SAML/SSO',
+    b2Problem: 'Komplexe B2B-Hierarchien erfordern granulares RBAC, individuelles SAML-Mapping pro Sub-Tenant und isolierte Audit-Logs.',
+    b2Impact: 'Skalierende SaaS-Anbieter stoßen im Standard-Dashboard an architektonische Grenzen.',
+    b2Fix: 'Entkoppeltes, API-basiertes Enterprise SSO-Routing für Self-Serve-SAML-Konfiguration.',
+    b2Us: 'US-Ausgangslage: "Frictionless B2B team management."',
+    b2Trad: 'Klassisches Ergebnis: "Reibungsloses B2B-Teammanagement."',
+    b2Refined: 'Präzisierter Intent: "Granulare Rollenkonzepte (RBAC) und nahtlose Okta/Azure AD-Anbindung für B2B-Enterprise-Kunden."',
+
+    b3Title: '03 / Edge-Sitzungssynchronisation & Latenz',
+    b3Problem: 'Echtzeit-Berechtigungsprüfungen gegen US-Datenbanken erzeugen Cold-Starts und Latenzspitzen.',
+    b3Impact: 'UI-Ruckeln bei der Routenprüfung in weit entfernten Regionen (z. B. Süd-LATAM).',
+    b3Fix: 'Optimiertes JWT-Claim-Caching am Edge gepaart mit regionalen Revokation-Webhooks.',
+    b3Us: 'US-Ausgangslage: "Drop-in UI components and edge middleware."',
+    b3Trad: 'Klassisches Ergebnis: "Fertige UI-Komponenten und Edge-Middleware."',
+    b3Refined: 'Präzisierter Intent: "Latenzfreie Edge-Sitzungsvalidierung durch lokales JWT-Caching und verteilte Token-Widerrufe."',
+
+    s3Title: 'Abschnitt 3 / Expansions-Roadmap',
+    s3Heading: 'Strategische Neupositionierung für Enterprise-Sales',
+    s3TableCurrent: 'Aktuelle Stärke',
+    s3TableGrowth: 'Wachstums-Engpass',
+    s3TableSolution: 'Lösung',
+    r1Strength: 'Schnellste React/Next DX',
+    r1Bottleneck: 'EU/LATAM-Compliance',
+    r1Solution: 'Regionale PII (EU-central-1)',
+    r2Strength: 'Pre-built Auth UI',
+    r2Bottleneck: 'SAML/SSO Procurement',
+    r2Solution: 'Self-Serve Enterprise SAML',
+    r3Strength: 'Edge Middleware Support',
+    r3Bottleneck: 'Globale Edge-Latenz',
+    r3Solution: 'Lokales JWT-Caching',
+
+    summaryHeading: 'Strategisches Fazit',
+    summaryText: 'Um Großkunden in Europa zu gewinnen, muss Clerk vom "Indie-Liebling" zur "Enterprise-Sicherheitsplattform" reifen. Marketing und Dokumentation müssen DSGVO, SOC2 Type II und regionale Garantien gleichrangig mit Code-Beispielen präsentieren.',
+
     returnDir: '← Zurück zum Verzeichnis',
-    exportPdf: 'PDF Exportieren'
+    usBaseline: 'US-Ausgangslage',
+    tradAgency: 'Klassisches Agenturergebnis',
+    refinedIntent: 'Präzisierter technischer Intent'
   },
   es: {
     navTag: 'Auditoría de Localización #09',
-    title: 'Clerk: Arquitectura de Identidad y Seguridad de Usuarios',
-    subtitle: 'Adaptación de componentes de autenticación a marcos de seguridad europeos.',
-    readingTime: '8 min de lectura',
-    date: 'Diciembre 2026',
+    title: 'Clerk: Arquitectura de Identidad y Fricción de Ventas Enterprise',
+    subtitle: 'Adaptación de narrativa desde la simplicidad de integración en EE. UU. hacia cumplimiento normativo, residencia de datos e identidad B2B en Europa y LATAM.',
+    readingTime: '10 min de lectura',
+    date: 'Octubre 2026',
     client: 'Clerk',
-    markets: 'EU, DACH, LATAM, JP',
-    audience: 'Directores de Seguridad de la Información (CISO) y Arquitectos',
+    markets: 'EU, DACH, LATAM',
+    audience: 'Directores de Seguridad (CISO), Compradores Corporativos y Arquitectos',
+    
     s1Title: 'Sección 1 / Perspectiva e Intención',
-    overviewHeading: 'Contexto y Objetivo',
-    overviewBody: 'Reemplazar afirmaciones informales por garantías formales de control de acceso (RBAC), protocolos OIDC e aislamiento de datos.',
-    overviewSub: 'Auditoría enfocada en clientes corporativos B2B.',
-    s2Title: 'Sección 2 / Desglose Estructural de Adquisición',
-    items: [
-      {
-        id: 'h1',
-        label: 'asset.headline — us-en → es-es',
-        usBaseline: 'More than authentication. Complete user management.',
-        rejectedLabel: 'traducción directa — descartada',
-        tradAgency: 'Más que autenticación. Gestión completa de usuarios.',
-        shippedLabel: 'adaptación estructural — implementada',
-        refinedIntent: 'Infraestructura de gestión de identidad y autenticación segura con estándar OIDC.',
-        whyFailedHeading: 'Análisis',
-        whyFailedText: '"Gestión completa" carece de peso técnico en decisiones de compra corporativa.',
-        anchorHeading: 'Anclaje contextual',
-        anchorHtml: '<span class="text-bone-100">Estándar OIDC</span> garantiza interoperabilidad institucional.',
-        restructureHeading: 'Arquitectura de información',
-        restructureText: 'Prioriza protocolos de seguridad sobre conceptos generales de gestión.'
-      },
-      {
-        id: 'h2',
-        label: 'asset.subhead — us-en → es-es',
-        usBaseline: 'Frictionless sign-in components for modern web apps.',
-        rejectedLabel: 'traducción directa — descartada',
-        tradAgency: 'Componentes de inicio de sesión sin fricción para aplicaciones web modernas.',
-        shippedLabel: 'adaptación estructural — implementada',
-        refinedIntent: 'Autenticación multifactor nativa, gestión de sesiones y control de acceso basado en roles (RBAC).',
-        whyFailedHeading: 'Análisis',
-        whyFailedText: '"Sin fricción" sugiere vulnerabilidades de seguridad a los equipos de auditoría.',
-        anchorHeading: 'Anclaje contextual',
-        anchorHtml: '<span class="text-bone-100">Control de acceso (RBAC)</span> posiciona la solución a nivel empresarial.',
-        restructureHeading: 'Arquitectura de información',
-        restructureText: 'Enfatiza la gestión de privilegios y tokens de sesión.'
-      },
-      {
-        id: 'cta',
-        label: 'asset.cta — us-en → es-es',
-        usBaseline: 'Start building for free',
-        rejectedLabel: 'traducción directa — descartada',
-        tradAgency: 'Empieza a construir gratis',
-        shippedLabel: 'adaptación estructural — implementada',
-        refinedIntent: 'Integrar SDK de Auth / Revisar documentación de seguridad',
-        whyFailedHeading: 'Análisis',
-        whyFailedText: 'Los llamadas gratuitas genéricas reducen la conversión en equipos de arquitectura.',
-        anchorHeading: 'Anclaje contextual',
-        anchorHtml: '<span class="text-bone-100">Revisar documentación</span> ofrece validación previa sin compromiso.',
-        restructureHeading: 'Arquitectura de información',
-        restructureText: 'Ofrece rutas claras para ingenieros y responsables de seguridad.'
-      }
-    ],
-    s3Title: 'Sección 3 / Auditoría de Superficies Aplicadas',
-    s3Heading: '01 / Autenticación Multifactor y Estándares OIDC',
-    s3Body: 'Terminología precisa en gestión de tokens de sesión y residencia regional de datos.',
+    overviewHeading: 'Contexto Ejecutivo y Fricción Operativa',
+    overviewBody: 'Clerk es el estándar de experiencia de desarrollo (DX) en Next.js/React. Sin embargo, al expandirse en Europa y Latinoamérica (LGPD en Brasil), enfrenta cuellos de botella en residencia de datos, cumplimiento de soberanía normativo y sincronización de sesiones en el Edge.',
+    overviewSub: 'Esta auditoría reestructura la narrativa hacia gestión de identidad Zero-Trust, soberanía de datos en la UE (EU-central-1) y enrutamiento SAML/SSO autoservicio.',
+
+    s2Title: 'Sección 2 / Desglose Estructural de Fricción',
+    
+    b1Title: '01 / Residencia de Datos y Soberanía GDPR / LGPD',
+    b1Problem: 'Los compradores corporativos exigen almacenamiento estricto de PII dentro de la jurisdicción regional.',
+    b1Impact: 'Las auditorías de seguridad bloquean contratos de SaaS B2B si la información reside en servidores centralizados en EE. UU.',
+    b1Fix: 'Instancias nativas regionales (EU-central-1) sin necesidad de contratos Enterprise a medida.',
+    b1Us: 'Línea Base (EE. UU.): "More than authentication. Complete user management."',
+    b1Trad: 'Agencia Tradicional: "Más que autenticación. Gestión completa de usuarios."',
+    b1Refined: 'Intención Técnica: "Infraestructura de identidad compatible con GDPR/LGPD con residencia de datos regional (EU-central-1)."',
+
+    b2Title: '02 / Arquitectura Multi-Inquilino y SAML/SSO Enterprise',
+    b2Problem: 'Las empresas B2B requieren mapeo personalizado de SAML/SSO por sub-organización y control de acceso RBAC granular.',
+    b2Impact: 'Límites arquitectónicos al mapear jerarquías complejas en el panel estándar.',
+    b2Fix: 'Enrutamiento SSO desacoplado vía API para configuración autoservicio de proveedores de identidad (Okta, Azure AD).',
+    b2Us: 'Línea Base (EE. UU.): "Frictionless B2B team management."',
+    b2Trad: 'Agencia Tradicional: "Gestión de equipos B2B sin fricción."',
+    b2Refined: 'Intención Técnica: "Control de acceso basado en roles (RBAC) y enrutamiento SAML/SSO autoservicio para B2B."',
+
+    b3Title: '03 / Sincronización de Sesiones en el Edge y Latencia',
+    b3Problem: 'Validar tokens de sesión en bases de datos remotas añade latencia en regiones distantes (como LATAM).',
+    b3Impact: 'Picos de latencia y bloqueos de interfaz durante la verificación de rutas protegidas.',
+    b3Fix: 'Caché optimizado de claims JWT en el Edge con webhooks locales de revocación.',
+    b3Us: 'Línea Base (EE. UU.): "Drop-in UI components and edge middleware."',
+    b3Trad: 'Agencia Tradicional: "Componentes UI listos para usar y middleware Edge."',
+    b3Refined: 'Intención Técnica: "Validación de sesión de ultra baja latencia en redes Edge mediante caché distribuido de JWT."',
+
+    s3Title: 'Sección 3 / Matriz de Expansión',
+    s3Heading: 'Alineación para Ventas Corporativas',
+    s3TableCurrent: 'Fortaleza Actual',
+    s3TableGrowth: 'Cuello de Botella',
+    s3TableSolution: 'Solución',
+    r1Strength: 'Mejor DX en React/Next',
+    r1Bottleneck: 'Cumplimiento EU/LATAM',
+    r1Solution: 'Residencia de PII (EU-central-1)',
+    r2Strength: 'Componentes UI Listos',
+    r2Bottleneck: 'Ventas SAML/SSO',
+    r2Solution: 'SAML Autoservicio B2B',
+    r3Strength: 'Soporte Edge Middleware',
+    r3Bottleneck: 'Latencia Edge Global',
+    r3Solution: 'Caché Local JWT y Webhooks',
+
+    summaryHeading: 'Narrativa Estratégica',
+    summaryText: 'Clerk debe pasar de ser la herramienta favorita de proyectos independientes a una plataforma de identidad corporativa. Garantizar residencia de datos local y autoservicio SSO permitirá a sus clientes cerrar contratos Enterprise sin fricciones.',
+
     returnDir: '← Volver al Directorio',
-    exportPdf: 'Exportar PDF'
+    usBaseline: 'Línea Base (EE. UU.)',
+    tradAgency: 'Resultado de Agencia Tradicional',
+    refinedIntent: 'Intención Técnica Refinada'
   },
   fr: {
     navTag: 'Audit de Localisation #09',
-    title: 'Clerk : Architecture d’Identité & Sécurité Utilisateur',
-    subtitle: 'Adaptation du discours d’authentification aux exigences de sécurité IT européennes.',
-    readingTime: '8 min de lecture',
-    date: 'Décembre 2026',
+    title: 'Clerk : Architecture d’Identité & Friction de Vente Enterprise',
+    subtitle: 'Adaptation de la narration vers la souveraineté des données, la conformité RGPD et l’architecture multi-tenant B2B en Europe.',
+    readingTime: '10 min de lecture',
+    date: 'Octobre 2026',
     client: 'Clerk',
-    markets: 'EU, DACH, LATAM, JP',
-    audience: 'CISO & Architectes SaaS',
+    markets: 'EU, DACH, LATAM',
+    audience: 'Responsables Sécurité (CISO) & Architectes Logiciels',
+    
     s1Title: 'Section 1 / Perspective & Intention',
-    overviewHeading: 'Contexte & Objectif',
-    overviewBody: 'Restructuration du message vers l’infrastructure d’identité, les normes OIDC et le contrôle d’accès basé sur les rôles (RBAC).',
-    overviewSub: 'Positionnement axé sur la sécurité B2B.',
-    s2Title: 'Section 2 / Déconstruction de la Conversion',
-    items: [
-      {
-        id: 'h1',
-        label: 'asset.headline — us-en → fr-fr',
-        usBaseline: 'More than authentication. Complete user management.',
-        rejectedLabel: 'traduction directe — rejetée',
-        tradAgency: 'Plus que de l’authentification. Gestion complète des utilisateurs.',
-        shippedLabel: 'adaptation structurelle — déployée',
-        refinedIntent: 'Infrastructure d’identité et gestion des utilisateurs conforme au RGPD pour SaaS B2B.',
-        whyFailedHeading: 'Analyse',
-        whyFailedText: '« Gestion complète » paraît trop simpliste pour des acheteurs IT grands comptes.',
-        anchorHeading: 'Ancrage contextuel',
-        anchorHtml: '<span class="text-bone-100">Conforme au RGPD</span> établit une preuve de conformité légale.',
-        restructureHeading: 'Architecture de l’information',
-        restructureText: 'Remplace les formules marketing par des garanties d’infrastructure.'
-      },
-      {
-        id: 'h2',
-        label: 'asset.subhead — us-en → fr-fr',
-        usBaseline: 'Frictionless sign-in components for modern web apps.',
-        rejectedLabel: 'traduction directe — rejetée',
-        tradAgency: 'Composants de connexion sans friction pour applications web modernes.',
-        shippedLabel: 'adaptation structurelle — déployée',
-        refinedIntent: 'Authentification multifacteur, protection des sessions et contrôle d’accès (RBAC) clés en main.',
-        whyFailedHeading: 'Analyse',
-        whyFailedText: '« Sans friction » évoque une sécurité amoindrie pour les responsables de la sécurité.',
-        anchorHeading: 'Ancrage contextuel',
-        anchorHtml: '<span class="text-bone-100">Contrôle d’accès (RBAC)</span> répond aux critères d’audit technique.',
-        restructureHeading: 'Architecture de l’information',
-        restructureText: 'Met en avant la rigueur des autorisations plutôt que la simplicité d’interface.'
-      },
-      {
-        id: 'cta',
-        label: 'asset.cta — us-en → fr-fr',
-        usBaseline: 'Start building for free',
-        rejectedLabel: 'traduction directe — rejetée',
-        tradAgency: 'Commencer gratuitement',
-        shippedLabel: 'adaptation structurelle — déployée',
-        refinedIntent: 'Intégrer le SDK Auth / Consulter la documentation de sécurité',
-        whyFailedHeading: 'Analyse',
-        whyFailedText: 'L’incitation à la gratuité dévalue l’offre auprès des décideurs B2B.',
-        anchorHeading: 'Ancrage contextuel',
-        anchorHtml: '<span class="text-bone-100">Documentation de sécurité</span> facilite la vérification préalable.',
-        restructureHeading: 'Architecture de l’information',
-        restructureText: 'Propose deux accès ciblés pour développeurs et auditeurs sécurité.'
-      }
-    ],
-    s3Title: 'Section 3 / Audit des Surfaces Appliquées',
-    s3Heading: '01 / MFA & Protocole OIDC',
-    s3Body: 'Rigueur absolue sur la terminologie de sécurité et le stockage des jetons de session.',
+    overviewHeading: 'Contexte Exécutif & Freins Opérationnels',
+    overviewBody: 'Bien que Clerk soit la référence DX sur React/Next.js, son expansion auprès des grands comptes européens heurte des obstacles stricts : résidence des données PII, conformité RGPD et latence Edge lors de la vérification des sessions à distance.',
+    overviewSub: 'Cet audit réoriente la proposition de valeur vers une architecture Zero-Trust, un hébergement régional (EU-central-1) et le routage SSO/SAML en libre-service.',
+
+    s2Title: 'Section 2 / Analyse Détaillée des Contraintes',
+    
+    b1Title: '01 / Résidence des Données & Souveraineté RGPD',
+    b1Problem: 'Stockage des données PII d’utilisateurs sur des clusters centrés aux États-Unis.',
+    b1Impact: 'Rejet lors des audits de conformité menés par les équipes Achats en Europe.',
+    b1Fix: 'Instances projet ancrées localement (EU-central-1) sans surcoût Enterprise sur mesure.',
+    b1Us: 'Référence US : "More than authentication. Complete user management."',
+    b1Trad: 'Traduction Agence : "Plus que l’authentification. Gestion complète des utilisateurs."',
+    b1Refined: 'Intention Affinée : "Infrastructure d’identité conforme au RGPD avec hébergement régional des données (EU-central-1)."',
+
+    b2Title: '02 / Multi-Tenancy B2B & Routage SAML/SSO',
+    b2Problem: 'Exigence de contrôle d’accès basé sur les rôles (RBAC) et d’isolation des journaux d’audit.',
+    b2Impact: 'Blocage lors de la modélisation de hiérarchies d’entreprise complexes.',
+    b2Fix: 'Routage SSO/SAML découplé via API pour une configuration en autonomie.',
+    b2Us: 'Référence US : "Frictionless B2B team management."',
+    b2Trad: 'Traduction Agence : "Gestion d’équipe B2B sans friction."',
+    b2Refined: 'Intention Affinée : "Contrôle d’accès (RBAC) et intégration SSO/SAML en libre-service pour clients B2B Enterprise."',
+
+    b3Title: '03 / Synchronisation des Sessions Edge & Latence',
+    b3Problem: 'Interrogation de bases primaires distantes entraînant des pics de latence.',
+    b3Impact: 'Légers ralentissements de l’interface lors du contrôle des routes protégées.',
+    b3Fix: 'Mise en cache optimisée des jetons JWT au plus près des utilisateurs (Edge).',
+    b3Us: 'Référence US : "Drop-in UI components and edge middleware."',
+    b3Trad: 'Traduction Agence : "Composants UI intégrés et middleware Edge."',
+    b3Refined: 'Intention Affinée : "Validation de session à très faible latence sur les réseaux Edge avec gestion distribuée des jetons JWT."',
+
+    s3Title: 'Section 3 / Feuille de Route Expansive',
+    s3Heading: 'Positionnement pour le Marché Enterprise',
+    s3TableCurrent: 'Force Actuelle',
+    s3TableGrowth: 'Mégablocage',
+    s3TableSolution: 'Solution',
+    r1Strength: 'Meilleure DX React/Next',
+    r1Bottleneck: 'Conformité UE/LATAM',
+    r1Solution: 'PII Régionalisé (EU-central-1)',
+    r2Strength: 'Composants Auth Clé en Main',
+    r2Bottleneck: 'Ventes SAML/SSO',
+    r2Solution: 'SAML Enterprise en Autonomie',
+    r3Strength: 'Support Middleware Edge',
+    r3Bottleneck: 'Latence Edge Globale',
+    r3Solution: 'Cache JWT & Webhooks Locaux',
+
+    summaryHeading: 'Conclusion Stratégique',
+    summaryText: 'Pour convaincre les acheteurs grands comptes en Europe, Clerk doit mettre en avant la souveraineté des données et les fonctionnalités SSO en libre-service aux côtés de ses exemples de code React.',
+
     returnDir: '← Retour au Répertoire',
-    exportPdf: 'Exporter en PDF'
+    usBaseline: 'Référence US',
+    tradAgency: 'Rendu Agence Traditionnelle',
+    refinedIntent: 'Intention Technique Affinée'
   },
   it: {
     navTag: 'Audit di Localizzazione #09',
-    title: 'Clerk: Architettura di Identità e Sicurezza Utente',
-    subtitle: 'Riorganizzazione delle narrative di autenticazione per i framework di sicurezza europei.',
-    readingTime: '8 min di lettura',
-    date: 'Dicembre 2026',
+    title: 'Clerk: Architettura di Identità e Frizione di Procurement',
+    subtitle: 'Riorganizzazione delle narrative di autenticazione per la conformità GDPR, la residenza dei dati e il multi-tenant aziendale in Europa e LATAM.',
+    readingTime: '10 min di lettura',
+    date: 'Ottobre 2026',
     client: 'Clerk',
-    markets: 'EU, DACH, LATAM, JP',
-    audience: 'CISO e Architetti Software',
+    markets: 'EU, DACH, LATAM',
+    audience: 'CISO, Buyer Aziendali e Architetti SaaS',
+    
     s1Title: 'Sezione 1 / Prospettiva e Intento',
-    overviewHeading: 'Contesto e Obiettivo',
-    overviewBody: 'Focalizzarsi sugli standard OIDC, RBAC e sull’isolamento dei dati dei tenant.',
-    overviewSub: 'Analisi per i mercati ad alta conformità.',
-    s2Title: 'Sezione 2 / Analisi Strutturale',
-    items: [
-      {
-        id: 'h1',
-        label: 'asset.headline — us-en → it-it',
-        usBaseline: 'More than authentication. Complete user management.',
-        rejectedLabel: 'traduzione diretta — scartata',
-        tradAgency: 'Più che autenticazione. Gestione utenti completa.',
-        shippedLabel: 'adattamento strutturale — distribuito',
-        refinedIntent: 'Infrastruttura di identità e gestione utenti conforme GDPR per SaaS B2B.',
-        whyFailedHeading: 'Analisi',
-        whyFailedText: '«Gestione utenti» risulta generico e privo di valore infrastrutturale.',
-        anchorHeading: 'Ancoraggio contestuale',
-        anchorHtml: '<span class="text-bone-100">Infrastruttura di identità</span> qualifica il sistema per utilizzi enterprise.',
-        restructureHeading: 'Architettura informativa',
-        restructureText: 'Sostituisce i claim commerciali con specifiche di compliance.'
-      },
-      {
-        id: 'h2',
-        label: 'asset.subhead — us-en → it-it',
-        usBaseline: 'Frictionless sign-in components for modern web apps.',
-        rejectedLabel: 'traduzione diretta — scartata',
-        tradAgency: 'Componenti di accesso senza attrito per app web moderne.',
-        shippedLabel: 'adattamento strutturale — distribuito',
-        refinedIntent: 'Autenticazione a più fattori, protezione sessioni e controllo accessi (RBAC).',
-        whyFailedHeading: 'Analisi',
-        whyFailedText: 'L’espressione «senza attrito» viene interpretata come potenziale vulnerabilità.',
-        anchorHeading: 'Ancoraggio contestuale',
-        anchorHtml: '<span class="text-bone-100">Protezione sessioni</span> evidenzia la sicurezza attiva.',
-        restructureHeading: 'Architettura informativa',
-        restructureText: 'Priorità ai meccanismi di autorizzazione e gestione dei token.'
-      },
-      {
-        id: 'cta',
-        label: 'asset.cta — us-en → it-it',
-        usBaseline: 'Start building for free',
-        rejectedLabel: 'traduzione diretta — scartata',
-        tradAgency: 'Inizia gratis',
-        shippedLabel: 'adattamento strutturale — distribuito',
-        refinedIntent: 'Integra SDK Auth / Esamina documentazione di sicurezza',
-        whyFailedHeading: 'Analisi',
-        whyFailedText: 'Le call-to-action generiche perdono efficacia con i lead tecnici.',
-        anchorHeading: 'Ancoraggio contestuale',
-        anchorHtml: '<span class="text-bone-100">Esamina documentazione</span> attiva il canale di valutazione tecnica.',
-        restructureHeading: 'Architettura informativa',
-        restructureText: 'Percorsi separati per sviluppatori e responsabili della sicurezza.'
-      }
-    ],
-    s3Title: 'Sezione 3 / Audit Documentazione',
-    s3Heading: '01 / Autenticazione Multifattore e OIDC',
-    s3Body: 'Terminologia precisa per la sicurezza informatica e la residenza dei dati.',
+    overviewHeading: 'Contesto Esecutivo e Frizioni Operative',
+    overviewBody: 'Clerk è il punto di riferimento per la Developer Experience (DX) in ambiente React/Next.js. Tuttavia, la vendita verso grandi aziende in Europa e LATAM incontra ostacoli legati alla residenza dei dati personali (PII), al GDPR e alla latenza delle sessioni via Edge.',
+    overviewSub: 'Questo audit riposiziona i componenti di Clerk su architetture Zero-Trust, hosting dei dati in Europa (EU-central-1) e SSO/SAML self-service.',
+
+    s2Title: 'Sezione 2 / Analisi Strutturale dei Problemi',
+    
+    b1Title: '01 / Residenza dei Dati & Conformità GDPR',
+    b1Problem: 'I dati personali (PII) sono memorizzati in cluster statunitensi di default.',
+    b1Impact: 'I team di sicurezza aziendali bloccano l’adozione prima dell’integrazione.',
+    b1Fix: 'Istanze regionali native (cluster EU-central-1) senza costi Enterprise su misura.',
+    b1Us: 'Linea Base US: "More than authentication. Complete user management."',
+    b1Trad: 'Output Agenzia: "Più dell’autenticazione. Gestione utenti completa."',
+    b1Refined: 'Intento Tecnico: "Infrastruttura d’identità conforme al GDPR con residenza regionale dei dati (EU-central-1)."',
+
+    b2Title: '02 / Multi-Tenancy B2B & Integrazione SSO',
+    b2Problem: 'Gestione limitata di gerarchie aziendali complesse e ruoli RBAC personalizzati.',
+    b2Impact: 'Limiti architetturali nella configurazione di Enterprise Identity Provider (IdP).',
+    b2Fix: 'Routing SSO/SAML via API disaccoppiato per configurazioni in autonomia.',
+    b2Us: 'Linea Base US: "Frictionless B2B team management."',
+    b2Trad: 'Output Agenzia: "Gestione dei team B2B senza attriti."',
+    b2Refined: 'Intento Tecnico: "Controllo degli accessi basato sui ruoli (RBAC) e routing SSO/SAML self-service per clientela B2B."',
+
+    b3Title: '03 / Sincronizzazione Sessioni Edge & Latenza',
+    b3Problem: 'Latenza nella verifica dei token da regioni lontane dai server centrali.',
+    b3Impact: 'Rallentamenti della UI durante il controllo dei permessi delle pagine.',
+    b3Fix: 'Caching dei claim JWT ottimizzato sull’Edge con webhook di revoca locali.',
+    b3Us: 'Linea Base US: "Drop-in UI components and edge middleware."',
+    b3Trad: 'Output Agenzia: "Componenti UI pronti all’uso e middleware Edge."',
+    b3Refined: 'Intento Tecnico: "Validazione delle sessioni Edge a bassissima latenza tramite caching distribuito dei JWT."',
+
+    s3Title: 'Sezione 3 / Matrice di Espansione',
+    s3Heading: 'Strategia per il Mercato Enterprise',
+    s3TableCurrent: 'Punto di Forza',
+    s3TableGrowth: 'Collo di Bottiglia',
+    s3TableSolution: 'Soluzione',
+    r1Strength: 'Migliore DX su React/Next',
+    r1Bottleneck: 'Conformità EU/LATAM',
+    r1Solution: 'Dati PII Regionali (EU-central-1)',
+    r2Strength: 'Componenti UI Pronti',
+    r2Bottleneck: 'Vendite SSO/SAML',
+    r2Solution: 'SAML B2B Self-Service',
+    r3Strength: 'Supporto Middleware Edge',
+    r3Bottleneck: 'Latenza Edge Globale',
+    r3Solution: 'Caching JWT Locale',
+
+    summaryHeading: 'Sintesi Strategica',
+    summaryText: 'Per conquistare i mercati europei, Clerk deve affiancare alle sue funzionalità per desarrollatori solide garanzie di sovranità dei dati e gestione SSO aziendale.',
+
     returnDir: '← Torna al Direttorio',
-    exportPdf: 'Esporta PDF'
+    usBaseline: 'Linea Base US',
+    tradAgency: 'Output Agenzia Tradizionale',
+    refinedIntent: 'Intento Tecnico Rifinito'
   },
   pt: {
     navTag: 'Auditoria de Localização #09',
-    title: 'Clerk: Arquitetura de Identidade e Segurança de Usuários',
-    subtitle: 'Adequação de componentes de autenticação para normas de segurança europeias.',
-    readingTime: '8 min de leitura',
-    date: 'Dezembro 2026',
+    title: 'Clerk: Arquitetura de Identidade e Fricção de Vendas Corporativas',
+    subtitle: 'Adequação de narrativas de autenticação para conformidade com LGPD/GDPR, residência de dados e suporte multi-tenant B2B na Europa e LATAM.',
+    readingTime: '10 min de leitura',
+    date: 'Outubro 2026',
     client: 'Clerk',
-    markets: 'EU, DACH, LATAM, JP',
-    audience: 'CISOs e Arquitetos SaaS',
+    markets: 'EU, DACH, LATAM',
+    audience: 'CISOs, Compradores Corporativos e Arquitetos SaaS',
+    
     s1Title: 'Seção 1 / Perspectiva e Intenção',
-    overviewHeading: 'Contexto e Objetivo',
-    overviewBody: 'Adequação de narrativas de autenticação para auditorias técnicas de segurança.',
-    overviewSub: 'Reestruturação de posicionamento.',
-    s2Title: 'Seção 2 / Análise de Conversão',
-    items: [
-      {
-        id: 'h1',
-        label: 'asset.headline — us-en → pt-br/pt',
-        usBaseline: 'More than authentication. Complete user management.',
-        rejectedLabel: 'tradução direta — descartada',
-        tradAgency: 'Mais que autenticação. Gestão completa de usuários.',
-        shippedLabel: 'adaptação estrutural — implementada',
-        refinedIntent: 'Infraestrutura de identidade e gestão de usuários em conformidade com o GDPR.',
-        whyFailedHeading: 'Análise',
-        whyFailedText: '"Gestão completa" Soa simplista para compradores corporativos de TI.',
-        anchorHeading: 'Âncora contextual',
-        anchorHtml: '<span class="text-bone-100">Infraestrutura de identidade</span> atribui rigor institucional.',
-        restructureHeading: 'Arquitetura da informação',
-        restructureText: 'Substitui frases promocionais por especificações de segurança.'
-      },
-      {
-        id: 'h2',
-        label: 'asset.subhead — us-en → pt-br/pt',
-        usBaseline: 'Frictionless sign-in components for modern web apps.',
-        rejectedLabel: 'tradução direta — descartada',
-        tradAgency: 'Componentes de login sem fricção para apps web modernas.',
-        shippedLabel: 'adaptação estrutural — implementada',
-        refinedIntent: 'Autenticação multifator, proteção de sessão e controle de acesso (RBAC).',
-        whyFailedHeading: 'Análise',
-        whyFailedText: '"Sem fricção" sugere atalhos na verificação de segurança.',
-        anchorHeading: 'Âncora contextual',
-        anchorHtml: '<span class="text-bone-100">Controle de acesso (RBAC)</span> atende aos requisitos de auditoria.',
-        restructureHeading: 'Arquitetura da informação',
-        restructureText: 'Foca no controle de privilégios em vez da facilidade da interface.'
-      },
-      {
-        id: 'cta',
-        label: 'asset.cta — us-en → pt-br/pt',
-        usBaseline: 'Start building for free',
-        rejectedLabel: 'tradução direta — descartada',
-        tradAgency: 'Comece a construir grátis',
-        shippedLabel: 'adaptação estrutural — implementada',
-        refinedIntent: 'Integrar SDK de Auth / Analisar documentação de segurança',
-        whyFailedHeading: 'Análise',
-        whyFailedText: 'CTAs focadas em gratuidade perdem força no segmento B2B.',
-        anchorHeading: 'Âncora contextual',
-        anchorHtml: '<span class="text-bone-100">Analisar documentação</span> habilita o processo de avaliação técnica.',
-        restructureHeading: 'Arquitetura da informação',
-        restructureText: 'Oferece direcionamentos específicos para engenharia e segurança.'
-      }
-    ],
-    s3Title: 'Seção 3 / Documentação Técnica',
-    s3Heading: '01 / Autenticação Multifator e Protocolos OIDC',
-    s3Body: 'Precisão nos protocolos de segurança de sessão e conformidade regional.',
+    overviewHeading: 'Contexto Executivo e Gargalos Operacionais',
+    overviewBody: 'O Clerk é referência em experiência do desenvolvedor (DX) em React/Next.js. Porém, ao expandir para clientes corporativos na Europa e na América Latina (LGPD), enfrenta restrições em residência de PII, governança de dados e latência na validação de sessões via Edge.',
+    overviewSub: 'Esta auditoria reestrutura a proposta para foco em arquitetura de identidade Zero-Trust, residência local de dados (EU-central-1) e roteamento SSO/SAML autosserviço.',
+
+    s2Title: 'Seção 2 / Análise Detalhada dos Pontos de Fricção',
+    
+    b1Title: '01 / Residência de Dados e Soberania LGPD / GDPR',
+    b1Problem: 'Almacenamento de PII em clusters centralizados nos EUA.',
+    b1Impact: 'Bloqueio em auditorias de segurança antes do início da integração.',
+    b1Fix: 'Instâncias regionais nativas (EU-central-1) sem necessidade de planos corporativos customizados.',
+    b1Us: 'Linha de Base EUA: "More than authentication. Complete user management."',
+    b1Trad: 'Resultado de Agência: "Mais que autenticação. Gestão completa de usuários."',
+    b1Refined: 'Intenção Técnica: "Infraestrutura de identidade em conformidade com LGPD/GDPR e residência de dados regional (EU-central-1)."',
+
+    b2Title: '02 / Multi-Tenancy B2B e Roteamento SSO/SAML',
+    b2Problem: 'Exigência de controle de acesso RBAC granular e mapeamento de SSO por cliente corporativo.',
+    b2Impact: 'Limitações arquiteturais ao mapear estruturas complexas no painel padrão.',
+    b2Fix: 'Roteamento SSO/SAML desacoplado via API para configuração em autosserviço.',
+    b2Us: 'Linha de Base EUA: "Frictionless B2B team management."',
+    b2Trad: 'Resultado de Agência: "Gestão de equipes B2B sem fricção."',
+    b2Refined: 'Intenção Técnica: "Controle de acesso baseado em funções (RBAC) e integração SSO/SAML em autosserviço para B2B."',
+
+    b3Title: '03 / Sincronização de Sessões no Edge e Latência',
+    b3Problem: 'Consultas em bancos primários remotos geram picos de latência na verificação de permissões.',
+    b3Impact: 'Instabilidade na interface do usuário durante a verificação de rotas em regiões distantes.',
+    b3Fix: 'Cache otimizado de claims JWT no Edge combinado com webhooks de revogação local.',
+    b3Us: 'Linha de Base EUA: "Drop-in UI components and edge middleware."',
+    b3Trad: 'Resultado de Agência: "Componentes UI prontos e middleware Edge."',
+    b3Refined: 'Intenção Técnica: "Validação de sessão de ultrabaixa latência em redes Edge com gerenciamento distribuído de tokens JWT."',
+
+    s3Title: 'Seção 3 / Matriz de Expansão',
+    s3Heading: 'Estratégia de Posicionamento Enterprise',
+    s3TableCurrent: 'Força Atual',
+    s3TableGrowth: 'Gargalo de Crescimento',
+    s3TableSolution: 'Solução',
+    r1Strength: 'Melhor DX React/Next',
+    r1Bottleneck: 'Conformidade UE/LATAM',
+    r1Solution: 'Dados PII Regionais (EU-central-1)',
+    r2Strength: 'Componentes UI Prontos',
+    r2Bottleneck: 'Vendas SSO/SAML',
+    r2Solution: 'SAML B2B Autosserviço',
+    r3Strength: 'Suporte Middleware Edge',
+    r3Bottleneck: 'Latência Edge Global',
+    r3Solution: 'Cache JWT Local',
+
+    summaryHeading: 'Resumo Estratégico',
+    summaryText: 'Para conquistar grandes clientes na Europa e LATAM, o Clerk deve evoluir de uma ferramenta para desenvolvedores independentes para uma plataforma de identidade corporativa sólida, garantindo soberania de dados e autosserviço SSO.',
+
     returnDir: '← Voltar ao Diretório',
-    exportPdf: 'Exportar PDF'
-  },
-  ja: {
-    navTag: 'ローカリゼーション監査 #09',
-    title: 'Clerk: 認証基盤およびアイデンティティセキュリティの構造化',
-    subtitle: '米国型のシームレス重視メッセージから、厳格なセキュリティ・コンプライアンス要件への最適化。',
-    readingTime: '読了時間: 8分',
-    date: '2026年12月',
-    client: 'Clerk',
-    markets: 'EU, DACH, LATAM, JP',
-    audience: 'CISO（最高情報セキュリティ責任者）およびSaaSアーキテクト',
-    s1Title: 'セクション1 / 視点と導入目的',
-    overviewHeading: '文脈と意図',
-    overviewBody: '米国版の「認証以上の機能。完全なユーザー管理」という訴求は、手軽な組み込みを強調しています。しかしエンタープライズの技術審査では、OpenID Connect (OIDC) 適合性、マルチファクタ認証、RBAC（ロールベースアクセス制御）、データ分離基盤が評価基準となります。',
-    overviewSub: '本監査では、Clerkのコンポーネントをゼロトラスト認証基盤として再定義します。',
-    s2Title: 'セクション2 / 構造的検証 teardown',
-    items: [
-      {
-        id: 'h1',
-        label: 'asset.headline — us-en → ja-jp',
-        usBaseline: 'More than authentication. Complete user management.',
-        rejectedLabel: '直訳パターン — 却下',
-        tradAgency: '単なる認証ではありません。完全なユーザー管理を提供します。',
-        shippedLabel: '構造的適応 — 採用',
-        refinedIntent: 'B2B SaaSのためのアイデンティティ基盤とエンタープライズ統合管理',
-        whyFailedHeading: '分析',
-        whyFailedText: '「完全なユーザー管理」という直訳は、簡易的なCRMのような印象を与え、堅牢な認証層を求める決定権者に響きません。',
-        anchorHeading: 'コンテキストのアンカー',
-        anchorHtml: '<span class="text-bone-100">アイデンティティ基盤</span> という表現により、セキュリティ製品としての格格を確立します。',
-        restructureHeading: '情報アーキテクチャ',
-        restructureText: '抽象的な管理機能の強調を排除し、堅牢な認証基盤としての仕様を前面に配置。'
-      },
-      {
-        id: 'h2',
-        label: 'asset.subhead — us-en → ja-jp',
-        usBaseline: 'Frictionless sign-in components for modern web apps.',
-        rejectedLabel: '直訳パターン — 却下',
-        tradAgency: 'モダンなWebアプリのためのフリクションレスなサインインコンポーネント。',
-        shippedLabel: '構造的適応 — 採用',
-        refinedIntent: '多要素認証（MFA）、セッション制御、RBAC権限管理を標準実装。',
-        whyFailedHeading: '分析',
-        whyFailedText: '「フリクションレス」はセキュリティ統制の緩さを連想させ、CISOの警戒感を招きます。',
-        anchorHeading: 'コンテキストのアンカー',
-        anchorHtml: '<span class="text-bone-100">RBAC権限管理</span> が、エンタープライズ評価の必須チェック項目をカバーします。',
-        restructureHeading: '情報アーキテクチャ',
-        restructureText: '単なるUIの簡易性ではなく、認可モデルとセッション保護構造を中心に再構成。'
-      },
-      {
-        id: 'cta',
-        label: 'asset.cta — us-en → ja-jp',
-        usBaseline: 'Start building for free',
-        rejectedLabel: '直訳パターン — 却下',
-        tradAgency: '無料で開発を開始',
-        shippedLabel: '構造적適応 — 採用',
-        refinedIntent: '認証SDKの組み込み / セキュリティ仕様の確認',
-        whyFailedHeading: '分析',
-        whyFailedText: '「無料で開始」というフレーズは個人の趣味開発者向けに見え、技術監査でのCVRを低下させます。',
-        anchorHeading: 'コンテキストのアンカー',
-        anchorHtml: '<span class="text-bone-100">セキュリティ仕様の確認</span> により、技術審査層の離脱を防止します。',
-        restructureHeading: '情報アーキテクチャ',
-        restructureText: '開発者向けSDK導入と、セキュリティ担当者向け資料確認の二段階の行動喚起を設定。'
-      }
-    ],
-    s3Title: 'セクション3 / 適用面の個別監査',
-    s3Heading: '01 / 多要素認証およびOIDC標準プロトコル',
-    s3Body: 'セッショントークン管理、パスキー実装、リージョン内データ隔離における正確な技術用語の適用。',
-    returnDir: '← ディレクトリに戻る',
-    exportPdf: 'PDFを出力'
+    usBaseline: 'Linha de Base (EUA)',
+    tradAgency: 'Resultado de Agência Tradicional',
+    refinedIntent: 'Intenção Técnica Refinada'
   }
 };
 
 export default function ClerkAuditPage() {
-  const [lang, setLang] = useState<Language>('en');
+  const [lang, setLang] = useState('en');
   const t = AUDIT_CONTENT[lang] || AUDIT_CONTENT.en;
 
   return (
-    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950 print:bg-white print:text-black">
-      {/* Header */}
-      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40 print:hidden">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+    <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950">
+      {/* HEADER */}
+      <header className="border-b border-ink-700 sticky top-0 bg-ink-950/90 backdrop-blur z-40">
+        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-mono text-xs text-bone-400 hover:text-signal-gold transition-colors">
             ← VeraVox Main
           </Link>
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 font-mono text-xs">
-              {(['es', 'fr', 'de', 'it', 'pt', 'ja', 'en'] as Language[]).map((l) => (
+              {['es', 'fr', 'de', 'it', 'pt', 'en'].map((l) => (
                 <React.Fragment key={l}>
                   <button
                     onClick={() => setLang(l)}
@@ -545,145 +424,211 @@ export default function ClerkAuditPage() {
               onClick={() => window.print()}
               className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors cursor-pointer bg-transparent border-0"
             >
-              {t.exportPdf}
+              Export PDF
             </button>
           </div>
         </div>
       </header>
 
-      {/* Main Container */}
-      <main className="max-w-6xl mx-auto px-6 md:px-10 pt-12 pb-32 print:p-0 print:max-w-none">
-        
-        {/* Audit Header */}
-        <header className="mb-16 border-b border-ink-700 pb-12 print:border-black">
-          <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4 print:text-black">
+      {/* MAIN CONTENT */}
+      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32">
+        {/* AUDIT TITLE & METADATA */}
+        <header className="mb-20">
+          <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4">
             <span>{t.navTag}</span>
-            <span className="text-ink-600 print:text-gray-400">·</span>
-            <span className="text-bone-500 print:text-gray-600">{t.date}</span>
-            <span className="text-ink-600 print:text-gray-400">·</span>
-            <span className="text-bone-500 print:text-gray-600">{t.readingTime}</span>
+            <span className="text-ink-600">·</span>
+            <span className="text-bone-500">{t.date}</span>
+            <span className="text-ink-600">·</span>
+            <span className="text-bone-500">{t.readingTime}</span>
           </div>
 
-          <h1 className="font-display font-medium text-3xl md:text-5xl text-bone-100 tracking-tight mb-4 print:text-black">
+          <h1 className="font-display font-medium text-4xl md:text-5xl text-bone-100 tracking-tight mb-4">
             {t.title}
           </h1>
-          <p className="text-lg text-bone-300 max-w-3xl leading-relaxed print:text-gray-700">
+          <p className="text-lg text-bone-300 mb-10">
             {t.subtitle}
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 mt-8 border-t border-ink-700 font-mono text-xs text-bone-500 leading-relaxed print:border-gray-300 print:text-black">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ink-700 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed">
             <div>
-              <span className="text-bone-400 block mb-1 uppercase tracking-widest text-[10px] print:text-gray-500">Client</span>
+              <span className="text-bone-300 block mb-1">Client</span>
               {t.client}
             </div>
             <div>
-              <span className="text-bone-400 block mb-1 uppercase tracking-widest text-[10px] print:text-gray-500">Markets</span>
+              <span className="text-bone-300 block mb-1">Markets</span>
               {t.markets}
             </div>
             <div>
-              <span className="text-bone-400 block mb-1 uppercase tracking-widest text-[10px] print:text-gray-500">Audience</span>
+              <span className="text-bone-300 block mb-1">Audience</span>
               {t.audience}
             </div>
           </div>
         </header>
 
-        {/* Section 1: Overview */}
-        <section className="mb-20 print:mb-12">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-6 print:text-black">
+        {/* SECTION 1: PERSPECTIVE & INTENT */}
+        <section className="mb-20">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s1Title}
           </div>
-          <div className="max-w-3xl text-bone-300 leading-relaxed space-y-4 print:text-gray-800">
-            <h2 className="font-display font-semibold text-2xl text-bone-100 print:text-black">
+          <div className="max-w-none text-bone-300 leading-relaxed space-y-6">
+            <h2 className="font-display font-semibold text-xl text-bone-100 mb-2">
               {t.overviewHeading}
             </h2>
-            <p className="text-base leading-relaxed">
+            <p className="text-bone-300 leading-relaxed">
               {t.overviewBody}
             </p>
-            <p className="text-sm text-bone-400 leading-relaxed print:text-gray-600">
+            <p className="text-bone-400 text-sm leading-relaxed border-l-2 border-ink-700 pl-4 italic">
               {t.overviewSub}
             </p>
           </div>
         </section>
 
-        {/* Section 2: Core Teardowns matching Hero Grid */}
-        <section className="mb-20 print:mb-12">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black">
+        {/* SECTION 2: ARCHITECTURAL BREAKDOWN */}
+        <section className="mb-20">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s2Title}
           </div>
+          
+          {/* BLOCK 1 */}
+          <div className="mb-16">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4">
+              {t.b1Title}
+            </h3>
+            
+            <div className="bg-ink-900 border border-ink-700 p-5 rounded-sm space-y-3 mb-6 text-xs font-mono">
+              <div><span className="text-signal-red">The Problem:</span> <span className="text-bone-300">{t.b1Problem}</span></div>
+              <div><span className="text-signal-gold">Operational Impact:</span> <span className="text-bone-300">{t.b1Impact}</span></div>
+              <div><span className="text-signal-green">Architectural Fix:</span> <span className="text-bone-300">{t.b1Fix}</span></div>
+            </div>
 
-          <div className="space-y-12">
-            {t.items.map((item) => (
-              <div key={item.id} className="border border-ink-700 bg-ink-950 print:border-gray-300 print:bg-white print:break-inside-avoid">
-                {/* Panel Label Header */}
-                <div className="flex items-center justify-between px-5 py-3 border-b border-ink-700 print:border-gray-300 bg-ink-900/50 print:bg-gray-100">
-                  <span className="font-mono text-xs text-bone-500 print:text-gray-700">{item.label}</span>
-                  <span className="font-mono text-xs text-bone-500 print:text-gray-500">US Baseline: "{item.usBaseline}"</span>
-                </div>
-
-                {/* Main Teardown Grid */}
-                <div className="grid md:grid-cols-[1fr_280px] divide-y md:divide-y-0 md:divide-x divide-ink-700 print:divide-gray-300">
-                  
-                  {/* Left Column: Direct vs Structural */}
-                  <div className="divide-y divide-ink-700 print:divide-gray-300">
-                    <div className="flex gap-4 px-5 py-5">
-                      <span className="font-mono text-signal-red select-none mt-0.5 print:text-red-700">−</span>
-                      <div>
-                        <p className="font-mono text-xs text-signal-red mb-2 print:text-red-700">{item.rejectedLabel}</p>
-                        <p className="text-bone-500 line-through decoration-signal-red/60 leading-relaxed text-sm print:text-gray-500">
-                          {item.tradAgency}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-4 px-5 py-5">
-                      <span className="font-mono text-signal-green select-none mt-0.5 print:text-green-700">+</span>
-                      <div>
-                        <p className="font-mono text-xs text-signal-green mb-2 print:text-green-700">{item.shippedLabel}</p>
-                        <p className="text-bone-100 leading-relaxed text-sm print:text-black font-medium">
-                          {item.refinedIntent}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Column: Reasoning & Anchors */}
-                  <div className="px-5 py-5 bg-ink-900/20 print:bg-gray-50 space-y-5">
-                    <div>
-                      <p className="font-mono text-xs text-bone-500 mb-1 print:text-gray-600">{item.whyFailedHeading}</p>
-                      <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{item.whyFailedText}</p>
-                    </div>
-                    <div>
-                      <p className="font-mono text-xs text-bone-500 mb-1 print:text-gray-600">{item.anchorHeading}</p>
-                      <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800" dangerouslySetInnerHTML={{ __html: item.anchorHtml }} />
-                    </div>
-                    <div>
-                      <p className="font-mono text-xs text-bone-500 mb-1 print:text-gray-600">{item.restructureHeading}</p>
-                      <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{item.restructureText}</p>
-                    </div>
-                  </div>
-
-                </div>
+            <div className="space-y-4 mb-6">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.usBaseline}</p>
+                <p className="text-bone-400 italic text-sm">{t.b1Us}</p>
               </div>
-            ))}
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.tradAgency}</p>
+                <p className="text-bone-400 text-sm font-mono">{t.b1Trad}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1">{t.refinedIntent}</p>
+                <p className="text-bone-100 font-medium text-sm font-mono">{t.b1Refined}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* BLOCK 2 */}
+          <div className="mb-16">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4">
+              {t.b2Title}
+            </h3>
+            
+            <div className="bg-ink-900 border border-ink-700 p-5 rounded-sm space-y-3 mb-6 text-xs font-mono">
+              <div><span className="text-signal-red">The Problem:</span> <span className="text-bone-300">{t.b2Problem}</span></div>
+              <div><span className="text-signal-gold">Operational Impact:</span> <span className="text-bone-300">{t.b2Impact}</span></div>
+              <div><span className="text-signal-green">Architectural Fix:</span> <span className="text-bone-300">{t.b2Fix}</span></div>
+            </div>
+
+            <div className="space-y-4 mb-6">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.usBaseline}</p>
+                <p className="text-bone-400 italic text-sm">{t.b2Us}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.tradAgency}</p>
+                <p className="text-bone-400 text-sm font-mono">{t.b2Trad}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1">{t.refinedIntent}</p>
+                <p className="text-bone-100 font-medium text-sm font-mono">{t.b2Refined}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* BLOCK 3 */}
+          <div className="mb-16">
+            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4">
+              {t.b3Title}
+            </h3>
+            
+            <div className="bg-ink-900 border border-ink-700 p-5 rounded-sm space-y-3 mb-6 text-xs font-mono">
+              <div><span className="text-signal-red">The Problem:</span> <span className="text-bone-300">{t.b3Problem}</span></div>
+              <div><span className="text-signal-gold">Operational Impact:</span> <span className="text-bone-300">{t.b3Impact}</span></div>
+              <div><span className="text-signal-green">Architectural Fix:</span> <span className="text-bone-300">{t.b3Fix}</span></div>
+            </div>
+
+            <div className="space-y-4 mb-6">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.usBaseline}</p>
+                <p className="text-bone-400 italic text-sm">{t.b3Us}</p>
+              </div>
+              
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1">{t.tradAgency}</p>
+                <p className="text-bone-400 text-sm font-mono">{t.b3Trad}</p>
+              </div>
+
+              <div className="border-l-2 border-signal-gold pl-4 py-1">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1">{t.refinedIntent}</p>
+                <p className="text-bone-100 font-medium text-sm font-mono">{t.b3Refined}</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Section 3: Technical Context */}
-        <section className="mb-20 print:mb-12">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-6 print:text-black">
+        {/* SECTION 3: ROADMAP & MATRIX */}
+        <section className="mb-20">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8">
             {t.s3Title}
           </div>
-          <div className="space-y-4 text-bone-300 leading-relaxed max-w-3xl print:text-gray-800">
-            <h3 className="font-display text-xl text-bone-100 print:text-black">{t.s3Heading}</h3>
-            <p className="text-sm leading-relaxed">
-              {t.s3Body}
+          
+          <h3 className="font-display text-xl text-bone-100 mb-6">{t.s3Heading}</h3>
+          
+          {/* MATRIX TABLE */}
+          <div className="overflow-x-auto mb-12 border border-ink-700 bg-ink-900">
+            <table className="w-full text-left font-mono text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-ink-700 bg-ink-950 text-bone-500 uppercase">
+                  <th className="p-4 border-r border-ink-700">{t.s3TableCurrent}</th>
+                  <th className="p-4 border-r border-ink-700">{t.s3TableGrowth}</th>
+                  <th className="p-4">{t.s3TableSolution}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-ink-700 text-bone-300">
+                <tr>
+                  <td className="p-4 border-r border-ink-700 text-bone-100">{t.r1Strength}</td>
+                  <td className="p-4 border-r border-ink-700 text-signal-red">{t.r1Bottleneck}</td>
+                  <td className="p-4 text-signal-green">{t.r1Solution}</td>
+                </tr>
+                <tr>
+                  <td className="p-4 border-r border-ink-700 text-bone-100">{t.r2Strength}</td>
+                  <td className="p-4 border-r border-ink-700 text-signal-red">{t.r2Bottleneck}</td>
+                  <td className="p-4 text-signal-green">{t.r2Solution}</td>
+                </tr>
+                <tr>
+                  <td className="p-4 border-r border-ink-700 text-bone-100">{t.r3Strength}</td>
+                  <td className="p-4 border-r border-ink-700 text-signal-red">{t.r3Bottleneck}</td>
+                  <td className="p-4 text-signal-green">{t.r3Solution}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-mono text-xs uppercase tracking-widest text-signal-gold">{t.summaryHeading}</h4>
+            <p className="text-bone-300 leading-relaxed text-sm">
+              {t.summaryText}
             </p>
           </div>
         </section>
         
-        {/* Footer Link */}
-        <div className="pt-8 border-t border-ink-700 print:hidden">
-          <Link href="/" className="font-mono text-xs uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
+        {/* FOOTER NAVIGATION */}
+        <div className="mt-32 pt-8 border-t border-ink-700">
+          <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
             {t.returnDir}
           </Link>
         </div>
