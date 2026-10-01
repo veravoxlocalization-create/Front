@@ -67,8 +67,8 @@ const AUDIT_CONTENT = {
     usBaseline: 'US Baseline',
     tradAgency: 'Traditional Agency Output',
     refinedIntent: 'Refined Technical Intent',
-    lblProblem: 'The Problem',
-    lblImpact: 'Operational Impact',
+    lblProblem: 'Problem',
+    lblImpact: 'Impact',
     lblFix: 'Architectural Fix'
   },
   de: {
@@ -134,9 +134,9 @@ const AUDIT_CONTENT = {
     usBaseline: 'US-Ausgangslage',
     tradAgency: 'Klassisches Agenturergebnis',
     refinedIntent: 'Präzisierter technischer Intent',
-    lblProblem: 'Das Problem',
-    lblImpact: 'Betriebliche Auswirkung',
-    lblFix: 'Architektonische Lösung'
+    lblProblem: 'Problem',
+    lblImpact: 'Auswirkung',
+    lblFix: 'Lösung'
   },
   es: {
     navTag: 'Auditoría de Localización #09',
@@ -201,9 +201,9 @@ const AUDIT_CONTENT = {
     usBaseline: 'Línea Base (EE. UU.)',
     tradAgency: 'Resultado de Agencia Tradicional',
     refinedIntent: 'Intención Técnica Refinada',
-    lblProblem: 'El Problema',
-    lblImpact: 'Impacto Operativo',
-    lblFix: 'Solución Arquitectónica'
+    lblProblem: 'Problema',
+    lblImpact: 'Impacto',
+    lblFix: 'Solución'
   },
   fr: {
     navTag: 'Audit de Localisation #09',
@@ -268,9 +268,9 @@ const AUDIT_CONTENT = {
     usBaseline: 'Référence US',
     tradAgency: 'Rendu Agence Traditionnelle',
     refinedIntent: 'Intention Technique Affinée',
-    lblProblem: 'Le Problème',
-    lblImpact: 'Impact Opérationnel',
-    lblFix: 'Solution Architecturale'
+    lblProblem: 'Problème',
+    lblImpact: 'Impact',
+    lblFix: 'Solution'
   },
   it: {
     navTag: 'Audit di Localizzazione #09',
@@ -335,9 +335,9 @@ const AUDIT_CONTENT = {
     usBaseline: 'Linea Base US',
     tradAgency: 'Output Agenzia Tradizionale',
     refinedIntent: 'Intento Tecnico Rifinito',
-    lblProblem: 'Il Problema',
-    lblImpact: 'Impatto Operativo',
-    lblFix: 'Soluzione Architetturale'
+    lblProblem: 'Problema',
+    lblImpact: 'Impatto',
+    lblFix: 'Soluzione'
   },
   pt: {
     navTag: 'Auditoria de Localização #09',
@@ -402,9 +402,9 @@ const AUDIT_CONTENT = {
     usBaseline: 'Linha de Base (EUA)',
     tradAgency: 'Resultado de Agência Tradicional',
     refinedIntent: 'Intenção Técnica Refinada',
-    lblProblem: 'O Problema',
-    lblImpact: 'Impacto Operacional',
-    lblFix: 'Solução Arquitetônica'
+    lblProblem: 'Problema',
+    lblImpact: 'Impacto',
+    lblFix: 'Solução'
   }
 };
 
@@ -554,7 +554,7 @@ export default function ClerkAuditPage() {
           </div>
         </section>
 
-        {/* SECTION 2: CLEAN 3-CARD GRID FOR ARCHITECTURAL BREAKDOWN */}
+        {/* SECTION 2: CLEAN INTEGRATED-BORDER CARD LAYOUT */}
         <section className="mb-16">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black print:font-bold">
             {t.s2Title}
@@ -564,39 +564,39 @@ export default function ClerkAuditPage() {
             {blocks.map((item, idx) => (
               <div 
                 key={idx} 
-                className="flex flex-col justify-between border border-ink-700 bg-ink-900/50 p-5 rounded-none print:border-gray-300 print:bg-white"
+                className="flex flex-col justify-between border border-ink-800 bg-ink-900/40 p-5 rounded-none print:border-gray-300 print:bg-white"
               >
                 <div>
-                  <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-bone-100 mb-6 pb-3 border-b border-ink-800 print:text-black print:border-gray-200">
+                  <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-bone-100 mb-5 pb-3 border-b border-ink-800 print:text-black print:border-gray-200">
                     {item.title}
                   </h3>
 
-                  {/* PROBLEM BLOCK */}
-                  <div className="mb-5">
-                    <span className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-signal-red bg-signal-red/10 mb-2 print:bg-red-50 print:text-red-700 print:border print:border-red-200 font-bold">
+                  {/* PROBLEM BLOCK - RED INTEGRATED BORDER */}
+                  <div className="mb-3 p-3 bg-signal-red/5 border-l-2 border-signal-red text-xs print:bg-red-50/50 print:border-red-600">
+                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-signal-red block mb-1 print:text-red-700">
                       {t.lblProblem}
                     </span>
-                    <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">
+                    <p className="text-bone-300 leading-relaxed print:text-gray-800">
                       {item.problem}
                     </p>
                   </div>
 
-                  {/* IMPACT BLOCK */}
-                  <div className="mb-5">
-                    <span className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-signal-gold bg-signal-gold/10 mb-2 print:bg-amber-50 print:text-amber-800 print:border print:border-amber-200 font-bold">
+                  {/* IMPACT BLOCK - AMBER INTEGRATED BORDER */}
+                  <div className="mb-3 p-3 bg-signal-gold/5 border-l-2 border-signal-gold text-xs print:bg-amber-50/50 print:border-amber-600">
+                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-signal-gold block mb-1 print:text-amber-800">
                       {t.lblImpact}
                     </span>
-                    <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">
+                    <p className="text-bone-300 leading-relaxed print:text-gray-800">
                       {item.impact}
                     </p>
                   </div>
 
-                  {/* FIX BLOCK */}
-                  <div className="mb-6">
-                    <span className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-signal-green bg-signal-green/10 mb-2 print:bg-emerald-50 print:text-emerald-800 print:border print:border-emerald-200 font-bold">
+                  {/* FIX BLOCK - GREEN INTEGRATED BORDER */}
+                  <div className="mb-6 p-3 bg-signal-green/5 border-l-2 border-signal-green text-xs print:bg-emerald-50/50 print:border-emerald-600">
+                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-signal-green block mb-1 print:text-emerald-800">
                       {t.lblFix}
                     </span>
-                    <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">
+                    <p className="text-bone-300 leading-relaxed print:text-gray-800">
                       {item.fix}
                     </p>
                   </div>
