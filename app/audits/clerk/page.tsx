@@ -412,9 +412,39 @@ export default function ClerkAuditPage() {
   const [lang, setLang] = useState('en');
   const t = AUDIT_CONTENT[lang] || AUDIT_CONTENT.en;
 
+  const blocks = [
+    {
+      title: t.b1Title,
+      problem: t.b1Problem,
+      impact: t.b1Impact,
+      fix: t.b1Fix,
+      us: t.b1Us,
+      trad: t.b1Trad,
+      refined: t.b1Refined
+    },
+    {
+      title: t.b2Title,
+      problem: t.b2Problem,
+      impact: t.b2Impact,
+      fix: t.b2Fix,
+      us: t.b2Us,
+      trad: t.b2Trad,
+      refined: t.b2Refined
+    },
+    {
+      title: t.b3Title,
+      problem: t.b3Problem,
+      impact: t.b3Impact,
+      fix: t.b3Fix,
+      us: t.b3Us,
+      trad: t.b3Trad,
+      refined: t.b3Refined
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-ink-950 text-bone-100 font-sans selection:bg-signal-gold selection:text-ink-950 print:bg-white print:text-black">
-      {/* GLOBAL PRINT STYLES TO FORCE CLEAN DOCUMENT OUTPUT */}
+      {/* EXPLICIT PRINT UTILITIES TO REMOVE HEADER AND BOTTOM DIRECTORY LINK */}
       <style jsx global>{`
         @media print {
           body {
@@ -424,14 +454,14 @@ export default function ClerkAuditPage() {
           .print\\:hidden {
             display: none !important;
           }
-          .print\\:text-black {
-            color: #000000 !important;
-          }
           .print\\:border-gray-300 {
             border-color: #d1d5db !important;
           }
-          .print\\:bg-gray-50 {
-            background-color: #f9fafb !important;
+          .print\\:bg-white {
+            background-color: #ffffff !important;
+          }
+          .print\\:text-black {
+            color: #000000 !important;
           }
         }
       `}</style>
@@ -470,10 +500,11 @@ export default function ClerkAuditPage() {
         </div>
       </header>
 
-      {/* MAIN CONTENT */}
-      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-32 print:pt-0 print:pb-0 print:px-0">
-        {/* AUDIT TITLE & METADATA */}
-        <header className="mb-16">
+      {/* MAIN DOCUMENT BODY */}
+      <main className="max-w-5xl mx-auto px-6 md:px-12 pt-12 pb-32 print:pt-0 print:pb-0 print:px-0">
+        
+        {/* DOCUMENT METADATA */}
+        <header className="mb-16 border-b border-ink-800 pb-12 print:border-gray-300">
           <div className="flex items-center gap-3 font-mono text-xs text-signal-green mb-4 print:text-black">
             <span>{t.navTag}</span>
             <span className="text-ink-600 print:text-gray-400">·</span>
@@ -489,7 +520,7 @@ export default function ClerkAuditPage() {
             {t.subtitle}
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-ink-700 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed print:border-gray-300 print:text-gray-600">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-[10px] uppercase tracking-widest text-bone-500 leading-relaxed print:text-gray-600">
             <div>
               <span className="text-bone-300 block mb-1 print:text-black">Client</span>
               {t.client}
@@ -505,12 +536,12 @@ export default function ClerkAuditPage() {
           </div>
         </header>
 
-        {/* SECTION 1: PERSPECTIVE & INTENT */}
+        {/* SECTION 1: PERSPECTIVE */}
         <section className="mb-16">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-6 print:text-black print:font-bold">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-4 print:text-black print:font-bold">
             {t.s1Title}
           </div>
-          <div className="max-w-none text-bone-300 leading-relaxed space-y-6 print:text-gray-800">
+          <div className="max-w-none text-bone-300 leading-relaxed space-y-4 print:text-gray-800">
             <h2 className="font-display font-semibold text-xl text-bone-100 mb-2 print:text-black">
               {t.overviewHeading}
             </h2>
@@ -523,138 +554,89 @@ export default function ClerkAuditPage() {
           </div>
         </section>
 
-        {/* SECTION 2: ARCHITECTURAL BREAKDOWN */}
+        {/* SECTION 2: CLEAN 3-CARD GRID FOR ARCHITECTURAL BREAKDOWN */}
         <section className="mb-16">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black print:font-bold">
             {t.s2Title}
           </div>
-          
-          {/* BLOCK 1 */}
-          <div className="mb-14">
-            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4 print:text-black">
-              {t.b1Title}
-            </h3>
-            
-            {/* REFACTORED: Dynamic Flow Layout replacing the boxy square cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-ink-800 print:border-gray-200">
-              <div className="border-l-2 border-signal-red/80 pl-3 py-1 print:border-red-600">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-red block mb-1 print:text-red-700 font-semibold">{t.lblProblem}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b1Problem}</p>
-              </div>
 
-              <div className="border-l-2 border-signal-gold/80 pl-3 py-1 print:border-amber-500">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-gold block mb-1 print:text-amber-700 font-semibold">{t.lblImpact}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b1Impact}</p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {blocks.map((item, idx) => (
+              <div 
+                key={idx} 
+                className="flex flex-col justify-between border border-ink-700 bg-ink-900/50 p-5 rounded-none print:border-gray-300 print:bg-white"
+              >
+                <div>
+                  <h3 className="font-mono text-xs font-semibold uppercase tracking-wider text-bone-100 mb-6 pb-3 border-b border-ink-800 print:text-black print:border-gray-200">
+                    {item.title}
+                  </h3>
 
-              <div className="border-l-2 border-signal-green/80 pl-3 py-1 print:border-emerald-600">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-green block mb-1 print:text-emerald-700 font-semibold">{t.lblFix}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b1Fix}</p>
-              </div>
-            </div>
+                  {/* PROBLEM BLOCK */}
+                  <div className="mb-5">
+                    <span className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-signal-red bg-signal-red/10 mb-2 print:bg-red-50 print:text-red-700 print:border print:border-red-200 font-bold">
+                      {t.lblProblem}
+                    </span>
+                    <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">
+                      {item.problem}
+                    </p>
+                  </div>
 
-            <div className="space-y-4 pt-2">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.usBaseline}</p>
-                <p className="text-bone-400 italic text-sm print:text-gray-700">{t.b1Us}</p>
-              </div>
-              
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.tradAgency}</p>
-                <p className="text-bone-400 text-sm font-mono print:text-gray-700">{t.b1Trad}</p>
-              </div>
+                  {/* IMPACT BLOCK */}
+                  <div className="mb-5">
+                    <span className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-signal-gold bg-signal-gold/10 mb-2 print:bg-amber-50 print:text-amber-800 print:border print:border-amber-200 font-bold">
+                      {t.lblImpact}
+                    </span>
+                    <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">
+                      {item.impact}
+                    </p>
+                  </div>
 
-              <div className="border-l-2 border-signal-gold pl-4 py-1 print:border-black">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1 print:text-black print:font-bold">{t.refinedIntent}</p>
-                <p className="text-bone-100 font-medium text-sm font-mono print:text-black">{t.b1Refined}</p>
-              </div>
-            </div>
-          </div>
+                  {/* FIX BLOCK */}
+                  <div className="mb-6">
+                    <span className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest text-signal-green bg-signal-green/10 mb-2 print:bg-emerald-50 print:text-emerald-800 print:border print:border-emerald-200 font-bold">
+                      {t.lblFix}
+                    </span>
+                    <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">
+                      {item.fix}
+                    </p>
+                  </div>
+                </div>
 
-          {/* BLOCK 2 */}
-          <div className="mb-14">
-            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4 print:text-black">
-              {t.b2Title}
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-ink-800 print:border-gray-200">
-              <div className="border-l-2 border-signal-red/80 pl-3 py-1 print:border-red-600">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-red block mb-1 print:text-red-700 font-semibold">{t.lblProblem}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b2Problem}</p>
-              </div>
+                {/* COPYWRITING NARRATIVE COMPARISON */}
+                <div className="pt-4 border-t border-ink-800 space-y-3 print:border-gray-200">
+                  <div>
+                    <span className="block font-mono text-[9px] uppercase tracking-widest text-bone-600 mb-0.5 print:text-gray-500">
+                      {t.usBaseline}
+                    </span>
+                    <p className="text-[11px] text-bone-400 italic print:text-gray-600">
+                      {item.us}
+                    </p>
+                  </div>
 
-              <div className="border-l-2 border-signal-gold/80 pl-3 py-1 print:border-amber-500">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-gold block mb-1 print:text-amber-700 font-semibold">{t.lblImpact}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b2Impact}</p>
-              </div>
+                  <div>
+                    <span className="block font-mono text-[9px] uppercase tracking-widest text-bone-600 mb-0.5 print:text-gray-500">
+                      {t.tradAgency}
+                    </span>
+                    <p className="text-[11px] text-bone-400 font-mono print:text-gray-600">
+                      {item.trad}
+                    </p>
+                  </div>
 
-              <div className="border-l-2 border-signal-green/80 pl-3 py-1 print:border-emerald-600">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-green block mb-1 print:text-emerald-700 font-semibold">{t.lblFix}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b2Fix}</p>
+                  <div className="pt-1">
+                    <span className="block font-mono text-[9px] uppercase tracking-widest text-signal-gold mb-0.5 print:text-black print:font-bold">
+                      {t.refinedIntent}
+                    </span>
+                    <p className="text-xs text-bone-100 font-mono font-medium print:text-black">
+                      {item.refined}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div className="space-y-4 pt-2">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.usBaseline}</p>
-                <p className="text-bone-400 italic text-sm print:text-gray-700">{t.b2Us}</p>
-              </div>
-              
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.tradAgency}</p>
-                <p className="text-bone-400 text-sm font-mono print:text-gray-700">{t.b2Trad}</p>
-              </div>
-
-              <div className="border-l-2 border-signal-gold pl-4 py-1 print:border-black">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1 print:text-black print:font-bold">{t.refinedIntent}</p>
-                <p className="text-bone-100 font-medium text-sm font-mono print:text-black">{t.b2Refined}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* BLOCK 3 */}
-          <div className="mb-14">
-            <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-bone-100 mb-4 print:text-black">
-              {t.b3Title}
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 pt-4 border-t border-ink-800 print:border-gray-200">
-              <div className="border-l-2 border-signal-red/80 pl-3 py-1 print:border-red-600">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-red block mb-1 print:text-red-700 font-semibold">{t.lblProblem}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b3Problem}</p>
-              </div>
-
-              <div className="border-l-2 border-signal-gold/80 pl-3 py-1 print:border-amber-500">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-gold block mb-1 print:text-amber-700 font-semibold">{t.lblImpact}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b3Impact}</p>
-              </div>
-
-              <div className="border-l-2 border-signal-green/80 pl-3 py-1 print:border-emerald-600">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-signal-green block mb-1 print:text-emerald-700 font-semibold">{t.lblFix}</span>
-                <p className="text-xs text-bone-300 leading-relaxed print:text-gray-800">{t.b3Fix}</p>
-              </div>
-            </div>
-
-            <div className="space-y-4 pt-2">
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.usBaseline}</p>
-                <p className="text-bone-400 italic text-sm print:text-gray-700">{t.b3Us}</p>
-              </div>
-              
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-600 mb-1 print:text-gray-500">{t.tradAgency}</p>
-                <p className="text-bone-400 text-sm font-mono print:text-gray-700">{t.b3Trad}</p>
-              </div>
-
-              <div className="border-l-2 border-signal-gold pl-4 py-1 print:border-black">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-1 print:text-black print:font-bold">{t.refinedIntent}</p>
-                <p className="text-bone-100 font-medium text-sm font-mono print:text-black">{t.b3Refined}</p>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* SECTION 3: ROADMAP & MATRIX */}
+        {/* SECTION 3: EXPANSION ROADMAP & MATRIX */}
         <section className="mb-20">
           <div className="font-mono text-[10px] uppercase tracking-widest text-signal-gold mb-8 print:text-black print:font-bold">
             {t.s3Title}
@@ -662,7 +644,6 @@ export default function ClerkAuditPage() {
           
           <h3 className="font-display text-xl text-bone-100 mb-6 print:text-black">{t.s3Heading}</h3>
           
-          {/* MATRIX TABLE */}
           <div className="overflow-x-auto mb-12 border border-ink-700 bg-ink-900 print:bg-white print:border-gray-300">
             <table className="w-full text-left font-mono text-xs border-collapse">
               <thead>
@@ -699,8 +680,8 @@ export default function ClerkAuditPage() {
             </p>
           </div>
         </section>
-        
-        {/* FOOTER NAVIGATION - HIDDEN ON PRINT */}
+
+        {/* BOTTOM RETURN DIRECTORY LINK - STRICTLY HIDDEN ON PRINT */}
         <div className="mt-32 pt-8 border-t border-ink-700 print:hidden">
           <Link href="/" className="font-mono text-[10px] uppercase tracking-widest text-bone-500 hover:text-signal-gold transition-colors">
             {t.returnDir}
